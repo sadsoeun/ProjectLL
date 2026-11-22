@@ -1,0 +1,19 @@
+2026-11-01 타이틀 수정
+
+원본 비율: Meadow 1672x941, Logo 2172x724.
+기존 TextureImporter nPOTScale=ToNearest가 가로/세로를 각각 변환하던 문제를 None으로 수정.
+UI 원화는 mipmap 없음, Clamp, max 4096, 무압축으로 가져온다.
+TitleArtTextureImporter가 해당 TitleArt 폴더에만 설정을 유지한다.
+
+해상도: 1920x1080 기준 구도를 화면 안에 비율 유지하여 맞춘다.
+원화와 로고, 메뉴에 동일한 균등 배율을 적용하며 LateUpdate에서 창 크기 변경을 반영한다.
+16:10/4:3/세로 화면은 위아래 여백, 21:9는 좌우 여백을 둔다.
+계산 확인: 1280x720, 1920x1080, 2560x1440, 3440x1440, 1920x1200, 1024x768, 1080x1920.
+
+머리카락: 내부에 작은 사인파를 주던 방식에서 뿌리 기준 각도 회전 + 끝부분 지연으로 변경.
+얼굴/오른손/소매 영역은 모션에서 제외. 실제 분리 레이어/Cubism 리깅이 아닌 원화 변형이므로 머리카락 주변 배경 일부도 함께 변형될 수 있다.
+
+원화: 내장 image_gen으로 기존 구도/포즈를 유지한 약한 셀식 명암으로 편집.
+보존 원본: ConceptArt/LeafAndLeap_Title_v1/01-meadow-illustration.png
+셀식 원본: ConceptArt/LeafAndLeap_Title_v1/04-meadow-cel.png
+프롬프트: ConceptArt/LeafAndLeap_Title_v1/cel-generation-prompt.txt

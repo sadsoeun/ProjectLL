@@ -1,0 +1,207 @@
+﻿propId,name,category,prefabPath,defaultZ,collision,status,description
+T01_GrassCliffCore,잔디 절벽 코어,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T01_GrassCliffCore.prefab,0,false,Implemented,2x2x4 지면 모듈. 잔디 캡 + 흙띠. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore 슬롯.
+T02_GrassCliffLeftEnd,왼쪽 절벽 끝,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T02_GrassCliffLeftEnd.prefab,0,false,Implemented,2x2x4. 틈 왼쪽 끝 모듈. 테마 킷 groundEndLeft 슬롯.
+T03_GrassCliffRightEnd,오른쪽 절벽 끝,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T03_GrassCliffRightEnd.prefab,0,false,Implemented,2x2x4. 틈 오른쪽 끝 모듈. 테마 킷 groundEndRight 슬롯.
+T04_BareRockCore,적층 맨바위 코어,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T04_BareRockCore.prefab,0,false,Implemented,2x2x4. 잔디 없는 바위 코어. 높은 절벽 하부 반복. 테마 킷 rockCore 슬롯.
+T05_CliffStepModule,계단 조합,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T05_CliffStepModule.prefab,0,false,Implemented,"디딤폭 3, 단차 1, 깊이 4. 현재 빌더는 슬롯을 쓰지 않음(계단은 T01/T04 모듈로 구성)."
+T06_GrassFloatingPlatform,잔디 공중 발판,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T06_GrassFloatingPlatform.prefab,0,false,Implemented,3x1x4. 얕은 바위 하부. 높이 0.5 초과 platform 블록. 테마 킷 floatingPlatform 슬롯.
+T07_ThinTimberPlatform,얇은 목재 발판,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T07_ThinTimberPlatform.prefab,0,false,Implemented,폭 3(기준) x 0.4 x 4. 높이 0.5 이하 platform 블록. 테마 킷 timberPlatform 슬롯.
+V01_BroadleafOak,큰 활엽수,Vegetation,Assets/_Project/Prefabs/Environment/GreenMeadow/V01_BroadleafOak.prefab,8,false,Implemented,높이 4. 6각 줄기 + 5개 수관 덩어리. 바닥 중심 피벗.
+V02_RoundShrub,둥근 관목,Vegetation,Assets/_Project/Prefabs/Environment/GreenMeadow/V02_RoundShrub.prefab,6,false,Implemented,높이 0.6-1. 3-5개 덩어리.
+V03_GrassTuft,풀 군집,Vegetation,Assets/_Project/Prefabs/Environment/GreenMeadow/V03_GrassTuft.prefab,0,false,Implemented,높이 0.2-0.5. 잔디 끝 장식.
+V04_FlowerCluster,꽃 군집,Vegetation,Assets/_Project/Prefabs/Environment/GreenMeadow/V04_FlowerCluster.prefab,0,false,Implemented,높이 0.2-0.4. 흰색/분홍색 변형.
+V05_StoneCluster,작은 바위 군집,Vegetation,Assets/_Project/Prefabs/Environment/GreenMeadow/V05_StoneCluster.prefab,6,false,Implemented,높이 0.3-1. 크기가 다른 3개 돌.
+P01_TimberFence,목재 울타리,Prop,Assets/_Project/Prefabs/Environment/GreenMeadow/P01_TimberFence.prefab,6,false,Implemented,폭 2 x 높이 1. 기둥과 가로대 분리.
+P02_DirectionSign,방향 표지,Prop,Assets/_Project/Prefabs/Environment/GreenMeadow/P02_DirectionSign.prefab,0,false,Implemented,높이 1.5. 화살표 판과 기둥.
+A01_Windmill,풍차,Landmark,Assets/_Project/Prefabs/Environment/GreenMeadow/A01_Windmill.prefab,8,false,Implemented,"바닥 W4xD3, 날개 포함 H6. 날개 분리, 날개 회전축 피벗."
+A02_Watchtower,망루,Landmark,Assets/_Project/Prefabs/Environment/GreenMeadow/A02_Watchtower.prefab,30,false,Implemented,W3xH7xD3. 원경용 단순 변형.
+G01_Checkpoint,체크포인트,Gameplay,Assets/_Project/Prefabs/Environment/GreenMeadow/G01_Checkpoint.prefab,0,false,Implemented,시각적 기둥 H3(깃발 별도). 테마 킷 checkpointVisual 슬롯. 판정은 기존 프리팹 유지.
+G02_GoalArch,골인 아치,Gameplay,Assets/_Project/Prefabs/Environment/GreenMeadow/G02_GoalArch.prefab,0,false,Implemented,외관 W3xH3.5xD1. 바닥 중심 피벗. 테마 킷 goalVisual 슬롯. 판정은 기존 프리팹 유지.
+G03a_Coin,코인,Gameplay,Assets/_Project/Prefabs/Environment/GreenMeadow/G03a_Coin.prefab,0,false,Implemented,"지름 0.6, 두께 0.12. 중심 피벗. 테마 킷 coinVisual 슬롯."
+G03b_MagentaGem,마젠타 보석,Gameplay,Assets/_Project/Prefabs/Environment/GreenMeadow/G03b_MagentaGem.prefab,0,false,Implemented,0.8m 기본 형태. 중심 피벗. 테마 킷 gemVisual 슬롯.
+B01_RollingHill,원경 구릉,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B01_RollingHill.prefab,30,false,Implemented,W20-35 x H6-12 x D10-20.
+B02_ForestMass,원경 숲 덩어리,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B02_ForestMass.prefab,30,false,Implemented,W8-15 x H4-8 x D4-8.
+B03_SeaStackCluster,초록 암초 군집,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B03_SeaStackCluster.prefab,70,false,Implemented,H4-12. 바위 기둥 3개.
+B04_WaterfallCliff,폭포 절벽,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B04_WaterfallCliff.prefab,10,false,Implemented,W10-16 x H8-14 x D4-8. 바위/물띠/포말 분리.
+B05_CloudMass,입체 구름,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B05_CloudMass.prefab,70,false,Implemented,W8-16. 둥근 다면체 4개.
+B06_WaterSurface,원경 수면,Background,Assets/_Project/Prefabs/Environment/GreenMeadow/B06_WaterSurface.prefab,30,false,Implemented,반복 평면 W20xD20.
+T07_ThinTimberPlatform3m,얇은 목재 발판 3m,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T07_ThinTimberPlatform3m.prefab,0,false,Implemented,3 x 0.4 x 4. T07의 3m 폭 변형. 피벗 좌상단/깊이 중앙.
+T07_TimberSupport,목재 발판 지지대,Prop,Assets/_Project/Prefabs/Environment/GreenMeadow/T07_TimberSupport.prefab,1.5,false,Implemented,1 x 1.65 x 0.2. 얇은 목재 발판 아래 장식 지지대. 충돌 없음. 바닥 중심 피벗.
+SD_G01_Ground_Straight,모래 바닥 기본,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G01_Ground_Straight.prefab,0,false,Implemented,SUN DUNES. 2x2x4 모래 상판 + 사암 측면. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore.
+SD_G02_Ground_Half,모래 반폭 바닥,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G02_Ground_Half.prefab,0,false,Implemented,SUN DUNES. 1x2x4. G01 접합면 공유.
+SD_G03_Ground_InnerCorner,모래 오목 L 코너,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G03_Ground_InnerCorner.prefab,0,false,Implemented,SUN DUNES. 2x2x4. 상판 L자(1x1 사분면 제외).
+SD_G04_Ground_OuterCorner_L,모래 볼록 코너 (L),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G04_Ground_OuterCorner_L.prefab,0,false,Implemented,"SUN DUNES. 2x2x4 끝 모듈. L=왼쪽 끝, R=오른쪽 끝. 테마 킷 groundEndLeft/Right."
+SD_G04_Ground_OuterCorner_R,모래 볼록 코너 (R),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G04_Ground_OuterCorner_R.prefab,0,false,Implemented,"SUN DUNES. 2x2x4 끝 모듈. L=왼쪽 끝, R=오른쪽 끝. 테마 킷 groundEndLeft/Right."
+SD_G05_Ground_Ramp,모래 경사 발판,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G05_Ground_Ramp.prefab,0,false,Implemented,"SUN DUNES. 폭 2, 높이차 1. COL_ 경사 충돌체 포함."
+SD_G06_Ground_Stair,사암 3단 계단,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G06_Ground_Stair.prefab,0,false,Implemented,"SUN DUNES. 2x2x4, 3단 총 1 m. COL_ 경사 충돌체 포함."
+SD_G07_Platform_Floating,사암 공중 발판 (Floating),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G07_Platform_Floating.prefab,0,false,Implemented,SUN DUNES. Thin 3x0.4x4(테마 킷 timberPlatform) / Floating 3x1x4(테마 킷 floatingPlatform).
+SD_G07_Platform_Thin,사암 공중 발판 (Thin),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G07_Platform_Thin.prefab,0,false,Implemented,SUN DUNES. Thin 3x0.4x4(테마 킷 timberPlatform) / Floating 3x1x4(테마 킷 floatingPlatform).
+SD_G08_Platform_Breakaway,붕괴 발판,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G08_Platform_Breakaway.prefab,0,false,Implemented,SUN DUNES. 3x0.4x4. 4조각 개별 피벗(낙하 기믹용).
+SD_G09_Cliff_Extension,사암 절벽 연장,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G09_Cliff_Extension.prefab,0,false,Implemented,SUN DUNES. 2x2x4 상하좌우 반복. 테마 킷 rockCore.
+SD_G10_Oasis_Basin,오아시스 수반,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G10_Oasis_Basin.prefab,0,false,Implemented,SUN DUNES. 4x0.6x3. 테두리/물 분리(물은 애니메이션 물 셰이더).
+SD_P08_Pottery,토기,Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P08_Pottery.prefab,2.5,false,Implemented,SUN DUNES. 본체 + 파괴편 4.
+SD_P09_Banner,태양 깃발,Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P09_Banner.prefab,3,false,Implemented,SUN DUNES. 봉/천 분리(천 바람). 피벗 봉 상단.
+SD_P10_Brazier,석제 화로,Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P10_Brazier.prefab,3,false,Implemented,SUN DUNES. 받침/그릇 + FX_Fire 지점.
+SD_P11_SunSwitch,태양 압력판,Gameplay,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P11_SunSwitch.prefab,0,false,Implemented,SUN DUNES. base/plate(이동 0.08)/emblem. 맵 도구 switches 요소의 테마 비주얼(SpikeTrap/FloorSwitch 구현됨).
+SD_P12_SpikeTrap,상승 가시 함정,Gameplay,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P12_SpikeTrap.prefab,0,false,Implemented,SUN DUNES. base/spikes3. 맵 도구 spikeTraps 요소의 테마 비주얼(가시가 로컬 Y +0.58 상승).
+SD_P01_Palm,야자수,Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P01_Palm.prefab,6,false,Implemented,SUN DUNES. 높이 3.5. 잎 바람 흔들림.
+SD_P02_Cactus_Round,선인장 (Round),Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P02_Cactus_Round.prefab,3,false,Implemented,SUN DUNES. Tall(기둥형) / Round(구형).
+SD_P02_Cactus_Tall,선인장 (Tall),Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P02_Cactus_Tall.prefab,3,false,Implemented,SUN DUNES. Tall(기둥형) / Round(구형).
+SD_P03_Rock_Set_A,사암 바위 (A),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P03_Rock_Set_A.prefab,4,false,Implemented,SUN DUNES. 실루엣 A/B/C.
+SD_P03_Rock_Set_B,사암 바위 (B),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P03_Rock_Set_B.prefab,4,false,Implemented,SUN DUNES. 실루엣 A/B/C.
+SD_P03_Rock_Set_C,사암 바위 (C),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P03_Rock_Set_C.prefab,4,false,Implemented,SUN DUNES. 실루엣 A/B/C.
+SD_P04_Column_Broken,유적 기둥 (Broken),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P04_Column_Broken.prefab,5,false,Implemented,SUN DUNES. Intact(정상) / Broken(파손).
+SD_P04_Column_Intact,유적 기둥 (Intact),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P04_Column_Intact.prefab,5,false,Implemented,SUN DUNES. Intact(정상) / Broken(파손).
+SD_P05_SunArch,태양 문,Landmark,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P05_SunArch.prefab,4,false,Implemented,SUN DUNES. 3.5x3.2x1. 기둥2/아치/문양(발광). 테마 킷 goalVisual.
+SD_P07_RopeBridge,밧줄 다리,Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P07_RopeBridge.prefab,0,true,Implemented,SUN DUNES. 4 m. 판자/기둥4/로프2 분리. COL_ 통행면.
+SD_P06_TempleGate,계단 신전,Landmark,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P06_TempleGate.prefab,12,false,Implemented,SUN DUNES. 8x7x8. 신전/문/문양 분리.
+SD_B01_Mesa_Cluster,메사 군락,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B01_Mesa_Cluster.prefab,45,false,Implemented,"SUN DUNES. 원경 입체 메시, LOD 3단."
+SD_B02_Butte_Trio,암주 세트,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B02_Butte_Trio.prefab,60,false,Implemented,"SUN DUNES. 원경 암주 3개, LOD 3단."
+SD_B03_Dune_Ridge,입체 사구,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B03_Dune_Ridge.prefab,30,false,Implemented,"SUN DUNES. 중경 사구, 뒷면/밑면 닫힘."
+SD_B04_Rock_Arch,바위 아치,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B04_Rock_Arch.prefab,50,false,Implemented,SUN DUNES. 원경 아치(실제 두께).
+SD_B05_Temple_Far,원경 신전,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B05_Temple_Far.prefab,90,false,Implemented,"SUN DUNES. 최원경 신전, LOD 3단."
+SD_B06_Oasis_Grove,원경 오아시스,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B06_Oasis_Grove.prefab,35,false,Implemented,SUN DUNES. 야자수/바위/물 조합.
+SD_P13_SunGate,태양 문 (슬라이딩 게이트),Gameplay,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P13_SunGate.prefab,0,false,Implemented,"SUN DUNES. 1x3x1.5. 맵 도구 gates 요소의 테마 비주얼. 바닥 중앙 피벗, COL_Gate."
+SD_B07_Desert_Floor,사막 바닥,Background,Assets/_Project/Prefabs/Environment/SunDunes/Background/SD_B07_Desert_Floor.prefab,2.4,false,Implemented,"SUN DUNES. 플레이 라인 뒤를 잇는 연속 사막 바닥 W400 x D150, 앞면 사암 절벽(y -12까지). 피벗 앞모서리 중앙."
+SD_G11_Sandstone_Core,사암 지면 코어,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G11_Sandstone_Core.prefab,0,false,Implemented,"SUN DUNES v2. 2x2x4 모래 캡 + 사암 블록 2단. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore."
+SD_G11_Sandstone_Core_V2,사암 지면 코어 V2,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G11_Sandstone_Core_V2.prefab,0,false,Implemented,"SUN DUNES v2. groundCore 변형(뒤쪽 모래 둔덕 + 자갈). 같은 이음 프로필."
+SD_G11_Sandstone_Core_V3,사암 지면 코어 V3,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G11_Sandstone_Core_V3.prefab,0,false,Implemented,"SUN DUNES v2. groundCore 변형(뒤쪽 반쯤 묻힌 바위 + 자갈). 같은 이음 프로필."
+SD_G12_Sandstone_End_L,사암 지면 끝 (L),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G12_Sandstone_End_L.prefab,0,false,Implemented,"SUN DUNES v2. 2x2x4 왼쪽 끝 모듈(측면 블록 + 모서리 모래 립). 테마 킷 groundEndLeft."
+SD_G12_Sandstone_End_R,사암 지면 끝 (R),Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G12_Sandstone_End_R.prefab,0,false,Implemented,"SUN DUNES v2. 2x2x4 오른쪽 끝 모듈. 테마 킷 groundEndRight."
+SD_G13_Sandstone_Rock,사암 암반,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G13_Sandstone_Rock.prefab,0,false,Implemented,"SUN DUNES v2. 2x2x4 사암 블록 3단, 상하좌우 반복. 테마 킷 rockCore."
+SD_G13_Sandstone_Rock_V2,사암 암반 V2,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G13_Sandstone_Rock_V2.prefab,0,false,Implemented,"SUN DUNES v2. rockCore 변형."
+SD_G13_Sandstone_Rock_V3,사암 암반 V3,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G13_Sandstone_Rock_V3.prefab,0,false,Implemented,"SUN DUNES v2. rockCore 변형."
+SD_G14_Sandstone_Floating,사암 공중 섬,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G14_Sandstone_Floating.prefab,0,false,Implemented,"SUN DUNES v2. 3x1x4 모래 캡 + 사암 링 + 둥근 밑면. 테마 킷 floatingPlatform."
+SD_G15_PalmTimber_Platform,야자목 발판,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G15_PalmTimber_Platform.prefab,0,false,Implemented,"SUN DUNES v2. 3x0.4x4 야자목 판자 + 밧줄 + 천 깃발. 테마 킷 timberPlatform / moverVisual."
+SD_V01_DryGrassTuft,마른 풀 군집,Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_V01_DryGrassTuft.prefab,1.5,false,Implemented,"SUN DUNES v2. 높이 0.3-0.6. 지면 끝 장식(바람 흔들림)."
+SD_V02_SageShrub,사막 세이지 덤불,Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_V02_SageShrub.prefab,1.5,false,Implemented,"SUN DUNES v2. 높이 0.5. 은녹색 덩어리 + 분홍 꽃."
+SD_V03_BarrelCactus,꽃 핀 통선인장,Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_V03_BarrelCactus.prefab,1.5,false,Implemented,"SUN DUNES v2. 높이 0.45. 통선인장 3개, 분홍 꽃."
+SD_V04_DesertMarigold,사막 들꽃,Vegetation,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_V04_DesertMarigold.prefab,1.5,false,Implemented,"SUN DUNES v2. 높이 0.2-0.4. 노랑/주황 꽃 군집(바람 흔들림)."
+SD_P09_BannerStand,태양 깃발 (기둥형),Prop,Assets/_Project/Prefabs/Environment/SunDunes/Props/SD_P09_BannerStand.prefab,1.6,false,Implemented,"SUN DUNES. 세로 기둥 + SD_P09_Banner. 피벗 바닥 중앙(지면에 바로 세움), 높이 3.3."
+FP_A01_IceCastle,얼음 성,Landmark,Assets/_Project/Prefabs/Environment/FrostPeaks/Architecture/FP_A01_IceCastle.prefab,20,false,Implemented,FROST PEAKS. 18x22x12 중앙동/탑4/첨탑/성벽. 근경 랜드마크.
+FP_A02_RuinArch,폐허 아치,Landmark,Assets/_Project/Prefabs/Environment/FrostPeaks/Architecture/FP_A02_RuinArch.prefab,5,false,Implemented,FROST PEAKS. 5x5x1.8 파손 아치 + 파편.
+FP_B01_SnowMountain,독립 설산,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B01_SnowMountain.prefab,60,false,Implemented,"FROST PEAKS. 원경 입체 메시, LOD 3단."
+FP_B02_ThreePeakRidge,3봉 능선,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B02_ThreePeakRidge.prefab,80,false,Implemented,"FROST PEAKS. 원경 능선, LOD 3단."
+FP_B03_GlacierCliff,빙하 절벽,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B03_GlacierCliff.prefab,30,false,Implemented,"FROST PEAKS. 중경 빙벽, 뒷면/밑면 닫힘."
+FP_B04_StoneArch,설산 암석 아치,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B04_StoneArch.prefab,50,false,Implemented,FROST PEAKS. 실제 관통 아치(두께 8).
+FP_B05_IceCastleFar,원경 얼음 성,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B05_IceCastleFar.prefab,90,false,Implemented,"FROST PEAKS. 최원경 성, 창 발광."
+FP_B06_SnowHills,눈 언덕 군락,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B06_SnowHills.prefab,25,false,Implemented,FROST PEAKS. 눈 언덕 + 전나무 3.
+FP_B07_SnowField,연속 설원 바닥,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B07_SnowField.prefab,2.4,false,Implemented,FROST PEAKS. 400x150 연속 설원. x = 스테이지 길이/2 에 배치.
+FP_G01_CheckpointBeacon,체크포인트 비콘,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G01_CheckpointBeacon.prefab,0,false,Implemented,FROST PEAKS. 높이 3. 테마 킷 checkpointVisual.
+FP_G02_GoalArch,골인 아치,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G02_GoalArch.prefab,0,false,Implemented,"FROST PEAKS. 2.5x3.8x1.2, 통로 1.5x3. 테마 킷 goalVisual."
+FP_G03_RunePlate,룬 압력판,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G03_RunePlate.prefab,0,false,Implemented,FROST PEAKS. Plinth/Plate/Emblem. 테마 킷 switchVisual.
+FP_G04_IceGate,승강 얼음 문,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G04_IceGate.prefab,0,false,Implemented,FROST PEAKS. 이동 슬래브 1x3x1.5. 테마 킷 gateVisual.
+FP_G05_IceMoverPlatform,이동 얼음 발판,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G05_IceMoverPlatform.prefab,0,false,Implemented,FROST PEAKS. 3x0.4x4 좌상단 피벗. 테마 킷 moverVisual/fallerVisual.
+FP_G06_IceSpikeTrap,수납식 얼음 가시,Gameplay,Assets/_Project/Prefabs/Environment/FrostPeaks/Gimmicks/FP_G06_IceSpikeTrap.prefab,0,false,Implemented,FROST PEAKS. Plinth + Spike_01..03(+0.58 상승). 테마 킷 spikeTrapVisual.
+FP_P01_SnowFir,대형 설송,Vegetation,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P01_SnowFir.prefab,6,false,Implemented,FROST PEAKS. 높이 4.5. 가지 끝 약한 바람.
+FP_P02_YoungFir,어린 설송,Vegetation,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P02_YoungFir.prefab,4,false,Implemented,FROST PEAKS. 높이 2.2.
+FP_P03_SnowBoulders,눈바위 군락,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P03_SnowBoulders.prefab,4,false,Implemented,FROST PEAKS. 바위 3 + 설관.
+FP_P04_WinterShrub,겨울 관목,Vegetation,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P04_WinterShrub.prefab,1.5,false,Implemented,FROST PEAKS. 눈 덮인 마른 가지(바람).
+FP_P05_IceCrystals,빙정 군락,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P05_IceCrystals.prefab,3,false,Implemented,"FROST PEAKS. 결정 3, 약한 발광."
+FP_P06_LanternPost,등불 기둥,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P06_LanternPost.prefab,2.5,false,Implemented,"FROST PEAKS. 높이 2.7, 등불 발광. 피벗 기둥 바닥."
+FP_P07_Signpost,방향 표지판,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P07_Signpost.prefab,2,false,Implemented,FROST PEAKS. 화살판 2.
+FP_P08_SupplyChest,보급 상자,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P08_SupplyChest.prefab,2,false,Implemented,FROST PEAKS. Body/Lid(뒤 경첩)/Lock. 장식 전용.
+FP_P09_SnowflakePennant,눈꽃 깃발,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P09_SnowflakePennant.prefab,2,false,Implemented,"FROST PEAKS. 기둥형 깃발, 천 바람. 피벗 바닥 중앙."
+FP_P10_BrokenPillar,무너진 기둥,Prop,Assets/_Project/Prefabs/Environment/FrostPeaks/Props/FP_P10_BrokenPillar.prefab,4,false,Implemented,FROST PEAKS. 높이 3.2.
+FP_T01_SnowCliffCore,설면 절벽 코어,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T01_SnowCliffCore.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 눈 캡 + 청회색 암반. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+FP_T01_SnowCliffCore_V2,설면 절벽 코어 (V2),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T01_SnowCliffCore_V2.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 눈 캡 + 청회색 암반. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+FP_T01_SnowCliffCore_V3,설면 절벽 코어 (V3),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T01_SnowCliffCore_V3.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 눈 캡 + 청회색 암반. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+FP_T02_SnowCliffEnd_L,설면 절벽 왼쪽 끝 (L),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T02_SnowCliffEnd_L.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 왼쪽 끝 모듈. 테마 킷 groundEndLeft.
+FP_T03_SnowCliffEnd_R,설면 절벽 오른쪽 끝 (R),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T03_SnowCliffEnd_R.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 오른쪽 끝 모듈. 테마 킷 groundEndRight.
+FP_T04_IceRockCore,빙암 코어,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T04_IceRockCore.prefab,0,false,Implemented,"FROST PEAKS. 2x2x4 눈 없는 암반, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+FP_T04_IceRockCore_V2,빙암 코어 (V2),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T04_IceRockCore_V2.prefab,0,false,Implemented,"FROST PEAKS. 2x2x4 눈 없는 암반, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+FP_T04_IceRockCore_V3,빙암 코어 (V3),Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T04_IceRockCore_V3.prefab,0,false,Implemented,"FROST PEAKS. 2x2x4 눈 없는 암반, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+FP_T05_FrozenSurface,얼음 표면 변형,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T05_FrozenSurface.prefab,0,false,Implemented,FROST PEAKS. 2x2x4 T01 접합. 테마 킷 groundCoreVariants. 테마 킷 iceSurface: surface=ice 블록(미끄럼).
+FP_T06_IceFloatingPlatform,공중 얼음 발판,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T06_IceFloatingPlatform.prefab,0,false,Implemented,FROST PEAKS. 3x1x4 눈 상판 + 암반 하부 + 고드름. 테마 킷 floatingPlatform.
+FP_T07_TimberBridgeDeck,목재 다리 발판,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T07_TimberBridgeDeck.prefab,0,false,Implemented,FROST PEAKS. 3x0.4x4 덱 + 뒤쪽 난간(Rails). 테마 킷 timberPlatform.
+FP_T08_IceCliffWall,빙벽 확장 모듈,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T08_IceCliffWall.prefab,3,false,Implemented,FROST PEAKS. 2x8x4 장식 빙벽. 피벗 좌상단.
+FP_B08_FirForestBand,전나무 숲 띠,Background,Assets/_Project/Prefabs/Environment/FrostPeaks/Background/FP_B08_FirForestBand.prefab,18,false,Implemented,"FROST PEAKS. 60 m 타일 반복 숲 띠(전나무 92그루), 끝단 이음매 없음."
+CC_B01_PalmIsland,야자수 섬,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B01_PalmIsland.prefab,45,false,Implemented,"CORAL COAST. 원경 섬, LOD 3단."
+CC_B02_SeaStacks,해식 기둥 군락,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B02_SeaStacks.prefab,35,false,Implemented,"CORAL COAST. 중경 바위 기둥, LOD 3단."
+CC_B03_SeaArch,해식 아치,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B03_SeaArch.prefab,55,false,Implemented,"CORAL COAST. 관통 아치, LOD 3단."
+CC_B04_CoralRidge,산호 능선,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B04_CoralRidge.prefab,80,false,Implemented,"CORAL COAST. 원경 능선, LOD 3단."
+CC_B05_ShellPalaceFar,원경 조개 궁전,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B05_ShellPalaceFar.prefab,90,false,Implemented,"CORAL COAST. A01 단순화, 창 발광."
+CC_G01_PearlCheckpoint,진주 체크포인트,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G01_PearlCheckpoint.prefab,0,false,Implemented,CORAL COAST. 높이 3. 테마 킷 checkpointVisual.
+CC_G02_ShellGoalArch,조개 골인 아치,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G02_ShellGoalArch.prefab,0,false,Implemented,"CORAL COAST. 2.7x4x1.2, 통로 1.5x3. 테마 킷 goalVisual."
+CC_G03_TidePlate,조수 압력판,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G03_TidePlate.prefab,0,false,Implemented,CORAL COAST. Base/Plate/Emblem. 테마 킷 switchVisual.
+CC_G04_TideGate,승강 수문,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G04_TideGate.prefab,0,false,Implemented,CORAL COAST. 이동 문 판 1x3x1.5. 테마 킷 gateVisual. 고정 가이드는 TideGateGuide 장식.
+CC_G04_TideGateGuide,승강 수문 고정 가이드,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G04_TideGateGuide.prefab,0,false,Implemented,CORAL COAST. 이동 문 판 1x3x1.5. 테마 킷 gateVisual. 고정 가이드는 TideGateGuide 장식.
+CC_G05_RaftPlatform,뗏목 발판,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G05_RaftPlatform.prefab,0,false,Implemented,CORAL COAST. 3x0.4x4 좌상단 피벗. 테마 킷 moverVisual/fallerVisual.
+CC_G06_CoralSpikeTrap,수납식 산호 가시,Gameplay,Assets/_Project/Prefabs/Environment/CoralCoast/Gimmicks/CC_G06_CoralSpikeTrap.prefab,0,false,Implemented,CORAL COAST. Base + Spike_01..03(+0.58 상승). 테마 킷 spikeTrapVisual.
+CC_P01_PalmTree,야자수,Vegetation,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P01_PalmTree.prefab,6,false,Implemented,CORAL COAST. 높이 5. 잎 바람.
+CC_P02_BeachPlant,해안 식물,Vegetation,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P02_BeachPlant.prefab,2.5,false,Implemented,CORAL COAST. 큰 잎(바람) + 꽃.
+CC_P03_BranchCoral,가지 산호,Vegetation,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P03_BranchCoral.prefab,3,false,Implemented,CORAL COAST. 장식 산호(가시 없음).
+CC_P04_DomeCoral,돔 산호,Vegetation,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P04_DomeCoral.prefab,3,false,Implemented,CORAL COAST. 뇌산호 돔.
+CC_P05_Shells,조개 세트,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P05_Shells.prefab,2.2,false,Implemented,CORAL COAST. 가리비/소라/대합.
+CC_P06_CargoCrate,화물 상자,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P06_CargoCrate.prefab,2.5,false,Implemented,CORAL COAST. 장식 전용(파괴 불가).
+CC_P07_Barrel,나무통,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P07_Barrel.prefab,2.5,false,Implemented,CORAL COAST. 장식 전용.
+CC_P08_Anchor,닻,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P08_Anchor.prefab,3,false,Implemented,CORAL COAST. 닻 + 로프.
+CC_P09_HarborLantern,항로 등불,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P09_HarborLantern.prefab,2.5,false,Implemented,"CORAL COAST. 높이 2.4, 등불 발광."
+CC_P10_MooringPost,계선주와 로프,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P10_MooringPost.prefab,2.2,false,Implemented,CORAL COAST. 부두 장식.
+CC_P11_CoastFlag,해안 깃발,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P11_CoastFlag.prefab,2.5,false,Implemented,CORAL COAST. 천 바람.
+CC_P12_CoastRocks,해안 바위,Prop,Assets/_Project/Prefabs/Environment/CoralCoast/Props/CC_P12_CoastRocks.prefab,4,false,Implemented,CORAL COAST. 석회암 3 + 모래.
+CC_T01_SandCliffCore,모래 절벽 코어,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T01_SandCliffCore.prefab,0,false,Implemented,CORAL COAST. 2x2x4 모래 캡 + 석회암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+CC_T01_SandCliffCore_V2,모래 절벽 코어 (V2),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T01_SandCliffCore_V2.prefab,0,false,Implemented,CORAL COAST. 2x2x4 모래 캡 + 석회암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+CC_T01_SandCliffCore_V3,모래 절벽 코어 (V3),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T01_SandCliffCore_V3.prefab,0,false,Implemented,CORAL COAST. 2x2x4 모래 캡 + 석회암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+CC_T02_SandCliffEnd_L,모래 절벽 왼쪽 끝 (L),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T02_SandCliffEnd_L.prefab,0,false,Implemented,CORAL COAST. 2x2x4 왼쪽 끝 모듈. 테마 킷 groundEndLeft.
+CC_T03_SandCliffEnd_R,모래 절벽 오른쪽 끝 (R),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T03_SandCliffEnd_R.prefab,0,false,Implemented,CORAL COAST. 2x2x4 오른쪽 끝 모듈. 테마 킷 groundEndRight.
+CC_T04_LimestoneCore,적층 석회암,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T04_LimestoneCore.prefab,0,false,Implemented,"CORAL COAST. 2x2x4 모래 없는 석회암, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+CC_T04_LimestoneCore_V2,적층 석회암 (V2),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T04_LimestoneCore_V2.prefab,0,false,Implemented,"CORAL COAST. 2x2x4 모래 없는 석회암, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+CC_T04_LimestoneCore_V3,적층 석회암 (V3),Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T04_LimestoneCore_V3.prefab,0,false,Implemented,"CORAL COAST. 2x2x4 모래 없는 석회암, 상하좌우 반복. 테마 킷 rockCore(+변형)."
+CC_T05_ReefStoneTop,산호암 포장 상단,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T05_ReefStoneTop.prefab,0,false,Implemented,"CORAL COAST. 2x2x4 T01 접합, 포장면 높이 0. 장식/변형 지형."
+CC_T06_IslandPlatform,소도 발판,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T06_IslandPlatform.prefab,0,false,Implemented,CORAL COAST. 3x1x4 모래 상판 + 석회암 하부. 테마 킷 floatingPlatform.
+CC_T07_JettyDeck,부두 덱,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T07_JettyDeck.prefab,0,false,Implemented,CORAL COAST. 3x0.4x4 판자 덱(난간 없음). 테마 킷 timberPlatform.
+CC_T08_PierSupport,부두 지지대,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T08_PierSupport.prefab,0,false,Implemented,"CORAL COAST. 3x4x4 기둥4 + 가로보, 피벗 바닥 중앙. 부두 덱 아래 장식(충돌 없음)."
+CC_A02_PierGazebo,부두 정자,Landmark,Assets/_Project/Prefabs/Environment/CoralCoast/Architecture/CC_A02_PierGazebo.prefab,5,false,Implemented,CORAL COAST. 4x4x4 장식(충돌 없음).
+CC_B06_Shipwreck,난파선,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B06_Shipwreck.prefab,22,false,Implemented,CORAL COAST. 중경 난파선(TiltRoot).
+CC_B07_SandFloor,얕은 바다 모래 바닥,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B07_SandFloor.prefab,2.4,false,Implemented,CORAL COAST. 400x150 연속 해저 모래. x = 스테이지 길이/2.
+CC_B08_WaterSurface,바다 수면,Background,Assets/_Project/Prefabs/Environment/CoralCoast/Background/CC_B08_WaterSurface.prefab,2.4,false,Implemented,CORAL COAST. 32x32 수면 타일 + 포말 띠. 애니메이션 물 재질.
+CC_A01_ShellPalace,조개 궁전,Landmark,Assets/_Project/Prefabs/Environment/CoralCoast/Architecture/CC_A01_ShellPalace.prefab,22,false,Implemented,CORAL COAST. 18x22x12 소라 지붕 궁전. 근경 랜드마크.
+EF_A01_LavaFortress,용암 요새,Landmark,Assets/_Project/Prefabs/Environment/EmberFortress/Architecture/EF_A01_LavaFortress.prefab,22,false,Implemented,EMBER FORTRESS. 20x22x14 중앙동 + 탑4 + 청동뿔. 근경 랜드마크.
+EF_A02_ForgeShelter,대장간 쉼터,Landmark,Assets/_Project/Prefabs/Environment/EmberFortress/Architecture/EF_A02_ForgeShelter.prefab,5,false,Implemented,"EMBER FORTRESS. 5x4.5x4 장식(충돌 없음), 화덕 발광."
+EF_B01_Volcano,화산체,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B01_Volcano.prefab,70,false,Implemented,"EMBER FORTRESS. 원경 화산, 분화구 용암띠, LOD 3단."
+EF_B02_BasaltRidge,현무암 능선,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B02_BasaltRidge.prefab,60,false,Implemented,"EMBER FORTRESS. 원경 능선, LOD 3단."
+EF_B03_ObsidianSpires,흑요석 암주 군락,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B03_ObsidianSpires.prefab,35,false,Implemented,"EMBER FORTRESS. 중경 암주, LOD 3단."
+EF_B04_BasaltArch,현무암 아치,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B04_BasaltArch.prefab,45,false,Implemented,"EMBER FORTRESS. 관통 아치, LOD 3단."
+EF_B05_FortressFar,원경 요새,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B05_FortressFar.prefab,90,false,Implemented,"EMBER FORTRESS. A01 단순화, 창 발광."
+EF_B06_LavafallCliff,용암 폭포 절벽,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B06_LavafallCliff.prefab,30,false,Implemented,"EMBER FORTRESS. 흐름 메시 발광, LOD 3단."
+EF_G01_EmberCheckpoint,잿불 체크포인트,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G01_EmberCheckpoint.prefab,0,false,Implemented,"EMBER FORTRESS. 높이 3, 황금 수정. 테마 킷 checkpointVisual."
+EF_G02_BasaltGoalArch,현무암 골인 아치,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G02_BasaltGoalArch.prefab,0,false,Implemented,"EMBER FORTRESS. 2.7x4x1.2, 통로 1.5x3. 테마 킷 goalVisual."
+EF_G03_FurnacePlate,용광로 압력판,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G03_FurnacePlate.prefab,0,false,Implemented,EMBER FORTRESS. Base/Plate/Emblem. 테마 킷 switchVisual.
+EF_G04_IronPortcullis,철제 격자문,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G04_IronPortcullis.prefab,0,false,Implemented,EMBER FORTRESS. 이동 격자 1x3x1.5. 테마 킷 gateVisual. 고정 가이드는 PortcullisGuide 장식.
+EF_G04_PortcullisGuide,철제 격자문 고정 가이드,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G04_PortcullisGuide.prefab,0,false,Implemented,EMBER FORTRESS. 이동 격자 1x3x1.5. 테마 킷 gateVisual. 고정 가이드는 PortcullisGuide 장식.
+EF_G05_FoundryLift,주조장 승강 발판,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G05_FoundryLift.prefab,0,false,Implemented,EMBER FORTRESS. 3x0.4x4 좌상단 피벗. 테마 킷 moverVisual/fallerVisual.
+EF_G06_ObsidianSpikeTrap,수납식 흑요석 가시,Gameplay,Assets/_Project/Prefabs/Environment/EmberFortress/Gimmicks/EF_G06_ObsidianSpikeTrap.prefab,0,false,Implemented,EMBER FORTRESS. Base + Spike_01..03(+0.58 상승). 테마 킷 spikeTrapVisual.
+EF_P01_ObsidianCrystal,흑요석 결정,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P01_ObsidianCrystal.prefab,3,false,Implemented,"EMBER FORTRESS. 결정 3종 조합, 은은한 발광."
+EF_P02_CooledLavaRocks,식은 용암 바위,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P02_CooledLavaRocks.prefab,4,false,Implemented,"EMBER FORTRESS. 바위 3, 발광 없음."
+EF_P03_BasaltColumns,현무암 기둥 군락,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P03_BasaltColumns.prefab,4,false,Implemented,EMBER FORTRESS. 6각 기둥 5.
+EF_P04_AshShrub,재빛 관목,Vegetation,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P04_AshShrub.prefab,2.5,false,Implemented,EMBER FORTRESS. 붉은 마른 가지(약한 바람).
+EF_P05_Brazier,화로,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P05_Brazier.prefab,2.5,false,Implemented,EMBER FORTRESS. 불꽃 메시 발광.
+EF_P06_EmberLantern,잿불 등불,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P06_EmberLantern.prefab,2.5,false,Implemented,"EMBER FORTRESS. 높이 2.5, 등불 발광."
+EF_P07_Anvil,모루,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P07_Anvil.prefab,2.5,false,Implemented,EMBER FORTRESS. 장식 전용.
+EF_P08_OreCrate,광석 상자,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P08_OreCrate.prefab,2.5,false,Implemented,EMBER FORTRESS. 장식 전용(파괴 불가).
+EF_P09_ChainPost,체인 기둥,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P09_ChainPost.prefab,2.2,false,Implemented,EMBER FORTRESS. 기둥 + 체인.
+EF_P10_FortressBanner,요새 깃발,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P10_FortressBanner.prefab,2.5,false,Implemented,EMBER FORTRESS. 천 바람.
+EF_P11_BrokenPillar,부서진 석주,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P11_BrokenPillar.prefab,3,false,Implemented,"EMBER FORTRESS. 높이 3, 파편 분리."
+EF_P12_FlameVent,화염 분출구,Prop,Assets/_Project/Prefabs/Environment/EmberFortress/Props/EF_P12_FlameVent.prefab,3,false,Implemented,EMBER FORTRESS. 장식 전용(불꽃·피해 없음).
+EF_T01_CooledBasaltCore,식은 현무암 코어,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T01_CooledBasaltCore.prefab,0,false,Implemented,EMBER FORTRESS. 2x2x4 식은 상판 + 현무암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+EF_T01_CooledBasaltCore_V2,식은 현무암 코어 (V2),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T01_CooledBasaltCore_V2.prefab,0,false,Implemented,EMBER FORTRESS. 2x2x4 식은 상판 + 현무암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+EF_T01_CooledBasaltCore_V3,식은 현무암 코어 (V3),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T01_CooledBasaltCore_V3.prefab,0,false,Implemented,EMBER FORTRESS. 2x2x4 식은 상판 + 현무암. 피벗 좌상단/깊이 중앙. 테마 킷 groundCore(+변형).
+EF_T02_BasaltEnd_L,현무암 왼쪽 끝 (L),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T02_BasaltEnd_L.prefab,0,false,Implemented,EMBER FORTRESS. 2x2x4 왼쪽 끝 모듈. 테마 킷 groundEndLeft.
+EF_T03_BasaltEnd_R,현무암 오른쪽 끝 (R),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T03_BasaltEnd_R.prefab,0,false,Implemented,EMBER FORTRESS. 2x2x4 오른쪽 끝 모듈. 테마 킷 groundEndRight.
+EF_T04_StackedBasaltCore,적층 현무암,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T04_StackedBasaltCore.prefab,0,false,Implemented,"EMBER FORTRESS. 2x2x4 상하좌우 반복, 발광 없음. 테마 킷 rockCore(+변형)."
+EF_T04_StackedBasaltCore_V2,적층 현무암 (V2),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T04_StackedBasaltCore_V2.prefab,0,false,Implemented,"EMBER FORTRESS. 2x2x4 상하좌우 반복, 발광 없음. 테마 킷 rockCore(+변형)."
+EF_T04_StackedBasaltCore_V3,적층 현무암 (V3),Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T04_StackedBasaltCore_V3.prefab,0,false,Implemented,"EMBER FORTRESS. 2x2x4 상하좌우 반복, 발광 없음. 테마 킷 rockCore(+변형)."
+EF_T05_FortressPaving,요새 포장,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T05_FortressPaving.prefab,0,false,Implemented,"EMBER FORTRESS. 2x2x4 T01 접합, 포장면 높이 0, 청동 띠. 장식/변형 지형."
+EF_T06_BasaltPlatform,현무암 발판,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T06_BasaltPlatform.prefab,0,false,Implemented,EMBER FORTRESS. 3x1x4 평탄 상판. 테마 킷 floatingPlatform.
+EF_T07_IronBridgeDeck,철제 다리 덱,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T07_IronBridgeDeck.prefab,0,false,Implemented,EMBER FORTRESS. 3x0.4x4 리벳 철판 덱. 테마 킷 timberPlatform.
+EF_T08_LavaChannel,용암 수로,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T08_LavaChannel.prefab,0,false,Implemented,"EMBER FORTRESS. 2x2x4 좌상단 피벗, 용암면 Y -0.3 발광. 장식 전용(피해 없음)."
+EF_B07_BasaltFloor,현무암 바닥,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B07_BasaltFloor.prefab,2.4,false,Implemented,EMBER FORTRESS. 400x150 연속 현무암 평지. x = 스테이지 길이/2.
+EF_B08_LavaSurface,용암 수면,Background,Assets/_Project/Prefabs/Environment/EmberFortress/Background/EF_B08_LavaSurface.prefab,2.4,false,Implemented,EMBER FORTRESS. 32x32 용암 타일. MyGame/Ambient/Lava 애니메이션 셰이더(흐르는 용암맥·떠다니는 식은 껍질).
+EF_FX03_LavaBubbles,용암 기포,Background,Assets/_Project/Prefabs/Environment/EmberFortress/FX/EF_FX03_LavaBubbles.prefab,-6,false,Implemented,EMBER FORTRESS. FX03 용암 수면 반복: 32x16 m 범위에서 부풀었다 터지는 발광 기포. 피벗 = 용암면(y -1.8). 장식 전용.
+EF_FX10_EmberDrift,떠오르는 불티,Background,Assets/_Project/Prefabs/Environment/EmberFortress/FX/EF_FX10_EmberDrift.prefab,8,false,Implemented,EMBER FORTRESS. 용암에서 천천히 떠오르는 작은 불티(32x20 m 범위). 피벗 = 용암면(y -1.8). 장식 전용.
+T10_PlatformPier,발판 받침 돌기둥,Terrain,Assets/_Project/Prefabs/Environment/GreenMeadow/T10_PlatformPier.prefab,0,false,Implemented,"이끼 낀 돌기둥. 피벗 상단 중앙, 기둥은 레인 뒤쪽(z 1.25), 높이 24(아래로 묻힘). 테마 킷 platformSupport."
+SD_G11_PlatformPier,발판 받침 사암 기둥,Terrain,Assets/_Project/Prefabs/Environment/SunDunes/Ground/SD_G11_PlatformPier.prefab,0,false,Implemented,"SUN DUNES. 사암 기둥 + 목재 받침. 피벗 상단 중앙, 높이 24. 테마 킷 platformSupport."
+FP_T10_PlatformPier,발판 받침 얼음 돌기둥,Terrain,Assets/_Project/Prefabs/Environment/FrostPeaks/Ground/FP_T10_PlatformPier.prefab,0,false,Implemented,"FROST PEAKS. 눈 덮인 돌기둥 + 고드름. 피벗 상단 중앙, 높이 24. 테마 킷 platformSupport."
+CC_T10_PlatformPier,발판 받침 목재 말뚝,Terrain,Assets/_Project/Prefabs/Environment/CoralCoast/Ground/CC_T10_PlatformPier.prefab,0,false,Implemented,"CORAL COAST. 목재 말뚝 트러스. 피벗 상단 중앙, 높이 24. 테마 킷 platformSupport."
+EF_T10_PlatformPier,발판 받침 현무암 기둥,Terrain,Assets/_Project/Prefabs/Environment/EmberFortress/Ground/EF_T10_PlatformPier.prefab,0,false,Implemented,"EMBER FORTRESS. 현무암 주상절리 + 철제 받침. 피벗 상단 중앙, 높이 24. 테마 킷 platformSupport."

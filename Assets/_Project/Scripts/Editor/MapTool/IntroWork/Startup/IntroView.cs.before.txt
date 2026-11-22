@@ -1,0 +1,111 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Aspect-preserving film frame with live, language-specific Noto captions.</summary>
+    public sealed class IntroView : MonoBehaviour
+    {
+        public Canvas Canvas { get; private set; }
+        public RawImage Picture { get; private set; }
+        public Button Skip { get; private set; }
+        public Text Caption { get; private set; }
+        public Text Closing { get; private set; }
+        public RectTransform Frame { get; private set; }
+        public RectTransform CaptionPanel { get; private set; }
+        Text skipText, loading;
+        CanvasGroup captionAlpha;
+        string language;
+        int currentCue=-2;
+        bool ready;
+        static readonly Color Cream=new Color(1,.94f,.78f);
+
+        public void Build(string code)
+        {
+            Canvas=gameObject.AddComponent<Canvas>();
+            Canvas.renderMode=RenderMode.ScreenSpaceOverlay; Canvas.sortingOrder=31000;
+            var scaler=gameObject.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution=new Vector2(1920,1080);scaler.matchWidthOrHeight=.5f;
+            gameObject.AddComponent<GraphicRaycaster>();
+            var black=Rect("Black",transform);Stretch(black);
+            black.gameObject.AddComponent<Image>().color=Color.black;
+            Frame=Rect("FilmFrame",transform);Frame.sizeDelta=new Vector2(1920,1080);
+            var picture=Rect("Picture",Frame);Stretch(picture);
+            Picture=picture.gameObject.AddComponent<RawImage>();Picture.color=Color.white;Picture.raycastTarget=false;
+            CaptionPanel=Rect("SubtitlePanel",Frame);CaptionPanel.anchorMin=CaptionPanel.anchorMax=new Vector2(.5f,0);
+            CaptionPanel.sizeDelta=new Vector2(1640,128);CaptionPanel.anchoredPosition=new Vector2(0,108);
+            CaptionPanel.gameObject.AddComponent<Image>().color=new Color(.025f,.04f,.05f,.84f);
+            captionAlpha=CaptionPanel.gameObject.AddComponent<CanvasGroup>();
+            Caption=Label("Subtitle",CaptionPanel,new Vector2(1580,108),42);
+            Caption.color=new Color(1,.98f,.92f);Caption.lineSpacing=1.08f;
+            Closing=Label("ClosingLine",Frame,new Vector2(1460,74),30);
+            Closing.rectTransform.anchoredPosition=new Vector2(0,-165);
+            loading=Label("Preparing",Frame,new Vector2(1500,140),36);
+            var button=Rect("Skip",Frame);button.anchorMin=button.anchorMax=new Vector2(1,1);
+            button.pivot=new Vector2(1,1);button.anchoredPosition=new Vector2(-48,-40);button.sizeDelta=new Vector2(260,66);
+            var image=button.gameObject.AddComponent<Image>();image.color=Color.white;
+            Skip=button.gameObject.AddComponent<Button>();Skip.targetGraphic=image;
+            var colors=Skip.colors;colors.normalColor=new Color(.035f,.04f,.05f,.92f);
+            colors.highlightedColor=colors.selectedColor=new Color(.23f,.18f,.08f,.98f);
+            colors.pressedColor=new Color(.36f,.27f,.11f);colors.disabledColor=colors.normalColor;Skip.colors=colors;
+            foreach(bool horizontal in new[]{true,false})foreach(int sign in new[]{-1,1})
+            {
+                var line=Rect("GoldEdge",button);line.sizeDelta=horizontal?new Vector2(260,1):new Vector2(1,66);
+                line.anchoredPosition=horizontal?new Vector2(0,sign*32.5f):new Vector2(sign*129.5f,0);
+                var edge=line.gameObject.AddComponent<Image>();edge.color=new Color(.83f,.65f,.31f);edge.raycastTarget=false;
+            }
+            skipText=Label("Label",button,new Vector2(220,54),32);
+            Skip.navigation=new Navigation{mode=Navigation.Mode.None};Skip.interactable=false;
+            CaptionPanel.gameObject.SetActive(false);Closing.gameObject.SetActive(false);
+            SetLanguage(code);Layout();
+        }
+        public void SetLanguage(string code)
+        {
+            language=code;var font=FontProvider.Get(code);
+            foreach(var text in new[]{Caption,Closing,loading,skipText})text.font=font;
+            skipText.text=IntroStory.Text(code,"intro.skip");loading.text=IntroStory.Text(code,"intro.loading");
+            Closing.text=IntroStory.Text(code,"intro.tagline");
+            LocalizedTextFit.Attach(skipText,32);LocalizedTextFit.Attach(Closing,30);
+            LocalizedTextFit.Attach(loading,36);currentCue=-2;
+        }
+        public void SetReady(Texture texture)
+        {ready=true;Picture.texture=texture;Picture.enabled=true;loading.gameObject.SetActive(false);}
+        public void SetTime(double time)
+        {
+            int index=IntroStory.CueAt(time);
+            if(index!=currentCue)
+            {
+                currentCue=index;CaptionPanel.gameObject.SetActive(index>=0);
+                Caption.text=index<0?string.Empty:IntroStory.Text(language,IntroStory.Cues[index].Key);
+                LocalizedTextFit.Attach(Caption,42);
+            }
+            if(index>=0)
+            {
+                var cue=IntroStory.Cues[index];
+                captionAlpha.alpha=Mathf.Min(Mathf.Clamp01((float)(time-cue.Start)/.2f),Mathf.Clamp01((float)(cue.End-time)/.25f));
+            }
+            float closingAlpha=Mathf.SmoothStep(0,1,Mathf.Clamp01((float)(time-81.58)/1.5f))*
+                (1-Mathf.SmoothStep(0,1,Mathf.Clamp01((float)(time-84.43)/.65f)));
+            Closing.gameObject.SetActive(closingAlpha>0);var c=Cream;c.a=closingAlpha;Closing.color=c;
+        }
+        public void ShowBlack()
+        {Picture.enabled=false;CaptionPanel.gameObject.SetActive(false);Closing.gameObject.SetActive(false);loading.gameObject.SetActive(false);Skip.gameObject.SetActive(false);}
+        public void Layout()
+        {
+            if(Frame==null)return;
+            var bounds=((RectTransform)transform).rect.size;
+            Frame.localScale=Vector3.one*Mathf.Min(bounds.x/1920,bounds.y/1080);
+        }
+        void LateUpdate(){Layout();if(!ready && Picture!=null)Picture.enabled=false;}
+        static RectTransform Rect(string name,Transform parent)
+        {var r=new GameObject(name,typeof(RectTransform)).GetComponent<RectTransform>();r.SetParent(parent,false);r.anchorMin=r.anchorMax=r.pivot=new Vector2(.5f,.5f);return r;}
+        static void Stretch(RectTransform r){r.anchorMin=Vector2.zero;r.anchorMax=Vector2.one;r.offsetMin=r.offsetMax=Vector2.zero;}
+        static Text Label(string name,Transform parent,Vector2 size,int fontSize)
+        {
+            var r=Rect(name,parent);r.sizeDelta=size;var t=r.gameObject.AddComponent<Text>();
+            t.font=FontProvider.Get(LocalizationTable.DefaultLanguage);t.fontSize=fontSize;t.color=Cream;t.alignment=TextAnchor.MiddleCenter;
+            t.horizontalOverflow=HorizontalWrapMode.Wrap;t.verticalOverflow=VerticalWrapMode.Truncate;t.supportRichText=false;t.raycastTarget=false;return t;
+        }
+    }
+}

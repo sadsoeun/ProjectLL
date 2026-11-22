@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1317319987a10004889bf7924c65aa2b, type: 3}
+  m_Name: SunDunes
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::MyGame.EditorTools.StageThemeKit
+  groundCore: {fileID: 7895166303224479031, guid: 469f63f64228bc443a997f80d73af5bb, type: 3}
+  groundEndLeft: {fileID: 5305518373627633605, guid: 0d8f6ce33d6bc894284b6a23f10419ff, type: 3}
+  groundEndRight: {fileID: 8307137158466193022, guid: 776fdb2a9adcc6a4dae57f2ef0416c65, type: 3}
+  rockCore: {fileID: 5160411611189296475, guid: 2918673f31533434ab7978d5c568c0b6, type: 3}
+  groundCoreVariants:
+  - {fileID: 1129586965935198889, guid: 9df5eb342e780a04da5824ab450a7ddb, type: 3}
+  - {fileID: 2227965919067829751, guid: 31b2e4362cf8ffb4e82481a91138c1d7, type: 3}
+  rockCoreVariants:
+  - {fileID: 3327960402058864745, guid: e1acffeda8e3c074994fd1394eac5577, type: 3}
+  - {fileID: 7422417947432778870, guid: 658a9691a66d62146a3c863be763ad7e, type: 3}
+  iceSurface: {fileID: 0}
+  floatingPlatform: {fileID: 6294873888768243945, guid: 8b8d64cc483b10a4f84e3d4d1456da24, type: 3}
+  timberPlatform: {fileID: 4288637659293571584, guid: 548ac9dc04516c34ebf20bfaeac88650, type: 3}
+  crumbleSlab: {fileID: 5959787979601116094, guid: 453849ff30b459845bcfdad59543c2eb, type: 3}
+  platformSupport: {fileID: 8310353150087192504, guid: 7e1fb4f8f8652a248a7f51a0c18f8a4e, type: 3}
+  checkpointVisual: {fileID: 5156602862508508175, guid: c2ffad5fac14e18479be075d5d36927e, type: 3}
+  goalVisual: {fileID: 8823192815867661785, guid: 203e14d77c09b2b49889b6c1f8adae67, type: 3}
+  coinVisual: {fileID: 4450080509531969899, guid: d639887d2948db54c8b381f44432b129, type: 3}
+  gemVisual: {fileID: 5987696576419745225, guid: 74f38ebde82e9a1449ce704a57c9b3e3, type: 3}
+  fallerVisual: {fileID: 3669149745535422966, guid: 76e51b08182d7b349a497e947f36c9bc, type: 3}
+  moverVisual: {fileID: 4288637659293571584, guid: 548ac9dc04516c34ebf20bfaeac88650, type: 3}
+  spikeTrapVisual: {fileID: 4543929155752800995, guid: 405bc7368193d744886482d51af3db44, type: 3}
+  switchVisual: {fileID: 7813629830783878925, guid: be43d48f1d75c63408e0fc184a2acc4b, type: 3}
+  gateVisual: {fileID: 7229256220463313415, guid: afc103c1eb517804ebed48fcbfa2efb0, type: 3}
+  spikeVisual: {fileID: 0}
+  arenaWallVisual: {fileID: 2526810028884635322, guid: a0d1531755009574799a4f63940c3e4d, type: 3}
+  arenaGateVisual: {fileID: 1706122161310718701, guid: ddd2b8c75e7b1cc4590908a179b42ecc, type: 3}
+  useAtmosphere: 1
+  skyColor: {r: 0.56, g: 0.72, b: 0.92, a: 1}
+  fogColor: {r: 0.96, g: 0.84, b: 0.68, a: 1}
+  fogStart: 40
+  fogEnd: 260
+  sunColor: {r: 1, g: 0.96, b: 0.88, a: 1}
+  sunIntensity: 1.1
+  skyMaterial: {fileID: 2100000, guid: 18eab31e0ec47f847a411fd339a29529, type: 2}
+  screenFxProfile: {fileID: 11400000, guid: 331f28f7f17e1354c9691968aec7ff93, type: 2}
+  backFillDepth: 8
+  backFillBody: {fileID: 0}
+  backFillRaisedOnly: 1
+  backFillFarBand: 0
+  dressSmall:
+  - {fileID: 7008647461096070777, guid: b9ffbf0e52ab8594ca831c4d5ab14a90, type: 3}
+  - {fileID: 3742357019644767456, guid: a76001359ec796546a1001b6ebf6e454, type: 3}
+  - {fileID: 7008647461096070777, guid: b9ffbf0e52ab8594ca831c4d5ab14a90, type: 3}
+  - {fileID: 3057430427791765135, guid: 7cfd0e9692a11f043965cf3ff0c52e97, type: 3}
+  dressMedium:
+  - {fileID: 1112763283468820703, guid: 345af80993786de45a395e82f766ae87, type: 3}
+  - {fileID: 6629928666612449440, guid: 0e75811945a0bf74fb418f2124ca52ff, type: 3}
+  - {fileID: 7332260109425221741, guid: 6b8ccb9ff5f363b45908405d705c76c0, type: 3}
+  - {fileID: 1501832735965296274, guid: bd785a029070d974ca14c4ce1952b6e2, type: 3}
+  - {fileID: 5752769686734065757, guid: 2daa194b239eb8f478110854aab79095, type: 3}
+  dressLarge:
+  - {fileID: 8241356949317576822, guid: 52edb37cefff1e049a512b84ae9dfd89, type: 3}
+  - {fileID: 3762590572026389899, guid: c155a32aa62333d4d8409f8851013607, type: 3}
+  dressDepth: 8
+  dressMidDensity: 0.4
+  dressLipDensity: 0.4
+  ambientSeagulls: 0

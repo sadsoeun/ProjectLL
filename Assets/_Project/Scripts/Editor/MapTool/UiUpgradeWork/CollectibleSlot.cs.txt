@@ -1,0 +1,27 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Empty slots use an outline; obtained slots use a filled center as well as color.</summary>
+    [RequireComponent(typeof(CanvasRenderer))]
+    public sealed class CollectibleSlot:MaskableGraphic
+    {
+        private bool filled;
+        public void SetFilled(bool value){filled=value;color=value?HudColors.SpecialFull:GoldUiTheme.Cream;SetVerticesDirty();}
+        public static void Set(Image image,bool value)
+        {
+            var rect=UiKit.Rect("SlotShape",image.transform);GoldUiTheme.Stretch(rect);
+            var slot=UiKit.Ensure<CollectibleSlot>(rect);slot.raycastTarget=false;image.enabled=false;slot.SetFilled(value);
+        }
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            vh.Clear();var r=GetPixelAdjustedRect();var points=new[]{new Vector2(r.xMin,r.yMin),new Vector2(r.xMax,r.yMin),new Vector2(r.xMax,r.yMax),new Vector2(r.xMin,r.yMax)};
+            // Existing slot transforms already rotate the square into a diamond.
+            if(filled){for(int i=0;i<4;i++)vh.AddVert(points[i],color,Vector2.zero);vh.AddTriangle(0,1,2);vh.AddTriangle(2,3,0);return;}
+            float border=Mathf.Max(2,r.width*.1f);
+            var inner=new[]{points[0]+new Vector2(border,border),points[1]+new Vector2(-border,border),points[2]+new Vector2(-border,-border),points[3]+new Vector2(border,-border)};
+            for(int i=0;i<4;i++){int j=(i+1)%4,k=vh.currentVertCount;vh.AddVert(points[i],color,Vector2.zero);vh.AddVert(points[j],color,Vector2.zero);vh.AddVert(inner[j],color,Vector2.zero);vh.AddVert(inner[i],color,Vector2.zero);vh.AddTriangle(k,k+1,k+2);vh.AddTriangle(k,k+2,k+3);}
+        }
+    }
+}

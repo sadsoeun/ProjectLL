@@ -1,0 +1,205 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+
+namespace MyGame.EditorTools
+{
+    // Installed only in the isolated verification copy. Never runs in the user's project.
+    [InitializeOnLoad]
+    public static class StartupFlowVerification
+    {
+        const string Key="IntroFlowQA.Running";
+        static readonly BindingFlags Fields=BindingFlags.Instance|BindingFlags.NonPublic;
+        static string Output=>Path.GetFullPath("Verification");
+        static int state, introId, errors;
+        static double deadline, began, maxTime, nextProgress;
+        static string lastScene="";
+        static bool sawLanguage, sawLogo, sawLoading, checkedIntro;
+        static Keyboard keyboard;
+        static Mouse mouse;
+        static Vector2 skipPoint;
+        static int pointerFrame;
+        static bool releasedMouse, sawSkipFade;
+        static StartupFlowVerification(){EditorApplication.update+=Poll;Application.logMessageReceived+=Logged;}
+        public static void Run()
+        {
+            Directory.CreateDirectory(Output);
+            File.WriteAllText(Path.Combine(Output,"flow.txt"),"Actual project-copy Play Mode test; no service adapters.\n");
+            File.WriteAllText(Path.Combine(Output,"runtime-errors.txt"),"");
+            File.WriteAllText(Path.Combine(Output,"editor-search-issues.txt"),"");
+            PlayerSettings.companyName="CodexIsolatedQA";
+            PlayerSettings.productName="LeafLeapIntroFlow-"+DateTime.UtcNow.ToString("yyyyMMddHHmmss");
+            EditorSettings.enterPlayModeOptionsEnabled=false;
+            AssetDatabase.SaveAssets();
+            EditorSceneManager.OpenScene("Assets/_Project/Scenes/01_Logo.unity",OpenSceneMode.Single);
+            SessionState.SetBool(Key,true);
+            EditorApplication.EnterPlaymode();
+        }
+        static void Logged(string message,string stack,LogType type)
+        {
+            if(!SessionState.GetBool(Key,false)||!EditorApplication.isPlaying)return;
+            if(type==LogType.Error||type==LogType.Exception||type==LogType.Assert)
+            {
+                if(stack.Contains("UnityEditor.Search.SearchDatabase")&&!stack.Contains("MyGame."))
+                {File.AppendAllText(Path.Combine(Output,"editor-search-issues.txt"),message+"\n"+stack+"\n");return;}
+                errors++;File.AppendAllText(Path.Combine(Output,"runtime-errors.txt"),type+": "+message+"\n"+stack+"\n");
+            }
+        }
+        static T Find<T>() where T:UnityEngine.Object=>UnityEngine.Object.FindFirstObjectByType<T>();
+        static Button Button(object controller,string field)=>(Button)controller.GetType().GetField(field,Fields).GetValue(controller);
+        static void Log(string text){File.AppendAllText(Path.Combine(Output,"flow.txt"),DateTime.UtcNow.ToString("HH:mm:ss")+" "+text+"\n");}
+        static void Require(bool condition,string text){if(!condition)throw new Exception(text);}
+        static void Next(int value,double timeout=45){state=value;deadline=EditorApplication.timeSinceStartup+timeout;Log("State "+value);}
+        static void Poll()
+        {
+            if(!SessionState.GetBool(Key,false)||!EditorApplication.isPlaying)return;
+            try
+            {
+                double now=EditorApplication.timeSinceStartup;
+                var systems=GameSystems.Exists?GameSystems.Instance:null;
+                string scene=SceneManager.GetActiveScene().name;
+                if(scene!=lastScene){Log("Scene "+scene);lastScene=scene;}
+                if(scene=="01_Logo")sawLogo=true;
+                if(scene=="02_LanguageSelect")sawLanguage=true;
+                if(scene=="04_Loading")sawLoading=true;
+                if(state==0)
+                {
+                    if(systems==null)return;
+                    // A hidden Editor has no focused Game view. Route only this isolated test's
+                    // virtual input through the normal player input loop without touching OS input.
+                    InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;
+                    InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+                    Require(Application.persistentDataPath.Contains("CodexIsolatedQA"),"Unsafe save path");
+                    Require(!systems.Settings.Data.hasSelectedLanguage&&!systems.Save.HasSaveOnDisk,"Fresh QA identity is not fresh");
+                    Log("Isolated save path: "+Application.persistentDataPath);
+                    Next(1);
+                }
+                if(now>deadline)throw new Exception("Timeout in state "+state+" scene="+scene);
+                if(systems==null)return;
+                var film=Find<IntroSequencePlayer>();
+                switch(state)
+                {
+                    case 1:
+                        if(scene!="02_LanguageSelect"||systems.Loader.IsBusy)return;
+                        Require(sawLogo,"HAMZTER logo scene missing");
+                        var language=Find<LanguageSelectController>();Require(language!=null,"Language controller missing");
+                        language.Preview("ja");Button(language,"confirmButton").onClick.Invoke();
+                        Require(systems.Settings.Data.hasSelectedLanguage&&systems.Settings.Data.languageCode=="ja","Language not saved");
+                        Require(!systems.Save.HasSaveOnDisk,"Startup created game progress");
+                        Next(2,120);began=now;break;
+                    case 2:
+                        if(film!=null)
+                        {
+                            Require(UnityEngine.Object.FindObjectsByType<IntroSequencePlayer>(FindObjectsSortMode.None).Length==1,"Duplicate intro");
+                            if(!checkedIntro&&film.Player.isPrepared&&film.Player.time>2)
+                            {
+                                introId=film.GetInstanceID();checkedIntro=true;
+                                var controller=Find<LanguageSelectController>();Button(controller,"confirmButton").onClick.Invoke();controller.Preview("en");
+                                Require(Find<IntroSequencePlayer>().GetInstanceID()==introId,"Duplicate confirm restarted video");
+                                Require(systems.Localization.CurrentLanguage=="ja","Background input changed language");
+                                Require(film.View.Caption.text==IntroStory.Text("ja","intro.01"),"Japanese caption mismatch");
+                                Require(film.View.Caption.font.name.StartsWith("NotoSans"),"Wrong subtitle font");
+                                Log("PASS language confirm -> decoded video, Japanese Noto caption, duplicate-input guard; no new save.");
+                            }
+                            maxTime=Math.Max(maxTime,film.Player.time);
+                            if(now>nextProgress){nextProgress=now+15;Log("Natural video playback time="+film.Player.time.ToString("F2"));}
+                        }
+                        if(scene=="03_Title"&&!systems.Loader.IsBusy)
+                        {
+                            Require(checkedIntro&&maxTime>83&&now-began>80,"Intro did not finish naturally");
+                            Require(film==null,"Intro retained after title transition");
+                            Require(!systems.InputMode.IsLocked,"Title input still locked");
+                            Require(!systems.Save.HasSaveOnDisk,"Intro created a save");
+                            var newGame=Button(Find<TitleController>(),"newGameButton");
+                            if(!newGame.IsInteractable())return;
+                            Log("PASS full 85s playback -> title, overlay released, input unlocked, menu entrance completed.");
+                            newGame.onClick.Invoke();Next(3,70);
+                        }
+                        break;
+                    case 3:
+                        Require(film==null,"New Game replayed intro");
+                        if(scene!="05_WorldMap"||systems.Loader.IsBusy)return;
+                        Require(sawLoading&&systems.Loader.LastRequest.Reason==LoadReason.NewGame,"New Game loading route wrong");
+                        Require(systems.Save.HasSave&&systems.Save.HasSaveOnDisk,"New save missing");
+                        Require(Find<WorldMapController>()!=null&&!systems.InputMode.IsLocked,"World map not ready");
+                        Log("PASS title New Game -> loading -> real WorldMap, save exists, input unlocked.");
+                        systems.Loader.Load(SceneId.Title);Next(4);break;
+                    case 4:
+                        if(scene!="03_Title"||systems.Loader.IsBusy)return;
+                        Require(film==null,"Return to title replayed intro");
+                        var continueButton=Button(Find<TitleController>(),"continueButton");Require(continueButton.interactable,"Continue disabled");
+                        if(!continueButton.IsInteractable())return;
+                        continueButton.onClick.Invoke();Next(5,70);break;
+                    case 5:
+                        Require(film==null,"Continue replayed intro");
+                        if(scene!="05_WorldMap"||systems.Loader.IsBusy)return;
+                        Require(systems.Loader.LastRequest.Reason==LoadReason.Continue,"Continue reason wrong");
+                        Log("PASS title Continue -> real WorldMap without intro.");
+                        systems.Settings.Load();Require(systems.Settings.Data.hasSelectedLanguage&&systems.Settings.Data.languageCode=="ja","Saved language reload failed");
+                        sawLanguage=false;systems.Loader.Load(SceneId.Logo);Next(6);break;
+                    case 6:
+                        Require(!sawLanguage,"Saved language asked again");
+                        if(film==null||!film.Player.isPrepared||film.Player.time<2)return;
+                        Require(scene=="01_Logo","Returning startup route wrong");
+                        Require(film.View.Caption.text==IntroStory.Text("ja","intro.01"),"Saved language not applied");
+                        Require(EventSystem.current!=null&&EventSystem.current.currentInputModule!=null,"Logo intro has no active UI input module");
+                        skipPoint=RectTransformUtility.WorldToScreenPoint(null,film.View.Skip.transform.position);
+                        var hits=new List<RaycastResult>();
+                        EventSystem.current.RaycastAll(new PointerEventData(EventSystem.current){position=skipPoint},hits);
+                        Require(hits.Count>0&&hits[0].gameObject==film.View.Skip.gameObject,"Skip button blocked from pointer raycast");
+                        mouse=InputSystem.AddDevice<Mouse>();
+                        InputSystem.QueueStateEvent(mouse,new MouseState{position=skipPoint});
+                        pointerFrame=Time.frameCount;Next(10);break;
+                    case 7:
+                        if(!releasedMouse&&Time.frameCount>pointerFrame+1)
+                        {InputSystem.QueueStateEvent(mouse,new MouseState{position=skipPoint});releasedMouse=true;}
+                        if(film!=null)
+                        {
+                            float alpha=film.View.Frame.GetComponent<CanvasGroup>().alpha;
+                            if(alpha>0&&alpha<.95f)
+                            {
+                                sawSkipFade=true;
+                                Require(film.GetComponent<AudioSource>().volume<systems.Settings.Data.bgmVolume,"Skip music did not fade");
+                                film.View.Skip.onClick.Invoke(); // repeated request must not restart the fade
+                            }
+                        }
+                        if(scene!="03_Title"||systems.Loader.IsBusy)return;
+                        Require(film==null&&!systems.InputMode.IsLocked,"Skip did not clean up");
+                        Require(sawSkipFade,"No intermediate picture/audio fade observed");
+                        InputSystem.RemoveDevice(mouse);mouse=null;
+                        Log("PASS remembered-language startup -> actual virtual mouse click on skip -> picture/audio fade -> title once.");
+                        systems.Loader.Load(SceneId.Logo);Next(8);break;
+                    case 10:
+                        if(Time.frameCount<=pointerFrame+1)return;
+                        InputSystem.QueueStateEvent(mouse,new MouseState{position=skipPoint}.WithButton(MouseButton.Left));
+                        pointerFrame=Time.frameCount;Next(7);break;
+                    case 8:
+                        if(film==null||!film.Player.isPrepared||film.Player.time<2)return;
+                        keyboard=InputSystem.AddDevice<Keyboard>();
+                        InputSystem.QueueStateEvent(keyboard,new KeyboardState(UnityEngine.InputSystem.Key.Escape));
+                        Next(9);break;
+                    case 9:
+                        if(scene!="03_Title"||systems.Loader.IsBusy)return;
+                        Require(film==null&&!systems.InputMode.IsLocked,"Escape did not clean up");
+                        if(keyboard!=null){InputSystem.RemoveDevice(keyboard);keyboard=null;}
+                        Log("PASS Escape via Unity's virtual keyboard -> title, input unlocked.");
+                        Require(errors==0,"Runtime errors recorded: "+errors);
+                        Log("PASS ALL: actual scenes, actual services, real Play Mode, natural finish + button skip + Escape + New Game + Continue.");
+                        Log("Unity engine splash is build-player-only; enabled in settings, not observed in Editor Play Mode.");
+                        SessionState.SetBool(Key,false);EditorApplication.Exit(0);break;
+                }
+            }
+            catch(Exception e){Log("FAIL "+e);SessionState.SetBool(Key,false);EditorApplication.Exit(1);}
+        }
+    }
+}

@@ -1,0 +1,69 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+namespace MyGame
+{
+    /// <summary>Shared behaviour of modal popups: focus capture/restore, Cancel to close, host bookkeeping.</summary>
+    public abstract class PopupBase : MonoBehaviour
+    {
+        private PopupHost host;
+        private GameObject previousSelection;
+        private bool closed;
+
+        protected bool IsClosed => closed;
+
+        /// <summary>Call once after instantiation.</summary>
+        protected void BeginOpen(PopupHost owner, GameObject firstSelected)
+        {
+            GoldUiTheme.Apply(transform);
+            host = owner;
+            host.NotifyOpened();
+            if (EventSystem.current != null)
+            {
+                previousSelection = EventSystem.current.currentSelectedGameObject;
+                if (firstSelected != null)
+                    EventSystem.current.SetSelectedGameObject(firstSelected);
+            }
+            else
+            {
+                Debug.LogWarning("[Popup] No EventSystem in the scene; keyboard/gamepad navigation will not work.");
+            }
+        }
+
+        public void Close()
+        {
+            if (closed)
+                return;
+            closed = true;
+            if (EventSystem.current != null && previousSelection != null && previousSelection.activeInHierarchy)
+                EventSystem.current.SetSelectedGameObject(previousSelection);
+            if (host != null)
+                host.NotifyClosed();
+            OnClosed();
+            Destroy(gameObject);
+        }
+
+        protected virtual void OnClosed() { }
+
+        /// <summary>Called when Cancel (Esc / gamepad B) is pressed. Default closes the popup.</summary>
+        protected virtual void OnCancelRequested() => Close();
+
+        private void Update()
+        {
+            if (closed || !GameSystems.Exists)
+                return;
+            if (GameSystems.Instance.InputMode.CancelPressed)
+                OnCancelRequested();
+        }
+
+        private void OnDestroy()
+        {
+            // Destroyed externally (scene unload): keep the host counter consistent.
+            if (!closed && host != null)
+            {
+                closed = true;
+                host.NotifyClosed();
+            }
+        }
+    }
+}

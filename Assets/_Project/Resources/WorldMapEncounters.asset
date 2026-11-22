@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0c5a7c81004286837ac5c4231f945d, type: 3}
+  m_Name: WorldMapEncounters
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.WorldMapEncounterAtlas
+  texture: {fileID: 2800000, guid: e559c7502b839ca4eb826ba6b841a9d5, type: 3}
+  viewCount: 11
+  tileSize: 128
+  creatureIds: e9030000ef030000ee030000ea030000292300004d040000500400004e040000520400004f0400005104000053040000350800002a230000b1040000b4040000b2040000b3040000b5040000b6040000b7040000990800002b230000150500001605000017050000180500002c230000790500007d0500007a0500007e0500007b0500007c0500007f050000610900002d230000
+  stages:
+  - stageId: W1_S1
+    models: 00000000
+  - stageId: W1_S2
+    models: 01000000
+  - stageId: W1_S3
+    models: 02000000
+  - stageId: W1_S4
+    models: 03000000
+  - stageId: W1_B
+    models: 04000000
+  - stageId: W2_S1
+    models: 0500000006000000
+  - stageId: W2_S2
+    models: 0700000008000000
+  - stageId: W2_S3
+    models: 090000000a000000
+  - stageId: W2_S4
+    models: 0b0000000c000000
+  - stageId: W2_B
+    models: 0d000000
+  - stageId: W3_S1
+    models: 0e0000000f000000
+  - stageId: W3_S2
+    models: 1000000011000000
+  - stageId: W3_S3
+    models: 1200000013000000
+  - stageId: W3_S4
+    models: 1400000015000000
+  - stageId: W3_B
+    models: 16000000
+  - stageId: W4_S1
+    models: 17000000
+  - stageId: W4_S2
+    models: 18000000
+  - stageId: W4_S3
+    models: 19000000
+  - stageId: W4_S4
+    models: 1a000000
+  - stageId: W4_B
+    models: 1b000000
+  - stageId: W5_S1
+    models: 1c0000001d000000
+  - stageId: W5_S2
+    models: 1e0000001f000000
+  - stageId: W5_S3
+    models: 2000000021000000
+  - stageId: W5_S4
+    models: 2200000023000000
+  - stageId: W5_B
+    models: 24000000

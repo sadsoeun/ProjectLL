@@ -1,0 +1,69 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Localized illustration motion; no Cubism model is required.</summary>
+    [DisallowMultipleComponent]
+    public sealed class TitleIllustration : MonoBehaviour
+    {
+        [Range(0, 2)] public float windStrength = 1.3f;
+        public bool motionEnabled = true;
+        Material motionMaterial;
+        RawImage art;
+        float elapsed;
+
+        void Start()
+        {
+            var texture = Resources.Load<Texture2D>("TitleArt/Meadow");
+            var logoTexture = Resources.Load<Texture2D>("TitleArt/Logo");
+            if (texture == null || logoTexture == null) { Debug.LogWarning("Title illustration assets missing."); return; }
+            var rt = GoldUiTheme.Rect("MeadowIllustration", transform);
+            GoldUiTheme.Stretch(rt); rt.SetAsFirstSibling();
+            art = rt.gameObject.AddComponent<RawImage>();
+            art.texture = texture; art.raycastTarget = false;
+            var shader = Resources.Load<Shader>("TitleArt/IllustrationMotion");
+            if (shader != null && shader.isSupported)
+            {
+                motionMaterial = new Material(shader);
+                art.material = motionMaterial;
+            }
+            var atmosphere = transform.Find("GoldAtmosphere");
+            if (atmosphere != null) atmosphere.gameObject.SetActive(false);
+            var logo = transform.Find("GameLogo") as RectTransform;
+            if (logo != null)
+            {
+                var text = logo.GetComponent<Text>(); if (text != null) text.enabled = false;
+                var imageRect = GoldUiTheme.Rect("IllustratedLogo", logo);
+                GoldUiTheme.Stretch(imageRect);
+                var image = imageRect.gameObject.AddComponent<RawImage>();
+                image.texture = logoTexture; image.raycastTarget = false;
+                var fit = imageRect.gameObject.AddComponent<AspectRatioFitter>();
+                fit.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+                fit.aspectRatio = (float)logoTexture.width / logoTexture.height;
+                logo.sizeDelta = new Vector2(780, 260);
+            }
+        }
+
+        void Update()
+        {
+            if (motionEnabled) elapsed += Time.unscaledDeltaTime;
+            if (art == null) return;
+            var rect = art.rectTransform.rect;
+            if (motionMaterial != null)
+            {
+                motionMaterial.SetFloat("_MotionTime", elapsed);
+                motionMaterial.SetFloat("_Wind", windStrength);
+                motionMaterial.SetFloat("_ViewAspect", rect.width / Mathf.Max(1, rect.height));
+                motionMaterial.SetFloat("_ImageAspect", (float)art.texture.width / art.texture.height);
+            }
+            else
+            {
+                float ratio = (rect.width / Mathf.Max(1, rect.height)) / ((float)art.texture.width / art.texture.height);
+                float x = Mathf.Min(1, ratio), y = Mathf.Min(1, 1 / Mathf.Max(.001f, ratio));
+                art.uvRect = new Rect((1-x)*.76f, (1-y)*.5f, x, y);
+            }
+        }
+        void OnDestroy() { if (motionMaterial != null) Destroy(motionMaterial); }
+    }
+}

@@ -1,0 +1,20 @@
+using UnityEngine;
+using UnityEngine.UI;
+namespace MyGame
+{
+    [RequireComponent(typeof(CanvasRenderer))]
+    public sealed class GoldUiBackdrop : MaskableGraphic
+    {
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            vh.Clear(); var r = rectTransform.rect;
+            var dark = new Color(.016f,.025f,.027f,.93f);
+            var clear = new Color(.016f,.025f,.027f,.06f);
+            vh.AddVert(new Vector3(r.xMin,r.yMin),dark,Vector2.zero);
+            vh.AddVert(new Vector3(r.xMin,r.yMax),dark,Vector2.zero);
+            vh.AddVert(new Vector3(r.xMax,r.yMax),clear,Vector2.zero);
+            vh.AddVert(new Vector3(r.xMax,r.yMin),clear,Vector2.zero);
+            vh.AddTriangle(0,1,2); vh.AddTriangle(0,2,3);
+        }
+    }
+}

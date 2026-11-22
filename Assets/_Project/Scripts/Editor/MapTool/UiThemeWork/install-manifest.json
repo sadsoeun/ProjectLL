@@ -1,0 +1,57 @@
+[
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\InGameController.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\InGame\\InGameController.cs",
+    "beforeHash": "8EF534FA771C0632F8F51F66640BDD462FC845CDDFDE83B118782156DB3C50D9"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\GoldUiButton.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiButton.cs",
+    "beforeHash": ""
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\GoldUiTheme.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiTheme.cs",
+    "beforeHash": ""
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\StageClearCelebration.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\InGame\\StageClearCelebration.cs",
+    "beforeHash": "22F24EE7694D3EE7CEA6CD20175601A88E46CE5D5B2EF4B75415BFEBD6BBD836"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\PopupBase.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\PopupBase.cs",
+    "beforeHash": "37C58B8EE11C813298ACC6A52197446227B702FCEEC91B5C3A661C8AD110A232"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\LocalizationTable.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Services\\LocalizationTable.cs",
+    "beforeHash": "FBACF273359C994B37E58D8EC781F48E6168641FF116D87AE5261A21129A4B1E"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\TitlePresentation.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Title\\TitlePresentation.cs",
+    "beforeHash": ""
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\InGameView.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\InGame\\InGameView.cs",
+    "beforeHash": "7E5892CF57058B56AA5DD32495910EDAF2065B94D3A77A4107316F83E6E9F9C4"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\GoldUiBackdrop.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiBackdrop.cs",
+    "beforeHash": ""
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\SettingsPopup.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\SettingsPopup.cs",
+    "beforeHash": "42E2FB7384F4960FC9C36A9F9E20CC4B4B4C8840BC862BC1EAD87E99B351CC11"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiThemeWork\\GoldUiFrame.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiFrame.cs",
+    "beforeHash": ""
+  }
+]

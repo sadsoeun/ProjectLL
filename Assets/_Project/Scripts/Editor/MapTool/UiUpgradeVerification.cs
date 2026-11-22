@@ -1,0 +1,286 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+namespace MyGame.EditorTools
+{
+    [InitializeOnLoad]
+    public static class UiUpgradeVerification
+    {
+        static string Work=>Path.Combine(Application.dataPath,"_Project/Scripts/Editor/MapTool/UiUpgradeWork");
+        static readonly Vector2Int[] Sizes={new Vector2Int(1920,1080),new Vector2Int(1280,720),new Vector2Int(2560,1080),new Vector2Int(1024,768)};
+        static double next;
+        static UiUpgradeVerification(){EditorApplication.update+=Poll;}
+        static void Poll()
+        {
+            if(EditorApplication.timeSinceStartup<next||EditorApplication.isCompiling||EditorApplication.isUpdating||EditorApplication.isPlaying)return;
+            next=EditorApplication.timeSinceStartup+1;
+            bool titleOnly=File.Exists(Path.Combine(Work,"title.request"));
+            string request=Path.Combine(Work,titleOnly?"title.request":"verify.request");if(!File.Exists(request))return;
+            // The Editor can remain unfocused while the user reads the chat. Import code changes
+            // before a requested test so a stale loaded assembly cannot report a false result.
+            var runtimeTime=File.GetLastWriteTimeUtc(typeof(UiScreenLayout).Assembly.Location);
+            var editorTime=File.GetLastWriteTimeUtc(typeof(UiUpgradeVerification).Assembly.Location);
+            bool stale=Directory.EnumerateFiles(Path.Combine(Application.dataPath,"_Project/Scripts"),"*.cs",SearchOption.AllDirectories)
+                .Any(p=>File.GetLastWriteTimeUtc(p)>(p.Replace('\\','/').Contains("/Editor/")?editorTime:runtimeTime));
+            if(stale){AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);return;}
+            File.Delete(request);
+            try{if(titleOnly)RunTitle();else Run();}catch(Exception e){File.WriteAllText(Path.Combine(Work,"error.txt"),e.ToString());Debug.LogException(e);}
+        }
+        public static void RunTitle()
+        {
+            var pipeline=GraphicsSettings.defaultRenderPipeline;var quality=QualitySettings.renderPipeline;
+            if(File.Exists(Path.Combine(Work,"error.txt")))File.Delete(Path.Combine(Work,"error.txt"));
+            try
+            {
+                GraphicsSettings.defaultRenderPipeline=null;QualitySettings.renderPipeline=null;
+                Render("03_Title");
+                File.WriteAllText(Path.Combine(Work,"title-verification.txt"),"PASS: actual title scene menu and TitleIllustration layout, static artwork preview; 5 languages x 4 resolutions; all four labels use Noto Sans, maximum 40 design units, Normal, overflow-only shrinking, identical padding and centered alignment; text fits each button. No live playthrough or character animation verified.\n");
+            }
+            finally{GraphicsSettings.defaultRenderPipeline=pipeline;QualitySettings.renderPipeline=quality;}
+        }
+        [MenuItem("Tools/MyGame/Verify UI Upgrade")]
+        public static void Run()
+        {
+            if(EditorApplication.isPlaying)throw new InvalidOperationException("Use isolated edit-mode previews.");
+            Directory.CreateDirectory(Path.Combine(Work,"Verification"));
+            if(File.Exists(Path.Combine(Work,"error.txt")))File.Delete(Path.Combine(Work,"error.txt"));
+            var pipeline=GraphicsSettings.defaultRenderPipeline;var quality=QualitySettings.renderPipeline;
+            try
+            {
+                GraphicsSettings.defaultRenderPipeline=null;QualitySettings.renderPipeline=null;
+                Render("02_LanguageSelect");Render("03_Title");Render("04_Loading");Render("05_WorldMap");Render("06_InGame");
+                File.WriteAllText(Path.Combine(Work,"verification.txt"),"PASS: isolated title, language, loading, world map, HUD, pause, settings, confirmation and result previews at 1920x1080, 1280x720, 2560x1080, 1024x768; Noto Sans Normal and common action typography checked; HUD stage label centered; collectible renderers present; result time/coins/specials separated; title, settings and results checked in five languages. Navigation, idempotence and boss HUD visibility checks passed. No player save data or scene assets modified. This is not a live playthrough.\n");
+            }
+            finally{GraphicsSettings.defaultRenderPipeline=pipeline;QualitySettings.renderPipeline=quality;}
+        }
+        static void Render(string name)
+        {
+            var scene=EditorSceneManager.OpenPreviewScene("Assets/_Project/Scenes/"+name+".unity");
+            var previous=RenderTexture.active;
+            try
+            {
+                var roots=scene.GetRootGameObjects();var canvas=roots.SelectMany(r=>r.GetComponentsInChildren<Canvas>(true)).First();
+                var camera=roots.SelectMany(r=>r.GetComponentsInChildren<Camera>(true)).First();
+                camera.scene=scene;camera.enabled=false;camera.cullingMask=1<<5;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.13f,.18f,.23f);
+                Bind(canvas,camera);var root=canvas.transform;
+                foreach(string p in new[]{"PauseMenu","ResultPanel","GameOverPanel","MessageText"})root.Find(p)?.gameObject.SetActive(false);
+                GoldUiTheme.Apply(root);int count=root.GetComponentsInChildren<RectTransform>(true).Length;GoldUiTheme.Apply(root);
+                Require(count==root.GetComponentsInChildren<RectTransform>(true).Length,"UI duplication: "+name);Localize(root,"ko");
+                if(name=="05_WorldMap")
+                {
+                    var map=root.GetComponent<WorldMapPresentation>();
+                    root.Find("StageInfoPanel/StageNameText").GetComponent<LocalizedText>().SetText("3-2 얼음 능선");
+                    root.Find("StageInfoPanel/StateText").GetComponent<LocalizedText>().SetText("클리어");
+                    root.Find("StageInfoPanel/BestTimeText").GetComponent<LocalizedText>().SetText("최고 기록  00:42.35");
+                    root.Find("StageInfoPanel/SpecialsText").GetComponent<LocalizedText>().SetText("특별 코인  2 / 3");
+                    foreach(var slot in root.Find("StageInfoPanel/SpecialSlots").GetComponentsInChildren<Image>())CollectibleSlot.Set(slot,true);
+                    foreach(var size in Sizes)Capture(camera,canvas,size,"worldmap");
+                    map.SetMenuVisible(true);root.Find("PauseMenu").gameObject.SetActive(true);Localize(root,"ko");
+                    foreach(var size in Sizes)Capture(camera,canvas,size,"worldmap-menu");
+                    return;
+                }
+                if(name=="03_Title")
+                {
+                    // Use the real runtime layout with the existing static artwork. This preview
+                    // deliberately does not initialize Cubism or change player save data.
+                    var illustration=root.gameObject.AddComponent<TitleIllustration>();
+                    var artRect=GoldUiTheme.Rect("TypographyPreviewArt",root);artRect.SetAsFirstSibling();
+                    var art=artRect.gameObject.AddComponent<RawImage>();art.texture=Resources.Load<Texture2D>("TitleArt/Meadow");
+                    var logo=root.Find("GameLogo") as RectTransform;logo.GetComponent<Text>().enabled=false;
+                    var logoImage=GoldUiTheme.Rect("TypographyPreviewLogo",logo);GoldUiTheme.Stretch(logoImage);
+                    var logoArt=logoImage.gameObject.AddComponent<RawImage>();logoArt.texture=Resources.Load<Texture2D>("TitleArt/Logo");
+                    var fit=logoImage.gameObject.AddComponent<AspectRatioFitter>();fit.aspectMode=AspectRatioFitter.AspectMode.FitInParent;fit.aspectRatio=(float)logoArt.texture.width/logoArt.texture.height;
+                    var flags=BindingFlags.Instance|BindingFlags.NonPublic;
+                    typeof(TitleIllustration).GetField("art",flags).SetValue(illustration,art);
+                    typeof(TitleIllustration).GetField("logoRect",flags).SetValue(illustration,logo);
+                    typeof(TitleIllustration).GetField("menuRect",flags).SetValue(illustration,root.Find("MainMenu"));
+                    typeof(TitleIllustration).GetField("elapsed",flags).SetValue(illustration,2f);
+                    root.Find("GoldAtmosphere")?.gameObject.SetActive(false);root.Find("NoticeText")?.gameObject.SetActive(false);
+                    var labels=root.Find("MainMenu").GetComponentsInChildren<Button>(true).Select(b=>b.transform.Find("Label").GetComponent<Text>()).ToArray();
+                    Require(labels.Length==4,"Expected four title actions");
+                    foreach(string language in LocalizationTable.LanguageCodes)
+                    {
+                        Localize(root,language);
+                        foreach(var label in labels)label.font=FontProvider.Get(language);
+                        foreach(var size in Sizes)Capture(camera,canvas,size,"title-"+language,()=>
+                        {
+                            typeof(TitleIllustration).GetMethod("LateUpdate",flags).Invoke(illustration,null);Canvas.ForceUpdateCanvases();
+                            foreach(var label in labels)
+                            {
+                                Require(label.font!=null&&label.font.name.StartsWith("NotoSans"),"Title font must be Noto Sans");
+                                Require(label.fontSize<=40&&label.GetComponent<LocalizedTextFit>()?.DesignSize==40&&!label.resizeTextForBestFit&&label.fontStyle==FontStyle.Normal,"Title typography mismatch");
+                                Require(label.alignment==TextAnchor.MiddleCenter,"Title label is not centered");
+                                Require(label.rectTransform.offsetMin==new Vector2(24,8)&&label.rectTransform.offsetMax==new Vector2(-24,-8),"Title label padding mismatch");
+                                Require(label.preferredWidth<=label.rectTransform.rect.width&&label.preferredHeight<=label.rectTransform.rect.height,"Title text does not fit: "+language+" "+label.text);
+                            }
+                        });
+                    }
+                    return;
+                }
+                if(name=="02_LanguageSelect")
+                {
+                    foreach(var size in Sizes)
+                    {
+                        Capture(camera,canvas,size,"language",()=>
+                        {
+                            var last=root.Find("LanguageContent/LanguageList/Lang_ja") as RectTransform;
+                            var confirm=root.Find("LanguageContent/ConfirmButton") as RectTransform;
+                            Require(!Bounds(last,root).Overlaps(Bounds(confirm,root)),"Language button overlaps Confirm at "+size);
+                        });
+                    }
+                    return;
+                }
+                if(name=="04_Loading")
+                {
+                    root.Find("LoadingContent/Destination").GetComponent<LocalizedText>().SetText("3-2 얼음 능선");
+                    var fill=root.Find("LoadingContent/ProgressBar/ProgressFill") as RectTransform;fill.anchorMax=new Vector2(.65f,1);
+                    foreach(var size in Sizes)Capture(camera,canvas,size,"loading");return;
+                }
+                var view=root.GetComponent<InGameView>();view.SetLives(3);view.SetCoins(128);view.SetTime(42.35f);view.SetSpecials(new[]{true,true,false});
+                root.Find("StageNameText").GetComponent<LocalizedText>().SetText("3-2 얼음 능선");
+                foreach(var size in Sizes)Capture(camera,canvas,size,"hud",()=>
+                {
+                    var label=root.Find("StageNameText").GetComponent<Text>();
+                    Require(label.fontStyle==FontStyle.Normal&&label.fontSize<=UiKit.HudSize,"HUD typography differs");
+                    Require(Vector2.Distance(Bounds(label.rectTransform,root).center,Bounds((RectTransform)root.Find("HudChapter"),root).center)<.1f,"Stage label is off center");
+                    foreach(var slot in root.Find("SpecialSlots").GetComponentsInChildren<CollectibleSlot>())
+                        Require(slot.GetComponent<CanvasRenderer>()!=null&&slot.canvasRenderer.GetMesh()!=null,"Collectible slot is not rendered");
+                });
+                var boss=BossHud.Create("boss.W1.name",5);SceneManager.MoveGameObjectToScene(boss.gameObject,scene);foreach(var t in boss.GetComponentsInChildren<Transform>(true))t.gameObject.layer=5;
+                Bind(boss.GetComponent<Canvas>(),camera);typeof(BossHud).GetField("gameView",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(boss,view);
+                var bossUpdate=typeof(BossHud).GetMethod("Update",BindingFlags.NonPublic|BindingFlags.Instance);
+                var setHud=typeof(InGameView).GetMethod("SetHudVisible",BindingFlags.NonPublic|BindingFlags.Instance);
+                setHud.Invoke(view,new object[]{false});bossUpdate.Invoke(boss,null);Require(!boss.transform.Find("Panel").gameObject.activeSelf,"Boss HUD remains over menu");
+                setHud.Invoke(view,new object[]{true});bossUpdate.Invoke(boss,null);Require(boss.transform.Find("Panel").gameObject.activeSelf,"Boss HUD failed to restore");
+                UnityEngine.Object.DestroyImmediate(boss.gameObject);
+                var status=root.Find("StatusBanner/MessageText");status.gameObject.SetActive(true);status.GetComponent<LocalizedText>().SetText("준비!");Capture(camera,canvas,Sizes[0],"ready");status.gameObject.SetActive(false);
+                setHud.Invoke(view,new object[]{false});
+                foreach(string p in new[]{"PauseMenu","GameOverPanel"})
+                {
+                    root.Find(p).gameObject.SetActive(true);foreach(var size in Sizes)Capture(camera,canvas,size,p);root.Find(p).gameObject.SetActive(false);
+                }
+                Popup(camera,canvas,"SettingsPopup");Popup(camera,canvas,"ConfirmPopup");
+                var effect=StageClearCelebration.Create(root);effect.Play(2.6f);
+                var time=root.Find("ResultPanel/Window/TimeText").GetComponent<LocalizedText>();var button=root.Find("ResultPanel/Window/ContinueButton").GetComponent<Button>();
+                effect.ShowResult(42.35f,time,button,null);effect.SetSummary(128,2,3,true);Localize(effect.transform,"ko");effect.SetSummary(128,2,3,true);
+                // Localize the seconds with real arguments after preview localization.
+                time.SetText("42.35초");
+                foreach(var size in Sizes)Capture(camera,canvas,size,"result",()=>{effect.Sample(effect.Duration);effect.SampleResult(1);Canvas.ForceUpdateCanvases();});
+                Require(effect.transform.Find("ClearTimeAndContinue/TimeCard/RecordBadge").gameObject.activeSelf,"New record badge missing");
+                time.SetKey("ingame.result_seconds",42.35f);
+                foreach(string language in LocalizationTable.LanguageCodes)
+                {
+                    Localize(effect.transform,language);effect.SetSummary(128,2,3,false);
+                    Capture(camera,canvas,Sizes[1],"result-"+language,()=>{effect.Sample(effect.Duration);effect.SampleResult(1);Canvas.ForceUpdateCanvases();});
+                }
+            }
+            finally{RenderTexture.active=previous;EditorSceneManager.ClosePreviewScene(scene);}
+        }
+        static void Popup(Camera camera,Canvas canvas,string name)
+        {
+            var prefab=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Project/Prefabs/UI/"+name+".prefab");
+            var popup=UnityEngine.Object.Instantiate(prefab,canvas.transform);
+            try
+            {
+                GoldUiTheme.Apply(popup.transform);int count=popup.GetComponentsInChildren<RectTransform>(true).Length;GoldUiTheme.Apply(popup.transform);
+                Require(count==popup.GetComponentsInChildren<RectTransform>(true).Length,"Duplicate popup children");Localize(popup.transform,"ko");
+                if(name=="SettingsPopup")
+                {
+                    var view=popup.GetComponent<SettingsPresentation>();var window=popup.transform.Find("Window");
+                    window.Find("MasterSlider").GetComponent<Slider>().SetValueWithoutNotify(.75f);view.RefreshValues();Localize(popup.transform,"ko");
+                    Require(window.Find("MasterValue").GetComponent<Text>().text=="75%","Slider numeric value mismatch");
+                    Require(!window.Find("Lang_ko").gameObject.activeSelf,"Language choices should be collapsed");CheckNavigation(popup.transform);
+                    foreach(var size in Sizes)Capture(camera,canvas,size,"settings");
+                    window.Find("CurrentLanguage").GetComponent<Button>().onClick.Invoke();Require(view.LanguagePage,"Language page not opened");CheckNavigation(popup.transform);
+                    Localize(popup.transform,"ko");Capture(camera,canvas,Sizes[0],"settings-languages");
+                    Require(view.CloseLanguages()&&!view.CloseLanguages(),"Language back behavior");CheckNavigation(popup.transform);
+                    foreach(string language in LocalizationTable.LanguageCodes)
+                    {Localize(popup.transform,language);Capture(camera,canvas,Sizes[1],"settings-"+language);}
+                }
+                else
+                {
+                    var host=new GameObject("PreviewPopupHost").AddComponent<PopupHost>();SceneManager.MoveGameObjectToScene(host.gameObject,canvas.gameObject.scene);
+                    popup.GetComponent<ConfirmPopup>().Open(host,"title.confirm_quit",()=>{},()=>{});Localize(popup.transform,"ko");
+                    Require(popup.transform.Find("Window/YesButton").GetComponentInChildren<Text>().text=="게임 종료","Contextual action label missing");
+                    foreach(var size in Sizes)Capture(camera,canvas,size,"confirm");UnityEngine.Object.DestroyImmediate(host.gameObject);
+                }
+            }
+            finally{UnityEngine.Object.DestroyImmediate(popup);}
+        }
+        static void CheckNavigation(Transform root)
+        {
+            foreach(var selectable in root.GetComponentsInChildren<Selectable>(false))
+            {
+                Require(selectable.navigation.mode==Navigation.Mode.Explicit,"Non-explicit settings navigation");
+                Require(selectable.navigation.selectOnUp!=null&&selectable.navigation.selectOnUp.gameObject.activeInHierarchy,"Hidden Up target");
+                Require(selectable.navigation.selectOnDown!=null&&selectable.navigation.selectOnDown.gameObject.activeInHierarchy,"Hidden Down target");
+            }
+        }
+        static void Bind(Canvas c,Camera camera){c.renderMode=RenderMode.ScreenSpaceCamera;c.worldCamera=camera;c.planeDistance=1;}
+        static Rect Bounds(RectTransform rect,Transform relative)
+        {
+            var points=new Vector3[4];rect.GetWorldCorners(points);var a=relative.InverseTransformPoint(points[0]);var b=relative.InverseTransformPoint(points[2]);return Rect.MinMaxRect(a.x,a.y,b.x,b.y);
+        }
+        static void Localize(Transform root,string language)
+        {
+            foreach(var loc in root.GetComponentsInChildren<LocalizedText>(true))
+            {
+                string key=new SerializedObject(loc).FindProperty("key").stringValue;
+                if(string.IsNullOrEmpty(key))continue;
+                Require(LocalizationTable.TryGet(language,key,out string text),"Missing key "+key+" / "+language);
+                var args=typeof(LocalizedText).GetField("args",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(loc) as object[];
+                if(args!=null&&args.Length>0)text=string.Format(System.Globalization.CultureInfo.InvariantCulture,text,args);
+                loc.GetComponent<Text>().text=text;
+                var fixedLanguage=new SerializedObject(loc).FindProperty("fixedFontLanguage").stringValue;
+                loc.GetComponent<Text>().font=FontProvider.Get(string.IsNullOrEmpty(fixedLanguage)?language:fixedLanguage);
+            }
+        }
+        static void Capture(Camera camera,Canvas canvas,Vector2Int size,string name,Action before=null)
+        {
+            var rt=new RenderTexture(size.x,size.y,24);rt.Create();camera.targetTexture=rt;
+            try
+            {
+                Canvas.ForceUpdateCanvases();foreach(var view in canvas.GetComponentsInChildren<UiScreenLayout>(true))view.Layout();
+                foreach(var view in canvas.GetComponentsInChildren<SettingsPresentation>(true))view.Layout();
+                canvas.GetComponent<HudPresentation>()?.Layout();
+                canvas.GetComponent<WorldMapPresentation>()?.Layout();
+                foreach(var reveal in canvas.GetComponentsInChildren<GoldUiReveal>(true))reveal.Sample(GoldUiReveal.Duration);
+                Canvas.ForceUpdateCanvases();foreach(var fit in canvas.GetComponentsInChildren<LocalizedTextFit>(false))fit.FitNow();before?.Invoke();camera.Render();RenderTexture.active=rt;
+                foreach(var label in canvas.GetComponentsInChildren<Text>(false))
+                {
+                    if(!label.enabled||string.IsNullOrEmpty(label.text))continue;
+                    Require(label.font!=null&&label.font.name.StartsWith("NotoSans"),"Unexpected font: "+name+"/"+label.name);
+                    Require(label.fontStyle==FontStyle.Normal,"Unexpected weight: "+name+"/"+label.name);
+                    if(!label.resizeTextForBestFit&&label.preferredHeight>label.rectTransform.rect.height+1)
+                        File.AppendAllText(Path.Combine(Work,"typography-overflow.txt"),name+" / "+label.name+" / "+label.text+" : "+label.preferredHeight+" > "+label.rectTransform.rect.height+"\n");
+                    var button=label.GetComponentInParent<Button>();
+                    if(button!=null)
+                    {
+                        var fit=label.GetComponent<LocalizedTextFit>();
+                        int sizeForRole=UiKit.ActionSize;
+                        if(button.name=="EnterButton")sizeForRole=32;
+                        else if(button.name=="ResolutionButton")sizeForRole=28;
+                        else if(button.transform.parent.name=="ResolutionList")sizeForRole=26;
+                        Require(fit!=null&&fit.DesignSize==sizeForRole&&label.fontSize<=sizeForRole&&!label.resizeTextForBestFit,"Invalid action typography: "+name+"/"+button.name);
+                        Require(label.preferredHeight<=label.rectTransform.rect.height+1,"Action label clipped: "+name+"/"+label.text);
+                        if(button.targetGraphic is GoldUiInlay inlay)
+                            Require(inlay.isActiveAndEnabled && inlay.canvasRenderer.GetMesh()!=null && inlay.canvasRenderer.GetMesh().vertexCount>0,"Missing primary button plate: "+name+"/"+button.name);
+                    }
+                }
+                var tex=new Texture2D(size.x,size.y,TextureFormat.RGB24,false);
+                try{tex.ReadPixels(new Rect(0,0,size.x,size.y),0,0);tex.Apply();File.WriteAllBytes(Path.Combine(Work,"Verification",name+"-"+size.x+"x"+size.y+".png"),tex.EncodeToPNG());}
+                finally{UnityEngine.Object.DestroyImmediate(tex);}
+            }
+            finally{camera.targetTexture=null;RenderTexture.active=null;rt.Release();UnityEngine.Object.DestroyImmediate(rt);}
+        }
+        static void Require(bool condition,string message){if(!condition)throw new InvalidOperationException(message);}
+    }
+}

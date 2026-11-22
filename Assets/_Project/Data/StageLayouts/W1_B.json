@@ -1,0 +1,943 @@
+{
+ "version": 1,
+ "stageId": "W1_B",
+ "length": 100.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 84.0,
+  "y": 0.0
+ },
+ "sections": [
+  {
+   "id": "W1_B_A",
+   "startX": 0.0,
+   "endX": 24.0,
+   "note": "요새 앞 풀밭: 체크포인트, 특수 수집품 (소개)"
+  },
+  {
+   "id": "W1_B_B",
+   "startX": 24.0,
+   "endX": 46.0,
+   "note": "나무 울타리 틈: 가시밤톨 ×2"
+  },
+  {
+   "id": "W1_B_C",
+   "startX": 46.0,
+   "endX": 72.0,
+   "note": "요새 정문 진입로: 날개콩, 체크포인트, 특수 수집품 (조합)"
+  },
+  {
+   "id": "W1_B_D",
+   "startX": 72.0,
+   "endX": 100.0,
+   "note": "새싹왕의 요새 안뜰 (보스 아레나 72-98)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W1_B_A_ground1",
+   "section": "W1_B_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 24.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_B_B_ground1",
+   "section": "W1_B_B",
+   "kind": "ground",
+   "x": 27.0,
+   "y": 0.0,
+   "w": 16.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_B_B_platform1",
+   "section": "W1_B_B",
+   "kind": "platform",
+   "x": 31.5,
+   "y": 2.5,
+   "w": 3.0,
+   "h": 0.4
+  },
+  {
+   "id": "W1_B_C_ground1",
+   "section": "W1_B_C",
+   "kind": "ground",
+   "x": 46.0,
+   "y": 0.0,
+   "w": 52.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_B_D_wall1",
+   "section": "W1_B_D",
+   "kind": "wall",
+   "x": 98.0,
+   "y": 10.0,
+   "w": 2.0,
+   "h": 20.0
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W1_B_CP1",
+   "x": 21.0,
+   "y": 0.0
+  },
+  {
+   "id": "W1_B_CP2",
+   "x": 66.0,
+   "y": 0.0
+  }
+ ],
+ "coins": [
+  {
+   "x": 6.0,
+   "y": 1.2
+  },
+  {
+   "x": 9.0,
+   "y": 1.2
+  },
+  {
+   "x": 12.0,
+   "y": 1.2
+  },
+  {
+   "x": 15.0,
+   "y": 1.2
+  },
+  {
+   "x": 18.0,
+   "y": 1.2
+  },
+  {
+   "x": 21.0,
+   "y": 1.2
+  },
+  {
+   "x": 25.5,
+   "y": 2.6
+  },
+  {
+   "x": 31.5,
+   "y": 3.7
+  },
+  {
+   "x": 34.5,
+   "y": 3.7
+  },
+  {
+   "x": 38.0,
+   "y": 1.2
+  },
+  {
+   "x": 40.5,
+   "y": 1.2
+  },
+  {
+   "x": 44.5,
+   "y": 2.6
+  },
+  {
+   "x": 49.0,
+   "y": 1.2
+  },
+  {
+   "x": 52.0,
+   "y": 1.2
+  },
+  {
+   "x": 55.0,
+   "y": 1.2
+  },
+  {
+   "x": 58.0,
+   "y": 1.2
+  },
+  {
+   "x": 61.0,
+   "y": 1.2
+  },
+  {
+   "x": 64.0,
+   "y": 1.2
+  }
+ ],
+ "specials": [
+  {
+   "id": "W1_B_SC1",
+   "slot": 0,
+   "x": 15.0,
+   "y": 2.8
+  },
+  {
+   "id": "W1_B_SC2",
+   "slot": 1,
+   "x": 58.0,
+   "y": 2.8
+  },
+  {
+   "id": "W1_B_SC3",
+   "slot": 2,
+   "x": 74.5,
+   "y": 2.8
+  }
+ ],
+ "spikes": [
+  {
+   "id": "W1_B_A_hz500",
+   "x": 40.0,
+   "y": 0.0,
+   "w": 1.5,
+   "section": "W1_B_A"
+  },
+  {
+   "id": "W1_B_A_hz501",
+   "x": 15.0,
+   "y": 0.0,
+   "w": 1.5,
+   "section": "W1_B_A"
+  }
+ ],
+ "movers": [],
+ "enemies": [
+  {
+   "id": "W1_B_B_en1",
+   "monsterId": 1007,
+   "x": 29.0,
+   "y": 0.0,
+   "range": 5.0
+  }
+ ],
+ "fallers": [
+  {
+   "id": "W1_B_C_hz500",
+   "x": 62.5,
+   "y": 8.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.8,
+   "respawn": 2.7,
+   "section": "W1_B_C"
+  },
+  {
+   "id": "W1_B_B_hz501",
+   "x": 37.5,
+   "y": 8.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.8,
+   "respawn": 2.7,
+   "section": "W1_B_B"
+  },
+  {
+   "id": "W1_B_C_hz502",
+   "x": 47.5,
+   "y": 8.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.8,
+   "respawn": 2.7,
+   "section": "W1_B_C"
+  }
+ ],
+ "theme": "GreenMeadow",
+ "decorations": [
+  {
+   "id": "W1_B_dec1",
+   "prop": "V01_BroadleafOak",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 10.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec2",
+   "prop": "V01_BroadleafOak",
+   "x": 15.0,
+   "y": 0.0,
+   "z": 10.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec3",
+   "prop": "V01_BroadleafOak",
+   "x": 23.0,
+   "y": 0.0,
+   "z": 10.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec4",
+   "prop": "V01_BroadleafOak",
+   "x": 36.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec5",
+   "prop": "V01_BroadleafOak",
+   "x": 48.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec6",
+   "prop": "V01_BroadleafOak",
+   "x": 60.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec7",
+   "prop": "V02_RoundShrub",
+   "x": 6.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec8",
+   "prop": "V02_RoundShrub",
+   "x": 12.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec9",
+   "prop": "V02_RoundShrub",
+   "x": 20.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec10",
+   "prop": "V02_RoundShrub",
+   "x": 29.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec11",
+   "prop": "V02_RoundShrub",
+   "x": 41.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec12",
+   "prop": "V02_RoundShrub",
+   "x": 56.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec13",
+   "prop": "V02_RoundShrub",
+   "x": 64.0,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_B_dec14",
+   "prop": "V03_GrassTuft",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec15",
+   "prop": "V03_GrassTuft",
+   "x": 9.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec16",
+   "prop": "V03_GrassTuft",
+   "x": 17.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec17",
+   "prop": "V03_GrassTuft",
+   "x": 22.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec18",
+   "prop": "V03_GrassTuft",
+   "x": 38.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec19",
+   "prop": "V03_GrassTuft",
+   "x": 42.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec20",
+   "prop": "V03_GrassTuft",
+   "x": 50.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec21",
+   "prop": "V03_GrassTuft",
+   "x": 54.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec22",
+   "prop": "V03_GrassTuft",
+   "x": 62.0,
+   "y": 0.0,
+   "z": 1.2,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_B_dec23",
+   "prop": "V04_FlowerCluster",
+   "x": 8.0,
+   "y": 0.0,
+   "z": 1.3,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec24",
+   "prop": "V04_FlowerCluster",
+   "x": 19.0,
+   "y": 0.0,
+   "z": 1.3,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec25",
+   "prop": "V04_FlowerCluster",
+   "x": 31.0,
+   "y": 0.0,
+   "z": 1.3,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec26",
+   "prop": "V04_FlowerCluster",
+   "x": 47.0,
+   "y": 0.0,
+   "z": 1.3,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec27",
+   "prop": "V04_FlowerCluster",
+   "x": 58.0,
+   "y": 0.0,
+   "z": 1.3,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec28",
+   "prop": "V05_StoneCluster",
+   "x": 11.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W1_B_dec29",
+   "prop": "V05_StoneCluster",
+   "x": 28.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W1_B_dec30",
+   "prop": "V05_StoneCluster",
+   "x": 47.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W1_B_dec31",
+   "prop": "V05_StoneCluster",
+   "x": 63.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W1_B_dec32",
+   "prop": "P01_TimberFence",
+   "x": 5.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec33",
+   "prop": "P01_TimberFence",
+   "x": 13.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec34",
+   "prop": "P01_TimberFence",
+   "x": 21.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec35",
+   "prop": "P01_TimberFence",
+   "x": 30.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec36",
+   "prop": "P01_TimberFence",
+   "x": 36.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec37",
+   "prop": "P01_TimberFence",
+   "x": 41.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec38",
+   "prop": "P01_TimberFence",
+   "x": 50.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec39",
+   "prop": "P01_TimberFence",
+   "x": 56.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec40",
+   "prop": "P01_TimberFence",
+   "x": 62.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec41",
+   "prop": "P02_DirectionSign",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec42",
+   "prop": "P02_DirectionSign",
+   "x": 62.0,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec43",
+   "prop": "A02_Watchtower",
+   "x": 70.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_B_dec44",
+   "prop": "A02_Watchtower",
+   "x": 100.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_B_dec45",
+   "prop": "P01_TimberFence",
+   "x": 74.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec46",
+   "prop": "P01_TimberFence",
+   "x": 78.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec47",
+   "prop": "P01_TimberFence",
+   "x": 82.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec48",
+   "prop": "P01_TimberFence",
+   "x": 86.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec49",
+   "prop": "P01_TimberFence",
+   "x": 90.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec50",
+   "prop": "P01_TimberFence",
+   "x": 94.0,
+   "y": 0.0,
+   "z": 3.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_B_dec51",
+   "prop": "A02_Watchtower",
+   "x": 76.0,
+   "y": 0.0,
+   "z": 11.0,
+   "rotY": 0.0,
+   "scale": 1.8
+  },
+  {
+   "id": "W1_B_dec52",
+   "prop": "A02_Watchtower",
+   "x": 84.0,
+   "y": 0.0,
+   "z": 11.0,
+   "rotY": 0.0,
+   "scale": 1.8
+  },
+  {
+   "id": "W1_B_dec53",
+   "prop": "A02_Watchtower",
+   "x": 92.0,
+   "y": 0.0,
+   "z": 11.0,
+   "rotY": 0.0,
+   "scale": 1.8
+  },
+  {
+   "id": "W1_B_dec54",
+   "prop": "A02_Watchtower",
+   "x": 40.0,
+   "y": -1.2,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 1.7
+  },
+  {
+   "id": "W1_B_dec55",
+   "prop": "A01_Windmill",
+   "x": 10.0,
+   "y": 0.0,
+   "z": 12.0,
+   "rotY": 0.0,
+   "scale": 1.4
+  },
+  {
+   "id": "W1_B_dec56",
+   "prop": "A01_Windmill",
+   "x": 52.0,
+   "y": 0.0,
+   "z": 13.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_B_dec57",
+   "prop": "B01_RollingHill",
+   "x": 0.0,
+   "y": -8.5,
+   "z": 28.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec58",
+   "prop": "B01_RollingHill",
+   "x": 30.0,
+   "y": -8.5,
+   "z": 28.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec59",
+   "prop": "B01_RollingHill",
+   "x": 60.0,
+   "y": -8.5,
+   "z": 28.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec60",
+   "prop": "B01_RollingHill",
+   "x": 90.0,
+   "y": -8.5,
+   "z": 28.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_B_dec61",
+   "prop": "B02_ForestMass",
+   "x": 20.0,
+   "y": -2.6,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.4
+  },
+  {
+   "id": "W1_B_dec62",
+   "prop": "B02_ForestMass",
+   "x": 50.0,
+   "y": -2.6,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.4
+  },
+  {
+   "id": "W1_B_dec63",
+   "prop": "B02_ForestMass",
+   "x": 80.0,
+   "y": -2.6,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.4
+  },
+  {
+   "id": "W1_B_dec64",
+   "prop": "B04_WaterfallCliff",
+   "x": 70.0,
+   "y": -9.0,
+   "z": 42.0,
+   "rotY": 0.0,
+   "scale": 1.8
+  },
+  {
+   "id": "W1_B_dec65",
+   "prop": "B03_SeaStackCluster",
+   "x": 0.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_B_dec66",
+   "prop": "B03_SeaStackCluster",
+   "x": 35.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_B_dec67",
+   "prop": "B03_SeaStackCluster",
+   "x": 70.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_B_dec68",
+   "prop": "B03_SeaStackCluster",
+   "x": 105.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_B_dec69",
+   "prop": "B05_CloudMass",
+   "x": 0.0,
+   "y": 23.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_B_dec70",
+   "prop": "B05_CloudMass",
+   "x": 30.0,
+   "y": 23.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_B_dec71",
+   "prop": "B05_CloudMass",
+   "x": 60.0,
+   "y": 23.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_B_dec72",
+   "prop": "B05_CloudMass",
+   "x": 90.0,
+   "y": 23.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_B_dec73",
+   "prop": "B01_RollingHill",
+   "x": 0.0,
+   "y": -25.0,
+   "z": 95.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_B_dec74",
+   "prop": "B01_RollingHill",
+   "x": 62.0,
+   "y": -25.0,
+   "z": 95.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_B_dec75",
+   "prop": "B06_WaterSurface",
+   "x": 0.0,
+   "y": -11.0,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_B_dec76",
+   "prop": "B06_WaterSurface",
+   "x": 60.0,
+   "y": -11.0,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  }
+ ],
+ "boss": {
+  "bossId": 9001,
+  "x": 92.0,
+  "y": 0.0,
+  "arenaMinX": 72.0,
+  "arenaMaxX": 98.0
+ }
+}

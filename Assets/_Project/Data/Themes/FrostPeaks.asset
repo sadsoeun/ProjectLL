@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1317319987a10004889bf7924c65aa2b, type: 3}
+  m_Name: FrostPeaks
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::MyGame.EditorTools.StageThemeKit
+  groundCore: {fileID: 9024441777500098558, guid: 26c5039ec2ebbed4eaf66328e06615a8, type: 3}
+  groundEndLeft: {fileID: 1636768574944448436, guid: 7d5811f6a4d3cb6459ea6052e6669ecf, type: 3}
+  groundEndRight: {fileID: 5228373215948464717, guid: d1cc052d63e6aa24cb5961325a5a0744, type: 3}
+  rockCore: {fileID: 7155561654371407004, guid: a9ec9c1e1eefbbd479bec8e457efe1de, type: 3}
+  groundCoreVariants:
+  - {fileID: 6733450010399847698, guid: 6d7aa4b744c92e046b5e5df92bb66cff, type: 3}
+  - {fileID: 8745896729435669397, guid: 5d821950186f13f4f8e70b85c71096f3, type: 3}
+  rockCoreVariants:
+  - {fileID: 6141322474605406058, guid: ecd1670078f9e744e855e9164a6b247b, type: 3}
+  - {fileID: 9150408022337032441, guid: f2c02be57ad66034d93ac8cb008f2cdf, type: 3}
+  iceSurface: {fileID: 1953462184772718297, guid: 03f1d1b0ec9cb15409fdbd597ba4c099, type: 3}
+  floatingPlatform: {fileID: 5584482511722082354, guid: d8cb9a853136e26498b02ff506f370db, type: 3}
+  timberPlatform: {fileID: 1724121993727763213, guid: 11e18b23a02a7544cafeba9066ff3a36, type: 3}
+  crumbleSlab: {fileID: 5322496961459458769, guid: 36969f9c9bd4af04fafd2430eeb9b0fd, type: 3}
+  platformSupport: {fileID: 534500787090467460, guid: 10452bc49b4cc7a4fb7111098c00829e, type: 3}
+  checkpointVisual: {fileID: 1713298649084144615, guid: e83ad03201935c440b4a62f66ce6cbab, type: 3}
+  goalVisual: {fileID: 9039955498046516394, guid: be33856ac94b19642a067aad3a36a312, type: 3}
+  coinVisual: {fileID: 4450080509531969899, guid: d639887d2948db54c8b381f44432b129, type: 3}
+  gemVisual: {fileID: 5987696576419745225, guid: 74f38ebde82e9a1449ce704a57c9b3e3, type: 3}
+  fallerVisual: {fileID: 5158177551072995917, guid: 52fe99a38f82c2042b79077a227d244b, type: 3}
+  moverVisual: {fileID: 7838169089638370644, guid: e2c2524ce8e6cf349acee53f10fe3ac4, type: 3}
+  spikeTrapVisual: {fileID: 8127185609286109134, guid: d74edb36cfe99ff4cb4c6f1a9e06b0a7, type: 3}
+  switchVisual: {fileID: 2811657045323342137, guid: dc0054dd4f76c37408c43fc14bbac348, type: 3}
+  gateVisual: {fileID: 6203686965113484428, guid: cf0941c33aa6e6a4d906a83fcecd4f71, type: 3}
+  spikeVisual: {fileID: 0}
+  arenaWallVisual: {fileID: 8639576177611148689, guid: 183f0992aba5b7c439d5c307b7f07f5d, type: 3}
+  arenaGateVisual: {fileID: 1251412141856441385, guid: 4e5d3d8026f77c6478a6e7cab67d80b3, type: 3}
+  useAtmosphere: 1
+  skyColor: {r: 0.36, g: 0.55, b: 0.82, a: 1}
+  fogColor: {r: 0.56, g: 0.66, b: 0.84, a: 1}
+  fogStart: 18
+  fogEnd: 120
+  sunColor: {r: 1, g: 0.95, b: 0.88, a: 1}
+  sunIntensity: 1.1
+  skyMaterial: {fileID: 2100000, guid: c5e081a026d9e824cb2c72b3496ca20c, type: 2}
+  screenFxProfile: {fileID: 11400000, guid: 06b6fdd99d2eada4b8318e4ddf847760, type: 2}
+  backFillDepth: 8
+  backFillBody: {fileID: 0}
+  backFillRaisedOnly: 1
+  backFillFarBand: 0
+  dressSmall:
+  - {fileID: 885958240274943780, guid: b2e6a883fadca07419e9af2a872abc1d, type: 3}
+  dressMedium:
+  - {fileID: 2920913762807960307, guid: 98723662dd5bb584a8875294e822312d, type: 3}
+  - {fileID: 885958240274943780, guid: b2e6a883fadca07419e9af2a872abc1d, type: 3}
+  - {fileID: 3746403509834809663, guid: 3c098129167630441830cb7b3b9b60ab, type: 3}
+  - {fileID: 6995908774528590409, guid: 13706ac7210393a44b9188de106f0da9, type: 3}
+  dressLarge:
+  - {fileID: 6189647319663587840, guid: 0062c229cb0c3ac4cb3748eb25e34e70, type: 3}
+  - {fileID: 6995908774528590409, guid: 13706ac7210393a44b9188de106f0da9, type: 3}
+  dressDepth: 8
+  dressMidDensity: 0.4
+  dressLipDensity: 0.3
+  ambientSeagulls: 0

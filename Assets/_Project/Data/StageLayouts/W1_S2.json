@@ -1,0 +1,1414 @@
+{
+ "version": 1,
+ "stageId": "W1_S2",
+ "length": 150.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 147.0,
+  "y": 0.0
+ },
+ "sections": [
+  {
+   "id": "W1_S2_A",
+   "startX": 0.0,
+   "endX": 28.0,
+   "note": "복습 구간 (소개)"
+  },
+  {
+   "id": "W1_S2_B",
+   "startX": 28.0,
+   "endX": 48.0,
+   "note": "틈 길이 훈련 (연습)"
+  },
+  {
+   "id": "W1_S2_C",
+   "startX": 48.0,
+   "endX": 76.0,
+   "note": "구간: 고정 가시 ×3 (소개)"
+  },
+  {
+   "id": "W1_S2_D",
+   "startX": 76.0,
+   "endX": 96.0,
+   "note": "수평 이동 발판 (소개)"
+  },
+  {
+   "id": "W1_S2_E",
+   "startX": 96.0,
+   "endX": 124.0,
+   "note": "가시밤톨과 가시가 있는 선택 경로 (절정)"
+  },
+  {
+   "id": "W1_S2_F",
+   "startX": 124.0,
+   "endX": 150.0,
+   "note": "마무리 틈 점프: 고정 가시, 체크포인트 (마무리)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W1_S2_A_ground1",
+   "section": "W1_S2_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 16.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_A_ground2",
+   "section": "W1_S2_A",
+   "kind": "ground",
+   "x": 18.5,
+   "y": 0.0,
+   "w": 11.5,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_B_ground1",
+   "section": "W1_S2_B",
+   "kind": "ground",
+   "x": 33.0,
+   "y": 0.0,
+   "w": 5.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_B_ground2",
+   "section": "W1_S2_B",
+   "kind": "ground",
+   "x": 41.5,
+   "y": 0.0,
+   "w": 40.5,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_E_ground1",
+   "section": "W1_S2_E",
+   "kind": "ground",
+   "x": 96.0,
+   "y": 0.0,
+   "w": 34.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_E_opt1",
+   "section": "W1_S2_E",
+   "kind": "platform",
+   "x": 100.0,
+   "y": 2.5,
+   "w": 3.0,
+   "h": 0.4
+  },
+  {
+   "id": "W1_S2_E_opt2",
+   "section": "W1_S2_E",
+   "kind": "platform",
+   "x": 105.0,
+   "y": 4.0,
+   "w": 3.0,
+   "h": 0.4
+  },
+  {
+   "id": "W1_S2_E_opt3",
+   "section": "W1_S2_E",
+   "kind": "platform",
+   "x": 110.0,
+   "y": 5.5,
+   "w": 3.0,
+   "h": 0.4
+  },
+  {
+   "id": "W1_S2_E_opt4",
+   "section": "W1_S2_E",
+   "kind": "platform",
+   "x": 115.0,
+   "y": 4.0,
+   "w": 3.0,
+   "h": 0.4
+  },
+  {
+   "id": "W1_S2_F_ground1",
+   "section": "W1_S2_F",
+   "kind": "ground",
+   "x": 133.0,
+   "y": 0.0,
+   "w": 7.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_F_ground2",
+   "section": "W1_S2_F",
+   "kind": "ground",
+   "x": 143.0,
+   "y": 0.0,
+   "w": 7.0,
+   "h": 10.0
+  },
+  {
+   "id": "W1_S2_B_ground1_bridge38",
+   "section": "W1_S2_B",
+   "kind": "ground",
+   "x": 38.0,
+   "y": 0.0,
+   "w": 3.5,
+   "h": 10.0
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W1_S2_CP1",
+   "x": 47.0,
+   "y": 0.0
+  },
+  {
+   "id": "W1_S2_CP2",
+   "x": 77.0,
+   "y": 0.0
+  },
+  {
+   "id": "W1_S2_CP3",
+   "x": 125.0,
+   "y": 0.0
+  }
+ ],
+ "coins": [
+  {
+   "x": 5.0,
+   "y": 1.2
+  },
+  {
+   "x": 6.75,
+   "y": 1.2
+  },
+  {
+   "x": 8.5,
+   "y": 1.2
+  },
+  {
+   "x": 10.25,
+   "y": 1.2
+  },
+  {
+   "x": 12.0,
+   "y": 1.2
+  },
+  {
+   "x": 16.0,
+   "y": 1.0
+  },
+  {
+   "x": 17.25,
+   "y": 2.6
+  },
+  {
+   "x": 18.5,
+   "y": 1.0
+  },
+  {
+   "x": 30.0,
+   "y": 1.0
+  },
+  {
+   "x": 31.0,
+   "y": 2.78
+  },
+  {
+   "x": 32.0,
+   "y": 2.78
+  },
+  {
+   "x": 33.0,
+   "y": 1.0
+  },
+  {
+   "x": 38.0,
+   "y": 1.0
+  },
+  {
+   "x": 39.17,
+   "y": 2.96
+  },
+  {
+   "x": 40.33,
+   "y": 2.96
+  },
+  {
+   "x": 41.5,
+   "y": 1.0
+  },
+  {
+   "x": 48.0,
+   "y": 1.2
+  },
+  {
+   "x": 50.0,
+   "y": 1.2
+  },
+  {
+   "x": 52.0,
+   "y": 1.2
+  },
+  {
+   "x": 53.5,
+   "y": 1.2
+  },
+  {
+   "x": 54.75,
+   "y": 3.0
+  },
+  {
+   "x": 56.0,
+   "y": 1.2
+  },
+  {
+   "x": 59.5,
+   "y": 1.2
+  },
+  {
+   "x": 61.0,
+   "y": 3.0
+  },
+  {
+   "x": 62.5,
+   "y": 1.2
+  },
+  {
+   "x": 65.5,
+   "y": 1.2
+  },
+  {
+   "x": 67.0,
+   "y": 2.85
+  },
+  {
+   "x": 68.5,
+   "y": 3.4
+  },
+  {
+   "x": 70.0,
+   "y": 2.85
+  },
+  {
+   "x": 71.5,
+   "y": 1.2
+  },
+  {
+   "x": 78.0,
+   "y": 1.2
+  },
+  {
+   "x": 79.5,
+   "y": 1.2
+  },
+  {
+   "x": 81.0,
+   "y": 1.2
+  },
+  {
+   "x": 86.0,
+   "y": 1.7
+  },
+  {
+   "x": 87.5,
+   "y": 1.7
+  },
+  {
+   "x": 89.0,
+   "y": 1.7
+  },
+  {
+   "x": 90.5,
+   "y": 1.7
+  },
+  {
+   "x": 92.0,
+   "y": 1.7
+  },
+  {
+   "x": 98.0,
+   "y": 1.2
+  },
+  {
+   "x": 101.57,
+   "y": 1.2
+  },
+  {
+   "x": 105.14,
+   "y": 1.2
+  },
+  {
+   "x": 108.71,
+   "y": 1.2
+  },
+  {
+   "x": 112.29,
+   "y": 1.2
+  },
+  {
+   "x": 115.86,
+   "y": 1.2
+  },
+  {
+   "x": 119.43,
+   "y": 1.2
+  },
+  {
+   "x": 123.0,
+   "y": 1.2
+  },
+  {
+   "x": 114.0,
+   "y": 4.7
+  },
+  {
+   "x": 130.0,
+   "y": 1.0
+  },
+  {
+   "x": 131.0,
+   "y": 2.78
+  },
+  {
+   "x": 132.0,
+   "y": 2.78
+  },
+  {
+   "x": 133.0,
+   "y": 1.0
+  },
+  {
+   "x": 140.0,
+   "y": 1.0
+  },
+  {
+   "x": 141.0,
+   "y": 2.78
+  },
+  {
+   "x": 142.0,
+   "y": 2.78
+  },
+  {
+   "x": 143.0,
+   "y": 1.0
+  },
+  {
+   "x": 100.9,
+   "y": 3.7
+  },
+  {
+   "x": 102.1,
+   "y": 3.7
+  },
+  {
+   "x": 105.9,
+   "y": 5.2
+  },
+  {
+   "x": 107.1,
+   "y": 5.2
+  },
+  {
+   "x": 110.9,
+   "y": 6.7
+  },
+  {
+   "x": 112.1,
+   "y": 6.7
+  },
+  {
+   "x": 115.9,
+   "y": 5.2
+  },
+  {
+   "x": 117.1,
+   "y": 5.2
+  },
+  {
+   "x": 20.5,
+   "y": 1.2
+  },
+  {
+   "x": 21.5,
+   "y": 1.2
+  },
+  {
+   "x": 22.5,
+   "y": 1.2
+  },
+  {
+   "x": 23.5,
+   "y": 1.2
+  },
+  {
+   "x": 24.5,
+   "y": 1.2
+  },
+  {
+   "x": 25.5,
+   "y": 1.2
+  },
+  {
+   "x": 26.5,
+   "y": 1.2
+  },
+  {
+   "x": 120.5,
+   "y": 1.2
+  },
+  {
+   "x": 121.5,
+   "y": 1.2
+  },
+  {
+   "x": 124.0,
+   "y": 1.2
+  },
+  {
+   "x": 125.0,
+   "y": 1.2
+  },
+  {
+   "x": 126.0,
+   "y": 1.2
+  },
+  {
+   "x": 127.0,
+   "y": 1.2
+  }
+ ],
+ "specials": [
+  {
+   "id": "W1_S2_SC1",
+   "slot": 0,
+   "x": 39.75,
+   "y": 2.4
+  },
+  {
+   "id": "W1_S2_SC2",
+   "slot": 1,
+   "x": 89.0,
+   "y": 2.4
+  },
+  {
+   "id": "W1_S2_SC3",
+   "slot": 2,
+   "x": 111.5,
+   "y": 6.7
+  }
+ ],
+ "spikes": [
+  {
+   "id": "W1_S2_C_spk1",
+   "x": 112.5,
+   "y": 0.0,
+   "w": 1.5
+  },
+  {
+   "id": "W1_S2_C_spk2",
+   "x": 135.0,
+   "y": 0.0,
+   "w": 2.0
+  },
+  {
+   "id": "W1_S2_C_spk3",
+   "x": 66.0,
+   "y": 0.0,
+   "w": 1.0
+  },
+  {
+   "id": "W1_S2_C_spk4",
+   "x": 70.0,
+   "y": 0.0,
+   "w": 1.0
+  },
+  {
+   "id": "W1_S2_F_spk5",
+   "x": 108.0,
+   "y": 0.0,
+   "w": 1.5,
+   "section": "W1_S2_E"
+  }
+ ],
+ "movers": [
+  {
+   "x": 85.5,
+   "y": 0.0,
+   "w": 3.0,
+   "axis": "x",
+   "distance": 4.0,
+   "speed": 2.0,
+   "wait": 0.5,
+   "id": "W1_S2_D_mv1"
+  }
+ ],
+ "enemies": [
+  {
+   "id": "W1_S2_A_en1",
+   "section": "W1_S2_A",
+   "monsterId": 1007,
+   "x": 37.5,
+   "y": 0.0,
+   "range": 5.0
+  },
+  {
+   "id": "W1_S2_E_en2",
+   "section": "W1_S2_E",
+   "monsterId": 1007,
+   "x": 99.0,
+   "y": 0.0,
+   "range": 5.0
+  }
+ ],
+ "fallers": [
+  {
+   "id": "W1_S2_C_hz500",
+   "x": 52.5,
+   "y": 8.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.8,
+   "respawn": 2.7,
+   "section": "W1_S2_C"
+  }
+ ],
+ "theme": "GreenMeadow",
+ "decorations": [
+  {
+   "id": "W1_S2_dec1",
+   "prop": "V01_BroadleafOak",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 8.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec2",
+   "prop": "V01_BroadleafOak",
+   "x": 19.0,
+   "y": 0.0,
+   "z": 10.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec3",
+   "prop": "V01_BroadleafOak",
+   "x": 36.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.1
+  },
+  {
+   "id": "W1_S2_dec4",
+   "prop": "V01_BroadleafOak",
+   "x": 53.0,
+   "y": 0.0,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec5",
+   "prop": "V01_BroadleafOak",
+   "x": 69.0,
+   "y": 0.0,
+   "z": 8.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec6",
+   "prop": "V01_BroadleafOak",
+   "x": 99.0,
+   "y": 0.0,
+   "z": 7.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec7",
+   "prop": "V01_BroadleafOak",
+   "x": 112.0,
+   "y": 0.0,
+   "z": 11.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec8",
+   "prop": "V01_BroadleafOak",
+   "x": 127.0,
+   "y": 0.0,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec9",
+   "prop": "V01_BroadleafOak",
+   "x": 145.0,
+   "y": 0.0,
+   "z": 8.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec10",
+   "prop": "B02_ForestMass",
+   "x": 8.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec11",
+   "prop": "B02_ForestMass",
+   "x": 28.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec12",
+   "prop": "B02_ForestMass",
+   "x": 52.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec13",
+   "prop": "B02_ForestMass",
+   "x": 74.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec14",
+   "prop": "B02_ForestMass",
+   "x": 100.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec15",
+   "prop": "B02_ForestMass",
+   "x": 122.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec16",
+   "prop": "B02_ForestMass",
+   "x": 142.0,
+   "y": -2.62,
+   "z": 21.0,
+   "rotY": 0.0,
+   "scale": 1.5
+  },
+  {
+   "id": "W1_S2_dec17",
+   "prop": "B01_RollingHill",
+   "x": 0.0,
+   "y": -8.5,
+   "z": 29.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec18",
+   "prop": "B01_RollingHill",
+   "x": 32.0,
+   "y": -8.5,
+   "z": 29.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec19",
+   "prop": "B01_RollingHill",
+   "x": 64.0,
+   "y": -8.5,
+   "z": 29.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec20",
+   "prop": "B01_RollingHill",
+   "x": 95.0,
+   "y": -8.5,
+   "z": 29.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec21",
+   "prop": "B01_RollingHill",
+   "x": 128.0,
+   "y": -8.5,
+   "z": 29.0,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec22",
+   "prop": "B04_WaterfallCliff",
+   "x": 88.0,
+   "y": -11.0,
+   "z": 42.0,
+   "rotY": 0.0,
+   "scale": 1.8
+  },
+  {
+   "id": "W1_S2_dec23",
+   "prop": "B04_WaterfallCliff",
+   "x": 20.0,
+   "y": -13.0,
+   "z": 55.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec24",
+   "prop": "A02_Watchtower",
+   "x": 118.0,
+   "y": -5.98,
+   "z": 42.0,
+   "rotY": 0.0,
+   "scale": 1.6
+  },
+  {
+   "id": "W1_S2_dec25",
+   "prop": "B03_SeaStackCluster",
+   "x": 18.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_S2_dec26",
+   "prop": "B03_SeaStackCluster",
+   "x": 58.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_S2_dec27",
+   "prop": "B03_SeaStackCluster",
+   "x": 98.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_S2_dec28",
+   "prop": "B03_SeaStackCluster",
+   "x": 138.0,
+   "y": -20.0,
+   "z": 70.0,
+   "rotY": 0.0,
+   "scale": 1.9
+  },
+  {
+   "id": "W1_S2_dec29",
+   "prop": "B05_CloudMass",
+   "x": 0.0,
+   "y": 22.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec30",
+   "prop": "B05_CloudMass",
+   "x": 30.0,
+   "y": 24.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec31",
+   "prop": "B05_CloudMass",
+   "x": 60.0,
+   "y": 21.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec32",
+   "prop": "B05_CloudMass",
+   "x": 90.0,
+   "y": 23.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec33",
+   "prop": "B05_CloudMass",
+   "x": 120.0,
+   "y": 22.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec34",
+   "prop": "B05_CloudMass",
+   "x": 150.0,
+   "y": 24.0,
+   "z": 75.0,
+   "rotY": 0.0,
+   "scale": 2.0
+  },
+  {
+   "id": "W1_S2_dec35",
+   "prop": "B05_CloudMass",
+   "x": 15.0,
+   "y": 15.0,
+   "z": 60.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec36",
+   "prop": "B05_CloudMass",
+   "x": 85.0,
+   "y": 14.0,
+   "z": 60.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec37",
+   "prop": "B01_RollingHill",
+   "x": 0.0,
+   "y": -25.0,
+   "z": 95.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec38",
+   "prop": "B01_RollingHill",
+   "x": 62.0,
+   "y": -25.0,
+   "z": 95.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec39",
+   "prop": "B01_RollingHill",
+   "x": 124.0,
+   "y": -25.0,
+   "z": 95.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec40",
+   "prop": "B06_WaterSurface",
+   "x": 0.0,
+   "y": -11.0,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec41",
+   "prop": "B06_WaterSurface",
+   "x": 60.0,
+   "y": -11.0,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec42",
+   "prop": "B06_WaterSurface",
+   "x": 120.0,
+   "y": -11.0,
+   "z": 34.0,
+   "rotY": 0.0,
+   "scale": 3.0
+  },
+  {
+   "id": "W1_S2_dec43",
+   "prop": "T07_TimberSupport",
+   "x": 101.5,
+   "y": 0.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.27
+  },
+  {
+   "id": "W1_S2_dec44",
+   "prop": "T07_TimberSupport",
+   "x": 106.5,
+   "y": 0.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.09
+  },
+  {
+   "id": "W1_S2_dec45",
+   "prop": "T07_TimberSupport",
+   "x": 106.5,
+   "y": 1.8,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.09
+  },
+  {
+   "id": "W1_S2_dec46",
+   "prop": "T07_TimberSupport",
+   "x": 111.5,
+   "y": 0.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.03
+  },
+  {
+   "id": "W1_S2_dec47",
+   "prop": "T07_TimberSupport",
+   "x": 111.5,
+   "y": 1.7,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.03
+  },
+  {
+   "id": "W1_S2_dec48",
+   "prop": "T07_TimberSupport",
+   "x": 111.5,
+   "y": 3.4,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.03
+  },
+  {
+   "id": "W1_S2_dec49",
+   "prop": "T07_TimberSupport",
+   "x": 116.5,
+   "y": 0.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.09
+  },
+  {
+   "id": "W1_S2_dec50",
+   "prop": "T07_TimberSupport",
+   "x": 116.5,
+   "y": 1.8,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.09
+  },
+  {
+   "id": "W1_S2_dec51",
+   "prop": "P01_TimberFence",
+   "x": 15.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec52",
+   "prop": "P01_TimberFence",
+   "x": 29.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec53",
+   "prop": "P01_TimberFence",
+   "x": 37.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec54",
+   "prop": "P01_TimberFence",
+   "x": 129.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec55",
+   "prop": "P01_TimberFence",
+   "x": 139.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec56",
+   "prop": "P01_TimberFence",
+   "x": 19.5,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec57",
+   "prop": "P01_TimberFence",
+   "x": 34.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec58",
+   "prop": "P01_TimberFence",
+   "x": 42.5,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec59",
+   "prop": "P01_TimberFence",
+   "x": 134.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec60",
+   "prop": "P01_TimberFence",
+   "x": 144.0,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec61",
+   "prop": "P02_DirectionSign",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec62",
+   "prop": "P02_DirectionSign",
+   "x": 79.5,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec63",
+   "prop": "P02_DirectionSign",
+   "x": 97.5,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec64",
+   "prop": "P02_DirectionSign",
+   "x": 128.0,
+   "y": 0.0,
+   "z": 1.5,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W1_S2_dec65",
+   "prop": "V05_StoneCluster",
+   "x": 1.64,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.51
+  },
+  {
+   "id": "W1_S2_dec66",
+   "prop": "V05_StoneCluster",
+   "x": 4.94,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.7
+  },
+  {
+   "id": "W1_S2_dec67",
+   "prop": "V03_GrassTuft",
+   "x": 8.06,
+   "y": 0.0,
+   "z": 1.15,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec68",
+   "prop": "V02_RoundShrub",
+   "x": 10.37,
+   "y": 0.0,
+   "z": 1.84,
+   "rotY": 0.0,
+   "scale": 0.64
+  },
+  {
+   "id": "W1_S2_dec69",
+   "prop": "V03_GrassTuft",
+   "x": 13.67,
+   "y": 0.0,
+   "z": 1.05,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec70",
+   "prop": "V03_GrassTuft",
+   "x": 19.56,
+   "y": 0.0,
+   "z": 1.03,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec71",
+   "prop": "V05_StoneCluster",
+   "x": 21.99,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W1_S2_dec72",
+   "prop": "V02_RoundShrub",
+   "x": 25.3,
+   "y": 0.0,
+   "z": 1.8,
+   "rotY": 0.0,
+   "scale": 0.76
+  },
+  {
+   "id": "W1_S2_dec73",
+   "prop": "V05_StoneCluster",
+   "x": 28.71,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.65
+  },
+  {
+   "id": "W1_S2_dec74",
+   "prop": "V02_RoundShrub",
+   "x": 43.19,
+   "y": 0.0,
+   "z": 1.87,
+   "rotY": 0.0,
+   "scale": 0.72
+  },
+  {
+   "id": "W1_S2_dec75",
+   "prop": "V05_StoneCluster",
+   "x": 49.85,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.58
+  },
+  {
+   "id": "W1_S2_dec76",
+   "prop": "V02_RoundShrub",
+   "x": 52.76,
+   "y": 0.0,
+   "z": 1.72,
+   "rotY": 0.0,
+   "scale": 0.7
+  },
+  {
+   "id": "W1_S2_dec77",
+   "prop": "V02_RoundShrub",
+   "x": 63.13,
+   "y": 0.0,
+   "z": 1.84,
+   "rotY": 0.0,
+   "scale": 0.83
+  },
+  {
+   "id": "W1_S2_dec78",
+   "prop": "V03_GrassTuft",
+   "x": 72.18,
+   "y": 0.0,
+   "z": 1.06,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec79",
+   "prop": "V03_GrassTuft",
+   "x": 74.64,
+   "y": 0.0,
+   "z": 1.06,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec80",
+   "prop": "V03_GrassTuft",
+   "x": 79.72,
+   "y": 0.0,
+   "z": 1.02,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec81",
+   "prop": "V05_StoneCluster",
+   "x": 97.12,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.64
+  },
+  {
+   "id": "W1_S2_dec82",
+   "prop": "V02_RoundShrub",
+   "x": 99.38,
+   "y": 0.0,
+   "z": 1.83,
+   "rotY": 0.0,
+   "scale": 0.72
+  },
+  {
+   "id": "W1_S2_dec83",
+   "prop": "V03_GrassTuft",
+   "x": 103.1,
+   "y": 0.0,
+   "z": 1.19,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W1_S2_dec84",
+   "prop": "V05_StoneCluster",
+   "x": 105.51,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.5
+  },
+  {
+   "id": "W1_S2_dec85",
+   "prop": "V05_StoneCluster",
+   "x": 109.23,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.62
+  },
+  {
+   "id": "W1_S2_dec86",
+   "prop": "V04_FlowerCluster",
+   "x": 111.44,
+   "y": 0.0,
+   "z": 1.21,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec87",
+   "prop": "V05_StoneCluster",
+   "x": 113.72,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.61
+  },
+  {
+   "id": "W1_S2_dec88",
+   "prop": "V02_RoundShrub",
+   "x": 116.2,
+   "y": 0.0,
+   "z": 1.71,
+   "rotY": 0.0,
+   "scale": 0.79
+  },
+  {
+   "id": "W1_S2_dec89",
+   "prop": "V02_RoundShrub",
+   "x": 119.92,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 0.0,
+   "scale": 0.8
+  },
+  {
+   "id": "W1_S2_dec90",
+   "prop": "V04_FlowerCluster",
+   "x": 123.58,
+   "y": 0.0,
+   "z": 1.29,
+   "rotY": 0.0,
+   "scale": 1.3
+  },
+  {
+   "id": "W1_S2_dec91",
+   "prop": "V02_RoundShrub",
+   "x": 127.27,
+   "y": 0.0,
+   "z": 1.87,
+   "rotY": 0.0,
+   "scale": 0.85
+  },
+  {
+   "id": "W1_S2_dec92",
+   "prop": "V03_GrassTuft",
+   "x": 134.74,
+   "y": 0.0,
+   "z": 1.05,
+   "rotY": 0.0,
+   "scale": 1.2
+  }
+ ],
+ "featuredMonsters": [
+  1007
+ ]
+}

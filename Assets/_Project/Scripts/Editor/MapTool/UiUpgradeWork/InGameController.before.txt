@@ -1,0 +1,492 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
+
+namespace MyGame
+{
+    /// <summary>
+    /// Orchestrates one stage attempt (spec 5.6): loads the additive stage scene, drives
+    /// Ready / Playing / Paused / Dead / Clear / Result / GameOver, and returns to the world map.
+    /// </summary>
+    public sealed class InGameController : MonoBehaviour
+    {
+        [SerializeField] private PlayerMotor player;
+        [SerializeField] private CameraFollow cameraFollow;
+        [SerializeField] private InGameView view;
+        [Tooltip("Stage played when this scene is started directly in the Editor.")]
+        [SerializeField] private string debugStageId = "W1_S1";
+        [SerializeField, Min(0f)] private float readyDuration = 1.0f;
+        [SerializeField, Min(0f)] private float deadDuration = 1.2f;
+        [SerializeField, Min(0f)] private float clearDuration = 2.6f;
+
+        private GameSystems systems;
+        private StageData stageData;
+        private StageRoot stageRoot;
+        private StageSession session;
+        private bool gateHeld;
+        private bool initialized;
+
+        private void Awake()
+        {
+            Assert.IsNotNull(player, "InGameController.player is not assigned.");
+            Assert.IsNotNull(cameraFollow, "InGameController.cameraFollow is not assigned.");
+            Assert.IsNotNull(view, "InGameController.view is not assigned.");
+
+            // Hold the fade-in until the stage scene is loaded (spec 4.2).
+            if (GameSystems.Exists)
+            {
+                GameSystems.Instance.Loader.AcquireReadyGate();
+                gateHeld = true;
+            }
+
+            // Player is inactive until the stage is placed.
+            player.SetControl(false);
+            player.Freeze(true);
+        }
+
+        private void OnEnable()
+        {
+            view.PauseClicked += RequestHudPause;
+            view.ResumeClicked += Resume;
+            view.RetryClicked += Retry;
+            view.SettingsClicked += OpenSettings;
+            view.ExitClicked += RequestExit;
+            view.ResultContinueClicked += OnResultContinue;
+            view.GameOverContinueClicked += OnGameOverContinue;
+        }
+
+        private void OnDisable()
+        {
+            view.PauseClicked -= RequestHudPause;
+            view.ResumeClicked -= Resume;
+            view.RetryClicked -= Retry;
+            view.SettingsClicked -= OpenSettings;
+            view.ExitClicked -= RequestExit;
+            view.ResultContinueClicked -= OnResultContinue;
+            view.GameOverContinueClicked -= OnGameOverContinue;
+        }
+
+        private void OnDestroy()
+        {
+            Time.timeScale = 1f; // always restore on scene exit (spec 8)
+            if (stageRoot != null)
+                UnsubscribeStage();
+            ReleaseGate();
+        }
+
+        private void ReleaseGate()
+        {
+            if (gateHeld && GameSystems.Exists)
+                GameSystems.Instance.Loader.ReleaseReadyGate();
+            gateHeld = false;
+        }
+
+        private void Start()
+        {
+            systems = GameSystems.Instance;
+            StartCoroutine(InitRoutine());
+        }
+
+        // ---------------------------------------------------------------- init
+
+        private IEnumerator InitRoutine()
+        {
+            systems.InputMode.SetMode(InputMode.Gameplay);
+            var save = systems.Save;
+            if (!save.HasSave)
+                save.CreateTemporary(systems.StageDb.StartNodeId); // direct play (spec 4.3)
+
+            // Which stage?
+            string stageId = systems.Loader.LastRequest?.StageId;
+            if (!systems.StageDb.TryGetStage(stageId, out stageData))
+            {
+                if (Application.isEditor && systems.StageDb.TryGetStage(debugStageId, out stageData))
+                {
+                    Debug.Log($"[InGame] No valid StageId ('{stageId}'). Using debug stage '{debugStageId}'.");
+                }
+                else
+                {
+                    yield return FailAndReturn($"Unknown StageId '{stageId}'.");
+                    yield break;
+                }
+            }
+
+            // Load the stage scene additively (skip if it is already open, e.g. multi-scene editing).
+            string sceneName = stageData.SceneName;
+            Scene stageScene = SceneManager.GetSceneByName(sceneName);
+            if (!stageScene.isLoaded)
+            {
+                if (!Application.CanStreamedLevelBeLoaded(sceneName))
+                {
+                    yield return FailAndReturn($"Stage scene '{sceneName}' is not in Build Settings.");
+                    yield break;
+                }
+                var op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+                if (op == null)
+                {
+                    yield return FailAndReturn($"Could not load stage scene '{sceneName}'.");
+                    yield break;
+                }
+                yield return op;
+                stageScene = SceneManager.GetSceneByName(sceneName);
+            }
+
+            stageRoot = FindStageRoot(stageScene);
+            if (stageRoot == null)
+            {
+                yield return FailAndReturn($"Stage scene '{sceneName}' has no StageRoot.");
+                yield break;
+            }
+            stageRoot.GoalReached += OnGoalReached;
+            stageRoot.PlayerHit += OnPlayerHit;
+            stageRoot.CoinCollected += OnCoinCollected;
+            stageRoot.SpecialCollected += OnSpecialCollected;
+            stageRoot.CheckpointActivated += OnCheckpointActivated;
+            player.Jumped += OnPlayerJumped;
+            player.Landed += OnPlayerLanded;
+            player.Bounced += OnPlayerBounced;
+            stageRoot.BindPlayer(player.transform);
+            stageRoot.BindCamera(cameraFollow);
+
+            // Session / HUD
+            int lives = save.Current.lives > 0 ? save.Current.lives : save.InitialLives;
+            session = new StageSession(lives);
+            save.Current.lives = session.Lives;
+            view.SetStageName(stageData.DisplayNameKey);
+            view.SetLives(session.Lives);
+            view.SetCoins(0);
+            view.SetSpecials(session.CopySpecials());
+            view.SetTime(0f);
+
+            // Place player and camera
+            if (stageRoot.HasLevelEdges)
+                cameraFollow.SetViewBounds(stageRoot.LevelMinX, stageRoot.LevelMaxX, stageRoot.CameraMinY);
+            else
+                cameraFollow.SetBounds(stageRoot.CameraMinX, stageRoot.CameraMaxX, stageRoot.CameraMinY);
+            cameraFollow.SetTarget(player.transform);
+            PlacePlayerAtSpawn();
+            cameraFollow.SnapToTarget();
+
+            systems.Audio.PlayBgm(stageData.Bgm);
+
+            initialized = true;
+            ReleaseGate();
+            RequireTransition(StageState.Ready);
+            yield return ReadyRoutine(waitForFade: true);
+        }
+
+        private static StageRoot FindStageRoot(Scene scene)
+        {
+            foreach (var go in scene.GetRootGameObjects())
+            {
+                var root = go.GetComponentInChildren<StageRoot>(true);
+                if (root != null)
+                    return root;
+            }
+            return null;
+        }
+
+        private IEnumerator FailAndReturn(string message)
+        {
+            Debug.LogError($"[InGame] {message} Returning to the world map.");
+            ReleaseGate();
+            // Wait for the running transition to finish before requesting a new one.
+            while (systems.Loader.IsBusy)
+                yield return null;
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.WorldMap, null, LoadReason.Failed));
+        }
+
+        /// <summary>Places the player at the active checkpoint, or at the spawn point when none is active.</summary>
+        private void PlacePlayerAtSpawn()
+        {
+            Vector3 position = stageRoot.SpawnPosition;
+            if (stageRoot.TryGetRespawnOverride(out var overridePosition))
+                position = overridePosition; // e.g. inside a running boss arena
+            else if (session != null && stageRoot.TryGetRespawnPosition(session.CheckpointId, out var checkpointPosition))
+                position = checkpointPosition;
+            player.Freeze(false);
+            player.TeleportTo(position);
+        }
+
+        private void UnsubscribeStage()
+        {
+            stageRoot.GoalReached -= OnGoalReached;
+            stageRoot.PlayerHit -= OnPlayerHit;
+            stageRoot.CoinCollected -= OnCoinCollected;
+            stageRoot.SpecialCollected -= OnSpecialCollected;
+            stageRoot.CheckpointActivated -= OnCheckpointActivated;
+            player.Jumped -= OnPlayerJumped;
+            player.Landed -= OnPlayerLanded;
+            player.Bounced -= OnPlayerBounced;
+        }
+
+        // ---------------------------------------------------------------- stage events
+
+        private void OnPlayerHit()
+        {
+            if (session != null && session.State == StageState.Playing)
+                Die();
+        }
+
+        private void OnCoinCollected()
+        {
+            if (session == null)
+                return;
+            session.AddCoin();
+            view.SetCoins(session.Coins);
+            Sfx.Play(SfxId.Coin);
+        }
+
+        private void OnSpecialCollected(int slot)
+        {
+            if (session != null && session.CollectSpecial(slot))
+            {
+                view.SetSpecials(session.CopySpecials());
+                Sfx.Play(SfxId.Special);
+            }
+        }
+
+        private void OnCheckpointActivated(string id, float x)
+        {
+            if (session != null && session.TryActivateCheckpoint(id, x))
+                Sfx.Play(SfxId.Checkpoint);
+        }
+
+        private void OnPlayerJumped() => Sfx.Play(SfxId.Jump);
+        private void OnPlayerLanded() => Sfx.Play(SfxId.Land);
+        private void OnPlayerBounced() => Sfx.Play(SfxId.Stomp);
+
+        // ---------------------------------------------------------------- states
+
+        private IEnumerator ReadyRoutine(bool waitForFade)
+        {
+            player.SetControl(false);
+            view.ShowMessage("ingame.ready");
+            if (waitForFade)
+            {
+                while (systems.Loader.IsBusy)
+                    yield return null;
+            }
+            yield return WaitRealtime(readyDuration);
+            view.HideMessage();
+            if (session.TryTransition(StageState.Playing))
+            {
+                player.SetControl(true);
+                systems.InputMode.SetMode(InputMode.Gameplay);
+            }
+        }
+
+        /// <summary>Transition that must be valid by construction; logs an error otherwise (no side effects inside Assert).</summary>
+        private void RequireTransition(StageState next)
+        {
+            var from = session.State;
+            bool ok = session.TryTransition(next);
+            if (!ok)
+                Debug.LogError($"[InGame] Invalid state transition {from} -> {next}.");
+        }
+
+        private static IEnumerator WaitRealtime(float seconds)
+        {
+            float t = 0f;
+            while (t < seconds)
+            {
+                t += Time.unscaledDeltaTime;
+                yield return null;
+            }
+        }
+
+        private void Update()
+        {
+            view.SetPauseAvailable(initialized && session != null && session.State == StageState.Playing &&
+                systems != null && !systems.InputMode.IsLocked && !systems.Popups.IsBlocking && !systems.Loader.IsBusy && !NowCutIn.IsPlaying);
+            if (!initialized || session == null || systems.Loader.IsBusy)
+                return;
+
+            var input = systems.InputMode;
+            switch (session.State)
+            {
+                case StageState.Playing:
+                    session.Tick(Time.deltaTime);
+                    view.SetTime(session.Elapsed);
+                    if (input.PausePressed && !systems.Popups.IsBlocking)
+                        Pause();
+                    else if (player.transform.position.y < stageRoot.KillY)
+                        Die();
+                    break;
+
+                case StageState.Paused:
+                    if ((input.PausePressed || input.CancelPressed) && !systems.Popups.IsBlocking)
+                        Resume();
+                    break;
+            }
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            // Auto-pause when the window loses focus (spec 8). Skipped in the Editor where focus flips constantly.
+            if (!hasFocus && !Application.isEditor && initialized && session.State == StageState.Playing)
+                Pause();
+        }
+
+        // ---------------------------------------------------------------- pause
+
+        private void RequestHudPause()
+        {
+            if (!initialized || session == null || session.State != StageState.Playing ||
+                systems == null || systems.InputMode.IsLocked || systems.Popups.IsBlocking || systems.Loader.IsBusy) return;
+            Pause();
+        }
+
+        private void Pause()
+        {
+            if (NowCutIn.IsPlaying)
+                return; // the cut-in owns Time.timeScale while it plays
+            if (!session.TryTransition(StageState.Paused))
+                return;
+            Time.timeScale = 0f;
+            systems.InputMode.SetMode(InputMode.UI);
+            view.ShowPause(true);
+        }
+
+        private void Resume()
+        {
+            if (session == null || session.State != StageState.Paused)
+                return;
+            if (!session.TryTransition(StageState.Playing))
+                return;
+            Time.timeScale = 1f;
+            systems.InputMode.SetMode(InputMode.Gameplay);
+            view.ShowPause(false);
+        }
+
+        private void Retry()
+        {
+            if (session == null || session.State != StageState.Paused || systems.Loader.IsBusy)
+                return;
+            if (!session.TryTransition(StageState.Ready))
+                return;
+            Time.timeScale = 1f;
+            view.ShowPause(false);
+            systems.InputMode.SetMode(InputMode.Gameplay);
+            session.ResetForRetry(systems.Save.InitialLives);
+            systems.Save.Current.lives = session.Lives;
+            view.SetLives(session.Lives);
+            view.SetTime(0f);
+            view.SetCoins(0);
+            view.SetSpecials(session.CopySpecials());
+            stageRoot.ResetForAttempt(); // collectibles, checkpoints, defeated enemies, hazards, goal
+            PlacePlayerAtSpawn();
+            cameraFollow.SnapToTarget();
+            StartCoroutine(ReadyRoutine(waitForFade: false));
+        }
+
+        private void OpenSettings()
+        {
+            if (systems.Popups.IsBlocking)
+                return;
+            systems.Popups.OpenSettings();
+        }
+
+        private void RequestExit()
+        {
+            if (systems.Popups.IsBlocking || systems.Loader.IsBusy)
+                return;
+            systems.Popups.OpenConfirm("pause.confirm_exit", ExitToWorldMap);
+        }
+
+        private void ExitToWorldMap()
+        {
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.WorldMap, null, LoadReason.StageExit));
+        }
+
+        // ---------------------------------------------------------------- dead / game over
+
+        private void Die()
+        {
+            if (!session.TryTransition(StageState.Dead))
+                return;
+            Sfx.Play(SfxId.Death);
+            bool hasLives = session.ConsumeLife();
+            systems.Save.Current.lives = session.Lives;
+            view.SetLives(session.Lives);
+            player.SetControl(false);
+            player.Freeze(true);
+            StartCoroutine(DeadRoutine(hasLives));
+        }
+
+        private IEnumerator DeadRoutine(bool respawn)
+        {
+            view.ShowMessage("ingame.dead");
+            yield return WaitRealtime(deadDuration);
+            view.HideMessage();
+
+            if (respawn)
+            {
+                RequireTransition(StageState.Ready);
+                stageRoot.ResetForRespawn(); // hazards and movers restart; collected items stay collected
+                PlacePlayerAtSpawn();
+                cameraFollow.SnapToTarget();
+                yield return ReadyRoutine(waitForFade: false);
+            }
+            else
+            {
+                RequireTransition(StageState.GameOver);
+                Time.timeScale = 0f;
+                systems.InputMode.SetMode(InputMode.UI);
+                view.ShowGameOver();
+            }
+        }
+
+        private void OnGameOverContinue()
+        {
+            if (systems.Loader.IsBusy)
+                return;
+            // Lives are restored so the world map is not a dead end.
+            systems.Save.ResetLives();
+            if (!systems.Save.Save())
+                Debug.LogError("[InGame] Failed to save after game over.");
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.WorldMap, null, LoadReason.GameOver));
+        }
+
+        // ---------------------------------------------------------------- clear
+
+        private void OnGoalReached()
+        {
+            if (session == null || !session.TryTransition(StageState.Clear))
+                return;
+            Sfx.Play(SfxId.StageClear);
+            player.SetControl(false);
+            player.Freeze(true);
+            StartCoroutine(ClearRoutine());
+        }
+
+        private IEnumerator ClearRoutine()
+        {
+            float presentationDuration = view.ShowClearCelebration(clearDuration);
+
+            // Record and save immediately (spec 5.6 "Clear: record / save").
+            var save = systems.Save;
+            save.Current.RecordClear(stageData.StageId, session.Elapsed, session.CopySpecials(), session.Coins);
+            save.Current.lives = session.Lives;
+            if (systems.StageDb.TryGetNodeByStage(stageData.StageId, out var node))
+                save.Current.currentNodeId = node.NodeId;
+            if (!save.Save())
+                Debug.LogError("[InGame] Failed to save stage clear.");
+
+            yield return WaitRealtime(presentationDuration);
+
+            RequireTransition(StageState.Result);
+            Time.timeScale = 0f;
+            systems.InputMode.SetMode(InputMode.UI);
+            view.ShowResult(session.Elapsed);
+        }
+
+        private void OnResultContinue()
+        {
+            if (systems.Loader.IsBusy)
+                return;
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.WorldMap, stageData.StageId, LoadReason.StageClear));
+        }
+    }
+}

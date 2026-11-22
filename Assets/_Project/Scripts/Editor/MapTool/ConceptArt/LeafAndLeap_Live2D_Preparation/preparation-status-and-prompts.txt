@@ -1,0 +1,16 @@
+Live2D preparation — 2026-11-01
+Mode: built-in image_gen edits.
+Status: initial source assets only, NOT a completed Live2D model or complete part split.
+01-character-transparent.png: full character RGBA extraction; alpha verified. Generated reconstruction, not a pixel-identical cutout.
+02-background-clean.png: character and windmill rotor removed; occluded background reconstructed.
+Existing game continues using the static cel title. These preparation files have not replaced runtime assets.
+Remaining: aligned layered PSD; back/front/side hair, ribbons, face base, eyelids, irises, brows, mouth, torso, arms, legs; separate rotor and foreground foliage; hidden-surface painting; Cubism mesh/deformers/parameters/physics; moc3 export; Unity integration and tests.
+Cubism Editor not found in default install locations; user confirmed not installed.
+Official installer: https://www.live2d.com/en/cubism/download/editor/
+
+CHARACTER PROMPT
+Use case: background-extraction. Edit target: supplied cel-shaded meadow title illustration. Extract ONLY the full standing SD Unity-chan character as a clean transparent RGBA PNG. Preserve the exact face, expression, pose, proportions, blonde hair strands flowing right, tall orange ribbons, black forehead band, turquoise eyes, brown vest with orange piping, cyan sleeves/skirt, red wrist cuff, striped yellow/brown stockings and both shoes. Do not redesign or change costume. Include every hair tip and both ribbon tips, no clipping. Remove ALL scenery, grass, flowers, particles, ground shadow, windmill and sky; holes between hair strands and between limbs must be truly transparent, not filled. Center the entire character on a portrait-ish transparent canvas with moderate clean margins, high resolution, retain clean cel linework and original light. Single intact character, not a sprite sheet, no labels, no checkerboard painted in image. Actual transparent background.
+
+BACKGROUND PROMPT
+Use case: precise-object-edit. Edit target: supplied cel-style game meadow title art. Create a clean background plate by removing ONLY the whole girl character, all her blonde hair, orange ribbons, clothing, limbs and shoes, plus her ground shadow. Reconstruct the occluded meadow, small flowers, grass, lake and distant forest naturally. Also remove ONLY the four rotating sail/blade arms of the far-right windmill, leaving its tower, roof and central axle intact for a separate rotor asset. Preserve all other scenery pixel layout as closely as possible: exact wide composition, dark empty left 43 percent, sunset, skyline, clouds, far-right windmill location, fence, houses, foreground flowers and rock. Same clean gentle cel shading and palette. No people, no character, no new buildings, no lettering, no border. Full original wide frame, no crop, opaque image.
+

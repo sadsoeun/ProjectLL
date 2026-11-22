@@ -1,0 +1,20 @@
+2026-11-16 — Localized UI overflow fitting
+
+Installed: LocalizedTextFit.cs, LocalizedText.cs, UiKit.cs, GoldUiTheme.cs, UiScreenLayout.cs.
+Base font sizes, Noto Sans, colors, padding and button dimensions are preserved.
+Button labels measure single-line width and height and reduce font size only when needed.
+Non-button paragraphs keep wrapping and shrink only to fit their allotted height.
+Translations, font changes, rect changes and UI restyling trigger remeasurement.
+Shorter text and wider bounds restore the recorded design size. No cumulative shrinking.
+Render measurements are cached when inputs remain unchanged.
+
+Full project runtime and Editor compilation passed in a separate output directory outside Assets.
+Isolated Unity renderer: 5 menu languages at 1920x1080, 1280x720, 1024x768 and 2560x1080.
+World-map menu geometry: button 200x72, label padding 24 horizontal / 4 vertical, design font size 40.
+Japanese メニュー fits at 37, with one line and no clipped characters.
+Korean, English, Simplified Chinese and Spanish menu labels stay at 40.
+Tests passed: language/font changes, narrow/wide resize recovery, repeated style application,
+single-line action layout and multiline description height.
+Images are isolated UI renders using the game's fonts and exact fitter, not a world-map playthrough.
+Existing common UI verification assertions now accept overflow-only reduction from the shared design size.
+Original source backups are stored as *.before.txt in this folder.

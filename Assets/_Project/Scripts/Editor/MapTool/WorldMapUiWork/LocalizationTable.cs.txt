@@ -1,0 +1,204 @@
+using System.Collections.Generic;
+
+namespace MyGame
+{
+    /// <summary>
+    /// Minimal in-code string table. Column order: en, zh-Hans, ko, es, ja.
+    /// Designed to be replaced by the Unity Localization package later (keys stay the same).
+    /// </summary>
+    public static class LocalizationTable
+    {
+        public static readonly string[] LanguageCodes = { "en", "zh-Hans", "ko", "es", "ja" };
+        public static readonly string[] NativeNames = { "English", "中文", "한국어", "Español", "日本語" };
+        public const string DefaultLanguage = "en";
+
+        private static readonly Dictionary<string, string[]> Table = Build();
+
+        public static int IndexOf(string code)
+        {
+            for (int i = 0; i < LanguageCodes.Length; i++)
+                if (LanguageCodes[i] == code) return i;
+            return -1;
+        }
+
+        public static bool IsSupported(string code) => IndexOf(code) >= 0;
+
+        public static bool TryGet(string languageCode, string key, out string value)
+        {
+            value = null;
+            int idx = IndexOf(languageCode);
+            if (idx < 0) idx = 0;
+            if (string.IsNullOrEmpty(key) || !Table.TryGetValue(key, out var row))
+                return false;
+            value = string.IsNullOrEmpty(row[idx]) ? row[0] : row[idx];
+            return true;
+        }
+
+        /// <summary>Maps Application.systemLanguage to a supported code (spec 5.2).</summary>
+        public static string FromSystemLanguage(UnityEngine.SystemLanguage lang)
+        {
+            switch (lang)
+            {
+                case UnityEngine.SystemLanguage.Chinese:
+                case UnityEngine.SystemLanguage.ChineseSimplified:
+                    return "zh-Hans";
+                case UnityEngine.SystemLanguage.Korean: return "ko";
+                case UnityEngine.SystemLanguage.Spanish: return "es";
+                case UnityEngine.SystemLanguage.Japanese: return "ja";
+                default: return DefaultLanguage;
+            }
+        }
+
+        private static void Add(Dictionary<string, string[]> t, string key, string en, string zh, string ko, string es, string ja)
+        {
+            t[key] = new[] { en, zh, ko, es, ja };
+        }
+
+        private static Dictionary<string, string[]> Build()
+        {
+            var t = new Dictionary<string, string[]>();
+            Add(t, "worldmap.heading", "WORLD MAP", "世界地图", "월드맵", "MAPA DEL MUNDO", "ワールドマップ");
+            Add(t, "worldmap.hint_short", "Move: WASD / Stick     Zoom: Wheel / LB RB     Menu: Esc / Start", "移动：WASD / 摇杆    缩放：滚轮 / LB RB    菜单：Esc / Start", "이동  WASD / 스틱     확대·축소  휠 / LB RB     메뉴  Esc / Start", "Mover: WASD / palanca    Zoom: rueda / LB RB    Menú: Esc / Start", "移動 WASD / スティック　ズーム ホイール / LB RB　メニュー Esc / Start");
+            Add(t, "worldmap.menu_title", "Adventure menu", "冒险菜单", "모험 메뉴", "Menú de aventura", "冒険メニュー");
+            Add(t, "worldmap.more", "More options", "更多选项", "추가 메뉴", "Más opciones", "その他");
+            Add(t, "worldmap.back", "Back", "返回", "이전 메뉴", "Volver", "戻る");
+            Add(t, "worldmap.menu_note", "Choose a stage to continue your adventure.", "选择关卡，继续冒险。", "스테이지를 선택해 모험을 이어가세요.", "Elige un nivel y continúa la aventura.", "ステージを選んで冒険を続けましょう。");
+            Add(t, "worldmap.data_note", "Progress saves automatically at each stage stop.", "到达关卡时自动保存进度。", "스테이지에 도착하면 진행 상황이 자동 저장됩니다.", "Se guarda al llegar a cada nivel.", "ステージ到着時に進行状況を自動保存します。");
+
+            Add(t, "common.yes", "Yes", "是", "예", "Sí", "はい");
+            Add(t, "common.no", "No", "否", "아니오", "No", "いいえ");
+            Add(t, "common.close", "Close", "关闭", "닫기", "Cerrar", "閉じる");
+
+            Add(t, "lang.header", "Select your language", "请选择语言", "언어를 선택하세요", "Selecciona tu idioma", "言語を選択してください");
+            Add(t, "lang.confirm", "Confirm", "确认", "확인", "Confirmar", "決定");
+            Add(t, "lang.save_failed", "Failed to save settings. Please try again.", "设置保存失败，请重试。", "설정 저장에 실패했습니다. 다시 시도하세요.", "No se pudo guardar la configuración. Inténtalo de nuevo.", "設定の保存に失敗しました。もう一度お試しください。");
+
+            Add(t, "title.new_game", "New Game", "新游戏", "새로 시작", "Nueva partida", "はじめから");
+            Add(t, "title.continue", "Continue", "继续游戏", "이어하기", "Continuar", "つづきから");
+            Add(t, "title.settings", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "title.quit", "Quit", "退出游戏", "게임 종료", "Salir", "ゲーム終了");
+            Add(t, "title.confirm_overwrite", "Existing progress will be deleted.\nStart a new game?", "现有进度将被删除。\n要开始新游戏吗？", "기존 진행이 삭제됩니다.\n새로 시작할까요?", "Se borrará tu progreso actual.\n¿Empezar una nueva partida?", "既存の進行データが削除されます。\n最初から始めますか？");
+            Add(t, "title.confirm_quit", "Quit the game?", "要退出游戏吗？", "게임을 종료할까요?", "¿Salir del juego?", "ゲームを終了しますか？");
+            Add(t, "title.save_corrupted", "The save file was damaged and could not be loaded.", "存档文件已损坏，无法读取。", "세이브 파일이 손상되어 불러올 수 없습니다.", "El archivo de guardado está dañado y no se pudo cargar.", "セーブファイルが破損しており、読み込めませんでした。");
+            Add(t, "title.save_recovered", "The save file was restored from a backup.", "存档已从备份中恢复。", "세이브 파일을 백업에서 복구했습니다.", "El guardado se restauró desde una copia de seguridad.", "セーブファイルをバックアップから復元しました。");
+            Add(t, "title.save_failed", "Failed to write the save file.", "存档写入失败。", "세이브 파일을 저장하지 못했습니다.", "No se pudo escribir el archivo de guardado.", "セーブファイルの書き込みに失敗しました。");
+
+            Add(t, "settings.title", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "settings.language", "Language", "语言", "언어", "Idioma", "言語");
+            Add(t, "settings.master", "Master Volume", "主音量", "전체 볼륨", "Volumen general", "マスター音量");
+            Add(t, "settings.bgm", "BGM Volume", "音乐音量", "배경음 볼륨", "Volumen de música", "BGM音量");
+            Add(t, "settings.sfx", "SFX Volume", "音效音量", "효과음 볼륨", "Volumen de efectos", "SE音量");
+            Add(t, "settings.fullscreen", "Fullscreen", "全屏", "전체 화면", "Pantalla completa", "フルスクリーン");
+            Add(t, "settings.vsync", "V-Sync", "垂直同步", "수직 동기화", "Sincronización vertical", "垂直同期");
+
+            Add(t, "loading.loading", "Loading...", "加载中...", "로딩 중...", "Cargando...", "読み込み中...");
+            Add(t, "loading.tip1", "Tip: Hold the jump button to jump higher.", "提示：按住跳跃键可以跳得更高。", "팁: 점프 버튼을 길게 누르면 더 높이 뜁니다.", "Consejo: mantén pulsado el salto para saltar más alto.", "ヒント：ジャンプボタンを長押しすると高く跳べます。");
+            Add(t, "loading.tip2", "Tip: Falling into a pit costs one life.", "提示：掉进坑里会失去一条命。", "팁: 구덩이에 떨어지면 목숨이 하나 줄어듭니다.", "Consejo: caer a un foso cuesta una vida.", "ヒント：穴に落ちると残機が1つ減ります。");
+            Add(t, "loading.tip3", "Tip: Clear a stage to open the next one.", "提示：通关后会开启下一关。", "팁: 스테이지를 클리어하면 다음 스테이지가 열립니다.", "Consejo: supera un nivel para abrir el siguiente.", "ヒント：ステージをクリアすると次のステージが開きます。");
+
+            Add(t, "worldmap.state.locked", "Locked", "未解锁", "잠김", "Bloqueado", "ロック中");
+            Add(t, "worldmap.state.open", "Open", "可挑战", "열림", "Abierto", "挑戦可能");
+            Add(t, "worldmap.state.cleared", "Cleared", "已通关", "클리어", "Superado", "クリア済み");
+            Add(t, "worldmap.hint", "Move: Arrow / WASD / Stick    Enter: Enter / Space / A    Zoom: Wheel / - = / LB RB    Menu: Esc / Start", "移动：方向键 / WASD / 摇杆    进入：Enter / 空格 / A    缩放：滚轮 / - = / LB RB    菜单：Esc / Start", "이동: 방향키 / WASD / 스틱    진입: Enter / Space / A    줌: 마우스 휠 / - = / LB RB    메뉴: Esc / Start", "Mover: flechas / WASD / palanca    Entrar: Enter / Espacio / A    Zoom: rueda / - = / LB RB    Menú: Esc / Start", "移動：矢印 / WASD / スティック　決定：Enter / Space / A　ズーム：ホイール / - = / LB RB　メニュー：Esc / Start");
+            Add(t, "worldmap.enter", "Enter Stage", "进入关卡", "스테이지 진입", "Entrar al nivel", "ステージへ");
+            Add(t, "worldmap.locked_msg", "This stage is locked.", "该关卡尚未解锁。", "아직 잠긴 스테이지입니다.", "Este nivel está bloqueado.", "このステージはまだロックされています。");
+            Add(t, "worldmap.coming_soon", "This stage is still under construction.", "该关卡正在制作中。", "아직 준비 중인 스테이지입니다.", "Este nivel aún está en construcción.", "このステージは準備中です。");
+            Add(t, "worldmap.unlocked_msg", "A new stage has opened!", "新关卡已开启！", "새 스테이지가 열렸습니다!", "¡Se ha abierto un nuevo nivel!", "新しいステージが開きました！");
+            Add(t, "worldmap.best_time", "Best time: {0}", "最佳时间：{0}", "최고 기록: {0}", "Mejor tiempo: {0}", "ベストタイム：{0}");
+            Add(t, "worldmap.no_record", "Best time: --", "最佳时间：--", "최고 기록: --", "Mejor tiempo: --", "ベストタイム：--");
+            Add(t, "worldmap.specials", "Special items: {0}/{1}", "特殊道具：{0}/{1}", "특별 수집품: {0}/{1}", "Objetos especiales: {0}/{1}", "スペシャルアイテム：{0}/{1}");
+            Add(t, "worldmap.menu", "Menu", "菜单", "메뉴", "Menú", "メニュー");
+            Add(t, "worldmap.saved", "Progress saved.", "进度已保存。", "저장했습니다.", "Progreso guardado.", "セーブしました。");
+            Add(t, "worldmap.save_failed", "Could not save the progress.", "保存失败。", "저장하지 못했습니다.", "No se pudo guardar.", "セーブできませんでした。");
+            Add(t, "worldmap.save_temporary", "Test play: progress is not saved.", "测试游玩：进度不会保存。", "테스트 플레이 중에는 저장되지 않습니다.", "Partida de prueba: no se guarda el progreso.", "テストプレイ中はセーブされません。");
+            Add(t, "worldmap.no_save", "There is no saved game.", "没有存档。", "저장된 데이터가 없습니다.", "No hay partida guardada.", "セーブデータがありません。");
+            Add(t, "worldmap.load_failed", "The save file could not be read.", "无法读取存档。", "저장 데이터를 읽지 못했습니다.", "No se pudo leer la partida guardada.", "セーブデータを読み込めませんでした。");
+            Add(t, "worldmap.confirm_load", "Load the last saved game?", "要读取上次的存档吗？", "마지막으로 저장한 상태를 불러올까요?", "¿Cargar la última partida guardada?", "最後のセーブデータをロードしますか？");
+            Add(t, "worldmap.confirm_quit", "Save and quit the game?", "要保存并退出游戏吗？", "저장하고 게임을 종료할까요?", "¿Guardar y salir del juego?", "セーブしてゲームを終了しますか？");
+
+            Add(t, "pause.title", "Paused", "已暂停", "일시정지", "Pausa", "ポーズ");
+            Add(t, "pause.resume", "Resume", "继续", "이어서 하기", "Reanudar", "再開");
+            Add(t, "pause.retry", "Retry", "重试", "다시 시작", "Reintentar", "リトライ");
+            Add(t, "pause.settings", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "pause.exit_map", "Exit to World Map", "返回世界地图", "월드맵으로", "Salir al mapa", "ワールドマップへ");
+            Add(t, "pause.to_title", "Back to Title", "返回标题", "타이틀로", "Volver al título", "タイトルへ");
+            Add(t, "pause.save", "Save", "保存", "저장하기", "Guardar", "セーブ");
+            Add(t, "pause.load", "Load", "读取", "불러오기", "Cargar", "ロード");
+            Add(t, "pause.quit", "Quit Game", "退出游戏", "종료하기", "Salir del juego", "ゲーム終了");
+            Add(t, "pause.confirm_exit", "Leave the stage and return to the world map?", "要离开关卡并返回世界地图吗？", "스테이지를 나가 월드맵으로 돌아갈까요?", "¿Salir del nivel y volver al mapa?", "ステージを出てワールドマップに戻りますか？");
+
+            Add(t, "ingame.lives", "Lives: {0}", "生命：{0}", "목숨: {0}", "Vidas: {0}", "残機：{0}");
+            Add(t, "ingame.time", "Time {0}", "时间 {0}", "시간 {0}", "Tiempo {0}", "タイム {0}");
+            Add(t, "ingame.ready", "Ready?", "准备！", "준비!", "¿Listo?", "よーい！");
+            Add(t, "ingame.dead", "Missed!", "失败了！", "실패!", "¡Fallaste!", "ミス！");
+            Add(t, "ingame.clear", "Stage Clear!", "通关！", "스테이지 클리어!", "¡Nivel superado!", "ステージクリア！");
+            Add(t, "ingame.result_title", "Result", "结算", "결과", "Resultado", "リザルト");
+            Add(t, "ingame.result_time", "Clear time: {0}", "通关时间：{0}", "클리어 시간: {0}", "Tiempo: {0}", "クリアタイム：{0}");
+            Add(t, "ingame.result_time_label", "CLEAR TIME", "通关时间", "클리어 시간", "TIEMPO TOTAL", "クリアタイム");
+            Add(t, "ingame.result_seconds", "{0:0.00} s", "{0:0.00} 秒", "{0:0.00}초", "{0:0.00} s", "{0:0.00} 秒");
+            Add(t, "ingame.continue", "Continue", "继续", "계속", "Continuar", "つづける");
+            Add(t, "ingame.gameover", "Game Over", "游戏结束", "게임 오버", "Fin del juego", "ゲームオーバー");
+            Add(t, "ingame.coins", "Coins: {0}", "金币：{0}", "코인: {0}", "Monedas: {0}", "コイン：{0}");
+
+            Add(t, "boss.9001.name", "Sprout King", "新芽王", "새싹왕", "Rey Brote", "新芽王");
+            Add(t, "boss.9002.name", "Sun Guardian", "太阳守护者", "태양 수호자", "Guardián Solar", "太陽の守護者");
+            Add(t, "boss.9003.name", "Frost Mammoth", "寒霜猛犸", "서리 매머드", "Mamut de Escarcha", "フロストマンモス");
+            Add(t, "cutin.now", "NOW!", "就是现在!", "지금이다!", "¡AHORA!", "今だ!");
+            Add(t, "stage.W1_S1.name", "1-1  First Steps Meadow", "1-1  初步草原", "1-1  첫 걸음 초원", "1-1  Pradera de los primeros pasos", "1-1  はじめの一歩の草原");
+            Add(t, "stage.W1_S2.name", "1-2  Chasm Valley", "1-2  裂隙山谷", "1-2  틈새 계곡", "1-2  Valle de las grietas", "1-2  裂け目の谷");
+            Add(t, "stage.W1_S3.name", "1-3  Patrol Forest Trail", "1-3  巡逻林道", "1-3  순찰 숲길", "1-3  Sendero del bosque vigilado", "1-3  パトロールの森道");
+            Add(t, "stage.W1_S4.name", "1-4  Ridge of Trials", "1-4  试炼山脊", "1-4  시련의 능선", "1-4  Cresta de las pruebas", "1-4  試練の稜線");
+            // FIVE REALMS world map (Data/WorldMap/world-layout.json). Stages without a scene show worldmap.coming_soon.
+            Add(t, "stage.W1_B.name", "1-B  Sprout King's Fort", "1-B  新芽王的要塞", "1-B  새싹왕의 요새", "1-B  Fuerte del Rey Brote", "1-B  新芽王の砦");
+            Add(t, "stage.W2_S1.name", "2-1  Sandstorm Gate", "2-1  沙风入口", "2-1  모래바람 입구", "2-1  Puerta de la tormenta", "2-1  砂嵐の入口");
+            Add(t, "stage.W2_S2.name", "2-2  Oasis Road", "2-2  绿洲之路", "2-2  오아시스 길", "2-2  Camino del oasis", "2-2  オアシスの道");
+            Add(t, "stage.W2_S3.name", "2-3  Cactus Canyon", "2-3  仙人掌峡谷", "2-3  선인장 계곡", "2-3  Cañón de los cactus", "2-3  サボテン渓谷");
+            Add(t, "stage.W2_S4.name", "2-4  Ruin Stairs", "2-4  遗迹阶梯", "2-4  유적 계단", "2-4  Escaleras de las ruinas", "2-4  遺跡の階段");
+            Add(t, "stage.W2_B.name", "2-B  Temple of the Sun Guardian", "2-B  太阳守护神殿", "2-B  태양 수호 신전", "2-B  Templo del guardián solar", "2-B  太陽守護神殿");
+            Add(t, "stage.W3_S1.name", "3-1  Snowflake Trail", "3-1  雪花山路", "3-1  눈꽃 산길", "3-1  Sendero de copos", "3-1  雪花の山道");
+            Add(t, "stage.W3_S2.name", "3-2  Ice Ridge", "3-2  冰之山脊", "3-2  얼음 능선", "3-2  Cresta de hielo", "3-2  氷の稜線");
+            Add(t, "stage.W3_S3.name", "3-3  Slippery Valley", "3-3  滑溜峡谷", "3-3  미끄럼 계곡", "3-3  Valle resbaladizo", "3-3  すべり谷");
+            Add(t, "stage.W3_S4.name", "3-4  Frozen Bridge", "3-4  冰封之桥", "3-4  얼어붙은 다리", "3-4  Puente congelado", "3-4  凍てつく橋");
+            Add(t, "stage.W3_B.name", "3-B  Frost Citadel", "3-B  寒霜城堡", "3-B  서리 성채", "3-B  Ciudadela de escarcha", "3-B  霜の城塞");
+            Add(t, "stage.W4_S1.name", "4-1  Palm Beach", "4-1  椰林海滩", "4-1  야자수 해변", "4-1  Playa de palmeras", "4-1  ヤシの浜辺");
+            Add(t, "stage.W4_S2.name", "4-2  Stepping Isles", "4-2  踏石岛路", "4-2  징검 섬길", "4-2  Islas de paso", "4-2  飛び石の島道");
+            Add(t, "stage.W4_S3.name", "4-3  Shipwreck Harbor", "4-3  沉船港口", "4-3  난파선 항구", "4-3  Puerto del naufragio", "4-3  難破船の港");
+            Add(t, "stage.W4_S4.name", "4-4  Coral Bridge", "4-4  珊瑚之桥", "4-4  산호 다리", "4-4  Puente de coral", "4-4  サンゴの橋");
+            Add(t, "stage.W4_B.name", "4-B  Conch Palace", "4-B  海螺宫殿", "4-B  왕소라 궁전", "4-B  Palacio de la caracola", "4-B  大巻貝の宮殿");
+            Add(t, "stage.W5_S1.name", "5-1  Ashen Gate", "5-1  灰烬关口", "5-1  잿빛 관문", "5-1  Puerta de ceniza", "5-1  灰色の関門");
+            Add(t, "stage.W5_S2.name", "5-2  Lava Channel", "5-2  熔岩水道", "5-2  용암 수로", "5-2  Canal de lava", "5-2  溶岩水路");
+            Add(t, "stage.W5_S3.name", "5-3  Crater Rim", "5-3  火山口边缘", "5-3  분화구 둘레", "5-3  Borde del cráter", "5-3  火口のふち");
+            Add(t, "stage.W5_S4.name", "5-4  Flame Ramparts", "5-4  火焰城墙", "5-4  불꽃 성벽", "5-4  Murallas de fuego", "5-4  炎の城壁");
+            Add(t, "stage.W5_B.name", "5-B  Ember Citadel", "5-B  余烬最终要塞", "5-B  잿불 최종 요새", "5-B  Ciudadela de brasas", "5-B  残り火の最終要塞");
+
+            // Monster names (Data/Tables/MonsterTable.csv nameKey)
+            Add(t, "monster.1001.name", "Sprout Bean", "嫩芽豆", "새싹콩", "Judía brote", "めばえマメ");
+            Add(t, "monster.1002.name", "Crimson Chaser", "深红追击者", "진홍 추격자", "Perseguidor carmesí", "しんくのチェイサー");
+            Add(t, "monster.1003.name", "Hopping Patroller", "跳跃巡逻兵", "점프 순찰병", "Patrullero saltarín", "ジャンプパトロール");
+            Add(t, "monster.1004.name", "Distant Watcher", "远程监视者", "원거리 감시자", "Vigía lejano", "とおくのみはり");
+            Add(t, "monster.1005.name", "Acorn Snail", "橡果蜗牛", "도토리 달팽이", "Caracol bellota", "どんぐりカタツムリ");
+            Add(t, "monster.1006.name", "Wing Bean", "翅膀豆", "날개콩", "Judía alada", "はねマメ");
+            Add(t, "monster.1007.name", "Spike Chestnut", "尖刺栗", "가시밤톨", "Castaña espinosa", "トゲグリ");
+            // SUN DUNES (stage 2) monsters, Docs/art/sundunes-contract.md
+            Add(t, "monster.1101.name", "Cactus Walker", "仙人掌行者", "선인장 워커", "Cactus andante", "サボテンウォーカー");
+            Add(t, "monster.1102.name", "Sun Scarab", "太阳圣甲虫", "태양 풍뎅이", "Escarabajo solar", "たいようスカラベ");
+            Add(t, "monster.1103.name", "Dune Scorpion", "沙丘蝎", "사구 전갈", "Escorpión de las dunas", "さきゅうサソリ");
+            Add(t, "monster.1104.name", "Sand Slime", "沙史莱姆", "모래 슬라임", "Limo de arena", "すなスライム");
+            Add(t, "monster.1105.name", "Sand Worm", "沙虫", "모래벌레", "Gusano de arena", "サンドワーム");
+            Add(t, "monster.1106.name", "Dusk Bat", "黄昏蝙蝠", "황혼 박쥐", "Murciélago del ocaso", "たそがれコウモリ");
+            Add(t, "monster.1107.name", "Wrapped Guard", "绷带守卫", "붕대 수호자", "Guardián vendado", "ほうたいガード");
+            Add(t, "monster.2101.name", "Sandstone Golem", "砂岩魔像", "사암 골렘", "Gólem de arenisca", "さがんゴーレム");
+            // FROST PEAKS (stage 3) monsters, Docs/art/frostpeaks-contract.md
+            Add(t, "monster.1201.name", "Snow Slime", "雪史莱姆", "눈 슬라임", "Limo de nieve", "ゆきスライム");
+            Add(t, "monster.1202.name", "Ice Beetle", "冰晶甲虫", "빙정 풍뎅이", "Escarabajo de hielo", "ひょうしょうコガネ");
+            Add(t, "monster.1203.name", "Frost Bat", "霜蝙蝠", "서리 박쥐", "Murciélago de escarcha", "しもコウモリ");
+            Add(t, "monster.1204.name", "Snow Hare", "雪兔", "눈 토끼", "Liebre de nieve", "ゆきウサギ");
+            Add(t, "monster.1205.name", "Frost Wolf", "雪原狼", "설원 늑대", "Lobo de escarcha", "せつげんオオカミ");
+            Add(t, "monster.1206.name", "Snowball Sprite", "雪球精灵", "눈덩이 정령", "Espíritu bola de nieve", "ゆきだまのせい");
+            Add(t, "monster.1207.name", "Frost Sentinel", "冰封守卫", "빙결 수호병", "Centinela helado", "ひょうけつのしゅえい");
+            Add(t, "monster.2201.name", "Ice Golem", "冰魔像", "얼음 골렘", "Gólem de hielo", "こおりゴーレム");
+
+            return t;
+        }
+    }
+}

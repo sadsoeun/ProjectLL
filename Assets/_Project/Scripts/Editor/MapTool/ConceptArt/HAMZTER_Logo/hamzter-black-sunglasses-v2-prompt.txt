@@ -1,0 +1,4 @@
+Tool: built-in image generation, edit mode.
+Source: approved original flat hamster logo (exec-f938c204-0fff-4cfd-84e8-1c3a2f8c55be.png).
+Prompt: Preserve the original face markings, silhouette, ears, cheeks, nose, smile, colors and HAMZTER wordmark. Overlay only compact solid black sunglasses over the original eyes: two rounded trapezoid lenses and a thin bridge. No visible temple arms, outer frame ends, hinges, cream outline, highlights or reflections. Keep the original cream forehead lobes visible above the glasses. Preserve the rest of the artwork and transparency.
+Status: revised PNG design draft; no game scene changed.

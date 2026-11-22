@@ -1,0 +1,4510 @@
+{
+  "scenes": [
+    {
+      "scene": "01_Logo.unity",
+      "rects": 3,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "02_LanguageSelect.unity",
+      "rects": 24,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "03_Title.unity",
+      "rects": 18,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "04_Loading.unity",
+      "rects": 9,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "05_WorldMap.unity",
+      "rects": 41,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "06_InGame.unity",
+      "rects": 42,
+      "hud_rects": 41,
+      "hud_layout_hash": "0eb0dfabdec2"
+    },
+    {
+      "scene": "Stage_W1_B.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W1_S1.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W1_S2.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W1_S3.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W1_S4.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W2_B.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W2_S1.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W2_S2.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W2_S3.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W2_S4.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W3_B.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W3_S1.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W3_S2.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W3_S3.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    },
+    {
+      "scene": "Stage_W3_S4.unity",
+      "rects": 0,
+      "hud_rects": 0,
+      "hud_layout_hash": null
+    }
+  ],
+  "layouts": {
+    "01_Logo.unity": [
+      {
+        "path": "LogoCanvas/LogoGroup/LogoImage",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          1050.0,
+          700.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LogoCanvas/LogoGroup",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LogoCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "02_LanguageSelect.unity": [
+      {
+        "path": "LanguageCanvas/GoldAtmosphere",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ko/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/ErrorText",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          200.0
+        ],
+        "m_SizeDelta": [
+          1400.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -220.0
+        ],
+        "m_SizeDelta": [
+          760.0,
+          640.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ja",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -496.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/ConfirmButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_en",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/ConfirmButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          90.0
+        ],
+        "m_SizeDelta": [
+          500.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_es/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_en/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/ConfirmButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ja/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ko/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_zh-Hans/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_en/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ja/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_ko",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -248.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/Header",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -60.0
+        ],
+        "m_SizeDelta": [
+          1600.0,
+          120.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_es/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_es",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -372.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_zh-Hans/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LanguageCanvas/LanguageList/Lang_zh-Hans",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -124.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      }
+    ],
+    "03_Title.unity": [
+      {
+        "path": "TitleCanvas/MainMenu/Button_settings/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_new_game",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          580.0,
+          96.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_settings/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_continue",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -122.0
+        ],
+        "m_SizeDelta": [
+          580.0,
+          96.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/GoldAtmosphere",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_continue/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_quit/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/NoticeText",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          70.0
+        ],
+        "m_SizeDelta": [
+          1650.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_new_game/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_new_game/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_quit",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -366.0
+        ],
+        "m_SizeDelta": [
+          580.0,
+          96.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/VersionText",
+        "m_AnchorMin": [
+          1.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          -30.0,
+          20.0
+        ],
+        "m_SizeDelta": [
+          400.0,
+          50.0
+        ],
+        "m_Pivot": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/GameLogo",
+        "m_AnchorMin": [
+          0.0,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          115.0,
+          330.0
+        ],
+        "m_SizeDelta": [
+          780.0,
+          150.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_continue/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_settings",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -244.0
+        ],
+        "m_SizeDelta": [
+          580.0,
+          96.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu/Button_quit/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "TitleCanvas/MainMenu",
+        "m_AnchorMin": [
+          0.0,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          130.0,
+          -35.0
+        ],
+        "m_SizeDelta": [
+          600.0,
+          500.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.5
+        ]
+      }
+    ],
+    "04_Loading.unity": [
+      {
+        "path": "LoadingCanvas/ProgressBar",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          130.0
+        ],
+        "m_SizeDelta": [
+          1100.0,
+          30.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "LoadingCanvas/TipText",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          200.0
+        ],
+        "m_SizeDelta": [
+          1500.0,
+          90.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "LoadingCanvas/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LoadingCanvas/ProgressBar/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LoadingCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "path": "LoadingCanvas/LoadingLabel",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -60.0
+        ],
+        "m_SizeDelta": [
+          900.0,
+          90.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LoadingCanvas/LoadingIcon",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          80.0
+        ],
+        "m_SizeDelta": [
+          110.0,
+          110.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LoadingCanvas/ProgressBar/ProgressFill",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "LoadingCanvas/LoadingIcon/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "05_WorldMap.unity": [
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/TitleButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/SpecialSlots",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          660.0,
+          -211.0
+        ],
+        "m_SizeDelta": [
+          168.0,
+          57.600002
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/HintText",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          -130.0,
+          -32.0
+        ],
+        "m_SizeDelta": [
+          1560.0,
+          44.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/TitleButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -534.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/StateText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          40.0,
+          -100.0
+        ],
+        "m_SizeDelta": [
+          500.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/Title",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -40.0
+        ],
+        "m_SizeDelta": [
+          600.0,
+          80.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          760.0,
+          764.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/BestTimeText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          40.0,
+          -155.0
+        ],
+        "m_SizeDelta": [
+          700.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/MenuButton",
+        "m_AnchorMin": [
+          1.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          -24.0,
+          -16.0
+        ],
+        "m_SizeDelta": [
+          220.0,
+          76.0
+        ],
+        "m_Pivot": [
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SettingsButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SettingsButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/ResumeButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SaveButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/ResumeButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/EnterButton",
+        "m_AnchorMin": [
+          1.0,
+          0.5
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          -40.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          340.0,
+          110.0
+        ],
+        "m_Pivot": [
+          1.0,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/QuitButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/TitleButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SettingsButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -438.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          40.0
+        ],
+        "m_SizeDelta": [
+          1200.0,
+          290.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/SpecialSlots/Slot1",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          -56.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          36.0,
+          36.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/QuitButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SaveButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/EnterButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/MenuButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/SpecialSlots/Slot3",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          56.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          36.0,
+          36.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/SaveButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -246.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/MessageText",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -100.0
+        ],
+        "m_SizeDelta": [
+          1500.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/LoadButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -342.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/SpecialsText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          40.0,
+          -215.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/LoadButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/SpecialSlots/Slot2",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          36.0,
+          36.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/QuitButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -630.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/StageNameText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          40.0,
+          -20.0
+        ],
+        "m_SizeDelta": [
+          760.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/MenuButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/StageInfoPanel/EnterButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/ResumeButton",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -150.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          84.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "WorldMapCanvas/PauseMenu/Window/LoadButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "06_InGame.unity": [
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_resume/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_retry/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_exit_map/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/StageNameText",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -26.0
+        ],
+        "m_SizeDelta": [
+          900.0,
+          55.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_resume",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -160.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window/ContinueButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          60.0
+        ],
+        "m_SizeDelta": [
+          480.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_settings",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -420.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/SpecialSlots/Slot2",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          44.0,
+          44.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/SpecialSlots/Slot1",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          -70.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          44.0,
+          44.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/TimeText",
+        "m_AnchorMin": [
+          1.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          -34.0,
+          -26.0
+        ],
+        "m_SizeDelta": [
+          390.0,
+          55.0
+        ],
+        "m_Pivot": [
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_settings/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window/Title",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -80.0
+        ],
+        "m_SizeDelta": [
+          800.0,
+          130.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/MessageText/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/LivesText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          34.0,
+          -26.0
+        ],
+        "m_SizeDelta": [
+          390.0,
+          55.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_exit_map/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Title",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -40.0
+        ],
+        "m_SizeDelta": [
+          600.0,
+          80.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window/ContinueButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_settings/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/MessageText",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          120.0
+        ],
+        "m_SizeDelta": [
+          1600.0,
+          200.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/ContinueButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          60.0
+        ],
+        "m_SizeDelta": [
+          480.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/SpecialSlots",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -100.0
+        ],
+        "m_SizeDelta": [
+          210.0,
+          70.4
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          760.0,
+          820.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_retry",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -290.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          900.0,
+          560.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          900.0,
+          480.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/ContinueButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/TimeText",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -200.0
+        ],
+        "m_SizeDelta": [
+          800.0,
+          80.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/CoinsText",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          34.0,
+          -82.0
+        ],
+        "m_SizeDelta": [
+          390.0,
+          48.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_resume/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_exit_map",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -550.0
+        ],
+        "m_SizeDelta": [
+          560.0,
+          100.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/Title",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -50.0
+        ],
+        "m_SizeDelta": [
+          800.0,
+          110.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu/Window/Button_retry/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/ResultPanel/Window/ContinueButton/GoldLinework",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/GameOverPanel/Window/ContinueButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -48.0,
+          -16.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/SpecialSlots/Slot3",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          70.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          44.0,
+          44.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "HUDCanvas/PauseMenu",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "Stage_W1_B.unity": [],
+    "Stage_W1_S1.unity": [],
+    "Stage_W1_S2.unity": [],
+    "Stage_W1_S3.unity": [],
+    "Stage_W1_S4.unity": [],
+    "Stage_W2_B.unity": [],
+    "Stage_W2_S1.unity": [],
+    "Stage_W2_S2.unity": [],
+    "Stage_W2_S3.unity": [],
+    "Stage_W2_S4.unity": [],
+    "Stage_W3_B.unity": [],
+    "Stage_W3_S1.unity": [],
+    "Stage_W3_S2.unity": [],
+    "Stage_W3_S3.unity": [],
+    "Stage_W3_S4.unity": [],
+    "ConfirmPopup.prefab": [
+      {
+        "path": "ConfirmPopup",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          900.0,
+          420.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window/Message",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -40.0
+        ],
+        "m_SizeDelta": [
+          800.0,
+          220.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window/YesButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          -170.0,
+          40.0
+        ],
+        "m_SizeDelta": [
+          300.0,
+          90.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window/NoButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          170.0,
+          40.0
+        ],
+        "m_SizeDelta": [
+          300.0,
+          90.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window/YesButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "ConfirmPopup/Window/NoButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "SettingsPopup.prefab": [
+      {
+        "path": "SettingsPopup/Window/LanguageLabel",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          300.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider/Handle Slide Area/Handle",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          32.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          480.0,
+          -370.0
+        ],
+        "m_SizeDelta": [
+          740.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider/Fill Area",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          -5.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/VsyncToggle/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          56.0,
+          56.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/CloseButton",
+        "m_AnchorMin": [
+          0.5,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          40.0
+        ],
+        "m_SizeDelta": [
+          360.0,
+          90.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmLabel",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -360.0
+        ],
+        "m_SizeDelta": [
+          400.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_ja/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider/Handle Slide Area/Handle",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          32.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider/Handle Slide Area",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Title",
+        "m_AnchorMin": [
+          0.5,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.5,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          -30.0
+        ],
+        "m_SizeDelta": [
+          800.0,
+          80.0
+        ],
+        "m_Pivot": [
+          0.5,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_en/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          1300.0,
+          900.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/FullscreenToggle/Background/Checkmark",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          44.8,
+          44.8
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_ko",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          730.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          170.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider/Fill Area/Fill",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          10.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider/Handle Slide Area",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/VsyncToggle/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          38.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -76.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_ja",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          1090.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          170.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/VsyncToggle",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -650.0
+        ],
+        "m_SizeDelta": [
+          600.0,
+          56.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider/Fill Area/Fill",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          10.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxLabel",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -460.0
+        ],
+        "m_SizeDelta": [
+          400.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_ko/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider/Fill Area/Fill",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          10.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/FullscreenToggle",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -570.0
+        ],
+        "m_SizeDelta": [
+          600.0,
+          56.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_es/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_zh-Hans/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider/Fill Area",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          -5.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_en",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          370.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          170.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider/Handle Slide Area/Handle",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          32.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          480.0,
+          -270.0
+        ],
+        "m_SizeDelta": [
+          740.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_es",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          910.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          170.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/VsyncToggle/Background/Checkmark",
+        "m_AnchorMin": [
+          0.5,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.5,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          44.8,
+          44.8
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterSlider/Fill Area",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          -5.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/MasterLabel",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          60.0,
+          -260.0
+        ],
+        "m_SizeDelta": [
+          400.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/FullscreenToggle/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.5
+        ],
+        "m_AnchorMax": [
+          0.0,
+          0.5
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          56.0,
+          56.0
+        ],
+        "m_Pivot": [
+          0.0,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          480.0,
+          -470.0
+        ],
+        "m_SizeDelta": [
+          740.0,
+          50.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/CloseButton/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/BgmSlider/Handle Slide Area",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -20.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/FullscreenToggle/Label",
+        "m_AnchorMin": [
+          0.0,
+          0.0
+        ],
+        "m_AnchorMax": [
+          1.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          38.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          -76.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/SfxSlider/Background",
+        "m_AnchorMin": [
+          0.0,
+          0.25
+        ],
+        "m_AnchorMax": [
+          1.0,
+          0.75
+        ],
+        "m_AnchoredPosition": [
+          0.0,
+          0.0
+        ],
+        "m_SizeDelta": [
+          0.0,
+          0.0
+        ],
+        "m_Pivot": [
+          0.5,
+          0.5
+        ]
+      },
+      {
+        "path": "SettingsPopup/Window/Lang_zh-Hans",
+        "m_AnchorMin": [
+          0.0,
+          1.0
+        ],
+        "m_AnchorMax": [
+          0.0,
+          1.0
+        ],
+        "m_AnchoredPosition": [
+          550.0,
+          -140.0
+        ],
+        "m_SizeDelta": [
+          170.0,
+          70.0
+        ],
+        "m_Pivot": [
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  }
+}

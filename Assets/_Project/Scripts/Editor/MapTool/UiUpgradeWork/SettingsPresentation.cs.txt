@@ -1,0 +1,103 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    [DisallowMultipleComponent]
+    public sealed class SettingsPresentation:MonoBehaviour
+    {
+        private RectTransform window;
+        private Slider master,bgm,sfx;
+        private Toggle fullscreen,vsync;
+        private Button language,close;
+        private Button[] languages;
+        private Transform[] mainRows;
+        private bool initialized;
+        public bool LanguagePage { get; private set; }
+        public static SettingsPresentation Apply(Transform root)
+        {
+            var view=UiKit.Ensure<SettingsPresentation>(root);view.Initialize();view.Layout();view.RefreshValues();return view;
+        }
+        private void Initialize()
+        {
+            if(initialized)return;window=transform.Find("Window") as RectTransform;if(window==null)return;initialized=true;
+            master=window.Find("MasterSlider").GetComponent<Slider>();bgm=window.Find("BgmSlider").GetComponent<Slider>();sfx=window.Find("SfxSlider").GetComponent<Slider>();
+            fullscreen=window.Find("FullscreenToggle").GetComponent<Toggle>();vsync=window.Find("VsyncToggle").GetComponent<Toggle>();close=window.Find("CloseButton").GetComponent<Button>();
+            language=UiKit.Button(window,"CurrentLanguage","settings.language");language.onClick.AddListener(OpenLanguages);
+            languages=new Button[LocalizationTable.LanguageCodes.Length];
+            for(int i=0;i<languages.Length;i++)languages[i]=window.Find("Lang_"+LocalizationTable.LanguageCodes[i]).GetComponent<Button>();
+            UiKit.Label(window,"AudioHeading","ui.audio",24);UiKit.Label(window,"DisplayHeading","ui.display",24);
+            UiKit.Label(window,"SettingsNote","ui.settings_note",UiKit.CaptionSize,TextAnchor.MiddleCenter);
+            foreach(string n in new[]{"Master","Bgm","Sfx"})UiKit.Label(window,n+"Value",null,UiKit.BodySize,TextAnchor.MiddleRight);
+            UiKit.Label(window,"FullscreenState",null,UiKit.BodySize,TextAnchor.MiddleRight);UiKit.Label(window,"VsyncState",null,UiKit.BodySize,TextAnchor.MiddleRight);
+            mainRows=new[]{window.Find("AudioHeading"),window.Find("DisplayHeading"),window.Find("LanguageLabel"),language.transform,
+                window.Find("MasterLabel"),master.transform,window.Find("MasterValue"),window.Find("BgmLabel"),bgm.transform,window.Find("BgmValue"),
+                window.Find("SfxLabel"),sfx.transform,window.Find("SfxValue"),fullscreen.transform,vsync.transform,window.Find("FullscreenState"),window.Find("VsyncState")};
+            master.onValueChanged.AddListener(_=>RefreshValues());bgm.onValueChanged.AddListener(_=>RefreshValues());sfx.onValueChanged.AddListener(_=>RefreshValues());
+            fullscreen.onValueChanged.AddListener(_=>RefreshValues());vsync.onValueChanged.AddListener(_=>RefreshValues());
+            SetPage(false);
+        }
+        public void RefreshValues()
+        {
+            if(!initialized)return;
+            Literal("MasterValue",Mathf.RoundToInt(master.value*100)+"%");Literal("BgmValue",Mathf.RoundToInt(bgm.value*100)+"%");Literal("SfxValue",Mathf.RoundToInt(sfx.value*100)+"%");
+            UiKit.Key(window.Find("FullscreenState"),fullscreen.isOn?"ui.on":"ui.off");UiKit.Key(window.Find("VsyncState"),vsync.isOn?"ui.on":"ui.off");
+            string code=GameSystems.Exists?GameSystems.Instance.Localization.CurrentLanguage:"ko";
+            int index=Mathf.Max(0,LocalizationTable.IndexOf(code));
+            language.GetComponentInChildren<LocalizedText>(true).SetText(LocalizationTable.NativeNames[index]+"  ›");
+            for(int i=0;i<languages.Length;i++)
+            {
+                languages[i].GetComponentInChildren<LocalizedText>(true).SetText((i==index?"✓  ":"")+LocalizationTable.NativeNames[i]);
+                GoldUiTheme.MarkLanguage(languages[i],i==index);
+            }
+        }
+        private void Literal(string n,string value)=>window.Find(n).GetComponent<LocalizedText>().SetText(value);
+        public void OpenLanguages()
+        {
+            SetPage(true);
+            int index=GameSystems.Exists?Mathf.Max(0,LocalizationTable.IndexOf(GameSystems.Instance.Localization.CurrentLanguage)):0;
+            EventSystem.current?.SetSelectedGameObject(languages[index].gameObject);
+        }
+        public bool CloseLanguages()
+        {
+            if(!LanguagePage)return false;SetPage(false);EventSystem.current?.SetSelectedGameObject(language.gameObject);return true;
+        }
+        private void SetPage(bool page)
+        {
+            LanguagePage=page;foreach(var row in mainRows)row.gameObject.SetActive(!page);
+            foreach(var b in languages)b.gameObject.SetActive(page);
+            UiKit.Key(window.Find("Title"),page?"settings.language":"settings.title");
+            UiKit.Key(close.transform,page?"worldmap.back":"common.close");
+            UiKit.Key(window.Find("SettingsNote"),page?"ui.language_note":"ui.settings_note");
+            if(page)
+            {
+                var order=new Selectable[languages.Length+1];for(int i=0;i<languages.Length;i++)order[i]=languages[i];order[languages.Length]=close;UiKit.Link(order);
+            }
+            else UiKit.Link(master,bgm,sfx,fullscreen,vsync,language,close);
+        }
+        private void OnRectTransformDimensionsChange(){if(initialized)Layout();}
+        public void Layout()
+        {
+            if(!initialized)return;UiKit.Fit(window,(RectTransform)transform,1080,820);
+            UiKit.Place(window.Find("Title"),.5f,1,0,-26,920,64);UiKit.TextStyle(window.Find("Title"),UiKit.HeadingSize,TextAnchor.MiddleCenter);
+            UiKit.Place(window.Find("AudioHeading"),0,1,52,-112,940,40);
+            string[] rows={"Master","Bgm","Sfx"};
+            for(int i=0;i<3;i++)
+            {
+                float y=-164-i*70;UiKit.Place(window.Find(rows[i]+"Label"),0,1,56,y,330,50);UiKit.TextStyle(window.Find(rows[i]+"Label"),28);
+                UiKit.Place(window.Find(rows[i]+"Slider"),0,1,414,y-6,470,40);UiKit.Place(window.Find(rows[i]+"Value"),1,1,-52,y,110,50);
+            }
+            UiKit.Place(window.Find("DisplayHeading"),0,1,52,-384,940,40);
+            UiKit.Place(fullscreen.transform,0,1,56,-438,710,48);UiKit.Place(vsync.transform,0,1,56,-498,710,48);
+            UiKit.TextStyle(fullscreen.GetComponentInChildren<Text>(true).transform,28);UiKit.TextStyle(vsync.GetComponentInChildren<Text>(true).transform,28);
+            UiKit.Place(window.Find("FullscreenState"),1,1,-52,-438,180,48);UiKit.Place(window.Find("VsyncState"),1,1,-52,-498,180,48);
+            UiKit.Place(window.Find("LanguageLabel"),0,1,56,-578,300,58);UiKit.TextStyle(window.Find("LanguageLabel"),28);
+            UiKit.Place(language.transform,1,1,-52,-578,560,72);UiKit.ButtonStyle(language);
+            UiKit.Place(window.Find("SettingsNote"),.5f,1,0,-653,950,42);window.Find("SettingsNote").GetComponent<Text>().color=UiKit.Muted;
+            UiKit.Place(close.transform,.5f,0,0,38,440,72);UiKit.ButtonStyle(close,true);
+            for(int i=0;i<languages.Length;i++){UiKit.Place(languages[i].transform,.5f,1,0,-142-i*92,760,72);UiKit.ButtonStyle(languages[i]);}
+            window.Find("AudioHeading").GetComponent<Text>().color=GoldUiTheme.Gold;window.Find("DisplayHeading").GetComponent<Text>().color=GoldUiTheme.Gold;
+        }
+    }
+}

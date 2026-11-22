@@ -1,0 +1,121 @@
+FIVE REALMS — 보스 5종 블렌더 모델링 원화 패키지 v1
+작성일: 2026-11-13
+제작 방식: built-in image_gen. 원화 PNG 10장 + 제작 명세. 실제 .blend/.fbx 및 게임 적용은 포함하지 않는다.
+
+1. 패키지 구성
+보스당 외형 시트 1장(정면·측면·후면, 분리 부품, 약점/기절 자세)과 공격·VFX 시트 1장.
+총 보스 5종, 공격 제안 15종, 전용 VFX 디자인 30종.
+12 CSV: 보스 치수·부품. 13 CSV: 공격 패턴. 14 CSV: VFX. 15 JSON: 생성 프롬프트. 16 TXT: Claude/Blender 전달문.
+원화의 숫자·라벨보다 본 문서와 CSV 명세를 우선한다. 이미지는 설계 참고이며 정확한 투영 도면이나 완성된 리깅 데이터는 아니다.
+
+2. 테마와 정체성
+W1 GREEN MEADOW — 새싹왕 / GM_BOSS_SproutKing / 기존 BossData 9001.
+둥근 초록 몸, 큰 눈, 짧은 두 팔과 두 발, 잎 망토, 금빛 왕관과 분홍 보석, 두 잎 새싹.
+기존 모델 원화의 정체성을 유지했다. 나무 거인으로 변경하지 않는다.
+W2 SUN DUNES — 태양 수호자 / SD_BOSS_SunGuardian / 기존 9002.
+사암 인간형, 두 기둥 팔과 두 다리, 등 뒤 태양 원판, 가슴 청록 Core, 적갈색 천.
+가슴 Core는 장식 발광부다. 밟기 약점은 머리 위 금빛 원판이다.
+W3 FROST PEAKS — 서리 매머드 / FP_BOSS_FrostMammoth / 기존 9003.
+데이터는 있으나 확인 당시 prefab 미지정. 네 다리, 한 코, 두 엄니, 두 귀, 한 꼬리.
+흰 털 덩어리와 청록 얼음 갑주. 이마 상단 크리스털이 약점.
+W4 CORAL COAST — 산호 소라왕 / CC_BOSS_CoralHermitKing / 신규 제안.
+외부 보행 다리 네 개, 앞 집게 두 개(방패/망치), 눈자루 두 개, 나선형 껍데기와 산호 왕관.
+머리 위 진주가 약점. 껍데기는 진주보다 뒤쪽에 두어 수직 접근 공간을 확보한다.
+W5 EMBER FORTRESS — 용암 갑룡 / EF_BOSS_EmberIronback / 신규 제안.
+네 다리, 발당 단순한 세 발가락, 한 분절 꼬리, 뒤로 향하는 짧은 뿔 두 개. 날개 없음.
+현무암 등 갑주, 청동 띠, 호박색 용암 틈새. 머리 앞쪽 위의 육각 Crest가 약점.
+W4/W5의 BossData ID·프리팹·카탈로그 항목은 이번 작업에서 등록하지 않았다.
+
+3. 크기와 제작 좌표
+Blender: Metric, 1 unit = 1 m, Z-up, 정면 -Y. Unity 내 최종 방향은 기존 프리팹/임포터와 대조한다.
+Root 원점은 바닥 중앙. 별도 이동용 root motion을 넣지 않는다. Scale 적용 후 리깅한다.
+기존 BossData의 몸체 판정 폭/높이:
+W1 2.6/3.5 m, W2 3.0/4.1 m, W3 3.2/3.4 m.
+신규 제안 W4 3.4/3.0 m, W5 3.6/3.5 m.
+수치는 캐릭터 전체 외곽 너비를 강제로 맞추는 값이 아니라 게임플레이 판정 기준이다.
+왕관·팔·엄니·껍데기·꼬리 등의 시각 외곽은 별도로 측정한다. 기존 모델을 임의로 재스케일하지 않는다.
+용암 갑룡의 꼬리 포함 시각 길이는 약 5.5m 제안. 꼬리 피해 판정은 자동으로 생기지 않는다.
+CSV의 삼각형/본 수는 새 모델 제작 목표이며 실측치가 아니다. 기존 새싹왕 모델의 폴리곤 수와 다를 수 있다.
+처음에는 회색 블록아웃으로 플레이어 점프 높이·몸체 폭·머리 도달 가능성을 검사한다.
+
+4. 실루엣·메시·재질
+로우폴리곤 볼륨과 명확한 2~3단 셀 명암. 과도한 검정 면적과 고채도를 피한다.
+각 뷰의 눈·관절·부품 수를 맞춘다. 측면 가림에 의한 생략을 사지 개수 변경으로 해석하지 않는다.
+몸체/관절/장식/약점 발광부를 분리한다. 관절에 연속 토폴로지를 두고 회전 시 틈이 보이지 않게 내부 면을 보완한다.
+털은 큰 면 덩어리로, 잎·산호·얼음·암석은 별도 단순 메시로 만든다.
+주요 머티리얼: Body, Secondary, Trim, Eye, EmissiveWeakPoint, EmissiveSecondary.
+약점 발광과 가슴·용암 틈새의 장식 발광을 분리해 플레이어가 혼동하지 않게 한다.
+발광 강도는 게임 조명에서 조정한다. 외곽선 두께와 셀 셰이더는 원화가 보장하는 런타임 기능이 아니다.
+LOD0 목표는 CSV 참고. LOD1은 실루엣을 유지하며 약 50~60% 삼각형으로 단순화하는 선택안.
+
+5. 리깅과 약점
+Root > Body > Head 구조를 기본으로 하고 각 보스의 다리·팔·코·꼬리·잎·집게를 개별 본으로 나눈다.
+WeakPoint는 가중치 없는 본/트랜스폼으로 머리 상단에 두고 Head(또는 적절한 Body)에 종속한다.
+기절 때 머리가 내려오면 WeakPoint도 함께 내려와야 한다. 발광만 내리고 판정 위치를 남기지 않는다.
+약점 위에 왕관 잎·태양 원판·껍데기·뿔이 수직 접근을 막지 않게 배치한다.
+기절 포즈: 새싹왕 몸 낮춤/잎 처짐, 수호자 무릎 굽힘/머리 숙임, 매머드 앞다리 굽힘,
+소라왕 집게 펼침/몸 숙임, 갑룡 앞다리 굽힘/머리 숙임.
+기존 발광 파츠 탐색명 Core/Crest/Crown/Gem을 고려한다. 소라왕 진주는 Mesh_Gem_Pearl 권장.
+이 명명은 발광 탐색 보조이며 약점 판정을 자동 설정하는 기능은 아니다.
+
+6. 애니메이션과 기존 런타임의 연결
+기존 임포터 인식 클립: Idle, Move, Roar, Anticipate, Attack, Stunned, Hit, Defeat, Shake.
+Idle/Move/Stunned는 루프. 나머지는 기본 비루프. Generic rig, root motion 없음.
+제안 동작을 충실히 만들려면 Anticipate_Charge, Attack_Charge, Anticipate_Slam, Attack_Slam 등의 구분이 필요하다.
+현재 컨트롤러는 Charge와 Slam에 같은 Anticipate/Attack 상태를 호출한다.
+따라서 이 분리 클립들을 그대로 내보내면 모든 동작이 자동 연결되는 것은 아니다.
+별도 클립명 인식과 공격별 상태 매핑은 후속 구현 작업으로 명시한다. Rain은 Shake가 없으면 Attack으로 대체한다.
+게임 이동은 BossController가 담당한다. 돌진 애니메이션에 실제 월드 이동을 중복해서 굽지 않는다.
+강타 충격과 낙하 스폰은 현재 코드 타이머가 기준이다. 애니메이션 이벤트만 추가해 자동 동기화된다고 가정하지 않는다.
+
+7. 공격 패턴과 수치
+각 보스에 Charge / Slam / Rain 변형 3종을 디자인했다. 상세 이름·연출은 13 CSV 참고.
+기존 공통 기준: 예고 0.9s; Charge speed 11m/s(9003은 12); 돌진 피해 높이 2m.
+Charge는 아레나 끝에 도달하면 기절로 넘어간다. 데이터의 chargeEndPause 0.7s를 현재 코드가 실제 대기로 쓰는 것으로 가정하지 않는다.
+Slam은 Attack 시작 0.45s 후 양방향 충격파를 생성하고 0.8s 후 기절로 넘어간다. 파형 속도 7m/s.
+Rain은 표식 1.0s 후 첫 낙하, 0.25s 간격, 높이 12m/낙하 속도 18m/s.
+페이즈별 낙하 수 3/4/5, 기절 시간 2.5/2.0/1.6s. 낙하 시트는 가독성을 위해 대표 3개를 그렸다.
+현재는 개별 공격 종료마다 기절한다. 전체 패턴 묶음이 끝난 뒤에만 기절하는 것으로 해석하지 않는다.
+기존 실제 페이즈:
+9001: Charge / Rain→Charge / Charge→Rain→Charge.
+9002: Slam / Slam→Rain / Rain→Slam→Rain.
+9003: Charge / Slam→Rain / Charge→Rain→Slam.
+따라서 원화의 새싹왕 Slam·수호자 Charge 등은 추가 동작 설계이며 기존 설정에서 모두 사용되는 것은 아니다.
+W4/W5 수치는 기존 공통 기준을 따르는 제안이고 데이터 등록·플레이 테스트 전이다.
+회피 의도: 돌진/낮은 파형은 점프, 낙하는 표식 사이로 이동, 기절 때 머리 밟기.
+실제 회피 가능성은 플레이어 점프 궤적과 판정으로 검증해야 한다.
+현재 낙하 위치 선택은 최소 간격을 제한 횟수만 재시도하므로 모든 경우의 안전 공간을 보장하지 않는다.
+
+8. 이펙트 제작
+보스당 FX01 예고 링, FX02 돌진 궤적, FX03 강타 파형, FX04 낙하체/파편,
+FX05 기절 별/약점 광륜, FX06 격파 입자 — 총 30종.
+시트는 VFX 구성 원화이며 투명 스프라이트나 완성된 애니메이션 시퀀스가 아니다.
+블렌더에서는 링·파형·투사체·파편 메시를 개별 제작하고 먼지/거품/불티는 Unity 파티클로 구성한다.
+피해 판정과 장식 메시를 분리한다. 먼지나 발광 범위를 모두 피해 영역으로 취급하지 않는다.
+용암 갑룡은 상시 바닥 용암/브레스/레이저를 추가하는 설계가 아니다. 전투 바닥의 읽기 쉬운 상태를 유지한다.
+
+9. 확인한 프로젝트 연결점
+Assets/_Project/Scripts/Data/BossData.cs
+Assets/_Project/Scripts/InGame/Boss/BossController.cs
+Assets/_Project/Scripts/InGame/Boss/BossHazard.cs
+Assets/_Project/Scripts/InGame/Boss/BossStunFx.cs
+Assets/_Project/Scripts/Editor/Boss/BossImporter.cs
+Assets/_Project/Scripts/Editor/Boss/BossSetup.cs
+Assets/_Project/Scripts/Editor/StageLayoutData.cs
+Assets/_Project/Scripts/Editor/StageLayoutBuilder.Gimmicks.cs
+Assets/_Project/Scripts/Editor/MapTool/LayoutGeometry.cs
+Assets/_Project/Data/Bosses/Boss_9001.asset / Boss_9002.asset / Boss_9003.asset
+Assets/_Project/Data/StageLayouts/W1_B.json / W2_B.json / W3_B.json
+확인한 W1~3 아레나는 x=72~98, 보스 x=92, 바닥 y=0. 에디터 표시용 3.5m 범위를 실모델 제한으로 해석하지 않는다.
+LayoutBoss의 x는 중심, y는 바닥 기준이며 bossId와 arenaMinX/arenaMaxX를 사용한다.
+기존 몸체 트리거 깊이는 4m이고 높이 중심은 bodyHeight/2. 머리 밟기는 Stunned 상태와 WeakPoint 위치에 연동된다.
+BossCatalog는 BossData 에셋을 사용한다. 별도 BossTable.csv를 전제로 제작하지 않는다.
+기존 아트 참조: C:/Users/PC/UnityStudy/Docs/art/bosses/GM_BOSS_SproutKing_views.png 및 SD_BOSS_SunGuardian_views.png.
+기존 아트/모델/데이터는 수정하지 않았다.
+
+10. 납품 검수 기준
+정면·측면·후면 실루엣 대응 / 사지 수 일치 / 바닥 피벗 / 적용된 스케일 / 분리된 약점 /
+기절 시 약점 이동 / 관절 변형 / root motion 중복 없음 / 텍스처 경로 / 공격 타이밍 /
+플레이어의 점프 회피와 머리 도달 / VFX 표시와 피해 범위 일치.
+기존 ID 9001~9003을 보존한다. W4/W5 신규 ID는 프로젝트 담당자가 충돌 확인 후 배정한다.
+

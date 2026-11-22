@@ -1,0 +1,104 @@
+using System;
+using System.IO;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame.EditorTools
+{
+ public static class IntroVerification
+ {
+  static string report=""; static Camera camera; static IntroSequencePlayer sequence;
+  static RenderTexture capture; static GameSystems owner; static double deadline;static int state,callbacks;static bool decoded;
+  static readonly BindingFlags Private=BindingFlags.NonPublic|BindingFlags.Instance;
+  public static void Run()
+  {
+   try {
+    EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+    camera=new GameObject("Offscreen",typeof(Camera),typeof(AudioListener)).GetComponent<Camera>();
+    camera.orthographic=true;camera.orthographicSize=5;camera.enabled=false;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=Color.black;
+    VerifyLayout();
+    owner=new GameSystems(); sequence=IntroSequencePlayer.Play(owner,()=>callbacks++);
+    sequence.View.Canvas.renderMode=RenderMode.ScreenSpaceCamera;sequence.View.Canvas.worldCamera=camera;sequence.View.Canvas.planeDistance=1;
+    capture=new RenderTexture(1920,1080,24);capture.Create();camera.targetTexture=capture;
+    sequence.Player.sendFrameReadyEvents=true;sequence.Player.frameReady+=(p,n)=>{if(n>0)decoded=true;};
+    deadline=EditorApplication.timeSinceStartup+40;EditorApplication.update+=Poll;
+   }catch(Exception e){Fail(e);}
+  }
+  static void VerifyLayout()
+  {
+   var root=new GameObject("LayoutPreview",typeof(RectTransform));var view=root.AddComponent<IntroView>();view.Build("en");
+   view.Canvas.renderMode=RenderMode.ScreenSpaceCamera;view.Canvas.worldCamera=camera;view.Canvas.planeDistance=1;
+   view.SetReady(AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Backdrop.jpg"));
+   foreach(var size in new[]{new Vector2Int(1920,1080),new Vector2Int(1280,720),new Vector2Int(1024,768),new Vector2Int(2560,1080)})
+   {
+    var rt=new RenderTexture(size.x,size.y,24);rt.Create();camera.targetTexture=rt;
+    for(int pass=0;pass<3;pass++){Canvas.ForceUpdateCanvases();view.Layout();camera.Render();}
+    Require(Mathf.Abs(view.Frame.localScale.x-view.Frame.localScale.y)<.0001,"Distorted aspect");
+    foreach(var lang in LocalizationTable.LanguageCodes)
+    {
+     view.SetLanguage(lang);
+     foreach(var cue in IntroStory.Cues)
+     {
+      Require(IntroStory.Text(lang,cue.Key).Length>0,"Missing translation "+lang+cue.Key);
+      view.SetTime((cue.Start+cue.End)/2);Canvas.ForceUpdateCanvases();view.Caption.GetComponent<LocalizedTextFit>().FitNow();
+      Require(view.Caption.preferredHeight<=view.Caption.rectTransform.rect.height+1,"Caption overflow "+lang+cue.Key);
+      var gen=new TextGenerator();gen.Populate(view.Caption.text,view.Caption.GetGenerationSettings(view.Caption.rectTransform.rect.size));
+      Require(gen.lineCount<=2,"More than two lines "+lang+cue.Key);
+      Require(view.Caption.fontSize>=30,"Unreadably small caption "+lang+cue.Key);
+     }
+     view.SetTime(26);Canvas.ForceUpdateCanvases();camera.Render();
+     if(size.x==1920||lang=="es")Capture(rt,$"Verification/{lang}-{size.x}x{size.y}.png");
+     report+=$"PASS captions: {lang} {size.x}x{size.y}, all 14 cues, <=2 lines, >=30 design font size.\n";
+    }
+    camera.targetTexture=null;rt.Release();UnityEngine.Object.DestroyImmediate(rt);
+   }
+   foreach(var cue in IntroStory.Cues){Require(IntroStory.CueAt(cue.Start)>=0,"Cue start excluded");Require(IntroStory.CueAt(cue.End)!=Array.IndexOf(IntroStory.Cues,cue),"Cue end included");}
+   view.SetTime(7);Require(!view.CaptionPanel.gameObject.activeSelf,"Caption remains in gap");
+   view.SetTime(83);Require(view.Closing.gameObject.activeSelf,"Missing localized closing line");
+   view.SetTime(0);Require(!view.Closing.gameObject.activeSelf,"Closing line before ending");
+   Require(IntroStory.Text("unsupported","intro.skip")==IntroStory.Text("en","intro.skip"),"English fallback failed");
+   UnityEngine.Object.DestroyImmediate(root);
+  }
+  static void Poll()
+  {
+   try {
+    if(EditorApplication.timeSinceStartup>deadline)throw new Exception("Video verification timed out in state "+state+" prepared="+sequence.Player.isPrepared+" time="+sequence.Player.time);
+    if(state==0 && sequence.Player.isPrepared && decoded)
+    {
+     report+="PASS actual Unity VideoPlayer: prepared and decoded frames from installed-format MP4.\n";
+     Require(Math.Abs(sequence.GetComponent<AudioSource>().volume-.5f)<.001,"BGM volume not applied");
+     owner.Settings.Data.bgmVolume=.2f;owner.Settings.Notify();Require(Math.Abs(sequence.GetComponent<AudioSource>().volume-.2f)<.001,"Live volume change failed");
+     sequence.Player.time=32.5;state=1;deadline=EditorApplication.timeSinceStartup+20;
+    }
+    else if(state==1 && Math.Abs(sequence.Player.time-32.5)<2)
+    {
+     sequence.Player.Pause();owner.Localization.Set("ja");sequence.View.SetTime(32.5);Canvas.ForceUpdateCanvases();sequence.View.Layout();camera.Render();
+     Require(sequence.View.Caption.text==IntroStory.Text("ja","intro.05"),"Live language change failed");
+     Capture(capture,"Verification/actual-video-ja.png");
+     typeof(IntroSequencePlayer).GetField("began",Private).SetValue(sequence,Time.realtimeSinceStartup-2);
+     sequence.Skip();sequence.Skip();typeof(IntroSequencePlayer).GetMethod("Complete",Private).Invoke(sequence,null);
+     Require(callbacks==1 && sequence.IsFinished,"Duplicate completion callback");
+     Require(!sequence.Player.isPlaying,"Video playing after skip");
+     Require(!sequence.View.Picture.enabled,"Last frame remains after skip");
+     report+="PASS skip / repeated completion: exactly one continuation, stopped playback, black transition.\n";
+     report+="PASS BGM volume change and Japanese subtitle/font language update.\n";
+     UnityEngine.Object.DestroyImmediate(sequence.gameObject);
+     callbacks=0;sequence=IntroSequencePlayer.Play(owner,()=>callbacks++);
+     typeof(IntroSequencePlayer).GetMethod("Failed",Private).Invoke(sequence,new object[]{sequence.Player,"Intentional verification error"});
+     Require(sequence.IsFinished&&callbacks==1,"Error fallback did not continue");
+     typeof(IntroSequencePlayer).GetMethod("Failed",Private).Invoke(sequence,new object[]{sequence.Player,"Repeated test error"});Require(callbacks==1,"Error callback repeated");
+     report+="PASS decoder-error fallback continues once.\n";
+     File.WriteAllText("Verification/results.txt",report+"Scope: isolated Unity editor/offscreen playback and actual runtime view/player with service adapters; full title-to-world-map playthrough not executed.\n");
+     EditorApplication.update-=Poll;EditorApplication.Exit(0);
+    }
+   }catch(Exception e){Fail(e);}
+  }
+  static void Capture(RenderTexture rt,string file)
+  {RenderTexture.active=rt;var t=new Texture2D(rt.width,rt.height,TextureFormat.RGB24,false);t.ReadPixels(new Rect(0,0,rt.width,rt.height),0,0);t.Apply();File.WriteAllBytes(file,t.EncodeToPNG());UnityEngine.Object.DestroyImmediate(t);RenderTexture.active=null;}
+  static void Require(bool test,string message){if(!test)throw new Exception(message);}
+  static void Fail(Exception e){EditorApplication.update-=Poll;File.WriteAllText("Verification/results.txt",report+"FAIL: "+e);Debug.LogException(e);EditorApplication.Exit(1);}
+ }
+}

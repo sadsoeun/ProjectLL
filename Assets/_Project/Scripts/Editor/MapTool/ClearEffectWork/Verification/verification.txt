@@ -1,0 +1,3 @@
+PASS: Unity runtime/editor compilation; initial hidden state; minimum/extended duration; fade endpoints; stop/replay; zero-timescale sampling; five localized renders.
+Rendered from the actual uGUI effect in an isolated preview scene. No player saves or stage scenes modified.
+Full goal-to-result playthrough and real-time animation still require Play Mode verification.

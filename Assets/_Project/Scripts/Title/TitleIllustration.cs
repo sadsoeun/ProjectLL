@@ -1,0 +1,93 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Cel title artwork and original explorer character in an aspect-preserving design space.</summary>
+    [DisallowMultipleComponent]
+    public sealed class TitleIllustration : MonoBehaviour
+    {
+        RawImage art;
+        float elapsed;
+        bool arrivedFromIntro;
+        RectTransform logoRect, menuRect;
+
+        void Start()
+        {
+            arrivedFromIntro=IntroTitleTransition.IsActive;
+            var texture = Resources.Load<Texture2D>("TitleArt/Meadow");
+            var logoTexture = Resources.Load<Texture2D>("TitleArt/Logo");
+            if (texture == null || logoTexture == null) { Debug.LogWarning("Title illustration assets missing."); return; }
+            var rt = GoldUiTheme.Rect("MeadowIllustration", transform);
+            GoldUiTheme.Stretch(rt); rt.SetAsFirstSibling();
+            art = rt.gameObject.AddComponent<RawImage>();
+            art.texture = texture; art.raycastTarget = false;
+            var cleanBackground = Resources.Load<Texture2D>("TitleArt/MeadowBackground");
+            if (cleanBackground != null)
+            {
+                var live = gameObject.AddComponent<TitleExplorerCharacter>();
+                if (live.Initialize(rt)) art.texture = cleanBackground;
+            }
+            var motion = gameObject.AddComponent<TitleAmbientMotion>();
+            motion.Initialize(art);
+            var matte = GoldUiTheme.Rect("TitleAspectMatte", transform);
+            GoldUiTheme.Stretch(matte); matte.SetAsFirstSibling();
+            var matteImage = matte.gameObject.AddComponent<Image>();
+            matteImage.color = new Color(.025f,.025f,.027f,1); matteImage.raycastTarget = false;
+            logoRect = transform.Find("GameLogo") as RectTransform;
+            menuRect = transform.Find("MainMenu") as RectTransform;
+            var atmosphere = transform.Find("GoldAtmosphere");
+            if (atmosphere != null) atmosphere.gameObject.SetActive(false);
+            var logo = transform.Find("GameLogo") as RectTransform;
+            if (logo != null)
+            {
+                var text = logo.GetComponent<Text>(); if (text != null) text.enabled = false;
+                var imageRect = GoldUiTheme.Rect("IllustratedLogo", logo);
+                GoldUiTheme.Stretch(imageRect);
+                var image = imageRect.gameObject.AddComponent<RawImage>();
+                image.texture = logoTexture; image.raycastTarget = false;
+                var fit = imageRect.gameObject.AddComponent<AspectRatioFitter>();
+                fit.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
+                fit.aspectRatio = (float)logoTexture.width / logoTexture.height;
+                logo.sizeDelta = new Vector2(780, 260);
+            }
+        }
+
+        void Update()
+        {
+            if (!IntroTitleTransition.IsActive && (!GameSystems.Exists || !GameSystems.Instance.Loader.IsBusy))
+                elapsed += Time.unscaledDeltaTime;
+        }
+
+        // Keep artwork and controls in the same fitted design space. Never stretch
+        // or crop the character on 4:3, 16:10, ultrawide or portrait windows.
+        void LateUpdate()
+        {
+            if (art == null) return;
+            var canvasRect = ((RectTransform)transform).rect;
+            float scale = Mathf.Min(canvasRect.width / 1920f, canvasRect.height / 1080f);
+            var imageRect = art.rectTransform;
+            imageRect.anchorMin = imageRect.anchorMax = imageRect.pivot = new Vector2(.5f,.5f);
+            imageRect.anchoredPosition = Vector2.zero;
+            float imageAspect = (float)art.texture.width / art.texture.height;
+            float imageWidth = Mathf.Min(1920f,1080f * imageAspect);
+            imageRect.sizeDelta = new Vector2(imageWidth,imageWidth/imageAspect)*scale;
+            if (logoRect != null)
+            {
+                logoRect.anchorMin=logoRect.anchorMax=new Vector2(.5f,.5f);
+                logoRect.pivot=new Vector2(0,.5f); logoRect.localScale=Vector3.one*scale;
+                float intro=arrivedFromIntro?1:1-Mathf.Pow(1-Mathf.Clamp01(elapsed/.9f),3);
+                logoRect.anchoredPosition=new Vector2(-960+115-32*(1-intro),330)*scale;
+                logoRect.sizeDelta=new Vector2(780,260);
+            }
+            if (menuRect != null)
+            {
+                menuRect.anchorMin=menuRect.anchorMax=new Vector2(.5f,.5f);
+                menuRect.pivot=new Vector2(0,.5f); menuRect.localScale=Vector3.one*scale;
+                menuRect.anchoredPosition=new Vector2(-960+130,-35)*scale;
+                menuRect.sizeDelta=new Vector2(600,500);
+            }
+            art.uvRect = new Rect(0, 0, 1, 1);
+        }
+    }
+}

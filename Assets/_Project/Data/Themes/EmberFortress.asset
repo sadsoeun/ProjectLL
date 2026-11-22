@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1317319987a10004889bf7924c65aa2b, type: 3}
+  m_Name: EmberFortress
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::MyGame.EditorTools.StageThemeKit
+  groundCore: {fileID: 3072604023410837024, guid: ca40fc920c8459147a216b537c94e18d, type: 3}
+  groundEndLeft: {fileID: 3629640170873795083, guid: 23a45e64aeb3fc74fbf42e2353a9a0f2, type: 3}
+  groundEndRight: {fileID: 8538882475569832395, guid: 271437e2a4557804e8ec4aba6b6727b4, type: 3}
+  rockCore: {fileID: 2724695212887547710, guid: acbfaff6d36528b44abbdc705402b2f1, type: 3}
+  groundCoreVariants:
+  - {fileID: 7384515562533334158, guid: 1b6f0bb29b0dcbd4da7d82673f25176a, type: 3}
+  - {fileID: 4846193662993688091, guid: cfcc74725f9747142b0fb83ead2409c9, type: 3}
+  rockCoreVariants:
+  - {fileID: 3746047742524078121, guid: 59bdd540d907a534582074565e62a596, type: 3}
+  - {fileID: 7934887369721005676, guid: 8483b9bfa6bc00c40a7ea5e879922d38, type: 3}
+  iceSurface: {fileID: 0}
+  floatingPlatform: {fileID: 7972017541597950192, guid: 30b95996bedf2044b8bf507c3e870c32, type: 3}
+  timberPlatform: {fileID: 1313032487413004713, guid: ecbcb3ce96c622e49845295098a3a3b3, type: 3}
+  crumbleSlab: {fileID: 8478817869181013423, guid: 13881f85b9e76a443b88cbb4deeb4824, type: 3}
+  platformSupport: {fileID: 8119782285055442234, guid: a6df862a5b84e6348a596fe37957f377, type: 3}
+  checkpointVisual: {fileID: 8758874537109630429, guid: 2946853b9a17ebc40b61586df00a2b0b, type: 3}
+  goalVisual: {fileID: 6486699569910164267, guid: b831e142892b7ea408d1375cc133efed, type: 3}
+  coinVisual: {fileID: 4450080509531969899, guid: d639887d2948db54c8b381f44432b129, type: 3}
+  gemVisual: {fileID: 5987696576419745225, guid: 74f38ebde82e9a1449ce704a57c9b3e3, type: 3}
+  fallerVisual: {fileID: 2373735653168095823, guid: 23c672ebf5863194e9de6ab3101fd1ea, type: 3}
+  moverVisual: {fileID: 2373735653168095823, guid: 23c672ebf5863194e9de6ab3101fd1ea, type: 3}
+  spikeTrapVisual: {fileID: 8016081144644284532, guid: f8085a395525fc24b860d1c67f33b030, type: 3}
+  switchVisual: {fileID: 2418137671160140361, guid: fe5790c341d4ffc428093d8f16a1f154, type: 3}
+  gateVisual: {fileID: 2321624672366797738, guid: 6e5bba13053c0384dbed191c9c86713a, type: 3}
+  spikeVisual: {fileID: 0}
+  arenaWallVisual: {fileID: 2531700913483107862, guid: 8fdd8604fd60dcc4fb64c41b5f29fcb9, type: 3}
+  arenaGateVisual: {fileID: 3734488275486293169, guid: e0bc58b3cb5b57f4c92b991255cfc093, type: 3}
+  useAtmosphere: 1
+  skyColor: {r: 0.4, g: 0.25, b: 0.27, a: 1}
+  fogColor: {r: 0.5, g: 0.33, b: 0.32, a: 1}
+  fogStart: 32
+  fogEnd: 175
+  sunColor: {r: 1, g: 0.82, b: 0.66, a: 1}
+  sunIntensity: 1.1
+  skyMaterial: {fileID: 2100000, guid: 5e2d877162f4f214cbc3bcb25cf939df, type: 2}
+  screenFxProfile: {fileID: 11400000, guid: 7e51ac7374abf1c4fa8399794739d5fb, type: 2}
+  backFillDepth: 3
+  backFillBody: {fileID: 0}
+  backFillRaisedOnly: 0
+  backFillFarBand: 0
+  dressSmall:
+  - {fileID: 729481708231503743, guid: ed137bb2ee7424e4aa19b93eaeb346ca, type: 3}
+  dressMedium:
+  - {fileID: 7861429822068850934, guid: f16ec32ad666d0f4283af4dac7f139b1, type: 3}
+  - {fileID: 729481708231503743, guid: ed137bb2ee7424e4aa19b93eaeb346ca, type: 3}
+  - {fileID: 2821177454346718220, guid: 1831e99808298ca42acd71a0c49a4777, type: 3}
+  dressLarge: []
+  dressDepth: 3
+  dressMidDensity: 0.35
+  dressLipDensity: 0.25
+  ambientSeagulls: 0

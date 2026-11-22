@@ -1,0 +1,89 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>
+    /// Applies a localized string and a CJK-capable font to a legacy uGUI Text.
+    /// With an empty key only the font is applied (text is driven by code via SetText).
+    /// </summary>
+    [RequireComponent(typeof(Text))]
+    public sealed class LocalizedText : MonoBehaviour
+    {
+        [SerializeField] private string key;
+        [Tooltip("If set, this language's font is always used (e.g. language names in the language list).")]
+        [SerializeField] private string fixedFontLanguage;
+
+        private Text text;
+        private object[] args;
+        private bool subscribed;
+
+        private Text Target
+        {
+            get
+            {
+                if (text == null) text = GetComponent<Text>();
+                return text;
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (GameSystems.Exists && !subscribed)
+            {
+                GameSystems.Instance.Localization.LanguageChanged += Refresh;
+                subscribed = true;
+            }
+            Refresh();
+            LocalizedTextFit.Attach(Target);
+        }
+
+        private void OnDisable()
+        {
+            if (subscribed && GameSystems.Exists)
+                GameSystems.Instance.Localization.LanguageChanged -= Refresh;
+            subscribed = false;
+        }
+
+        public void SetKey(string newKey, params object[] newArgs)
+        {
+            key = newKey;
+            args = newArgs;
+            Refresh();
+        }
+
+        public void SetArgs(params object[] newArgs)
+        {
+            args = newArgs;
+            Refresh();
+        }
+
+        /// <summary>Shows a literal (non-localized) string; the key is cleared.</summary>
+        public void SetText(string literal)
+        {
+            key = null;
+            Target.text = literal;
+            ApplyFont();
+        }
+
+        public void ApplyFont()
+        {
+            string lang = !string.IsNullOrEmpty(fixedFontLanguage)
+                ? fixedFontLanguage
+                : (GameSystems.Exists ? GameSystems.Instance.Localization.CurrentLanguage : LocalizationTable.DefaultLanguage);
+            var font = FontProvider.Get(lang);
+            if (Target.font != font)
+                Target.font = font;
+            LocalizedTextFit.Attach(Target);
+        }
+
+        private void Refresh()
+        {
+            ApplyFont();
+            if (string.IsNullOrEmpty(key) || !GameSystems.Exists)
+                return;
+            Target.text = GameSystems.Instance.Localization.Get(key, args);
+            LocalizedTextFit.Attach(Target)?.FitNow();
+        }
+    }
+}

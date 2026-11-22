@@ -1,0 +1,1056 @@
+{
+ "version": 1,
+ "stageId": "W5_B",
+ "length": 100.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 84.0,
+  "y": 0.0
+ },
+ "sections": [
+  {
+   "id": "W5_B_A",
+   "startX": 0.0,
+   "endX": 27.0,
+   "note": "Basalt approach: 주기 가시 함정, 특수 수집품"
+  },
+  {
+   "id": "W5_B_B",
+   "startX": 27.0,
+   "endX": 45.0,
+   "note": "Cinder terrace: 잿불 박쥐, 체크포인트"
+  },
+  {
+   "id": "W5_B_C",
+   "startX": 45.0,
+   "endX": 72.0,
+   "note": "Citadel forecourt: 용암 풍뎅이, 요새 수호병, 체크포인트, 특수 수집품"
+  },
+  {
+   "id": "W5_B_D",
+   "startX": 72.0,
+   "endX": 100.0,
+   "note": "Boss arena (Ember Ironback), flat solid floor x72-98, end wall x98"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W5_B_A_ground1_a",
+   "section": "W5_B_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 17.5,
+   "h": 10.0
+  },
+  {
+   "id": "W5_B_A_ground1_s175",
+   "section": "W5_B_A",
+   "kind": "ground",
+   "x": 17.5,
+   "y": 0.0,
+   "w": 5.0,
+   "h": 10.0,
+   "surface": "conveyor_l"
+  },
+  {
+   "id": "W5_B_A_ground1_b",
+   "section": "W5_B_A",
+   "kind": "ground",
+   "x": 22.5,
+   "y": 0.0,
+   "w": 1.5,
+   "h": 10.0
+  },
+  {
+   "id": "W5_B_B_ground2",
+   "section": "W5_B_B",
+   "kind": "ground",
+   "x": 27.0,
+   "y": 1.5,
+   "w": 18.0,
+   "h": 11.5
+  },
+  {
+   "id": "W5_B_C_ground3",
+   "section": "W5_B_C",
+   "kind": "ground",
+   "x": 45.0,
+   "y": 0.0,
+   "w": 53.0,
+   "h": 10.0
+  },
+  {
+   "id": "W5_B_D_wall4",
+   "section": "W5_B_D",
+   "kind": "wall",
+   "x": 98.0,
+   "y": 10.0,
+   "w": 2.0,
+   "h": 20.0
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W5_B_CP1",
+   "section": "W5_B_B",
+   "x": 29.0,
+   "y": 1.5
+  },
+  {
+   "id": "W5_B_CP2",
+   "section": "W5_B_C",
+   "x": 66.0,
+   "y": 0.0
+  }
+ ],
+ "coins": [
+  {
+   "section": "W5_B_A",
+   "x": 1.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 4.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 6.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 9.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 11.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 19.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 21.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_A",
+   "x": 24.5,
+   "y": 3.4
+  },
+  {
+   "section": "W5_B_A",
+   "x": 25.5,
+   "y": 3.9
+  },
+  {
+   "section": "W5_B_A",
+   "x": 26.5,
+   "y": 3.4
+  },
+  {
+   "section": "W5_B_B",
+   "x": 31.0,
+   "y": 2.7
+  },
+  {
+   "section": "W5_B_B",
+   "x": 33.5,
+   "y": 2.7
+  },
+  {
+   "section": "W5_B_B",
+   "x": 43.5,
+   "y": 2.7
+  },
+  {
+   "section": "W5_B_C",
+   "x": 46.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 49.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 59.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 61.5,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 64.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 69.0,
+   "y": 1.2
+  },
+  {
+   "section": "W5_B_C",
+   "x": 71.5,
+   "y": 1.2
+  },
+  {
+   "x": 32.0,
+   "y": 2.7
+  },
+  {
+   "x": 34.5,
+   "y": 2.7
+  },
+  {
+   "x": 35.5,
+   "y": 2.7
+  },
+  {
+   "x": 36.5,
+   "y": 2.7
+  },
+  {
+   "x": 37.5,
+   "y": 2.7
+  }
+ ],
+ "specials": [
+  {
+   "id": "W5_B_SC1",
+   "section": "W5_B_B",
+   "slot": 0,
+   "x": 25.5,
+   "y": 3.5
+  },
+  {
+   "id": "W5_B_SC2",
+   "section": "W5_B_C",
+   "slot": 1,
+   "x": 57.0,
+   "y": 2.8
+  },
+  {
+   "id": "W5_B_SC3",
+   "section": "W5_B_D",
+   "slot": 2,
+   "x": 74.5,
+   "y": 2.8
+  }
+ ],
+ "spikes": [],
+ "movers": [],
+ "enemies": [
+  {
+   "id": "W5_B_B_en1",
+   "section": "W5_B_B",
+   "monsterId": 1403,
+   "x": 38.5,
+   "y": 1.5,
+   "range": 5.0
+  },
+  {
+   "id": "W5_B_C_en2",
+   "section": "W5_B_C",
+   "monsterId": 1402,
+   "x": 57.5,
+   "y": 0.0,
+   "range": 5.0
+  },
+  {
+   "id": "W5_B_C_en3",
+   "section": "W5_B_C",
+   "monsterId": 1407,
+   "x": 46.5,
+   "y": 0.0,
+   "range": 3.0
+  }
+ ],
+ "fallers": [],
+ "theme": "EmberFortress",
+ "decorations": [
+  {
+   "id": "W5_B_dec1",
+   "prop": "EF_B08_LavaSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec2",
+   "prop": "EF_B08_LavaSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec3",
+   "prop": "EF_B08_LavaSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec4",
+   "prop": "EF_B08_LavaSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec5",
+   "prop": "EF_B08_LavaSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec6",
+   "prop": "EF_B08_LavaSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec7",
+   "prop": "EF_B08_LavaSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec8",
+   "prop": "EF_B08_LavaSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec9",
+   "prop": "EF_B08_LavaSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec10",
+   "prop": "EF_B08_LavaSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec11",
+   "prop": "EF_B08_LavaSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec12",
+   "prop": "EF_B08_LavaSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec13",
+   "prop": "EF_B08_LavaSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec14",
+   "prop": "EF_B08_LavaSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec15",
+   "prop": "EF_B08_LavaSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec16",
+   "prop": "EF_B08_LavaSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec17",
+   "prop": "EF_B08_LavaSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec18",
+   "prop": "EF_B08_LavaSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec19",
+   "prop": "EF_B08_LavaSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec20",
+   "prop": "EF_B08_LavaSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec21",
+   "prop": "EF_B08_LavaSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec22",
+   "prop": "EF_B08_LavaSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec23",
+   "prop": "EF_B08_LavaSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec24",
+   "prop": "EF_B08_LavaSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec25",
+   "prop": "EF_B08_LavaSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec26",
+   "prop": "EF_B08_LavaSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec27",
+   "prop": "EF_B08_LavaSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec28",
+   "prop": "EF_B08_LavaSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec29",
+   "prop": "EF_B07_BasaltFloor",
+   "x": 50.0,
+   "y": -1.8,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec30",
+   "prop": "EF_B06_LavafallCliff",
+   "x": 16.0,
+   "y": -2.2,
+   "z": 24.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec31",
+   "prop": "EF_B01_Volcano",
+   "x": 8.0,
+   "y": -2.2,
+   "z": 54.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec32",
+   "prop": "EF_B03_ObsidianSpires",
+   "x": 30.0,
+   "y": -2.2,
+   "z": 42.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec33",
+   "prop": "EF_B03_ObsidianSpires",
+   "x": 66.0,
+   "y": -2.2,
+   "z": 38.0,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec34",
+   "prop": "EF_B04_BasaltArch",
+   "x": 45.0,
+   "y": -2.2,
+   "z": 64.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec35",
+   "prop": "EF_B01_Volcano",
+   "x": 94.0,
+   "y": -2.2,
+   "z": 58.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec36",
+   "prop": "EF_B02_BasaltRidge",
+   "x": 22.0,
+   "y": -2.2,
+   "z": 82.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec37",
+   "prop": "EF_B02_BasaltRidge",
+   "x": 76.0,
+   "y": -2.2,
+   "z": 84.0,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec38",
+   "prop": "EF_B05_FortressFar",
+   "x": 40.0,
+   "y": -2.2,
+   "z": 94.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec39",
+   "prop": "EF_A01_LavaFortress",
+   "x": 86.0,
+   "y": -1.6,
+   "z": 30.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec40",
+   "prop": "EF_T08_LavaChannel",
+   "x": 48.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec41",
+   "prop": "EF_T08_LavaChannel",
+   "x": 50.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec42",
+   "prop": "EF_T08_LavaChannel",
+   "x": 52.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec43",
+   "prop": "EF_T08_LavaChannel",
+   "x": 54.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec44",
+   "prop": "EF_T08_LavaChannel",
+   "x": 56.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec45",
+   "prop": "EF_T08_LavaChannel",
+   "x": 58.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec46",
+   "prop": "EF_T08_LavaChannel",
+   "x": 60.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec47",
+   "prop": "EF_T08_LavaChannel",
+   "x": 62.0,
+   "y": 0.0,
+   "z": 4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec48",
+   "prop": "EF_P05_Brazier",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec49",
+   "prop": "EF_P10_FortressBanner",
+   "x": 7.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec50",
+   "prop": "EF_P02_CooledLavaRocks",
+   "x": 5.5,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec51",
+   "prop": "EF_P04_AshShrub",
+   "x": 10.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec52",
+   "prop": "EF_P12_FlameVent",
+   "x": 17.0,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec53",
+   "prop": "EF_P04_AshShrub",
+   "x": 21.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec54",
+   "prop": "EF_P03_BasaltColumns",
+   "x": 22.5,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec55",
+   "prop": "EF_P10_FortressBanner",
+   "x": 28.5,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec56",
+   "prop": "EF_P06_EmberLantern",
+   "x": 31.0,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec57",
+   "prop": "EF_P02_CooledLavaRocks",
+   "x": 40.0,
+   "y": 1.5,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec58",
+   "prop": "EF_P04_AshShrub",
+   "x": 43.0,
+   "y": 1.5,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec59",
+   "prop": "EF_P09_ChainPost",
+   "x": 46.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec60",
+   "prop": "EF_P06_EmberLantern",
+   "x": 47.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec61",
+   "prop": "EF_P08_OreCrate",
+   "x": 50.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec62",
+   "prop": "EF_P07_Anvil",
+   "x": 56.0,
+   "y": 0.0,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec63",
+   "prop": "EF_P12_FlameVent",
+   "x": 60.0,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec64",
+   "prop": "EF_P04_AshShrub",
+   "x": 63.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec65",
+   "prop": "EF_P10_FortressBanner",
+   "x": 67.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec66",
+   "prop": "EF_P06_EmberLantern",
+   "x": 70.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec67",
+   "prop": "EF_P05_Brazier",
+   "x": 74.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec68",
+   "prop": "EF_P10_FortressBanner",
+   "x": 75.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec69",
+   "prop": "EF_P11_BrokenPillar",
+   "x": 79.0,
+   "y": 0.0,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec70",
+   "prop": "EF_P03_BasaltColumns",
+   "x": 82.0,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec71",
+   "prop": "EF_P11_BrokenPillar",
+   "x": 88.0,
+   "y": 0.0,
+   "z": 2.8,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec72",
+   "prop": "EF_P12_FlameVent",
+   "x": 91.0,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec73",
+   "prop": "EF_P03_BasaltColumns",
+   "x": 95.0,
+   "y": 0.0,
+   "z": 2.9,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec74",
+   "prop": "EF_P10_FortressBanner",
+   "x": 96.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec75",
+   "prop": "EF_P05_Brazier",
+   "x": 94.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec76",
+   "prop": "EF_FX10_EmberDrift",
+   "x": 16.0,
+   "y": -1.8,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec77",
+   "prop": "EF_FX03_LavaBubbles",
+   "x": 0.0,
+   "y": -1.8,
+   "z": -4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec78",
+   "prop": "EF_FX10_EmberDrift",
+   "x": 48.0,
+   "y": -1.8,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec79",
+   "prop": "EF_FX03_LavaBubbles",
+   "x": 32.0,
+   "y": -1.8,
+   "z": -4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec80",
+   "prop": "EF_FX10_EmberDrift",
+   "x": 80.0,
+   "y": -1.8,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec81",
+   "prop": "EF_FX03_LavaBubbles",
+   "x": 64.0,
+   "y": -1.8,
+   "z": -4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec82",
+   "prop": "EF_FX10_EmberDrift",
+   "x": 112.0,
+   "y": -1.8,
+   "z": 9.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W5_B_dec83",
+   "prop": "EF_FX03_LavaBubbles",
+   "x": 96.0,
+   "y": -1.8,
+   "z": -4.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  }
+ ],
+ "spikeTraps": [
+  {
+   "id": "W5_B_A_trap1",
+   "section": "W5_B_A",
+   "x": 13.0,
+   "y": 0.0,
+   "w": 3.0,
+   "period": 3.0,
+   "upTime": 1.0,
+   "warn": 0.5,
+   "offset": 0.0
+  }
+ ],
+ "boss": {
+  "bossId": 9005,
+  "x": 92.0,
+  "y": 0.0,
+  "arenaMinX": 72.0,
+  "arenaMaxX": 98.0
+ }
+}

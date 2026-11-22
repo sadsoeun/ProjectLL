@@ -1,0 +1,21 @@
+PASS: 5 menu translations x 4 render sizes, single-line width/height fit, Japanese shrink, language/size restoration, no cumulative shrink, wrapped body height. Exact runtime fitting component with bundled Noto fonts; isolated UI preview, not live world-map navigation.
+(1920, 1080) ko font=40 lines=1
+(1920, 1080) en font=40 lines=1
+(1920, 1080) ja font=37 lines=1
+(1920, 1080) zh-Hans font=40 lines=1
+(1920, 1080) es font=40 lines=1
+(1280, 720) ko font=40 lines=1
+(1280, 720) en font=40 lines=1
+(1280, 720) ja font=37 lines=1
+(1280, 720) zh-Hans font=40 lines=1
+(1280, 720) es font=40 lines=1
+(1024, 768) ko font=40 lines=1
+(1024, 768) en font=40 lines=1
+(1024, 768) ja font=37 lines=1
+(1024, 768) zh-Hans font=40 lines=1
+(1024, 768) es font=40 lines=1
+(2560, 1080) ko font=40 lines=1
+(2560, 1080) en font=40 lines=1
+(2560, 1080) ja font=37 lines=1
+(2560, 1080) zh-Hans font=40 lines=1
+(2560, 1080) es font=40 lines=1

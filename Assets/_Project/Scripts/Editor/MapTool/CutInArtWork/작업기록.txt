@@ -1,0 +1,40 @@
+Leaf & Leap — ‘지금이다!’ 일러스트 컷인 적용
+2026-11-16
+
+적용 파일
+- Assets/_Project/Scripts/InGame/FX/NowCutIn.cs
+- Assets/_Project/Resources/CutInArt/CounterPortrait.png
+- Assets/_Project/Resources/CutInArt/NowKo.png
+- 두 이미지의 TextureImporter 메타데이터 (투명 알파, 밉맵 끔, 비압축)
+
+구현
+- 캐릭터 복제, 얼굴 표정 강제 변경, 촬영 카메라, RenderTexture를 제거.
+- 초상화, 한국어 전용 레터링, 검정·금빛 띠, 눈빛 효과를 독립 레이어로 구성.
+- 기존 1.15초 연출 시간, 효과음 호출, 보스 기절 시 호출 지점을 유지.
+- 그림은 균일 확대 및 이동만 사용. 화면 비율에 맞춰 전체 구도를 균일 축소.
+- 한국어는 이미지 레터링. 영어·일본어·중국어·스페인어는 기존 번역과 Noto Sans 폰트 사용.
+- 일반 UI와 타이틀 호흡 설정은 변경하지 않음.
+- 강제 비활성화 및 종료 시 연출이 소유한 시간 배율을 복원.
+
+검증
+- 실제 프로젝트 전체 실행/에디터 코드 분리 컴파일 통과.
+- 별도 Unity 검증 프로젝트에서 실제 NowCutIn 코드와 PNG를 렌더.
+- 1920×1080, 1280×720, 1024×768, 2560×1080 배치 검사.
+- 5개 언어, 시작/등장/강조/유지/퇴장/종료의 8개 타임라인 시점 검사.
+- 모델·카메라 미생성, 그림 비율 유지, 포인터 입력 방해 없음, 중복 실행 방지 확인.
+- 편집 모드에서 정리 콜백을 직접 호출해 시간 배율 복원 확인.
+- 검증 환경의 오디오·기존 시간정지 서비스는 비활성 대체 연결임.
+- 검증 이미지는 기존 플레이 캡처 위에 새 UI를 Unity로 렌더한 결과이며, 실제 보스전 플레이 녹화가 아님.
+- 임시 컴파일 파일의 원본 프로젝트 오인식은 파일 이동 및 사용자 Refresh 후 해소.
+- 원본 Unity의 최신 어셈블리에 새 PNG 리소스 경로가 포함됐는지 별도 확인.
+
+이미지 제작
+- 기본 내장 이미지 생성 도구 사용, 승인된 컷인 시안을 기준으로 투명 리소스 2장 제작.
+- 제작 원본은 Art 폴더에, 설치본은 Resources/CutInArt에 저장.
+- 기존 코드 백업: NowCutIn.before.txt
+
+Portrait production prompt:
+Production asset extraction / identity-preserving edit of the approved reference. Output ONLY the large cel-shaded blonde anime heroine portrait from the LEFT side of the cut-in, on a genuinely transparent background. Preserve her exact confident toothy grin, turquoise eyes looking right, black headband, two angular orange ribbon loops, flowing blonde hair, black orange-trimmed collar and teal sleeve detail, same face design and clean two-tone cel shading. Recreate this same head-and-shoulders illustration at high resolution, not a different pose. Include all ribbon tips and left flowing hair with safe transparent margins. Complete the lower shoulder/collar silhouette where the gold stripe previously cut across it, framing down to upper chest only, no hands. The portrait should fill most of a square canvas, centered, facing right. Remove the game scene, HUD, typography, gold border, speed lines, and eye sparkle entirely; they will be separate UI layers. Crisp dark contour edges, clean true alpha, no backdrop, no shadow outside the silhouette, no glow, no text. This isolated portrait will be placed over a narrow black/gold game banner.
+
+Lettering production prompt:
+Extract and refine ONLY the Korean display lettering '지금이다!' from the reference cut-in into a standalone production UI asset on a genuinely TRANSPARENT background. Exact text 지금이다! with all four Hangul syllable blocks and one exclamation mark, clear and correctly spelled. Same chunky angular heavy condensed comic display shapes, forward italic lean, warm ivory fill, fine golden lower edge and strong very dark charcoal offset outline/shadow. Make it clean flat cel graphic, no metallic texture, no glow. One horizontal line, LEVEL baseline, not diagonally rotated as a whole: Unity will rotate the entire asset. Leave safe transparent margins on all four sides, tightly frame the word in a wide landscape canvas. No character, no game scene, no panel, no lines, no sparkle, no extra text. Preserve the visual letter design from the approved mockup. Crisp contour, readable at small screen sizes, transparent alpha including holes in the Korean letters.

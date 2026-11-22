@@ -1,0 +1,175 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>World map information hierarchy and a two-page, keyboard-accessible menu.</summary>
+    [DisallowMultipleComponent]
+    public sealed class WorldMapPresentation : MonoBehaviour
+    {
+        private RectTransform info, window, hint, heading, menu, hintBack;
+        private Button[] primary, secondary;
+        private LocalizedText menuTitle, menuNote;
+        private UiFocusKeeper focus;
+        private bool initialized;
+        public bool IsMoreOpen { get; private set; }
+        private static readonly Color Back = new Color(.035f,.038f,.045f,.96f);
+
+        public static WorldMapPresentation Apply(Transform root)
+        {
+            var view = root.GetComponent<WorldMapPresentation>() ?? root.gameObject.AddComponent<WorldMapPresentation>();
+            view.Initialize(); view.Layout(); return view;
+        }
+
+        public void Configure(UiFocusKeeper keeper) => focus = keeper;
+
+        private void Initialize()
+        {
+            if (initialized) return;
+            info = transform.Find("StageInfoPanel") as RectTransform;
+            window = transform.Find("PauseMenu/Window") as RectTransform;
+            hint = transform.Find("HintText") as RectTransform;
+            menu = transform.Find("MenuButton") as RectTransform;
+            if (info == null || window == null || menu == null) return;
+            initialized = true;
+            heading = Label(transform,"MapHeading","worldmap.heading",UiKit.BodySize,TextAnchor.MiddleLeft).GetComponent<RectTransform>();
+            hint.GetComponent<LocalizedText>().SetKey("worldmap.hint_short");
+            Style(hint,UiKit.CaptionSize,TextAnchor.MiddleCenter);
+            hintBack=Existing("MapHintBackdrop",transform); hintBack.SetAsFirstSibling();
+            var hintImage=Ensure<Image>(hintBack); hintImage.color=Back; hintImage.raycastTarget=false;
+            menuTitle = window.Find("Title").GetComponent<LocalizedText>();
+            menuNote = Label(window,"MenuNote","worldmap.menu_note",UiKit.CaptionSize,TextAnchor.MiddleCenter);
+            var more = NewButton("MoreButton","worldmap.more");
+            var back = NewButton("BackButton","worldmap.back");
+            more.onClick.AddListener(OpenMore);
+            back.onClick.AddListener(() => CloseMore());
+            primary = new[] { Button("ResumeButton"), Button("SettingsButton"), more, Button("TitleButton") };
+            secondary = new[] { back, Button("SaveButton"), Button("LoadButton"), Button("QuitButton") };
+            foreach (var button in primary) StyleButton(button);
+            foreach (var button in secondary) StyleButton(button);
+            info.GetComponent<Image>().color = Back;
+            window.GetComponent<Image>().color = Back;
+            info.GetComponent<Image>().raycastTarget = false;
+            GoldUiTheme.Frame(info).diamond = false;
+            GoldUiTheme.Frame(window).diamond = false;
+            Style(info.Find("StageNameText"),UiKit.HudSize,TextAnchor.MiddleLeft);
+            Style(info.Find("StateText"),UiKit.BodySize,TextAnchor.MiddleLeft);
+            Style(info.Find("BestTimeText"),UiKit.BodySize,TextAnchor.MiddleLeft);
+            Style(info.Find("SpecialsText"),UiKit.BodySize,TextAnchor.MiddleLeft);
+            StyleButton(info.Find("EnterButton").GetComponent<Button>());
+            var enterColors = info.Find("EnterButton").GetComponent<Button>().colors;
+            enterColors.normalColor = new Color(.23f,.17f,.085f,.98f);
+            info.Find("EnterButton").GetComponent<Button>().colors = enterColors;
+            var menuButton = menu.GetComponent<Button>();
+            StyleButton(menuButton);
+            menuButton.navigation = new Navigation { mode = Navigation.Mode.None };
+            ResetMenu();
+        }
+
+        private Button Button(string name) => window.Find(name).GetComponent<Button>();
+        private Button NewButton(string name,string key)
+        {
+            var rt = Existing(name,window);
+            var image = Ensure<Image>(rt);
+            var button = Ensure<Button>(rt); button.targetGraphic = image;
+            var label = Label(rt,"Label",key,30,TextAnchor.MiddleCenter);
+            GoldUiTheme.Stretch(label.GetComponent<RectTransform>());
+            return button;
+        }
+        private static LocalizedText Label(Transform parent,string name,string key,int size,TextAnchor alignment)
+        {
+            var rt = Existing(name,parent); Ensure<Text>(rt);
+            var loc = Ensure<LocalizedText>(rt); loc.SetKey(key);
+            // Editor previews have no service singleton.
+            if (!Application.isPlaying && LocalizationTable.TryGet("ko",key,out string value)) loc.GetComponent<Text>().text=value;
+            Style(rt,size,alignment); return loc;
+        }
+        private static RectTransform Existing(string name,Transform parent) => parent.Find(name) as RectTransform ?? GoldUiTheme.Rect(name,parent);
+        private static T Ensure<T>(Component c) where T : Component => c.GetComponent<T>() ?? c.gameObject.AddComponent<T>();
+        private static void Style(Transform target,int size,TextAnchor alignment)
+        {
+            var text = target.GetComponent<Text>(); if (text == null) return;
+            UiKit.TextStyle(target,size,alignment);
+        }
+        private static void StyleButton(Button button)
+        {
+            GoldUiTheme.StyleButton(button);
+            Style(button.GetComponentInChildren<Text>(true).transform,UiKit.ActionSize,TextAnchor.MiddleCenter);
+            var colors=button.colors; colors.normalColor=Back; button.colors=colors;
+        }
+
+        public void OpenMore() { SetPage(true); focus?.Select(secondary[0].gameObject); }
+        public bool CloseMore()
+        {
+            if (!IsMoreOpen) return false;
+            SetPage(false); focus?.Select(primary[2].gameObject); return true;
+        }
+        public void ResetMenu() { if (initialized) SetPage(false); }
+        private void SetPage(bool more)
+        {
+            IsMoreOpen=more;
+            foreach(var button in primary) button.gameObject.SetActive(!more);
+            foreach(var button in secondary) button.gameObject.SetActive(more);
+            menuTitle.SetKey(more ? "worldmap.more" : "worldmap.menu_title");
+            menuNote.SetKey(more ? "worldmap.data_note" : "worldmap.menu_note");
+            var active=more ? secondary : primary;
+            for(int i=0;i<active.Length;i++)
+                active[i].navigation=new Navigation { mode=Navigation.Mode.Explicit,
+                    selectOnUp=active[(i+active.Length-1)%active.Length], selectOnDown=active[(i+1)%active.Length] };
+        }
+
+        public void SetMenuVisible(bool visible)
+        {
+            info.gameObject.SetActive(!visible); hint.gameObject.SetActive(!visible);
+            menu.gameObject.SetActive(!visible); heading.gameObject.SetActive(!visible);
+            hintBack.gameObject.SetActive(!visible);
+            if (visible) ResetMenu();
+        }
+
+        private void OnRectTransformDimensionsChange() { if(initialized) Layout(); }
+        public void Layout()
+        {
+            if(!initialized) return;
+            float width=((RectTransform)transform).rect.width;
+            if(width<1) width=1920;
+            info.GetComponent<Image>().color=Back; window.GetComponent<Image>().color=Back;
+            foreach(var button in primary) StyleButton(button);
+            foreach(var button in secondary) StyleButton(button);
+            var enterButton=info.Find("EnterButton").GetComponent<Button>();
+            var enterColors=enterButton.colors; enterColors.normalColor=new Color(.23f,.17f,.085f,.98f); enterButton.colors=enterColors;
+            float w=Mathf.Min(1440,width-64); bool compact=w<1200;
+            Place(info,.5f,0,0,72,w,compact?248:192);
+            Place(heading,0,1,32,-26,420,48);
+            Place(menu,1,1,-32,-24,200,72);
+            Place(hint,.5f,0,0,20,Mathf.Min(1300,width-64),36);
+            Place(hintBack,.5f,0,0,14,Mathf.Min(1340,width-48),48);
+            Place(transform.Find("MessageText"),.5f,1,0,-105,Mathf.Min(1100,width-80),64);
+            float left=compact?w*.65f:w*.38f;
+            Place(info.Find("StageNameText"),0,1,32,-24,left-56,60);
+            Place(info.Find("StateText"),0,1,34,-91,left-60,44);
+            float sx=compact?34:left, sy=compact?-143:-40, sw=compact?left-65:w*.32f-30;
+            Place(info.Find("BestTimeText"),0,1,sx,sy,sw,40);
+            Place(info.Find("SpecialsText"),0,1,sx,sy-45,sw-140,44);
+            Place(info.Find("SpecialSlots"),0,1,sx+sw-126,sy-48,126,30);
+            var slots=info.Find("SpecialSlots");
+            for(int i=0;i<slots.childCount;i++) Place(slots.GetChild(i),0,1,i*42,0,28,28);
+            Place(info.Find("EnterButton"),1,.5f,-28,0,compact?w*.3f:w*.25f,80);
+            Place(window,.5f,.5f,0,0,Mathf.Min(660,width-64),610);
+            Place(window.Find("Title"),.5f,1,0,-32,500,64);
+            Style(window.Find("Title"),UiKit.HeadingSize,TextAnchor.MiddleCenter);
+            Place(menuNote.transform,.5f,0,0,30,Mathf.Min(560,width-110),58);
+            for(int i=0;i<4;i++)
+            {
+                Place(primary[i].transform,.5f,1,0,-126-i*88,Mathf.Min(520,width-120),72);
+                Place(secondary[i].transform,.5f,1,0,-126-i*88,Mathf.Min(520,width-120),72);
+            }
+            info.localScale=Vector3.one; window.localScale=Vector3.one;
+            info.GetComponent<GoldUiReveal>()?.RefreshRestPose();
+            window.GetComponent<GoldUiReveal>()?.RefreshRestPose();
+        }
+        private static void Place(Transform t,float ax,float ay,float x,float y,float w,float h)
+        {
+            if(t!=null) GoldUiTheme.Place((RectTransform)t,new Vector2(ax,ay),new Vector2(ax,ay),new Vector2(x,y),new Vector2(w,h));
+        }
+    }
+}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69269e5296d0dc9478b5babbe3867109, type: 3}
+  m_Name: WML_W5
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.WorldMapLightingPreset
+  sunColor: {r: 1, g: 0.62, b: 0.42, a: 1}
+  sunIntensity: 1.2
+  sunPitch: 24
+  sunYaw: 300
+  shadowStrength: 0.8
+  ambientSky: {r: 0.4, g: 0.32, b: 0.5, a: 1}
+  ambientEquator: {r: 0.56, g: 0.34, b: 0.32, a: 1}
+  ambientGround: {r: 0.48, g: 0.24, b: 0.16, a: 1}
+  fogColor: {r: 0.55, g: 0.3, b: 0.3, a: 1}
+  fogStartBeyondAvatar: 4
+  fogEndBeyondAvatar: 85
+  skyColor: {r: 0.4, g: 0.25, b: 0.3, a: 1}
+  profile: {fileID: 11400000, guid: ce20795dcf458a247a40cd214aa27088, type: 2}

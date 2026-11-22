@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df06e5760abde334094ea80b7cdabeb1, type: 3}
+  m_Name: Boss_9004
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.BossData
+  bossId: 9004
+  nameKey: boss.9004.name
+  prefab: {fileID: 2063795130191819389, guid: dc322993ce246e34c8e89b6221caefea, type: 3}
+  maxHp: 10
+  bodyWidth: 3.4
+  bodyHeight: 3
+  stompTolerance: 0.7
+  knockbackSpeed: 9
+  knockbackLift: 6
+  knockbackSeconds: 0.35
+  introSeconds: 1.5
+  anticipateSeconds: 0.9
+  hitFlinchSeconds: 0.4
+  stompCooldownSeconds: 0.3
+  defeatSeconds: 2.5
+  engageDistance: 2.5
+  chargeSpeed: 11.5
+  chargeHitHeight: 2
+  chargeEndPause: 0.7
+  slamImpactDelay: 0.45
+  waveSpeed: 7
+  slamRecoverSeconds: 0.8
+  wavePrefab: {fileID: 4821409575538604501, guid: 3969b6aca58ab0942a8038a8d74ba7a7, type: 3}
+  markerSeconds: 1
+  rainInterval: 0.25
+  fallSpeed: 18
+  fallHeight: 12
+  rainMinSpacing: 2.4
+  fallingPrefab: {fileID: 2264954289920105484, guid: 5417d7c0d3b8e534ebbc8d6518cea0c7, type: 3}
+  markerPrefab: {fileID: 7619026567434601019, guid: c9eb33ad98c96cb46ab630453064c958, type: 3}
+  eruptionChargeSeconds: 1.6
+  eruptionSpacing: 2.4
+  eruptionWidth: 2
+  eruptionHeight: 3.6
+  eruptionStepSeconds: 0.6
+  eruptionWarnSeconds: 0.8
+  eruptionActiveSeconds: 0.32
+  eruptionPrefab: {fileID: 0}
+  hitClip: {fileID: 8300000, guid: fa7be94a2e154769b4eb168e0969ed2a, type: 3}
+  hitVolume: 0.9
+  defeatFxPrefab: {fileID: 0}
+  stunStarMaterial: {fileID: 2100000, guid: ac14665655a043c7b9fcaf7544cf38b2, type: 2}
+  stunStarCount: 3
+  stunStarColor: {r: 1, g: 0.88, b: 0.25, a: 1}
+  stunStarSize: 0.45
+  stunStarRadius: 0.9
+  stunStarHeight: 0.6
+  stunStarSpinDegrees: 300
+  stunTrailSeconds: 0.25
+  phases:
+  - moveSpeed: 2.5
+    walkSeconds: 1.5
+    stunSeconds: 2
+    attacks: 01000000
+    rainCount: 3
+  - moveSpeed: 3.2
+    walkSeconds: 1.2
+    stunSeconds: 1.7
+    attacks: 0000000002000000
+    rainCount: 4
+  - moveSpeed: 4
+    walkSeconds: 0.9
+    stunSeconds: 1.5
+    attacks: 010000000000000002000000
+    rainCount: 5

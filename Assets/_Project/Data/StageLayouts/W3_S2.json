@@ -1,0 +1,1432 @@
+{
+ "version": 1,
+ "stageId": "W3_S2",
+ "length": 185.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 180.0,
+  "y": 0.0
+ },
+ "sections": [
+  {
+   "id": "W3_S2_A",
+   "startX": 0.0,
+   "endX": 26.0,
+   "note": "빙정 풍뎅이 소개 (넓은 평지에서 돌진 보기)"
+  },
+  {
+   "id": "W3_S2_B",
+   "startX": 26.0,
+   "endX": 58.0,
+   "note": "능선 오르기 (계단 2 m), 첫 서리 박쥐"
+  },
+  {
+   "id": "W3_S2_C",
+   "startX": 58.0,
+   "endX": 91.0,
+   "note": "위/아래 길: 얼음 발판 연쇄 vs 박쥐 분지"
+  },
+  {
+   "id": "W3_S2_D",
+   "startX": 91.0,
+   "endX": 140.0,
+   "note": "풍뎅이를 피해 수직 리프트로, 고드름 낙하 (절정)"
+  },
+  {
+   "id": "W3_S2_E",
+   "startX": 140.0,
+   "endX": 185.0,
+   "note": "박쥐, 이동 발판, 내리막 마무리"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W3_S2_A_ground1",
+   "section": "W3_S2_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 22.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_A_ground2",
+   "section": "W3_S2_A",
+   "kind": "ground",
+   "x": 25.5,
+   "y": 1.5,
+   "w": 8.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_B_ground3",
+   "section": "W3_S2_B",
+   "kind": "ground",
+   "x": 33.5,
+   "y": 3.5,
+   "w": 8.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_B_ground4",
+   "section": "W3_S2_B",
+   "kind": "ground",
+   "x": 41.5,
+   "y": 5.5,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_B_platform5",
+   "section": "W3_S2_B",
+   "kind": "platform",
+   "x": 44.5,
+   "y": 8.0,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_B_ground6",
+   "section": "W3_S2_B",
+   "kind": "ground",
+   "x": 51.5,
+   "y": 3.5,
+   "w": 6.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_C_ground7",
+   "section": "W3_S2_C",
+   "kind": "ground",
+   "x": 61.0,
+   "y": 0.0,
+   "w": 30.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_C_platform8",
+   "section": "W3_S2_C",
+   "kind": "platform",
+   "x": 59.5,
+   "y": 5.5,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_C_platform9",
+   "section": "W3_S2_C",
+   "kind": "platform",
+   "x": 65.5,
+   "y": 6.5,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_C_platform10",
+   "section": "W3_S2_C",
+   "kind": "platform",
+   "x": 71.5,
+   "y": 7.0,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_C_platform11",
+   "section": "W3_S2_C",
+   "kind": "platform",
+   "x": 77.5,
+   "y": 6.5,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_C_platform12",
+   "section": "W3_S2_C",
+   "kind": "platform",
+   "x": 83.5,
+   "y": 5.5,
+   "w": 3.0,
+   "h": 1.0
+  },
+  {
+   "id": "W3_S2_D_ground13",
+   "section": "W3_S2_D",
+   "kind": "ground",
+   "x": 91.0,
+   "y": 2.0,
+   "w": 13.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_D_ground15",
+   "section": "W3_S2_D",
+   "kind": "ground",
+   "x": 112.0,
+   "y": 6.0,
+   "w": 14.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_D_ground16",
+   "section": "W3_S2_D",
+   "kind": "ground",
+   "x": 126.0,
+   "y": 4.0,
+   "w": 14.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_E_ground17",
+   "section": "W3_S2_E",
+   "kind": "ground",
+   "x": 143.5,
+   "y": 2.0,
+   "w": 12.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_E_ground19",
+   "section": "W3_S2_E",
+   "kind": "ground",
+   "x": 163.5,
+   "y": 0.0,
+   "w": 21.5,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S2_E_platform20",
+   "section": "W3_S2_E",
+   "kind": "platform",
+   "x": 168.0,
+   "y": 2.5,
+   "w": 3.0,
+   "h": 0.5
+  },
+  {
+   "id": "W3_S2_E_platform21",
+   "section": "W3_S2_E",
+   "kind": "platform",
+   "x": 172.5,
+   "y": 5.0,
+   "w": 3.0,
+   "h": 0.5
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W3_S2_CP1",
+   "section": "W3_S2_B",
+   "x": 48.0,
+   "y": 5.5
+  },
+  {
+   "id": "W3_S2_CP2",
+   "section": "W3_S2_D",
+   "x": 95.0,
+   "y": 2.0
+  },
+  {
+   "id": "W3_S2_CP3",
+   "section": "W3_S2_E",
+   "x": 146.0,
+   "y": 2.0
+  }
+ ],
+ "coins": [
+  {
+   "section": "W3_S2_A",
+   "x": 4.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 6.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 8.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 10.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 12.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 21.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 22.333,
+   "y": 2.759
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 23.667,
+   "y": 2.759
+  },
+  {
+   "section": "W3_S2_A",
+   "x": 25.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 27.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 28.6,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 30.2,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 31.8,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 35.0,
+   "y": 4.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 36.6,
+   "y": 4.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 38.2,
+   "y": 4.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 39.8,
+   "y": 4.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 43.0,
+   "y": 6.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 44.8,
+   "y": 6.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 46.6,
+   "y": 6.7
+  },
+  {
+   "section": "W3_S2_B",
+   "x": 48.4,
+   "y": 6.7
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 60.3,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 62.2,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 66.3,
+   "y": 8.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 68.2,
+   "y": 8.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 72.3,
+   "y": 8.7
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 74.2,
+   "y": 8.7
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 84.3,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 86.2,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 63.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 66.25,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 69.5,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 72.75,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 76.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 79.25,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 82.5,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 85.75,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_C",
+   "x": 89.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 93.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 95.5,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 98.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 100.5,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 103.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 107.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 108.5,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 113.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 115.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 117.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 119.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 121.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 123.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 125.0,
+   "y": 7.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 127.0,
+   "y": 5.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 130.0,
+   "y": 5.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 133.0,
+   "y": 5.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 136.0,
+   "y": 5.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 139.0,
+   "y": 5.2
+  },
+  {
+   "section": "W3_S2_D",
+   "x": 139.5,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 141.167,
+   "y": 5.586
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 142.833,
+   "y": 5.586
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 144.5,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 146.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 148.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 150.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 152.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 154.0,
+   "y": 3.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 157.0,
+   "y": 3.7
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 158.6,
+   "y": 3.7
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 160.2,
+   "y": 3.7
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 161.8,
+   "y": 3.7
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 165.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 167.6,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 170.2,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 172.8,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 175.4,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S2_E",
+   "x": 178.0,
+   "y": 1.2
+  }
+ ],
+ "specials": [
+  {
+   "id": "W3_S2_SC1",
+   "section": "W3_S2_B",
+   "slot": 0,
+   "x": 46.0,
+   "y": 9.6
+  },
+  {
+   "id": "W3_S2_SC2",
+   "section": "W3_S2_C",
+   "slot": 1,
+   "x": 79.0,
+   "y": 8.6
+  },
+  {
+   "id": "W3_S2_SC3",
+   "section": "W3_S2_E",
+   "slot": 2,
+   "x": 174.0,
+   "y": 6.7
+  }
+ ],
+ "spikes": [],
+ "movers": [
+  {
+   "id": "W3_S2_D_mv14",
+   "section": "W3_S2_D",
+   "x": 106.0,
+   "y": 2.0,
+   "w": 3.0,
+   "axis": "y",
+   "distance": 4.5,
+   "speed": 1.6,
+   "wait": 0.8
+  },
+  {
+   "id": "W3_S2_E_mv18",
+   "section": "W3_S2_E",
+   "x": 156.0,
+   "y": 2.0,
+   "w": 3.0,
+   "axis": "x",
+   "distance": 4.0,
+   "speed": 2.2,
+   "wait": 0.4
+  }
+ ],
+ "enemies": [
+  {
+   "id": "W3_S2_A_en22",
+   "section": "W3_S2_A",
+   "monsterId": 1202,
+   "x": 14.0,
+   "y": 0.0,
+   "range": 6.0
+  },
+  {
+   "id": "W3_S2_B_en23",
+   "section": "W3_S2_B",
+   "monsterId": 1203,
+   "x": 42.5,
+   "y": 5.5,
+   "range": 4.0
+  },
+  {
+   "id": "W3_S2_C_en25",
+   "section": "W3_S2_C",
+   "monsterId": 1203,
+   "x": 79.0,
+   "y": 0.0,
+   "range": 5.0
+  },
+  {
+   "id": "W3_S2_D_en27",
+   "section": "W3_S2_D",
+   "monsterId": 1202,
+   "x": 130.0,
+   "y": 4.0,
+   "range": 6.0
+  },
+  {
+   "id": "W3_S2_E_en28",
+   "section": "W3_S2_E",
+   "monsterId": 1203,
+   "x": 147.5,
+   "y": 2.0,
+   "range": 4.0
+  },
+  {
+   "id": "W3_S2_E_en29",
+   "section": "W3_S2_D",
+   "monsterId": 1202,
+   "x": 98.0,
+   "y": 2.0,
+   "range": 5.0
+  }
+ ],
+ "fallers": [
+  {
+   "id": "W3_S2_D_fall30",
+   "section": "W3_S2_D",
+   "x": 116.5,
+   "y": 13.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.5,
+   "respawn": 3.0
+  },
+  {
+   "id": "W3_S2_D_fall31",
+   "section": "W3_S2_D",
+   "x": 121.5,
+   "y": 13.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.45,
+   "respawn": 3.0
+  },
+  {
+   "id": "W3_S2_D_fall32",
+   "section": "W3_S2_D",
+   "x": 127.5,
+   "y": 11.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.45,
+   "respawn": 3.0
+  },
+  {
+   "id": "W3_S2_D_fall33",
+   "section": "W3_S2_D",
+   "x": 138.0,
+   "y": 11.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.45,
+   "respawn": 3.0
+  },
+  {
+   "id": "W3_S2_E_hz504",
+   "section": "W3_S2_E",
+   "x": 172.5,
+   "y": 8.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.5,
+   "respawn": 3.0
+  }
+ ],
+ "theme": "FrostPeaks",
+ "decorations": [
+  {
+   "id": "W3_S2_dec1",
+   "prop": "FP_B07_SnowField",
+   "x": 92.5,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec2",
+   "prop": "FP_P07_Signpost",
+   "x": 6.0,
+   "y": 0.0,
+   "z": 3.2,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec3",
+   "prop": "FP_P02_YoungFir",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 6.156,
+   "rotY": 0.0,
+   "scale": 1.049
+  },
+  {
+   "id": "W3_S2_dec4",
+   "prop": "FP_P02_YoungFir",
+   "x": 10.632,
+   "y": 0.0,
+   "z": 5.643,
+   "rotY": 180.0,
+   "scale": 1.108
+  },
+  {
+   "id": "W3_S2_dec5",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 15.875,
+   "y": 0.0,
+   "z": 5.661,
+   "rotY": 0.0,
+   "scale": 0.812
+  },
+  {
+   "id": "W3_S2_dec6",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 28.591,
+   "y": 1.5,
+   "z": 4.947,
+   "rotY": 180.0,
+   "scale": 1.113
+  },
+  {
+   "id": "W3_S2_dec7",
+   "prop": "FP_P05_IceCrystals",
+   "x": 46.96,
+   "y": 5.5,
+   "z": 5.881,
+   "rotY": 0.0,
+   "scale": 0.862
+  },
+  {
+   "id": "W3_S2_dec8",
+   "prop": "FP_P06_LanternPost",
+   "x": 48.874,
+   "y": 5.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec9",
+   "prop": "FP_P05_IceCrystals",
+   "x": 63.785,
+   "y": 0.0,
+   "z": 3.873,
+   "rotY": 0.0,
+   "scale": 0.935
+  },
+  {
+   "id": "W3_S2_dec10",
+   "prop": "FP_P02_YoungFir",
+   "x": 69.069,
+   "y": 0.0,
+   "z": 8.308,
+   "rotY": 180.0,
+   "scale": 1.061
+  },
+  {
+   "id": "W3_S2_dec11",
+   "prop": "FP_P06_LanternPost",
+   "x": 70.775,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec12",
+   "prop": "FP_P02_YoungFir",
+   "x": 73.665,
+   "y": 0.0,
+   "z": 8.74,
+   "rotY": 180.0,
+   "scale": 1.139
+  },
+  {
+   "id": "W3_S2_dec13",
+   "prop": "FP_P02_YoungFir",
+   "x": 79.3,
+   "y": 0.0,
+   "z": 7.554,
+   "rotY": 180.0,
+   "scale": 0.976
+  },
+  {
+   "id": "W3_S2_dec14",
+   "prop": "FP_P02_YoungFir",
+   "x": 84.52,
+   "y": 0.0,
+   "z": 5.81,
+   "rotY": 180.0,
+   "scale": 1.045
+  },
+  {
+   "id": "W3_S2_dec15",
+   "prop": "FP_P01_SnowFir",
+   "x": 97.961,
+   "y": 2.0,
+   "z": 8.756,
+   "rotY": 0.0,
+   "scale": 1.049
+  },
+  {
+   "id": "W3_S2_dec16",
+   "prop": "FP_P02_YoungFir",
+   "x": 114.404,
+   "y": 6.0,
+   "z": 8.294,
+   "rotY": 180.0,
+   "scale": 0.962
+  },
+  {
+   "id": "W3_S2_dec17",
+   "prop": "FP_P04_WinterShrub",
+   "x": 119.803,
+   "y": 6.0,
+   "z": 3.738,
+   "rotY": 0.0,
+   "scale": 0.888
+  },
+  {
+   "id": "W3_S2_dec18",
+   "prop": "FP_P06_LanternPost",
+   "x": 121.369,
+   "y": 6.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec19",
+   "prop": "FP_P05_IceCrystals",
+   "x": 131.387,
+   "y": 4.0,
+   "z": 3.638,
+   "rotY": 180.0,
+   "scale": 0.977
+  },
+  {
+   "id": "W3_S2_dec20",
+   "prop": "FP_P06_LanternPost",
+   "x": 133.612,
+   "y": 4.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec21",
+   "prop": "FP_P05_IceCrystals",
+   "x": 136.45,
+   "y": 4.0,
+   "z": 4.044,
+   "rotY": 180.0,
+   "scale": 0.865
+  },
+  {
+   "id": "W3_S2_dec22",
+   "prop": "FP_P06_LanternPost",
+   "x": 138.132,
+   "y": 4.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec23",
+   "prop": "FP_P02_YoungFir",
+   "x": 147.514,
+   "y": 2.0,
+   "z": 8.21,
+   "rotY": 180.0,
+   "scale": 0.938
+  },
+  {
+   "id": "W3_S2_dec24",
+   "prop": "FP_P01_SnowFir",
+   "x": 152.161,
+   "y": 2.0,
+   "z": 5.643,
+   "rotY": 180.0,
+   "scale": 1.177
+  },
+  {
+   "id": "W3_S2_dec25",
+   "prop": "FP_P04_WinterShrub",
+   "x": 169.388,
+   "y": 0.0,
+   "z": 3.395,
+   "rotY": 180.0,
+   "scale": 1.086
+  },
+  {
+   "id": "W3_S2_dec26",
+   "prop": "FP_P04_WinterShrub",
+   "x": 174.923,
+   "y": 0.0,
+   "z": 3.707,
+   "rotY": 0.0,
+   "scale": 0.943
+  },
+  {
+   "id": "W3_S2_dec27",
+   "prop": "FP_P02_YoungFir",
+   "x": 179.524,
+   "y": 0.0,
+   "z": 7.533,
+   "rotY": 0.0,
+   "scale": 0.897
+  },
+  {
+   "id": "W3_S2_dec28",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 49.6,
+   "y": 5.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec29",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 96.6,
+   "y": 2.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec30",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 147.6,
+   "y": 2.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec31",
+   "prop": "FP_B08_FirForestBand",
+   "x": -30.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec32",
+   "prop": "FP_B08_FirForestBand",
+   "x": 24.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec33",
+   "prop": "FP_B08_FirForestBand",
+   "x": 78.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec34",
+   "prop": "FP_B08_FirForestBand",
+   "x": 132.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec35",
+   "prop": "FP_B08_FirForestBand",
+   "x": 186.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec36",
+   "prop": "FP_B08_FirForestBand",
+   "x": 240.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec37",
+   "prop": "FP_B06_SnowHills",
+   "x": -20.0,
+   "y": -2.381,
+   "z": 26.478,
+   "rotY": 0.0,
+   "scale": 1.308
+  },
+  {
+   "id": "W3_S2_dec38",
+   "prop": "FP_B06_SnowHills",
+   "x": 7.023,
+   "y": -2.362,
+   "z": 28.729,
+   "rotY": 0.0,
+   "scale": 1.276
+  },
+  {
+   "id": "W3_S2_dec39",
+   "prop": "FP_B03_GlacierCliff",
+   "x": 33.56,
+   "y": -2.369,
+   "z": 41.247,
+   "rotY": 0.0,
+   "scale": 1.337
+  },
+  {
+   "id": "W3_S2_dec40",
+   "prop": "FP_B06_SnowHills",
+   "x": 65.891,
+   "y": -2.265,
+   "z": 23.126,
+   "rotY": 180.0,
+   "scale": 1.11
+  },
+  {
+   "id": "W3_S2_dec41",
+   "prop": "FP_B06_SnowHills",
+   "x": 91.928,
+   "y": -2.393,
+   "z": 23.053,
+   "rotY": 0.0,
+   "scale": 1.357
+  },
+  {
+   "id": "W3_S2_dec42",
+   "prop": "FP_B06_SnowHills",
+   "x": 119.591,
+   "y": -1.7,
+   "z": 31.42,
+   "rotY": 180.0,
+   "scale": 1.134
+  },
+  {
+   "id": "W3_S2_dec43",
+   "prop": "FP_B06_SnowHills",
+   "x": 148.231,
+   "y": -1.553,
+   "z": 27.513,
+   "rotY": 180.0,
+   "scale": 1.087
+  },
+  {
+   "id": "W3_S2_dec44",
+   "prop": "FP_B06_SnowHills",
+   "x": 181.266,
+   "y": -2.015,
+   "z": 20.207,
+   "rotY": 0.0,
+   "scale": 1.08
+  },
+  {
+   "id": "W3_S2_dec45",
+   "prop": "FP_B03_GlacierCliff",
+   "x": 212.466,
+   "y": -2.308,
+   "z": 40.433,
+   "rotY": 0.0,
+   "scale": 1.027
+  },
+  {
+   "id": "W3_S2_dec46",
+   "prop": "FP_B01_SnowMountain",
+   "x": -25.0,
+   "y": -3.339,
+   "z": 58.432,
+   "rotY": 180.0,
+   "scale": 0.928
+  },
+  {
+   "id": "W3_S2_dec47",
+   "prop": "FP_B01_SnowMountain",
+   "x": 12.615,
+   "y": -3.405,
+   "z": 50.103,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec48",
+   "prop": "FP_B01_SnowMountain",
+   "x": 51.742,
+   "y": -3.564,
+   "z": 57.783,
+   "rotY": 180.0,
+   "scale": 0.962
+  },
+  {
+   "id": "W3_S2_dec49",
+   "prop": "FP_B01_SnowMountain",
+   "x": 90.752,
+   "y": -3.716,
+   "z": 61.055,
+   "rotY": 0.0,
+   "scale": 0.903
+  },
+  {
+   "id": "W3_S2_dec50",
+   "prop": "FP_B01_SnowMountain",
+   "x": 129.231,
+   "y": -3.976,
+   "z": 59.307,
+   "rotY": 180.0,
+   "scale": 1.293
+  },
+  {
+   "id": "W3_S2_dec51",
+   "prop": "FP_B02_ThreePeakRidge",
+   "x": 167.126,
+   "y": -3.72,
+   "z": 57.944,
+   "rotY": 0.0,
+   "scale": 1.234
+  },
+  {
+   "id": "W3_S2_dec52",
+   "prop": "FP_B04_StoneArch",
+   "x": 203.875,
+   "y": -3.625,
+   "z": 60.199,
+   "rotY": 180.0,
+   "scale": 1.226
+  },
+  {
+   "id": "W3_S2_dec53",
+   "prop": "FP_B05_IceCastleFar",
+   "x": 138.75,
+   "y": -3.5,
+   "z": 88.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W3_S2_dec54",
+   "prop": "FP_A02_RuinArch",
+   "x": 83.25,
+   "y": 0.0,
+   "z": 6.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec55",
+   "prop": "FP_P06_LanternPost",
+   "x": 177.5,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec56",
+   "prop": "FP_P06_LanternPost",
+   "x": 182.5,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S2_dec57",
+   "prop": "FP_P05_IceCrystals",
+   "x": 7.58,
+   "y": 0.0,
+   "z": 1.56,
+   "rotY": 270.0,
+   "scale": 0.68
+  },
+  {
+   "id": "W3_S2_dec58",
+   "prop": "FP_P04_WinterShrub",
+   "x": 14.27,
+   "y": 0.0,
+   "z": 1.51,
+   "rotY": 15.0,
+   "scale": 1.06
+  },
+  {
+   "id": "W3_S2_dec59",
+   "prop": "FP_P04_WinterShrub",
+   "x": 19.42,
+   "y": 0.0,
+   "z": 1.34,
+   "rotY": 240.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S2_dec60",
+   "prop": "FP_P04_WinterShrub",
+   "x": 28.12,
+   "y": 1.5,
+   "z": 1.52,
+   "rotY": 225.0,
+   "scale": 1.03
+  },
+  {
+   "id": "W3_S2_dec61",
+   "prop": "FP_P05_IceCrystals",
+   "x": 35.07,
+   "y": 3.5,
+   "z": 1.53,
+   "rotY": 60.0,
+   "scale": 0.8
+  },
+  {
+   "id": "W3_S2_dec62",
+   "prop": "FP_P05_IceCrystals",
+   "x": 43.37,
+   "y": 5.5,
+   "z": 1.27,
+   "rotY": 255.0,
+   "scale": 0.8
+  },
+  {
+   "id": "W3_S2_dec63",
+   "prop": "FP_P04_WinterShrub",
+   "x": 52.59,
+   "y": 3.5,
+   "z": 1.4,
+   "rotY": 150.0,
+   "scale": 1.03
+  },
+  {
+   "id": "W3_S2_dec64",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 62.96,
+   "y": 0.0,
+   "z": 1.89,
+   "rotY": 315.0,
+   "scale": 0.62
+  },
+  {
+   "id": "W3_S2_dec65",
+   "prop": "FP_P05_IceCrystals",
+   "x": 75.24,
+   "y": 0.0,
+   "z": 1.42,
+   "rotY": 330.0,
+   "scale": 0.74
+  },
+  {
+   "id": "W3_S2_dec66",
+   "prop": "FP_P05_IceCrystals",
+   "x": 80.13,
+   "y": 0.0,
+   "z": 1.7,
+   "rotY": 270.0,
+   "scale": 0.75
+  },
+  {
+   "id": "W3_S2_dec67",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 87.57,
+   "y": 0.0,
+   "z": 1.87,
+   "rotY": 270.0,
+   "scale": 0.59
+  },
+  {
+   "id": "W3_S2_dec68",
+   "prop": "FP_P05_IceCrystals",
+   "x": 98.92,
+   "y": 2.0,
+   "z": 1.2,
+   "rotY": 255.0,
+   "scale": 0.67
+  },
+  {
+   "id": "W3_S2_dec69",
+   "prop": "FP_P02_YoungFir",
+   "x": 114.63,
+   "y": 6.0,
+   "z": 2.08,
+   "rotY": 255.0,
+   "scale": 0.88
+  },
+  {
+   "id": "W3_S2_dec70",
+   "prop": "FP_P04_WinterShrub",
+   "x": 127.12,
+   "y": 4.0,
+   "z": 1.59,
+   "rotY": 255.0,
+   "scale": 0.97
+  },
+  {
+   "id": "W3_S2_dec71",
+   "prop": "FP_P05_IceCrystals",
+   "x": 150.59,
+   "y": 2.0,
+   "z": 1.67,
+   "rotY": 75.0,
+   "scale": 0.6
+  },
+  {
+   "id": "W3_S2_dec72",
+   "prop": "FP_P05_IceCrystals",
+   "x": 165.4,
+   "y": 0.0,
+   "z": 1.54,
+   "rotY": 300.0,
+   "scale": 0.69
+  },
+  {
+   "id": "W3_S2_dec73",
+   "prop": "FP_P04_WinterShrub",
+   "x": 172.27,
+   "y": 0.0,
+   "z": 1.53,
+   "rotY": 195.0,
+   "scale": 0.91
+  }
+ ],
+ "featuredMonsters": [
+  1202,
+  1203
+ ],
+ "spikeTraps": []
+}

@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "stageId": "W1_TEST",
+ "length": 100.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": { "x": 2.0, "y": 0.0 },
+ "goal": { "x": 96.0, "y": 0.0 },
+ "sections": [
+  { "id": "T_A", "startX": 0.0, "endX": 36.0, "note": "spikes, coins, stompable enemies pair, wall, horizontal mover" },
+  { "id": "T_B", "startX": 36.0, "endX": 72.0, "note": "faller, vertical lift, platform with checkpoint" },
+  { "id": "T_C", "startX": 72.0, "endX": 100.0, "note": "sight-blocking wall, Behavior chaser (monster 1002)" }
+ ],
+ "blocks": [
+  { "id": "T_A_ground1", "section": "T_A", "kind": "ground", "x": 0.0, "y": 0.0, "w": 30.0, "h": 4.0 },
+  { "id": "T_A_wall1", "section": "T_A", "kind": "wall", "x": 26.0, "y": 1.5, "w": 1.0, "h": 1.5 },
+  { "id": "T_B_ground2", "section": "T_B", "kind": "ground", "x": 36.0, "y": 0.0, "w": 24.0, "h": 4.0 },
+  { "id": "T_B_platform1", "section": "T_B", "kind": "platform", "x": 64.0, "y": 4.0, "w": 6.0, "h": 1.0 },
+  { "id": "T_C_ground3", "section": "T_C", "kind": "ground", "x": 72.0, "y": 0.0, "w": 28.0, "h": 4.0 },
+  { "id": "T_C_wall2", "section": "T_C", "kind": "wall", "x": 79.0, "y": 2.0, "w": 1.0, "h": 2.0 }
+ ],
+ "checkpoints": [
+  { "id": "T_A_CP1", "x": 14.0, "y": 0.0 },
+  { "id": "T_B_CP2", "x": 67.0, "y": 4.0 }
+ ],
+ "coins": [
+  { "x": 4.0, "y": 1.5 }, { "x": 5.0, "y": 1.5 }, { "x": 6.0, "y": 1.5 },
+  { "x": 8.0, "y": 2.8 }, { "x": 9.0, "y": 3.2 }, { "x": 10.0, "y": 2.8 },
+  { "x": 32.0, "y": 1.5 }, { "x": 33.0, "y": 1.5 },
+  { "x": 80.0, "y": 1.5 }, { "x": 82.0, "y": 1.5 }
+ ],
+ "specials": [
+  { "id": "T_A_SC1", "slot": 0, "x": 9.0, "y": 4.2 },
+  { "id": "T_B_SC2", "slot": 1, "x": 52.0, "y": 3.0 },
+  { "id": "T_B_SC3", "slot": 2, "x": 67.0, "y": 7.0 }
+ ],
+ "spikes": [
+  { "id": "T_A_spk1", "x": 8.0, "y": 0.0, "w": 2.0 }
+ ],
+ "movers": [
+  { "id": "T_A_mv1", "x": 31.0, "y": 0.0, "w": 3.0, "axis": "x", "distance": 2.0, "speed": 2.0, "wait": 0.5 },
+  { "id": "T_B_mv2", "x": 61.0, "y": 0.0, "w": 3.0, "axis": "y", "distance": 4.0, "speed": 2.0, "wait": 0.5 }
+ ],
+ "enemies": [
+  { "id": "T_A_en1", "x": 17.0, "y": 0.0, "range": 6.0, "speed": 1.5 },
+  { "id": "T_A_en2", "x": 18.0, "y": 0.0, "range": 6.0, "speed": 1.5 },
+  { "id": "T_C_ch1", "monsterId": 1002, "x": 84.0, "y": 0.0, "range": 6.0 }
+ ],
+ "fallers": [
+  { "id": "T_B_fall1", "x": 45.0, "y": 5.0, "triggerHalfWidth": 1.5, "delay": 0.4, "respawn": 3.0 }
+ ]
+}

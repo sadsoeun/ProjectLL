@@ -1,0 +1,2 @@
+PASS: Unity compilation; sprite imports; idempotent HUD creation; live count updates; pause event once; unavailable-state gate; HUD modal hide/restore; gameplay navigation isolation; pre-initialization pause guard; 1920x1080,1280x720,2560x1080,1024x768 renders.
+Isolated actual scene preview. Full gameplay pause/resume still requires Play Mode validation.

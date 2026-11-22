@@ -1,0 +1,413 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764281c1d7672304784e74d88a622265, type: 3}
+  m_Name: TutorialConfig
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.TutorialConfig
+  view:
+    fadeInSeconds: 0.2
+    fadeOutSeconds: 0.35
+    slidePixels: 10
+    stageGapBelowHud: 20
+    stageFallbackTop: 230
+    worldMapGap: 22
+    maxWidth: 1080
+    mainFontSize: 32
+    subFontSize: 24
+    glyphHeight: 50
+    background: {r: 0.018, g: 0.019, b: 0.022, a: 0.95}
+    frame: {r: 0.79, g: 0.65, b: 0.42, a: 0.75}
+    doneAccent: {r: 1, g: 0.86, b: 0.5, a: 1}
+  explain:
+    overlayAlpha: 0.72
+    featherPixels: 26
+    minSpotPixels: 84
+    rectCornerPixels: 18
+    fadeInSeconds: 0.3
+    fadeOutSeconds: 0.25
+    spotFollow: 12
+    ringColor: {r: 1, g: 0.8, b: 0.4, a: 1}
+    ringWidth: 4
+    ringGap: 8
+    ringStartOffset: 170
+    ringShrinkSeconds: 0.5
+    ringPulsePixels: 4
+    ringPulseSpeed: 0.9
+    bubbleWidth: 700
+    bubbleGap: 34
+    titleFontSize: 36
+    bodyFontSize: 28
+    hintFontSize: 22
+    glyphHeight: 48
+    bubbleColor: {r: 0.018, g: 0.019, b: 0.022, a: 0.97}
+    titleColor: {r: 1, g: 0.8, b: 0.45, a: 1}
+    minReadSeconds: 0.8
+    skipHoldSeconds: 1
+  minVisibleSeconds: 1
+  minGapSeconds: 1.5
+  successHoldSeconds: 1.2
+  successKey: tutorial.success
+  minEnemyDistance: 3
+  dodgeFailWindow: 0.6
+  dodgeTryRadius: 5
+  bossCalmSeconds: 0.6
+  bossMinGap: 1
+  bossIntroDelay: 0.5
+  stages:
+  - stageId: W1_S1
+    steps:
+    - id: w1s1_move
+      textKey: tutorial.move
+      subKey: 
+      glyphs: 01000000
+      explain:
+      - titleKey: tutorial.ex.move.t
+        bodyKey: tutorial.ex.move.b
+        glyphs: 01000000
+        spot: 0
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 1.7
+      start: 0
+      startX: 0
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: 
+      targetId: 
+      goal: 2
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 12
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_run
+      textKey: tutorial.run
+      subKey: tutorial.run_sub
+      glyphs: 03000000
+      explain:
+      - titleKey: tutorial.ex.run.t
+        bodyKey: tutorial.ex.run.b
+        glyphs: 03000000
+        spot: 0
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 1.7
+      start: 1
+      startX: 0
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: w1s1_move
+      targetId: 
+      goal: 3
+      goalValue: 0.35
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 19.5
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_jump
+      textKey: tutorial.jump
+      subKey: tutorial.jump_sub
+      glyphs: 02000000
+      explain:
+      - titleKey: tutorial.ex.jump.t
+        bodyKey: tutorial.ex.jump.b
+        glyphs: 02000000
+        spot: 1
+        spotId: 
+        spotSlot: 0
+        point: {x: 21.5, y: 1.3}
+        radius: 2.6
+      start: 1
+      startX: 14
+      urgentX: 18
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: 
+      targetId: 
+      goal: 4
+      goalValue: 3
+      zoneMinX: 20
+      zoneMaxX: 29
+      zoneMinFeetY: 0.9
+      specialSlot: 0
+      endX: 30
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_leaf
+      textKey: tutorial.leaf
+      subKey: 
+      glyphs: 07000000
+      explain:
+      - titleKey: tutorial.ex.leaf.t
+        bodyKey: tutorial.ex.leaf.b
+        glyphs: 
+        spot: 4
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 1.5
+      - titleKey: tutorial.ex.leaf_hud.t
+        bodyKey: tutorial.ex.leaf_hud.b
+        glyphs: 
+        spot: 5
+        spotId: SpecialSlots
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 18
+      start: 1
+      startX: 23
+      urgentX: 26
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: w1s1_jump
+      targetId: 
+      goal: 5
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 35
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_stomp
+      textKey: tutorial.stomp
+      subKey: 
+      glyphs: 02000000
+      explain:
+      - titleKey: tutorial.ex.stomp.t
+        bodyKey: tutorial.ex.stomp.b
+        glyphs: 02000000
+        spot: 2
+        spotId: W1_S1_C_en1
+        spotSlot: 0
+        point: {x: 0, y: 0.6}
+        radius: 1.5
+      start: 1
+      startX: 33
+      urgentX: 34.5
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: 
+      targetId: W1_S1_C_en1
+      goal: 6
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 44.5
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_checkpoint
+      textKey: tutorial.checkpoint
+      subKey: 
+      glyphs: 
+      explain:
+      - titleKey: tutorial.ex.checkpoint.t
+        bodyKey: tutorial.ex.checkpoint.b
+        glyphs: 
+        spot: 3
+        spotId: W1_S1_CP2
+        spotSlot: 0
+        point: {x: 0, y: 1.5}
+        radius: 1.9
+      start: 2
+      startX: 0
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: 
+      targetId: W1_S1_CP2
+      goal: 8
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 68
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1s1_dodge
+      textKey: tutorial.dodge
+      subKey: tutorial.dodge_sub
+      glyphs: 04000000
+      explain:
+      - titleKey: tutorial.ex.dodge.t
+        bodyKey: tutorial.ex.dodge.b
+        glyphs: 04000000
+        spot: 2
+        spotId: W1_S1_E_en2
+        spotSlot: 0
+        point: {x: 0, y: 0.6}
+        radius: 1.5
+      - titleKey: tutorial.ex.dodge_timing.t
+        bodyKey: tutorial.ex.dodge_timing.b
+        glyphs: 04000000
+        spot: 0
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 1.7
+      start: 1
+      startX: 91.2
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep: 
+      targetId: W1_S1_E_en2
+      goal: 7
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 104
+      helperAfterFailures: 3
+      helperKey: tutorial.dodge_help
+  - stageId: W1_B
+    steps:
+    - id: w1b_boss
+      textKey: tutorial.boss_charge
+      subKey: tutorial.boss_charge_sub
+      glyphs: 0200000004000000
+      explain:
+      - titleKey: tutorial.ex.boss.t
+        bodyKey: tutorial.ex.boss.b
+        glyphs: 
+        spot: 6
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 2.7
+      - titleKey: tutorial.ex.boss_hp.t
+        bodyKey: tutorial.ex.boss_hp.b
+        glyphs: 
+        spot: 5
+        spotId: BossHud/Panel
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 14
+      - titleKey: tutorial.ex.boss_charge.t
+        bodyKey: tutorial.ex.boss_charge.b
+        glyphs: 0200000004000000
+        spot: 6
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 2.7
+      start: 5
+      startX: 0
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 0
+      afterStep:
+      targetId:
+      goal: 9
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 1000
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1b_stun
+      textKey: tutorial.boss_stomp
+      subKey: tutorial.boss_stomp_sub
+      glyphs: 02000000
+      explain:
+      - titleKey: tutorial.ex.boss_stun.t
+        bodyKey: tutorial.ex.boss_stun.b
+        glyphs: 02000000
+        spot: 6
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 2.7
+      start: 4
+      startX: 0
+      urgentX: 0
+      ignoreGap: 1
+      bossPhase: 0
+      afterStep: w1b_boss
+      targetId: 
+      goal: 10
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 1000
+      helperAfterFailures: 0
+      helperKey: 
+    - id: w1b_rain
+      textKey: tutorial.boss_rain
+      subKey: 
+      glyphs: 
+      explain:
+      - titleKey: tutorial.ex.boss_rain.t
+        bodyKey: tutorial.ex.boss_rain.b
+        glyphs: 
+        spot: 6
+        spotId: 
+        spotSlot: 0
+        point: {x: 0, y: 0}
+        radius: 2.7
+      start: 3
+      startX: 0
+      urgentX: 0
+      ignoreGap: 0
+      bossPhase: 1
+      afterStep: 
+      targetId: 
+      goal: 8
+      goalValue: 3
+      zoneMinX: 0
+      zoneMaxX: 0
+      zoneMinFeetY: 0
+      specialSlot: 0
+      endX: 1000
+      helperAfterFailures: 0
+      helperKey: 
+  mapMoveId: map_move
+  mapMoveKey: tutorial.map_move
+  mapMoveExplain:
+    titleKey: tutorial.ex.map_move.t
+    bodyKey: tutorial.ex.map_move.b
+    glyphs: 05000000
+    spot: 1
+    spotId: 
+    spotSlot: 0
+    point: {x: 0, y: 0}
+    radius: 1.2
+  mapEnterId: map_enter
+  mapEnterKey: tutorial.map_enter
+  mapEnterExplain:
+    titleKey: tutorial.ex.map_enter.t
+    bodyKey: tutorial.ex.map_enter.b
+    glyphs: 06000000
+    spot: 1
+    spotId: 
+    spotSlot: 0
+    point: {x: 0, y: 0}
+    radius: 1.2
+  mapIdleDelay: 0.8

@@ -1,0 +1,11 @@
+const fs=require('fs'),path=require('path');
+const root='C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/intro-film';
+let source=fs.readFileSync(path.join(root,'render-runtime.cjs'),'utf8');
+source=source.replace('drawSprite(c,logo,640,330,900,0,title);','// The Unity UI owns the single continuous logo.');
+source=source.replace('const fade=Math.max(1-smooth(t/.75),smooth((t-(total-.65))/.65));','const fade=1-smooth(t/.75);');
+source=source.replace("  writeMetadata();","  // Preserve the original delivery metadata.");
+source=source.replace(/  const moments=\[[\s\S]*?  if\(process.argv.includes\('--stills'\)\)[^\n]*\n/,'');
+source=source.replace('LeafAndLeap_Intro_Runtime_Picture_1080p.mp4','LeafAndLeap_Intro_LogoFreeTail.mp4');
+source=source.replace('for(let n=0;n<frames;n++)','for(let n=81*FPS;n<frames;n++)');
+fs.writeFileSync(path.join(root,'render-handoff-tail.cjs'),source);
+console.log(path.join(root,'render-handoff-tail.cjs'));

@@ -1,0 +1,96 @@
+using System;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Language, volume and display settings. Saves settings.json when closed (spec 5.3).</summary>
+    public sealed class SettingsPopup : PopupBase
+    {
+        [SerializeField] private Button[] languageButtons;   // order = LocalizationTable.LanguageCodes
+        [SerializeField] private Slider masterSlider;
+        [SerializeField] private Slider bgmSlider;
+        [SerializeField] private Slider sfxSlider;
+        [SerializeField] private Toggle fullscreenToggle;
+        [SerializeField] private Toggle vsyncToggle;
+        [SerializeField] private Button closeButton;
+
+        private Action onClosed;
+        private SettingsService settings;
+        private LocalizationService localization;
+
+        private static readonly Color Selected = new Color(0.95f, 0.75f, 0.2f, 1f);
+        private static readonly Color Normal = new Color(0.25f, 0.32f, 0.5f, 1f);
+
+        private void Awake()
+        {
+            Assert.IsNotNull(languageButtons, "SettingsPopup.languageButtons is not assigned.");
+            Assert.AreEqual(LocalizationTable.LanguageCodes.Length, languageButtons.Length);
+            Assert.IsNotNull(masterSlider);
+            Assert.IsNotNull(bgmSlider);
+            Assert.IsNotNull(sfxSlider);
+            Assert.IsNotNull(fullscreenToggle);
+            Assert.IsNotNull(vsyncToggle);
+            Assert.IsNotNull(closeButton);
+
+            for (int i = 0; i < languageButtons.Length; i++)
+            {
+                string code = LocalizationTable.LanguageCodes[i];
+                languageButtons[i].onClick.AddListener(() => OnLanguageClicked(code));
+            }
+            masterSlider.onValueChanged.AddListener(v => { settings.Data.masterVolume = v; settings.NotifyChanged(); });
+            bgmSlider.onValueChanged.AddListener(v => { settings.Data.bgmVolume = v; settings.NotifyChanged(); });
+            sfxSlider.onValueChanged.AddListener(v => { settings.Data.sfxVolume = v; settings.NotifyChanged(); });
+            fullscreenToggle.onValueChanged.AddListener(v => { settings.Data.fullscreen = v; settings.NotifyChanged(); });
+            vsyncToggle.onValueChanged.AddListener(v => { settings.Data.vSync = v; settings.NotifyChanged(); });
+            closeButton.onClick.AddListener(Close);
+        }
+
+        public void Open(PopupHost host, Action closedCallback)
+        {
+            var systems = GameSystems.Instance;
+            Assert.IsNotNull(systems);
+            settings = systems.Settings;
+            localization = systems.Localization;
+            onClosed = closedCallback;
+
+            var d = settings.Data;
+            masterSlider.SetValueWithoutNotify(d.masterVolume);
+            bgmSlider.SetValueWithoutNotify(d.bgmVolume);
+            sfxSlider.SetValueWithoutNotify(d.sfxVolume);
+            fullscreenToggle.SetIsOnWithoutNotify(d.fullscreen);
+            vsyncToggle.SetIsOnWithoutNotify(d.vSync);
+            UpdateLanguageMarkers();
+
+            int current = Mathf.Max(0, LocalizationTable.IndexOf(localization.CurrentLanguage));
+            BeginOpen(host, languageButtons[current].gameObject);
+        }
+
+        private void OnLanguageClicked(string code)
+        {
+            localization.SetLanguage(code);
+            settings.Data.languageCode = code;
+            settings.Data.hasSelectedLanguage = true;
+            UpdateLanguageMarkers();
+        }
+
+        private void UpdateLanguageMarkers()
+        {
+            string current = localization.CurrentLanguage;
+            for (int i = 0; i < languageButtons.Length; i++)
+            {
+                var img = languageButtons[i].targetGraphic as Image;
+                if (img != null)
+                    img.color = LocalizationTable.LanguageCodes[i] == current ? Selected : Normal;
+            }
+        }
+
+        protected override void OnClosed()
+        {
+            if (settings != null && !settings.Save())
+                Debug.LogError("[SettingsPopup] Failed to save settings.json.");
+            onClosed?.Invoke();
+        }
+    }
+}

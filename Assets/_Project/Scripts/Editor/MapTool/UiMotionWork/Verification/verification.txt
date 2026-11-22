@@ -1,0 +1,2 @@
+PASS: Unity compilation; actual settings prefab renders; unscaled reveal; entrance input gate; exact settle; repeated-open reset; focus/press/release/disabled feedback; hitbox/navigation preserved; exit input suppression.
+Popup close coroutine and callback ordering code reviewed; no player saves or scene assets modified.

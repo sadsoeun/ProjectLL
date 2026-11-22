@@ -1,0 +1,155 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Title-only 3D idle showcase and staggered menu entrance, sampled in unscaled time.</summary>
+    [DisallowMultipleComponent]
+    public sealed class TitlePresentation : MonoBehaviour
+    {
+        private Camera sceneCamera;
+        private Transform mascot, relic, outerRing, innerRing;
+        private Vector3 cameraPosition, mascotPosition;
+        private Quaternion cameraRotation, mascotRotation;
+        private CanvasGroup logoGroup;
+        private RectTransform logo;
+        private Vector2 logoPosition;
+        private readonly List<RectTransform> buttons = new List<RectTransform>();
+        private readonly List<Vector2> buttonPositions = new List<Vector2>();
+        private readonly List<CanvasGroup> buttonGroups = new List<CanvasGroup>();
+        private readonly List<Transform> clouds = new List<Transform>();
+        private readonly List<Vector3> cloudPositions = new List<Vector3>();
+        private GameObject modelFx;
+        private Material material;
+        private Mesh mesh;
+        private float elapsed;
+        private bool initialized;
+
+        private void Start() { Initialize(); Sample(0); }
+        private void Update() { elapsed += Time.unscaledDeltaTime; Sample(elapsed); }
+
+        public void Initialize()
+        {
+            if (initialized) return;
+            initialized = true;
+            foreach (var root in gameObject.scene.GetRootGameObjects())
+            {
+                if (sceneCamera == null) sceneCamera = root.GetComponentInChildren<Camera>();
+                if (root.name != "Environment") continue;
+                mascot = root.transform.Find("Mascot");
+                foreach (var t in root.GetComponentsInChildren<Transform>())
+                    if (t.name.StartsWith("B05_CloudMass")) { clouds.Add(t); cloudPositions.Add(t.localPosition); }
+            }
+            if (sceneCamera != null) { cameraPosition=sceneCamera.transform.localPosition; cameraRotation=sceneCamera.transform.localRotation; }
+            if (mascot != null)
+            {
+                mascotPosition=mascot.localPosition; mascotRotation=mascot.localRotation;
+                var animator=mascot.GetComponentInChildren<Animator>();
+                if (animator != null)
+                {
+                    animator.updateMode=AnimatorUpdateMode.UnscaledTime;
+                    animator.applyRootMotion=false;
+                    foreach(var parameter in animator.parameters)
+                    {
+                        if(parameter.name=="Speed")animator.SetFloat("Speed",0);
+                        else if(parameter.name=="Grounded")animator.SetBool("Grounded",true);
+                    }
+                }
+                BuildRelic(mascot.parent);
+            }
+            logo=transform.Find("GameLogo") as RectTransform;
+            if(logo!=null){logoPosition=logo.anchoredPosition;logoGroup=Group(logo);}
+            var menu=transform.Find("MainMenu");
+            if(menu!=null)foreach(var b in menu.GetComponentsInChildren<Button>(true))
+            {
+                var rt=(RectTransform)b.transform;buttons.Add(rt);buttonPositions.Add(rt.anchoredPosition);buttonGroups.Add(Group(rt));
+            }
+        }
+
+        private static CanvasGroup Group(Transform t)
+        { var group=t.GetComponent<CanvasGroup>();return group!=null?group:t.gameObject.AddComponent<CanvasGroup>(); }
+
+        public void Sample(float time)
+        {
+            Initialize();
+            float intro=1-Mathf.Pow(1-Mathf.Clamp01(time/.9f),3);
+            if(sceneCamera!=null)
+            {
+                sceneCamera.transform.localPosition=cameraPosition+new Vector3(Mathf.Sin(time*.24f)*.16f,Mathf.Sin(time*.32f)*.06f,-.6f*(1-intro));
+                sceneCamera.transform.localRotation=cameraRotation*Quaternion.Euler(0,Mathf.Sin(time*.18f)*.35f,0);
+            }
+            if(mascot!=null)mascot.localRotation=mascotRotation*Quaternion.Euler(0,Mathf.Sin(time*.45f)*4,0);
+            for(int i=0;i<clouds.Count;i++)if(clouds[i]!=null)
+                clouds[i].localPosition=cloudPositions[i]+new Vector3(Mathf.Sin(time*.08f+i)*1.2f,0,0);
+            if(relic!=null)
+            {
+                modelFx.transform.localPosition=mascotPosition+new Vector3(-1.6f,2.2f+Mathf.Sin(time*1.25f)*.12f,-.4f);
+                relic.localRotation=Quaternion.Euler(18,time*28,12);
+                outerRing.localRotation=Quaternion.Euler(65,0,time*16);
+                innerRing.localRotation=Quaternion.Euler(20,time*-22,70);
+            }
+            if(logo!=null)
+            {logoGroup.alpha=intro;logo.anchoredPosition=logoPosition+new Vector2(-32*(1-intro),0);}
+            for(int i=0;i<buttons.Count;i++)
+            {
+                float t=Mathf.Clamp01((time-.25f-i*.11f)/.45f);
+                float ease=1-Mathf.Pow(1-t,3);
+                buttons[i].anchoredPosition=buttonPositions[i]+new Vector2(-40*(1-ease),0);
+                buttonGroups[i].alpha=ease;
+                buttonGroups[i].interactable=t>=1;buttonGroups[i].blocksRaycasts=t>=1;
+            }
+        }
+
+        private void BuildRelic(Transform parent)
+        {
+            modelFx=new GameObject("TitleFloatingRelic");modelFx.transform.SetParent(parent,false);
+            var shader=Shader.Find("Universal Render Pipeline/Unlit");
+            if(shader==null)shader=Shader.Find("Unlit/Color");
+            if(shader==null)return;
+            material=new Material(shader){name="TitleGold_Runtime"};
+            material.color=new Color(1.5f,1.02f,.28f);
+            if(material.HasProperty("_BaseColor"))material.SetColor("_BaseColor",new Color(1.5f,1.02f,.28f));
+            var go=new GameObject("FacetedGoldCrystal",typeof(MeshFilter),typeof(MeshRenderer));
+            relic=go.transform;relic.SetParent(modelFx.transform,false);relic.localScale=Vector3.one*.43f;
+            mesh=Octahedron();go.GetComponent<MeshFilter>().sharedMesh=mesh;go.GetComponent<MeshRenderer>().sharedMaterial=material;
+            outerRing=Ring("OrbitOuter",.85f);innerRing=Ring("OrbitInner",.64f);
+        }
+
+        private Transform Ring(string name,float radius)
+        {
+            var go=new GameObject(name,typeof(LineRenderer));go.transform.SetParent(modelFx.transform,false);
+            var line=go.GetComponent<LineRenderer>();line.sharedMaterial=material;line.useWorldSpace=false;line.loop=true;
+            line.widthMultiplier=.012f;line.positionCount=80;
+            for(int i=0;i<80;i++){float a=i*Mathf.PI*2/80;line.SetPosition(i,new Vector3(Mathf.Cos(a)*radius,Mathf.Sin(a)*radius,0));}
+            return go.transform;
+        }
+
+        private static Mesh Octahedron()
+        {
+            var points=new[]{Vector3.up*1.4f,Vector3.right,Vector3.forward,Vector3.left,Vector3.back,Vector3.down*1.4f};
+            var vertices=new List<Vector3>();var triangles=new List<int>();
+            for(int i=0;i<4;i++)
+            {
+                int a=i+1,b=(i+1)%4+1;
+                vertices.Add(points[0]);vertices.Add(points[b]);vertices.Add(points[a]);
+                vertices.Add(points[5]);vertices.Add(points[a]);vertices.Add(points[b]);
+            }
+            for(int i=0;i<vertices.Count;i++)triangles.Add(i);
+            var result=new Mesh{name="TitleRelic_Octahedron"};result.SetVertices(vertices);result.SetTriangles(triangles,0);result.RecalculateNormals();result.RecalculateBounds();return result;
+        }
+
+        private void OnDisable()
+        {
+            if(sceneCamera!=null){sceneCamera.transform.localPosition=cameraPosition;sceneCamera.transform.localRotation=cameraRotation;}
+            if(mascot!=null)mascot.localRotation=mascotRotation;
+            for(int i=0;i<clouds.Count;i++)if(clouds[i]!=null)clouds[i].localPosition=cloudPositions[i];
+        }
+        private void OnDestroy()
+        {
+            Release(modelFx); Release(mesh); Release(material);
+        }
+        private static void Release(Object asset)
+        { if(asset==null)return; if(Application.isPlaying)Destroy(asset);else DestroyImmediate(asset); }
+    }
+}

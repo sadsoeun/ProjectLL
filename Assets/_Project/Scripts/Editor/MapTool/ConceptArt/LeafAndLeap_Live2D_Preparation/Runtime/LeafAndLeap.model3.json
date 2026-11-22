@@ -1,0 +1,19 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "LeafAndLeap.moc3",
+    "Textures": [
+      "LeafAndLeap.2048/texture_00.png"
+    ],
+    "DisplayInfo": "LeafAndLeap.cdi3.json",
+    "Motions": {
+      "Idle": [
+        {
+          "File": "MeadowIdle.motion3.json",
+          "FadeOutTime": 0.35,
+          "FadeInTime": 0.35
+        }
+      ]
+    }
+  }
+}

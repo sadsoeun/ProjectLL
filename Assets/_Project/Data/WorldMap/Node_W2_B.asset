@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91711ab9b27b2f04986f67a1f991044e, type: 3}
+  m_Name: Node_W2_B
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.WorldMapNodeData
+  nodeId: W2_B
+  stage: {fileID: 11400000, guid: 0a53d9e3225c235429261c16018103a5, type: 2}
+  prerequisiteStageIds:
+  - W2_S4
+  upNodeId: 
+  downNodeId: 
+  leftNodeId: W2_S4
+  rightNodeId: W3_S1
+  mapPosition: {x: 43, y: 7, z: 78}

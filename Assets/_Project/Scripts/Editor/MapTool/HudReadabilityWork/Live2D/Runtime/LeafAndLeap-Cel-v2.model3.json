@@ -1,0 +1,10 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "LeafAndLeap-Cel-v2.moc3",
+		"Textures": [
+			"LeafAndLeap-Cel-v2.2048/texture_00.png"
+		],
+		"DisplayInfo": "LeafAndLeap-Cel-v2.cdi3.json"
+	}
+}

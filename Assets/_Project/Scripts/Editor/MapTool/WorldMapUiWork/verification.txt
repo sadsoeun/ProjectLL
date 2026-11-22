@@ -1,0 +1,1 @@
+PASS: Unity compilation; idempotent UI; single-page menu (more/save/load/quit rows hidden); navigation restricted to visible controls; HUD hide/restore; 16:9,21:9,4:3 renders. Isolated scene preview.

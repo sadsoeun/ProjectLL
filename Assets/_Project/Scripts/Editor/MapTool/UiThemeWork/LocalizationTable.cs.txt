@@ -1,0 +1,138 @@
+using System.Collections.Generic;
+
+namespace MyGame
+{
+    /// <summary>
+    /// Minimal in-code string table. Column order: en, zh-Hans, ko, es, ja.
+    /// Designed to be replaced by the Unity Localization package later (keys stay the same).
+    /// </summary>
+    public static class LocalizationTable
+    {
+        public static readonly string[] LanguageCodes = { "en", "zh-Hans", "ko", "es", "ja" };
+        public static readonly string[] NativeNames = { "English", "中文", "한국어", "Español", "日本語" };
+        public const string DefaultLanguage = "en";
+
+        private static readonly Dictionary<string, string[]> Table = Build();
+
+        public static int IndexOf(string code)
+        {
+            for (int i = 0; i < LanguageCodes.Length; i++)
+                if (LanguageCodes[i] == code) return i;
+            return -1;
+        }
+
+        public static bool IsSupported(string code) => IndexOf(code) >= 0;
+
+        public static bool TryGet(string languageCode, string key, out string value)
+        {
+            value = null;
+            int idx = IndexOf(languageCode);
+            if (idx < 0) idx = 0;
+            if (string.IsNullOrEmpty(key) || !Table.TryGetValue(key, out var row))
+                return false;
+            value = string.IsNullOrEmpty(row[idx]) ? row[0] : row[idx];
+            return true;
+        }
+
+        /// <summary>Maps Application.systemLanguage to a supported code (spec 5.2).</summary>
+        public static string FromSystemLanguage(UnityEngine.SystemLanguage lang)
+        {
+            switch (lang)
+            {
+                case UnityEngine.SystemLanguage.Chinese:
+                case UnityEngine.SystemLanguage.ChineseSimplified:
+                    return "zh-Hans";
+                case UnityEngine.SystemLanguage.Korean: return "ko";
+                case UnityEngine.SystemLanguage.Spanish: return "es";
+                case UnityEngine.SystemLanguage.Japanese: return "ja";
+                default: return DefaultLanguage;
+            }
+        }
+
+        private static void Add(Dictionary<string, string[]> t, string key, string en, string zh, string ko, string es, string ja)
+        {
+            t[key] = new[] { en, zh, ko, es, ja };
+        }
+
+        private static Dictionary<string, string[]> Build()
+        {
+            var t = new Dictionary<string, string[]>();
+
+            Add(t, "common.yes", "Yes", "是", "예", "Sí", "はい");
+            Add(t, "common.no", "No", "否", "아니오", "No", "いいえ");
+            Add(t, "common.close", "Close", "关闭", "닫기", "Cerrar", "閉じる");
+
+            Add(t, "lang.header", "Select your language", "请选择语言", "언어를 선택하세요", "Selecciona tu idioma", "言語を選択してください");
+            Add(t, "lang.confirm", "Confirm", "确认", "확인", "Confirmar", "決定");
+            Add(t, "lang.save_failed", "Failed to save settings. Please try again.", "设置保存失败，请重试。", "설정 저장에 실패했습니다. 다시 시도하세요.", "No se pudo guardar la configuración. Inténtalo de nuevo.", "設定の保存に失敗しました。もう一度お試しください。");
+
+            Add(t, "title.new_game", "New Game", "新游戏", "새로 시작", "Nueva partida", "はじめから");
+            Add(t, "title.continue", "Continue", "继续游戏", "이어하기", "Continuar", "つづきから");
+            Add(t, "title.settings", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "title.quit", "Quit", "退出游戏", "게임 종료", "Salir", "ゲーム終了");
+            Add(t, "title.confirm_overwrite", "Existing progress will be deleted.\nStart a new game?", "现有进度将被删除。\n要开始新游戏吗？", "기존 진행이 삭제됩니다.\n새로 시작할까요?", "Se borrará tu progreso actual.\n¿Empezar una nueva partida?", "既存の進行データが削除されます。\n最初から始めますか？");
+            Add(t, "title.confirm_quit", "Quit the game?", "要退出游戏吗？", "게임을 종료할까요?", "¿Salir del juego?", "ゲームを終了しますか？");
+            Add(t, "title.save_corrupted", "The save file was damaged and could not be loaded.", "存档文件已损坏，无法读取。", "세이브 파일이 손상되어 불러올 수 없습니다.", "El archivo de guardado está dañado y no se pudo cargar.", "セーブファイルが破損しており、読み込めませんでした。");
+            Add(t, "title.save_recovered", "The save file was restored from a backup.", "存档已从备份中恢复。", "세이브 파일을 백업에서 복구했습니다.", "El guardado se restauró desde una copia de seguridad.", "セーブファイルをバックアップから復元しました。");
+            Add(t, "title.save_failed", "Failed to write the save file.", "存档写入失败。", "세이브 파일을 저장하지 못했습니다.", "No se pudo escribir el archivo de guardado.", "セーブファイルの書き込みに失敗しました。");
+
+            Add(t, "settings.title", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "settings.language", "Language", "语言", "언어", "Idioma", "言語");
+            Add(t, "settings.master", "Master Volume", "主音量", "전체 볼륨", "Volumen general", "マスター音量");
+            Add(t, "settings.bgm", "BGM Volume", "音乐音量", "배경음 볼륨", "Volumen de música", "BGM音量");
+            Add(t, "settings.sfx", "SFX Volume", "音效音量", "효과음 볼륨", "Volumen de efectos", "SE音量");
+            Add(t, "settings.fullscreen", "Fullscreen", "全屏", "전체 화면", "Pantalla completa", "フルスクリーン");
+            Add(t, "settings.vsync", "V-Sync", "垂直同步", "수직 동기화", "Sincronización vertical", "垂直同期");
+
+            Add(t, "loading.loading", "Loading...", "加载中...", "로딩 중...", "Cargando...", "読み込み中...");
+            Add(t, "loading.tip1", "Tip: Hold the jump button to jump higher.", "提示：按住跳跃键可以跳得更高。", "팁: 점프 버튼을 길게 누르면 더 높이 뜁니다.", "Consejo: mantén pulsado el salto para saltar más alto.", "ヒント：ジャンプボタンを長押しすると高く跳べます。");
+            Add(t, "loading.tip2", "Tip: Falling into a pit costs one life.", "提示：掉进坑里会失去一条命。", "팁: 구덩이에 떨어지면 목숨이 하나 줄어듭니다.", "Consejo: caer a un foso cuesta una vida.", "ヒント：穴に落ちると残機が1つ減ります。");
+            Add(t, "loading.tip3", "Tip: Clear a stage to open the next one.", "提示：通关后会开启下一关。", "팁: 스테이지를 클리어하면 다음 스테이지가 열립니다.", "Consejo: supera un nivel para abrir el siguiente.", "ヒント：ステージをクリアすると次のステージが開きます。");
+
+            Add(t, "worldmap.state.locked", "Locked", "未解锁", "잠김", "Bloqueado", "ロック中");
+            Add(t, "worldmap.state.open", "Open", "可挑战", "열림", "Abierto", "挑戦可能");
+            Add(t, "worldmap.state.cleared", "Cleared", "已通关", "클리어", "Superado", "クリア済み");
+            Add(t, "worldmap.hint", "Move: Arrow / WASD / Stick    Enter: Enter / Space / A    Pause: Esc / Start", "移动：方向键 / WASD / 摇杆    进入：Enter / 空格 / A    暂停：Esc / Start", "이동: 방향키 / WASD / 스틱    진입: Enter / Space / A    일시정지: Esc / Start", "Mover: flechas / WASD / palanca    Entrar: Enter / Espacio / A    Pausa: Esc / Start", "移動：矢印 / WASD / スティック　決定：Enter / Space / A　ポーズ：Esc / Start");
+            Add(t, "worldmap.enter", "Enter Stage", "进入关卡", "스테이지 진입", "Entrar al nivel", "ステージへ");
+            Add(t, "worldmap.locked_msg", "This stage is locked.", "该关卡尚未解锁。", "아직 잠긴 스테이지입니다.", "Este nivel está bloqueado.", "このステージはまだロックされています。");
+            Add(t, "worldmap.unlocked_msg", "A new stage has opened!", "新关卡已开启！", "새 스테이지가 열렸습니다!", "¡Se ha abierto un nuevo nivel!", "新しいステージが開きました！");
+            Add(t, "worldmap.best_time", "Best time: {0}", "最佳时间：{0}", "최고 기록: {0}", "Mejor tiempo: {0}", "ベストタイム：{0}");
+            Add(t, "worldmap.no_record", "Best time: --", "最佳时间：--", "최고 기록: --", "Mejor tiempo: --", "ベストタイム：--");
+            Add(t, "worldmap.specials", "Special items: {0}/{1}", "特殊道具：{0}/{1}", "특별 수집품: {0}/{1}", "Objetos especiales: {0}/{1}", "スペシャルアイテム：{0}/{1}");
+
+            Add(t, "pause.title", "Paused", "已暂停", "일시정지", "Pausa", "ポーズ");
+            Add(t, "pause.resume", "Resume", "继续", "이어서 하기", "Reanudar", "再開");
+            Add(t, "pause.retry", "Retry", "重试", "다시 시작", "Reintentar", "リトライ");
+            Add(t, "pause.settings", "Settings", "设置", "설정", "Ajustes", "設定");
+            Add(t, "pause.exit_map", "Exit to World Map", "返回世界地图", "월드맵으로", "Salir al mapa", "ワールドマップへ");
+            Add(t, "pause.to_title", "Back to Title", "返回标题", "타이틀로", "Volver al título", "タイトルへ");
+            Add(t, "pause.confirm_exit", "Leave the stage and return to the world map?", "要离开关卡并返回世界地图吗？", "스테이지를 나가 월드맵으로 돌아갈까요?", "¿Salir del nivel y volver al mapa?", "ステージを出てワールドマップに戻りますか？");
+
+            Add(t, "ingame.lives", "Lives: {0}", "生命：{0}", "목숨: {0}", "Vidas: {0}", "残機：{0}");
+            Add(t, "ingame.time", "Time {0}", "时间 {0}", "시간 {0}", "Tiempo {0}", "タイム {0}");
+            Add(t, "ingame.ready", "Ready?", "准备！", "준비!", "¿Listo?", "よーい！");
+            Add(t, "ingame.dead", "Missed!", "失败了！", "실패!", "¡Fallaste!", "ミス！");
+            Add(t, "ingame.clear", "Stage Clear!", "通关！", "스테이지 클리어!", "¡Nivel superado!", "ステージクリア！");
+            Add(t, "ingame.result_title", "Result", "结算", "결과", "Resultado", "リザルト");
+            Add(t, "ingame.result_time", "Clear time: {0}", "通关时间：{0}", "클리어 시간: {0}", "Tiempo: {0}", "クリアタイム：{0}");
+            Add(t, "ingame.result_time_label", "CLEAR TIME", "通关时间", "클리어 시간", "TIEMPO TOTAL", "クリアタイム");
+            Add(t, "ingame.result_seconds", "{0:0.00} s", "{0:0.00} 秒", "{0:0.00}초", "{0:0.00} s", "{0:0.00} 秒");
+            Add(t, "ingame.continue", "Continue", "继续", "계속", "Continuar", "つづける");
+            Add(t, "ingame.gameover", "Game Over", "游戏结束", "게임 오버", "Fin del juego", "ゲームオーバー");
+            Add(t, "ingame.coins", "Coins: {0}", "金币：{0}", "코인: {0}", "Monedas: {0}", "コイン：{0}");
+
+            Add(t, "stage.W1_S1.name", "1-1  First Steps Meadow", "1-1  初步草原", "1-1  첫 걸음 초원", "1-1  Pradera de los primeros pasos", "1-1  はじめの一歩の草原");
+            Add(t, "stage.W1_S2.name", "1-2  Chasm Valley", "1-2  裂隙山谷", "1-2  틈새 계곡", "1-2  Valle de las grietas", "1-2  裂け目の谷");
+            Add(t, "stage.W1_S3.name", "1-3  Patrol Forest Trail", "1-3  巡逻林道", "1-3  순찰 숲길", "1-3  Sendero del bosque vigilado", "1-3  パトロールの森道");
+            Add(t, "stage.W1_S4.name", "1-4  Ridge of Trials", "1-4  试炼山脊", "1-4  시련의 능선", "1-4  Cresta de las pruebas", "1-4  試練の稜線");
+
+            // Monster names (Data/Tables/MonsterTable.csv nameKey)
+            Add(t, "monster.1001.name", "Violet Patroller", "紫色巡逻兵", "보라 순찰병", "Patrullero violeta", "むらさきパトロール");
+            Add(t, "monster.1002.name", "Crimson Chaser", "深红追击者", "진홍 추격자", "Perseguidor carmesí", "しんくのチェイサー");
+            Add(t, "monster.1003.name", "Hopping Patroller", "跳跃巡逻兵", "점프 순찰병", "Patrullero saltarín", "ジャンプパトロール");
+            Add(t, "monster.1004.name", "Distant Watcher", "远程监视者", "원거리 감시자", "Vigía lejano", "とおくのみはり");
+
+            return t;
+        }
+    }
+}

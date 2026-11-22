@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161b2fca634796a429f35675cefe46f4, type: 3}
+  m_Name: StageData_W5_S4
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.StageData
+  stageId: W5_S4
+  displayNameKey: stage.W5_S4.name
+  sceneName: Stage_W5_S4
+  bgm: {fileID: 8300000, guid: 7b46a17d25844c4d8534bc07f0570f48, type: 3}
+  timeLimit: 0
+  collectibleCount: 3

@@ -1,0 +1,1869 @@
+{
+ "version": 1,
+ "stageId": "W4_S3",
+ "length": 206.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 199.0,
+  "y": 3.0
+ },
+ "sections": [
+  {
+   "id": "W4_S3_A",
+   "startX": 0.0,
+   "endX": 47.0,
+   "note": "Harbor quay: wide sand quay, cargo ledge, jetty planks (no enemy: warm-up)"
+  },
+  {
+   "id": "W4_S3_B",
+   "startX": 47.0,
+   "endX": 83.0,
+   "note": "Hull ascent: broken ship decks climbing 1.5 m per hop, CP1, first tide jelly"
+  },
+  {
+   "id": "W4_S3_C",
+   "startX": 83.0,
+   "endX": 130.0,
+   "note": "Drop to the dock, crab, vertical lift to the gantry over a sand shelf (SC2 pocket), second jelly, CP2"
+  },
+  {
+   "id": "W4_S3_D",
+   "startX": 130.0,
+   "endX": 172.0,
+   "note": "Wreck deck run: 해안 게 ×2, 소라게, 체크포인트, 특수 수집품"
+  },
+  {
+   "id": "W4_S3_E",
+   "startX": 172.0,
+   "endX": 206.0,
+   "note": "Lighthouse pier: long calm pier, goal"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W4_S3_A_ground1",
+   "section": "W4_S3_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 24.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_A_ground2",
+   "section": "W4_S3_A",
+   "kind": "ground",
+   "x": 16.0,
+   "y": 1.6,
+   "w": 3.0,
+   "h": 1.6
+  },
+  {
+   "id": "W4_S3_A_platform3",
+   "section": "W4_S3_A",
+   "kind": "platform",
+   "x": 27.0,
+   "y": 0.5,
+   "w": 8.0,
+   "h": 0.5
+  },
+  {
+   "id": "W4_S3_A_ground4",
+   "section": "W4_S3_A",
+   "kind": "ground",
+   "x": 38.0,
+   "y": 1.5,
+   "w": 9.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_B_ground5",
+   "section": "W4_S3_B",
+   "kind": "ground",
+   "x": 50.0,
+   "y": 3.0,
+   "w": 6.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_B_ground6",
+   "section": "W4_S3_B",
+   "kind": "ground",
+   "x": 59.0,
+   "y": 4.5,
+   "w": 6.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_B_ground7",
+   "section": "W4_S3_B",
+   "kind": "ground",
+   "x": 68.0,
+   "y": 6.0,
+   "w": 12.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_C_ground8_a",
+   "section": "W4_S3_C",
+   "kind": "ground",
+   "x": 83.0,
+   "y": 1.5,
+   "w": 9.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_C_ground8_s925",
+   "section": "W4_S3_C",
+   "kind": "ground",
+   "x": 92.5,
+   "y": 1.5,
+   "w": 2.0,
+   "h": 10.0,
+   "surface": "bounce"
+  },
+  {
+   "id": "W4_S3_C_ground8_b",
+   "section": "W4_S3_C",
+   "kind": "ground",
+   "x": 94.5,
+   "y": 1.5,
+   "w": 2.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_C_ground9",
+   "section": "W4_S3_C",
+   "kind": "ground",
+   "x": 97.0,
+   "y": 0.0,
+   "w": 1.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_C_ground10",
+   "section": "W4_S3_C",
+   "kind": "ground",
+   "x": 98.5,
+   "y": -1.5,
+   "w": 7.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_C_platform11",
+   "section": "W4_S3_C",
+   "kind": "platform",
+   "x": 103.0,
+   "y": 6.0,
+   "w": 14.0,
+   "h": 0.5
+  },
+  {
+   "id": "W4_S3_C_platform12",
+   "section": "W4_S3_C",
+   "kind": "platform",
+   "x": 120.0,
+   "y": 3.0,
+   "w": 9.0,
+   "h": 0.5
+  },
+  {
+   "id": "W4_S3_D_ground13",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 132.0,
+   "y": 4.0,
+   "w": 6.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_D_ground14_a",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 141.0,
+   "y": 5.5,
+   "w": 1.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_D_ground14_s1425",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 142.5,
+   "y": 5.5,
+   "w": 2.0,
+   "h": 10.0,
+   "surface": "bounce"
+  },
+  {
+   "id": "W4_S3_D_ground14_b",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 144.5,
+   "y": 5.5,
+   "w": 1.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_D_ground15",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 146.0,
+   "y": 3.0,
+   "w": 16.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_D_platform16",
+   "section": "W4_S3_D",
+   "kind": "platform",
+   "x": 148.5,
+   "y": 7.0,
+   "w": 3.0,
+   "h": 0.5,
+   "surface": "crumble"
+  },
+  {
+   "id": "W4_S3_D_platform17",
+   "section": "W4_S3_D",
+   "kind": "platform",
+   "x": 153.5,
+   "y": 8.5,
+   "w": 3.0,
+   "h": 0.5
+  },
+  {
+   "id": "W4_S3_D_ground18",
+   "section": "W4_S3_D",
+   "kind": "ground",
+   "x": 165.0,
+   "y": 2.0,
+   "w": 5.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_S3_E_platform19",
+   "section": "W4_S3_E",
+   "kind": "platform",
+   "x": 173.0,
+   "y": 3.0,
+   "w": 33.0,
+   "h": 0.5
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W4_S3_CP1",
+   "section": "W4_S3_B",
+   "x": 60.5,
+   "y": 4.5
+  },
+  {
+   "id": "W4_S3_CP2",
+   "section": "W4_S3_C",
+   "x": 122.0,
+   "y": 3.0
+  },
+  {
+   "id": "W4_S3_CP3",
+   "section": "W4_S3_D",
+   "x": 160.5,
+   "y": 3.0
+  }
+ ],
+ "coins": [
+  {
+   "section": "W4_S3_A",
+   "x": 3.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 5.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 7.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 9.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 11.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 13.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 19.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 21.8,
+   "y": 1.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 28.8,
+   "y": 1.7
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 30.8,
+   "y": 1.7
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 32.8,
+   "y": 1.7
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 39.8,
+   "y": 2.7
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 51.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 53.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 62.8,
+   "y": 5.7
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 69.8,
+   "y": 7.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 84.8,
+   "y": 2.7
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 92.8,
+   "y": 2.7
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 94.8,
+   "y": 2.7
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 100.3,
+   "y": -0.3
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 102.3,
+   "y": -0.3
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 104.8,
+   "y": 7.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 114.8,
+   "y": 7.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 123.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 125.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 133.8,
+   "y": 5.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 135.8,
+   "y": 5.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 142.8,
+   "y": 6.7
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 147.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 149.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 157.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 159.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 166.8,
+   "y": 3.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 174.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 176.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 178.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 180.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 182.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 192.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 194.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 196.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_E",
+   "x": 202.8,
+   "y": 4.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 25.5,
+   "y": 2.2
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 36.5,
+   "y": 3.2
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 48.5,
+   "y": 4.7
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 57.5,
+   "y": 6.2
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 66.5,
+   "y": 7.7
+  },
+  {
+   "section": "W4_S3_B",
+   "x": 81.5,
+   "y": 7.7
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 97.75,
+   "y": 3.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 118.5,
+   "y": 7.7
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 130.5,
+   "y": 5.7
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 139.5,
+   "y": 7.2
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 163.5,
+   "y": 4.7
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 171.5,
+   "y": 4.7
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 16.8,
+   "y": 3.3
+  },
+  {
+   "section": "W4_S3_A",
+   "x": 18.2,
+   "y": 3.3
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 100.0,
+   "y": 3.2
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 100.0,
+   "y": 4.6
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 101.0,
+   "y": 5.8
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 101.0,
+   "y": -0.3
+  },
+  {
+   "section": "W4_S3_C",
+   "x": 103.0,
+   "y": -0.3
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 149.5,
+   "y": 8.4
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 151.0,
+   "y": 8.4
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 154.0,
+   "y": 9.9
+  },
+  {
+   "section": "W4_S3_D",
+   "x": 156.0,
+   "y": 9.9
+  },
+  {
+   "x": 143.5,
+   "y": 8.9
+  },
+  {
+   "x": 143.5,
+   "y": 9.9
+  },
+  {
+   "x": 143.5,
+   "y": 10.8
+  },
+  {
+   "x": 93.5,
+   "y": 4.9
+  },
+  {
+   "x": 93.5,
+   "y": 5.9
+  },
+  {
+   "x": 93.5,
+   "y": 6.8
+  }
+ ],
+ "specials": [
+  {
+   "id": "W4_S3_SC1",
+   "section": "W4_S3_A",
+   "slot": 0,
+   "x": 17.5,
+   "y": 3.3
+  },
+  {
+   "id": "W4_S3_SC2",
+   "section": "W4_S3_C",
+   "slot": 1,
+   "x": 105.0,
+   "y": -0.2
+  },
+  {
+   "id": "W4_S3_SC3",
+   "section": "W4_S3_D",
+   "slot": 2,
+   "x": 139.5,
+   "y": 7.5
+  }
+ ],
+ "spikes": [],
+ "movers": [
+  {
+   "id": "W4_S3_C_mv1",
+   "section": "W4_S3_C",
+   "x": 99.0,
+   "y": 1.5,
+   "w": 3.0,
+   "axis": "y",
+   "distance": 4.5,
+   "speed": 1.6,
+   "wait": 0.8
+  }
+ ],
+ "enemies": [
+  {
+   "id": "W4_S3_A_en1",
+   "section": "W4_S3_D",
+   "monsterId": 1301,
+   "x": 134.0,
+   "y": 4.0,
+   "range": 3.0
+  },
+  {
+   "id": "W4_S3_B_en2",
+   "section": "W4_S3_B",
+   "monsterId": 1303,
+   "x": 73.0,
+   "y": 6.0,
+   "range": 4.0
+  },
+  {
+   "id": "W4_S3_C_en3",
+   "section": "W4_S3_C",
+   "monsterId": 1301,
+   "x": 87.0,
+   "y": 1.5,
+   "range": 3.0
+  },
+  {
+   "id": "W4_S3_C_en4",
+   "section": "W4_S3_C",
+   "monsterId": 1303,
+   "x": 108.0,
+   "y": 6.0,
+   "range": 4.0
+  },
+  {
+   "id": "W4_S3_D_en5",
+   "section": "W4_S3_D",
+   "monsterId": 1302,
+   "x": 152.0,
+   "y": 3.0,
+   "range": 3.0,
+   "speed": 0.6
+  },
+  {
+   "id": "W4_S3_E_en6",
+   "section": "W4_S3_D",
+   "monsterId": 1301,
+   "x": 156.5,
+   "y": 3.0,
+   "range": 3.0
+  }
+ ],
+ "fallers": [],
+ "theme": "CoralCoast",
+ "decorations": [
+  {
+   "id": "W4_S3_dec1",
+   "prop": "CC_B07_SandFloor",
+   "x": 103.0,
+   "y": -1.8,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec2",
+   "prop": "CC_P12_CoastRocks",
+   "x": 5.0,
+   "y": 0.0,
+   "z": 3.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec3",
+   "prop": "CC_P02_BeachPlant",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec4",
+   "prop": "CC_P06_CargoCrate",
+   "x": 8.5,
+   "y": 0.0,
+   "z": 2.8,
+   "rotY": 15.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec5",
+   "prop": "CC_P07_Barrel",
+   "x": 10.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec6",
+   "prop": "CC_P10_MooringPost",
+   "x": 13.0,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec7",
+   "prop": "CC_P09_HarborLantern",
+   "x": 20.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec8",
+   "prop": "CC_P08_Anchor",
+   "x": 22.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 20.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec9",
+   "prop": "CC_A02_PierGazebo",
+   "x": 14.0,
+   "y": 0.0,
+   "z": 6.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec10",
+   "prop": "CC_P11_CoastFlag",
+   "x": 29.0,
+   "y": 0.5,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec11",
+   "prop": "CC_P10_MooringPost",
+   "x": 33.8,
+   "y": 0.5,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec12",
+   "prop": "CC_P06_CargoCrate",
+   "x": 31.0,
+   "y": 0.5,
+   "z": 1.6,
+   "rotY": 5.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec13",
+   "prop": "CC_T08_PierSupport",
+   "x": 28.5,
+   "y": -2.8,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 0.7
+  },
+  {
+   "id": "W4_S3_dec14",
+   "prop": "CC_T08_PierSupport",
+   "x": 33.5,
+   "y": -2.8,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 0.7
+  },
+  {
+   "id": "W4_S3_dec15",
+   "prop": "CC_P07_Barrel",
+   "x": 40.0,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec16",
+   "prop": "CC_P06_CargoCrate",
+   "x": 41.4,
+   "y": 1.5,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec17",
+   "prop": "CC_P10_MooringPost",
+   "x": 46.0,
+   "y": 1.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec18",
+   "prop": "CC_P02_BeachPlant",
+   "x": 44.5,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec19",
+   "prop": "CC_P08_Anchor",
+   "x": 51.5,
+   "y": 3.0,
+   "z": 2.8,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec20",
+   "prop": "CC_P07_Barrel",
+   "x": 54.5,
+   "y": 3.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec21",
+   "prop": "CC_P09_HarborLantern",
+   "x": 60.0,
+   "y": 4.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec22",
+   "prop": "CC_P06_CargoCrate",
+   "x": 63.5,
+   "y": 4.5,
+   "z": 2.8,
+   "rotY": 25.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec23",
+   "prop": "CC_P10_MooringPost",
+   "x": 69.2,
+   "y": 6.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec24",
+   "prop": "CC_P07_Barrel",
+   "x": 78.0,
+   "y": 6.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec25",
+   "prop": "CC_P06_CargoCrate",
+   "x": 79.0,
+   "y": 6.0,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec26",
+   "prop": "CC_P03_BranchCoral",
+   "x": 71.0,
+   "y": 6.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec27",
+   "prop": "CC_P12_CoastRocks",
+   "x": 85.0,
+   "y": 1.5,
+   "z": 4.2,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec28",
+   "prop": "CC_P06_CargoCrate",
+   "x": 86.2,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec29",
+   "prop": "CC_P07_Barrel",
+   "x": 87.4,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec30",
+   "prop": "CC_P04_DomeCoral",
+   "x": 93.0,
+   "y": 1.5,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec31",
+   "prop": "CC_P08_Anchor",
+   "x": 95.5,
+   "y": 1.5,
+   "z": 2.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec32",
+   "prop": "CC_P09_HarborLantern",
+   "x": 104.0,
+   "y": 6.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec33",
+   "prop": "CC_P10_MooringPost",
+   "x": 116.5,
+   "y": 6.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec34",
+   "prop": "CC_P11_CoastFlag",
+   "x": 112.0,
+   "y": 6.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W4_S3_dec35",
+   "prop": "CC_P06_CargoCrate",
+   "x": 114.0,
+   "y": 6.0,
+   "z": 1.6,
+   "rotY": 8.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec36",
+   "prop": "CC_P07_Barrel",
+   "x": 106.5,
+   "y": 6.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec37",
+   "prop": "CC_T08_PierSupport",
+   "x": 121.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec38",
+   "prop": "CC_T08_PierSupport",
+   "x": 127.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec39",
+   "prop": "CC_P09_HarborLantern",
+   "x": 127.5,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec40",
+   "prop": "CC_P10_MooringPost",
+   "x": 121.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec41",
+   "prop": "CC_P08_Anchor",
+   "x": 102.0,
+   "y": -1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec42",
+   "prop": "CC_P05_Shells",
+   "x": 104.5,
+   "y": -1.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec43",
+   "prop": "CC_P07_Barrel",
+   "x": 133.0,
+   "y": 4.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec44",
+   "prop": "CC_P12_CoastRocks",
+   "x": 136.0,
+   "y": 4.0,
+   "z": 4.5,
+   "rotY": 90.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec45",
+   "prop": "CC_P03_BranchCoral",
+   "x": 142.0,
+   "y": 5.5,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec46",
+   "prop": "CC_P05_Shells",
+   "x": 145.3,
+   "y": 5.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec47",
+   "prop": "CC_P04_DomeCoral",
+   "x": 150.0,
+   "y": 3.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec48",
+   "prop": "CC_P08_Anchor",
+   "x": 156.0,
+   "y": 3.0,
+   "z": 3.0,
+   "rotY": 90.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec49",
+   "prop": "CC_P10_MooringPost",
+   "x": 160.5,
+   "y": 3.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec50",
+   "prop": "CC_P06_CargoCrate",
+   "x": 166.0,
+   "y": 2.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec51",
+   "prop": "CC_P03_BranchCoral",
+   "x": 168.5,
+   "y": 2.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec52",
+   "prop": "CC_T08_PierSupport",
+   "x": 174.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec53",
+   "prop": "CC_T08_PierSupport",
+   "x": 180.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec54",
+   "prop": "CC_T08_PierSupport",
+   "x": 186.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec55",
+   "prop": "CC_T08_PierSupport",
+   "x": 192.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec56",
+   "prop": "CC_T08_PierSupport",
+   "x": 198.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec57",
+   "prop": "CC_T08_PierSupport",
+   "x": 204.5,
+   "y": -2.2,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.175
+  },
+  {
+   "id": "W4_S3_dec58",
+   "prop": "CC_P09_HarborLantern",
+   "x": 175.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec59",
+   "prop": "CC_P06_CargoCrate",
+   "x": 177.5,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 12.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec60",
+   "prop": "CC_P07_Barrel",
+   "x": 179.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec61",
+   "prop": "CC_P10_MooringPost",
+   "x": 191.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec62",
+   "prop": "CC_P11_CoastFlag",
+   "x": 194.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec63",
+   "prop": "CC_P11_CoastFlag",
+   "x": 203.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec64",
+   "prop": "CC_P09_HarborLantern",
+   "x": 204.0,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec65",
+   "prop": "CC_P02_BeachPlant",
+   "x": 200.5,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 30.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec66",
+   "prop": "CC_A02_PierGazebo",
+   "x": 202.0,
+   "y": 3.0,
+   "z": 5.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec67",
+   "prop": "CC_B06_Shipwreck",
+   "x": 38.0,
+   "y": -2.2,
+   "z": 22.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec68",
+   "prop": "CC_B06_Shipwreck",
+   "x": 104.0,
+   "y": -2.2,
+   "z": 26.0,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec69",
+   "prop": "CC_B06_Shipwreck",
+   "x": 168.0,
+   "y": -2.2,
+   "z": 24.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec70",
+   "prop": "CC_B02_SeaStacks",
+   "x": 14.0,
+   "y": -2.2,
+   "z": 40.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec71",
+   "prop": "CC_B02_SeaStacks",
+   "x": 78.0,
+   "y": -2.2,
+   "z": 36.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec72",
+   "prop": "CC_B02_SeaStacks",
+   "x": 136.0,
+   "y": -2.2,
+   "z": 38.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec73",
+   "prop": "CC_B02_SeaStacks",
+   "x": 196.0,
+   "y": -2.2,
+   "z": 36.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec74",
+   "prop": "CC_B01_PalmIsland",
+   "x": 54.0,
+   "y": -2.2,
+   "z": 52.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec75",
+   "prop": "CC_B01_PalmIsland",
+   "x": 150.0,
+   "y": -2.2,
+   "z": 54.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec76",
+   "prop": "CC_B03_SeaArch",
+   "x": 100.0,
+   "y": -2.2,
+   "z": 62.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec77",
+   "prop": "CC_B04_CoralRidge",
+   "x": 30.0,
+   "y": -2.2,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec78",
+   "prop": "CC_B04_CoralRidge",
+   "x": 118.0,
+   "y": -2.2,
+   "z": 82.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec79",
+   "prop": "CC_B04_CoralRidge",
+   "x": 190.0,
+   "y": -2.2,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec80",
+   "prop": "CC_B05_ShellPalaceFar",
+   "x": 60.0,
+   "y": -2.2,
+   "z": 94.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec81",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec82",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec83",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec84",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec85",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec86",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec87",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec88",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec89",
+   "prop": "CC_B08_WaterSurface",
+   "x": 192.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec90",
+   "prop": "CC_B08_WaterSurface",
+   "x": 224.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec91",
+   "prop": "CC_B08_WaterSurface",
+   "x": 256.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec92",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec93",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec94",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec95",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec96",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec97",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec98",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec99",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec100",
+   "prop": "CC_B08_WaterSurface",
+   "x": 192.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec101",
+   "prop": "CC_B08_WaterSurface",
+   "x": 224.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec102",
+   "prop": "CC_B08_WaterSurface",
+   "x": 256.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec103",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec104",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec105",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec106",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec107",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec108",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec109",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec110",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec111",
+   "prop": "CC_B08_WaterSurface",
+   "x": 192.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec112",
+   "prop": "CC_B08_WaterSurface",
+   "x": 224.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec113",
+   "prop": "CC_B08_WaterSurface",
+   "x": 256.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec114",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec115",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec116",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec117",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec118",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec119",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec120",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec121",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec122",
+   "prop": "CC_B08_WaterSurface",
+   "x": 192.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec123",
+   "prop": "CC_B08_WaterSurface",
+   "x": 224.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec124",
+   "prop": "CC_B08_WaterSurface",
+   "x": 256.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_S3_dec125",
+   "prop": "CC_T08_PierSupport",
+   "x": 105.5,
+   "y": -1.8,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.83
+  },
+  {
+   "id": "W4_S3_dec126",
+   "prop": "CC_T08_PierSupport",
+   "x": 114.5,
+   "y": -1.8,
+   "z": 0.0,
+   "rotY": 0.0,
+   "scale": 1.83
+  },
+  {
+   "id": "W4_S3_dec127",
+   "prop": "CC_T10_PlatformPier",
+   "x": 202.0,
+   "y": 3.0,
+   "z": 4.25,
+   "rotY": 0.0,
+   "scale": 1.0
+  }
+ ],
+ "featuredMonsters": [
+  1303
+ ],
+ "spikeTraps": []
+}

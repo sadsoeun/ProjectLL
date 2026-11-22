@@ -1,0 +1,1263 @@
+{
+ "version": 1,
+ "stageId": "W3_S4",
+ "length": 200.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 194.0,
+  "y": 3.0
+ },
+ "sections": [
+  {
+   "id": "W3_S4_A",
+   "startX": 0.0,
+   "endX": 32.0,
+   "note": "룬 압력판과 얼음 문, 첫 목재 다리"
+  },
+  {
+   "id": "W3_S4_B",
+   "startX": 32.0,
+   "endX": 62.0,
+   "note": "구간: 빙결 수호병, 주기 가시 함정, 낙하 장애물, 체크포인트, 특수 수집품"
+  },
+  {
+   "id": "W3_S4_C",
+   "startX": 62.0,
+   "endX": 100.0,
+   "note": "이동 발판 다리: 이동 발판, 스위치, 문, 체크포인트"
+  },
+  {
+   "id": "W3_S4_D",
+   "startX": 100.0,
+   "endX": 140.0,
+   "note": "구간: 얼음 골렘, 빙결 수호병, 주기 가시 함정, 체크포인트, 특수 수집품"
+  },
+  {
+   "id": "W3_S4_E",
+   "startX": 140.0,
+   "endX": 172.0,
+   "note": "긴 다리와 박쥐, 높은 압력판"
+  },
+  {
+   "id": "W3_S4_F",
+   "startX": 172.0,
+   "endX": 200.0,
+   "note": "마지막 다리와 골렘, 골인"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W3_S4_A_ground1",
+   "section": "W3_S4_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 20.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_A_platform2",
+   "section": "W3_S4_A",
+   "kind": "platform",
+   "x": 20.0,
+   "y": 0.0,
+   "w": 12.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_B_ground3",
+   "section": "W3_S4_B",
+   "kind": "ground",
+   "x": 32.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_B_platform4",
+   "section": "W3_S4_B",
+   "kind": "platform",
+   "x": 42.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_B_ground5",
+   "section": "W3_S4_B",
+   "kind": "ground",
+   "x": 52.0,
+   "y": 0.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_C_platform6",
+   "section": "W3_S4_C",
+   "kind": "platform",
+   "x": 62.0,
+   "y": 0.0,
+   "w": 6.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_C_platform8",
+   "section": "W3_S4_C",
+   "kind": "platform",
+   "x": 77.0,
+   "y": 0.0,
+   "w": 8.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_C_ground9",
+   "section": "W3_S4_C",
+   "kind": "ground",
+   "x": 85.0,
+   "y": 0.0,
+   "w": 15.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_D_ground10",
+   "section": "W3_S4_D",
+   "kind": "ground",
+   "x": 100.0,
+   "y": 1.5,
+   "w": 12.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_D_platform11",
+   "section": "W3_S4_D",
+   "kind": "platform",
+   "x": 112.0,
+   "y": 1.5,
+   "w": 10.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_D_ground12",
+   "section": "W3_S4_D",
+   "kind": "ground",
+   "x": 122.0,
+   "y": 1.5,
+   "w": 8.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_D_ground13",
+   "section": "W3_S4_D",
+   "kind": "ground",
+   "x": 130.0,
+   "y": 3.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_D_platform14",
+   "section": "W3_S4_D",
+   "kind": "platform",
+   "x": 133.0,
+   "y": 5.5,
+   "w": 3.0,
+   "h": 0.5,
+   "surface": "crumble"
+  },
+  {
+   "id": "W3_S4_E_platform15",
+   "section": "W3_S4_E",
+   "kind": "platform",
+   "x": 140.0,
+   "y": 3.0,
+   "w": 14.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_E_ground16",
+   "section": "W3_S4_E",
+   "kind": "ground",
+   "x": 154.0,
+   "y": 3.0,
+   "w": 10.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_E_platform17",
+   "section": "W3_S4_E",
+   "kind": "platform",
+   "x": 156.0,
+   "y": 5.5,
+   "w": 3.0,
+   "h": 0.5
+  },
+  {
+   "id": "W3_S4_E_ground18",
+   "section": "W3_S4_E",
+   "kind": "ground",
+   "x": 164.0,
+   "y": 3.0,
+   "w": 8.0,
+   "h": 10.0
+  },
+  {
+   "id": "W3_S4_F_platform19",
+   "section": "W3_S4_F",
+   "kind": "platform",
+   "x": 172.0,
+   "y": 3.0,
+   "w": 6.0,
+   "h": 0.4
+  },
+  {
+   "id": "W3_S4_F_ground20",
+   "section": "W3_S4_F",
+   "kind": "ground",
+   "x": 178.0,
+   "y": 3.0,
+   "w": 22.0,
+   "h": 10.0
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W3_S4_CP1",
+   "section": "W3_S4_B",
+   "x": 54.0,
+   "y": 0.0
+  },
+  {
+   "id": "W3_S4_CP2",
+   "section": "W3_S4_D",
+   "x": 124.0,
+   "y": 1.5
+  },
+  {
+   "id": "W3_S4_CP3",
+   "section": "W3_S4_E",
+   "x": 155.0,
+   "y": 3.0
+  },
+  {
+   "id": "W3_S4_CP53",
+   "x": 95.0,
+   "y": 0.0
+  }
+ ],
+ "coins": [
+  {
+   "section": "W3_S4_A",
+   "x": 3.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 4.25,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 5.5,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 6.75,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 8.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 19.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 21.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 23.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 25.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 27.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 29.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_A",
+   "x": 31.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 35.0,
+   "y": 1.4
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 36.667,
+   "y": 3.305
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 38.333,
+   "y": 3.305
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 40.0,
+   "y": 1.4
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 43.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 45.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 47.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 49.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_B",
+   "x": 51.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 63.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 65.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 67.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 78.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 80.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 82.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 84.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 96.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 97.5,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_C",
+   "x": 99.0,
+   "y": 1.2
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 113.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 115.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 117.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 119.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 121.0,
+   "y": 2.7
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 131.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 133.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 135.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 137.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_D",
+   "x": 139.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 141.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 143.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 145.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 147.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 149.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 151.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 153.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 165.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 167.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 169.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_E",
+   "x": 171.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 173.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 175.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 177.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 181.0,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 183.75,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 186.5,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 189.25,
+   "y": 4.2
+  },
+  {
+   "section": "W3_S4_F",
+   "x": 192.0,
+   "y": 4.2
+  }
+ ],
+ "specials": [
+  {
+   "id": "W3_S4_SC1",
+   "section": "W3_S4_C",
+   "slot": 0,
+   "x": 47.0,
+   "y": 2.0
+  },
+  {
+   "id": "W3_S4_SC2",
+   "section": "W3_S4_D",
+   "slot": 1,
+   "x": 117.0,
+   "y": 3.5
+  },
+  {
+   "id": "W3_S4_SC3",
+   "section": "W3_S4_F",
+   "slot": 2,
+   "x": 175.0,
+   "y": 6.4
+  }
+ ],
+ "spikes": [],
+ "movers": [
+  {
+   "id": "W3_S4_C_mv7",
+   "section": "W3_S4_C",
+   "x": 68.5,
+   "y": 0.0,
+   "w": 3.0,
+   "axis": "x",
+   "distance": 5.0,
+   "speed": 2.0,
+   "wait": 0.5
+  }
+ ],
+ "enemies": [
+  {
+   "id": "W3_S4_B_en31",
+   "section": "W3_S4_B",
+   "monsterId": 1207,
+   "x": 57.5,
+   "y": 0.0,
+   "range": 3.5
+  },
+  {
+   "id": "W3_S4_D_en33",
+   "section": "W3_S4_D",
+   "monsterId": 2201,
+   "x": 104.0,
+   "y": 1.5,
+   "range": 6.0
+  },
+  {
+   "id": "W3_S4_D_en34",
+   "section": "W3_S4_D",
+   "monsterId": 1207,
+   "x": 134.0,
+   "y": 3.0,
+   "range": 4.5
+  },
+  {
+   "id": "W3_S4_E_en35",
+   "section": "W3_S4_E",
+   "monsterId": 1203,
+   "x": 146.0,
+   "y": 3.0,
+   "range": 5.0
+  },
+  {
+   "id": "W3_S4_F_en36",
+   "section": "W3_S4_F",
+   "monsterId": 2201,
+   "x": 186.0,
+   "y": 3.0,
+   "range": 4.0
+  }
+ ],
+ "fallers": [
+  {
+   "id": "W3_S4_B_fall30",
+   "section": "W3_S4_B",
+   "x": 47.0,
+   "y": 9.0,
+   "triggerHalfWidth": 1.5,
+   "delay": 0.5,
+   "respawn": 3.0
+  }
+ ],
+ "theme": "FrostPeaks",
+ "decorations": [
+  {
+   "id": "W3_S4_dec1",
+   "prop": "FP_B07_SnowField",
+   "x": 100.0,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec2",
+   "prop": "FP_P07_Signpost",
+   "x": 6.0,
+   "y": 0.0,
+   "z": 3.2,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec3",
+   "prop": "FP_P05_IceCrystals",
+   "x": 4.0,
+   "y": 0.0,
+   "z": 4.567,
+   "rotY": 180.0,
+   "scale": 0.981
+  },
+  {
+   "id": "W3_S4_dec4",
+   "prop": "FP_P10_BrokenPillar",
+   "x": 10.024,
+   "y": 0.0,
+   "z": 3.577,
+   "rotY": 180.0,
+   "scale": 0.848
+  },
+  {
+   "id": "W3_S4_dec5",
+   "prop": "FP_P02_YoungFir",
+   "x": 16.056,
+   "y": 0.0,
+   "z": 8.1,
+   "rotY": 0.0,
+   "scale": 1.092
+  },
+  {
+   "id": "W3_S4_dec6",
+   "prop": "FP_P01_SnowFir",
+   "x": 35.978,
+   "y": 0.0,
+   "z": 6.982,
+   "rotY": 0.0,
+   "scale": 1.085
+  },
+  {
+   "id": "W3_S4_dec7",
+   "prop": "FP_P04_WinterShrub",
+   "x": 40.543,
+   "y": 0.0,
+   "z": 3.784,
+   "rotY": 0.0,
+   "scale": 0.903
+  },
+  {
+   "id": "W3_S4_dec8",
+   "prop": "FP_P02_YoungFir",
+   "x": 55.838,
+   "y": 0.0,
+   "z": 8.45,
+   "rotY": 0.0,
+   "scale": 1.006
+  },
+  {
+   "id": "W3_S4_dec9",
+   "prop": "FP_P04_WinterShrub",
+   "x": 91.343,
+   "y": 0.0,
+   "z": 3.964,
+   "rotY": 0.0,
+   "scale": 0.839
+  },
+  {
+   "id": "W3_S4_dec10",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 96.415,
+   "y": 0.0,
+   "z": 4.842,
+   "rotY": 0.0,
+   "scale": 0.844
+  },
+  {
+   "id": "W3_S4_dec11",
+   "prop": "FP_P06_LanternPost",
+   "x": 98.755,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec12",
+   "prop": "FP_P10_BrokenPillar",
+   "x": 101.929,
+   "y": 1.5,
+   "z": 5.372,
+   "rotY": 0.0,
+   "scale": 0.871
+  },
+  {
+   "id": "W3_S4_dec13",
+   "prop": "FP_P05_IceCrystals",
+   "x": 108.407,
+   "y": 1.5,
+   "z": 5.296,
+   "rotY": 180.0,
+   "scale": 1.014
+  },
+  {
+   "id": "W3_S4_dec14",
+   "prop": "FP_P05_IceCrystals",
+   "x": 128.135,
+   "y": 1.5,
+   "z": 5.369,
+   "rotY": 0.0,
+   "scale": 1.042
+  },
+  {
+   "id": "W3_S4_dec15",
+   "prop": "FP_P05_IceCrystals",
+   "x": 133.793,
+   "y": 3.0,
+   "z": 4.806,
+   "rotY": 0.0,
+   "scale": 0.822
+  },
+  {
+   "id": "W3_S4_dec16",
+   "prop": "FP_P10_BrokenPillar",
+   "x": 158.373,
+   "y": 3.0,
+   "z": 5.958,
+   "rotY": 0.0,
+   "scale": 1.034
+  },
+  {
+   "id": "W3_S4_dec17",
+   "prop": "FP_P01_SnowFir",
+   "x": 169.169,
+   "y": 3.0,
+   "z": 5.813,
+   "rotY": 180.0,
+   "scale": 1.214
+  },
+  {
+   "id": "W3_S4_dec18",
+   "prop": "FP_P01_SnowFir",
+   "x": 182.264,
+   "y": 3.0,
+   "z": 5.902,
+   "rotY": 180.0,
+   "scale": 1.035
+  },
+  {
+   "id": "W3_S4_dec19",
+   "prop": "FP_P01_SnowFir",
+   "x": 188.671,
+   "y": 3.0,
+   "z": 7.017,
+   "rotY": 0.0,
+   "scale": 0.897
+  },
+  {
+   "id": "W3_S4_dec20",
+   "prop": "FP_P04_WinterShrub",
+   "x": 195.36,
+   "y": 3.0,
+   "z": 3.687,
+   "rotY": 180.0,
+   "scale": 1.118
+  },
+  {
+   "id": "W3_S4_dec21",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 55.6,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec22",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 125.6,
+   "y": 1.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec23",
+   "prop": "FP_P09_SnowflakePennant",
+   "x": 156.6,
+   "y": 3.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec24",
+   "prop": "FP_B08_FirForestBand",
+   "x": -30.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec25",
+   "prop": "FP_B08_FirForestBand",
+   "x": 24.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec26",
+   "prop": "FP_B08_FirForestBand",
+   "x": 78.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec27",
+   "prop": "FP_B08_FirForestBand",
+   "x": 132.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec28",
+   "prop": "FP_B08_FirForestBand",
+   "x": 186.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec29",
+   "prop": "FP_B08_FirForestBand",
+   "x": 240.0,
+   "y": -0.6,
+   "z": 15.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec30",
+   "prop": "FP_B06_SnowHills",
+   "x": -20.0,
+   "y": -1.703,
+   "z": 28.817,
+   "rotY": 180.0,
+   "scale": 1.131
+  },
+  {
+   "id": "W3_S4_dec31",
+   "prop": "FP_B06_SnowHills",
+   "x": 13.904,
+   "y": -1.797,
+   "z": 30.728,
+   "rotY": 180.0,
+   "scale": 1.241
+  },
+  {
+   "id": "W3_S4_dec32",
+   "prop": "FP_B06_SnowHills",
+   "x": 41.696,
+   "y": -1.565,
+   "z": 28.006,
+   "rotY": 180.0,
+   "scale": 1.007
+  },
+  {
+   "id": "W3_S4_dec33",
+   "prop": "FP_B06_SnowHills",
+   "x": 69.135,
+   "y": -2.245,
+   "z": 28.024,
+   "rotY": 180.0,
+   "scale": 1.062
+  },
+  {
+   "id": "W3_S4_dec34",
+   "prop": "FP_B06_SnowHills",
+   "x": 98.678,
+   "y": -2.19,
+   "z": 27.503,
+   "rotY": 0.0,
+   "scale": 1.273
+  },
+  {
+   "id": "W3_S4_dec35",
+   "prop": "FP_B06_SnowHills",
+   "x": 132.049,
+   "y": -2.186,
+   "z": 20.587,
+   "rotY": 0.0,
+   "scale": 1.259
+  },
+  {
+   "id": "W3_S4_dec36",
+   "prop": "FP_B03_GlacierCliff",
+   "x": 158.753,
+   "y": -2.302,
+   "z": 40.721,
+   "rotY": 0.0,
+   "scale": 1.066
+  },
+  {
+   "id": "W3_S4_dec37",
+   "prop": "FP_B06_SnowHills",
+   "x": 190.973,
+   "y": -1.648,
+   "z": 29.968,
+   "rotY": 180.0,
+   "scale": 1.314
+  },
+  {
+   "id": "W3_S4_dec38",
+   "prop": "FP_B06_SnowHills",
+   "x": 220.573,
+   "y": -1.787,
+   "z": 28.044,
+   "rotY": 180.0,
+   "scale": 1.393
+  },
+  {
+   "id": "W3_S4_dec39",
+   "prop": "FP_B01_SnowMountain",
+   "x": -25.0,
+   "y": -3.047,
+   "z": 56.694,
+   "rotY": 0.0,
+   "scale": 0.928
+  },
+  {
+   "id": "W3_S4_dec40",
+   "prop": "FP_B02_ThreePeakRidge",
+   "x": 5.947,
+   "y": -3.77,
+   "z": 61.838,
+   "rotY": 180.0,
+   "scale": 0.927
+  },
+  {
+   "id": "W3_S4_dec41",
+   "prop": "FP_B01_SnowMountain",
+   "x": 39.593,
+   "y": -3.666,
+   "z": 51.925,
+   "rotY": 180.0,
+   "scale": 1.183
+  },
+  {
+   "id": "W3_S4_dec42",
+   "prop": "FP_B02_ThreePeakRidge",
+   "x": 78.674,
+   "y": -3.604,
+   "z": 48.113,
+   "rotY": 180.0,
+   "scale": 0.927
+  },
+  {
+   "id": "W3_S4_dec43",
+   "prop": "FP_B04_StoneArch",
+   "x": 111.852,
+   "y": -3.028,
+   "z": 54.273,
+   "rotY": 0.0,
+   "scale": 0.939
+  },
+  {
+   "id": "W3_S4_dec44",
+   "prop": "FP_B02_ThreePeakRidge",
+   "x": 141.866,
+   "y": -3.843,
+   "z": 51.592,
+   "rotY": 0.0,
+   "scale": 1.024
+  },
+  {
+   "id": "W3_S4_dec45",
+   "prop": "FP_B02_ThreePeakRidge",
+   "x": 178.801,
+   "y": -3.251,
+   "z": 48.531,
+   "rotY": 180.0,
+   "scale": 0.944
+  },
+  {
+   "id": "W3_S4_dec46",
+   "prop": "FP_B01_SnowMountain",
+   "x": 218.145,
+   "y": -3.104,
+   "z": 58.752,
+   "rotY": 0.0,
+   "scale": 1.187
+  },
+  {
+   "id": "W3_S4_dec47",
+   "prop": "FP_B05_IceCastleFar",
+   "x": 150.0,
+   "y": -3.5,
+   "z": 88.0,
+   "rotY": 0.0,
+   "scale": 1.2
+  },
+  {
+   "id": "W3_S4_dec48",
+   "prop": "FP_A02_RuinArch",
+   "x": 90.0,
+   "y": 0.0,
+   "z": 6.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W3_S4_dec49",
+   "prop": "FP_P06_LanternPost",
+   "x": 191.5,
+   "y": 3.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec50",
+   "prop": "FP_P06_LanternPost",
+   "x": 196.5,
+   "y": 3.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W3_S4_dec51",
+   "prop": "FP_P05_IceCrystals",
+   "x": 34.14,
+   "y": 0.0,
+   "z": 1.63,
+   "rotY": 165.0,
+   "scale": 0.74
+  },
+  {
+   "id": "W3_S4_dec52",
+   "prop": "FP_P04_WinterShrub",
+   "x": 39.04,
+   "y": 0.0,
+   "z": 1.23,
+   "rotY": 270.0,
+   "scale": 1.06
+  },
+  {
+   "id": "W3_S4_dec53",
+   "prop": "FP_P02_YoungFir",
+   "x": 94.02,
+   "y": 0.0,
+   "z": 2.46,
+   "rotY": 345.0,
+   "scale": 0.79
+  },
+  {
+   "id": "W3_S4_dec54",
+   "prop": "FP_P05_IceCrystals",
+   "x": 106.71,
+   "y": 1.5,
+   "z": 1.41,
+   "rotY": 45.0,
+   "scale": 0.79
+  },
+  {
+   "id": "W3_S4_dec55",
+   "prop": "FP_P02_YoungFir",
+   "x": 131.27,
+   "y": 3.0,
+   "z": 2.32,
+   "rotY": 15.0,
+   "scale": 0.82
+  },
+  {
+   "id": "W3_S4_dec56",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 165.5,
+   "y": 3.0,
+   "z": 1.7,
+   "rotY": 90.0,
+   "scale": 0.7
+  },
+  {
+   "id": "W3_S4_dec57",
+   "prop": "FP_P03_SnowBoulders",
+   "x": 180.48,
+   "y": 3.0,
+   "z": 1.59,
+   "rotY": 180.0,
+   "scale": 0.63
+  },
+  {
+   "id": "W3_S4_dec58",
+   "prop": "FP_P05_IceCrystals",
+   "x": 185.11,
+   "y": 3.0,
+   "z": 1.6,
+   "rotY": 180.0,
+   "scale": 0.75
+  }
+ ],
+ "spikeTraps": [
+  {
+   "id": "W3_S4_B_trap27",
+   "section": "W3_S4_B",
+   "x": 36.0,
+   "y": 0.0,
+   "w": 3.0,
+   "period": 3.0,
+   "upTime": 1.0,
+   "warn": 0.5,
+   "offset": 0.0
+  },
+  {
+   "id": "W3_S4_D_trap28",
+   "section": "W3_S4_D",
+   "x": 125.5,
+   "y": 1.5,
+   "w": 3.0,
+   "period": 3.0,
+   "upTime": 1.0,
+   "warn": 0.5,
+   "offset": 1.5
+  },
+  {
+   "id": "W3_S4_E_trap29",
+   "section": "W3_S4_E",
+   "x": 166.5,
+   "y": 3.0,
+   "w": 3.0,
+   "period": 2.5,
+   "upTime": 0.8,
+   "warn": 0.5,
+   "offset": 0.5
+  }
+ ],
+ "switches": [
+  {
+   "id": "W3_S4_A_sw21",
+   "section": "W3_S4_A",
+   "x": 10.0,
+   "y": 0.0,
+   "channel": 1,
+   "once": true
+  },
+  {
+   "id": "W3_S4_C_sw23",
+   "section": "W3_S4_C",
+   "x": 88.0,
+   "y": 0.0,
+   "channel": 2,
+   "once": false
+  },
+  {
+   "id": "W3_S4_E_sw25",
+   "section": "W3_S4_E",
+   "x": 157.5,
+   "y": 5.5,
+   "channel": 4,
+   "once": true
+  }
+ ],
+ "gates": [
+  {
+   "id": "W3_S4_A_gate22",
+   "section": "W3_S4_A",
+   "x": 17.0,
+   "y": 0.0,
+   "h": 4.0,
+   "channel": 1,
+   "openSeconds": 0.8
+  },
+  {
+   "id": "W3_S4_C_gate24",
+   "section": "W3_S4_C",
+   "x": 91.0,
+   "y": 0.0,
+   "h": 4.0,
+   "channel": 2,
+   "openSeconds": 0.8
+  },
+  {
+   "id": "W3_S4_E_gate26",
+   "section": "W3_S4_E",
+   "x": 162.0,
+   "y": 3.0,
+   "h": 4.0,
+   "channel": 4,
+   "openSeconds": 0.8
+  }
+ ],
+ "featuredMonsters": [
+  1207,
+  2201
+ ]
+}

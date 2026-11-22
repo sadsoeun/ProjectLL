@@ -1,0 +1,861 @@
+{
+ "version": 1,
+ "stageId": "W4_B",
+ "length": 100.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": {
+  "x": 2.0,
+  "y": 0.0
+ },
+ "goal": {
+  "x": 84.0,
+  "y": 0.0
+ },
+ "sections": [
+  {
+   "id": "W4_B_A",
+   "startX": 0.0,
+   "endX": 27.0,
+   "note": "Pier approach: 특수 수집품"
+  },
+  {
+   "id": "W4_B_B",
+   "startX": 27.0,
+   "endX": 45.0,
+   "note": "Tidal terrace: 소라게, 주기 가시 함정, 체크포인트"
+  },
+  {
+   "id": "W4_B_C",
+   "startX": 45.0,
+   "endX": 72.0,
+   "note": "Palace forecourt: 조수 해파리, 급강하 갈매기, 체크포인트, 특수 수집품"
+  },
+  {
+   "id": "W4_B_D",
+   "startX": 72.0,
+   "endX": 100.0,
+   "note": "Boss arena (Coral Hermit King)"
+  }
+ ],
+ "blocks": [
+  {
+   "id": "W4_B_A_ground1_a",
+   "section": "W4_B_A",
+   "kind": "ground",
+   "x": 0.0,
+   "y": 0.0,
+   "w": 12.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_B_A_ground1_s125",
+   "section": "W4_B_A",
+   "kind": "ground",
+   "x": 12.5,
+   "y": 0.0,
+   "w": 5.0,
+   "h": 10.0,
+   "surface": "conveyor_l"
+  },
+  {
+   "id": "W4_B_A_ground1_b",
+   "section": "W4_B_A",
+   "kind": "ground",
+   "x": 17.5,
+   "y": 0.0,
+   "w": 6.5,
+   "h": 10.0
+  },
+  {
+   "id": "W4_B_B_ground2",
+   "section": "W4_B_B",
+   "kind": "ground",
+   "x": 27.0,
+   "y": 1.5,
+   "w": 18.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_B_C_ground3",
+   "section": "W4_B_C",
+   "kind": "ground",
+   "x": 45.0,
+   "y": 0.0,
+   "w": 53.0,
+   "h": 10.0
+  },
+  {
+   "id": "W4_B_D_wall4",
+   "section": "W4_B_D",
+   "kind": "wall",
+   "x": 98.0,
+   "y": 10.0,
+   "w": 2.0,
+   "h": 20.0
+  }
+ ],
+ "checkpoints": [
+  {
+   "id": "W4_B_CP1",
+   "section": "W4_B_B",
+   "x": 29.0,
+   "y": 1.5
+  },
+  {
+   "id": "W4_B_CP2",
+   "section": "W4_B_C",
+   "x": 66.0,
+   "y": 0.0
+  }
+ ],
+ "coins": [
+  {
+   "section": "W4_B_A",
+   "x": 4.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 6.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 8.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 10.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 22.5,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 24.5,
+   "y": 3.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 26.5,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 14.0,
+   "y": 4.0
+  },
+  {
+   "section": "W4_B_A",
+   "x": 12.0,
+   "y": 3.2
+  },
+  {
+   "section": "W4_B_A",
+   "x": 16.0,
+   "y": 3.2
+  },
+  {
+   "section": "W4_B_B",
+   "x": 39.0,
+   "y": 2.7
+  },
+  {
+   "section": "W4_B_B",
+   "x": 41.5,
+   "y": 2.7
+  },
+  {
+   "section": "W4_B_B",
+   "x": 44.0,
+   "y": 2.7
+  },
+  {
+   "section": "W4_B_C",
+   "x": 48.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_C",
+   "x": 50.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_C",
+   "x": 52.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_C",
+   "x": 60.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_C",
+   "x": 62.0,
+   "y": 1.2
+  },
+  {
+   "section": "W4_B_C",
+   "x": 64.0,
+   "y": 1.2
+  }
+ ],
+ "specials": [
+  {
+   "id": "W4_B_SC1",
+   "section": "W4_B_B",
+   "slot": 0,
+   "x": 25.5,
+   "y": 3.5
+  },
+  {
+   "id": "W4_B_SC2",
+   "section": "W4_B_C",
+   "slot": 1,
+   "x": 62.5,
+   "y": 2.8
+  },
+  {
+   "id": "W4_B_SC3",
+   "section": "W4_B_D",
+   "slot": 2,
+   "x": 74.5,
+   "y": 2.8
+  }
+ ],
+ "spikes": [],
+ "movers": [],
+ "enemies": [
+  {
+   "id": "W4_B_B_en1",
+   "section": "W4_B_B",
+   "monsterId": 1302,
+   "x": 33.0,
+   "y": 1.5,
+   "range": 5.0,
+   "speed": 0.6
+  },
+  {
+   "id": "W4_B_C_en2",
+   "section": "W4_B_C",
+   "monsterId": 1303,
+   "x": 55.0,
+   "y": 0.0,
+   "range": 5.0
+  },
+  {
+   "id": "W4_B_C_en3",
+   "section": "W4_B_C",
+   "monsterId": 1304,
+   "x": 46.5,
+   "y": 0.0,
+   "range": 2.5
+  }
+ ],
+ "fallers": [],
+ "theme": "CoralCoast",
+ "decorations": [
+  {
+   "id": "W4_B_dec1",
+   "prop": "CC_B07_SandFloor",
+   "x": 50.0,
+   "y": -1.8,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec2",
+   "prop": "CC_P12_CoastRocks",
+   "x": 5.0,
+   "y": 0.0,
+   "z": 3.8,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec3",
+   "prop": "CC_P02_BeachPlant",
+   "x": 3.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec4",
+   "prop": "CC_P01_PalmTree",
+   "x": 8.5,
+   "y": 0.0,
+   "z": 4.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec5",
+   "prop": "CC_P05_Shells",
+   "x": 10.0,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec6",
+   "prop": "CC_P01_PalmTree",
+   "x": 19.5,
+   "y": 0.0,
+   "z": 5.0,
+   "rotY": 0.0,
+   "scale": 0.9
+  },
+  {
+   "id": "W4_B_dec7",
+   "prop": "CC_P02_BeachPlant",
+   "x": 21.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 20.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec8",
+   "prop": "CC_P11_CoastFlag",
+   "x": 30.6,
+   "y": 1.5,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec9",
+   "prop": "CC_P04_DomeCoral",
+   "x": 34.5,
+   "y": 1.5,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec10",
+   "prop": "CC_P03_BranchCoral",
+   "x": 40.0,
+   "y": 1.5,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec11",
+   "prop": "CC_P05_Shells",
+   "x": 43.5,
+   "y": 1.5,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec12",
+   "prop": "CC_P10_MooringPost",
+   "x": 47.0,
+   "y": 0.0,
+   "z": 2.4,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec13",
+   "prop": "CC_P09_HarborLantern",
+   "x": 48.0,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec14",
+   "prop": "CC_P12_CoastRocks",
+   "x": 52.0,
+   "y": 0.0,
+   "z": 4.5,
+   "rotY": 180.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec15",
+   "prop": "CC_P04_DomeCoral",
+   "x": 59.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec16",
+   "prop": "CC_P03_BranchCoral",
+   "x": 62.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec17",
+   "prop": "CC_P11_CoastFlag",
+   "x": 67.6,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec18",
+   "prop": "CC_P09_HarborLantern",
+   "x": 70.5,
+   "y": 0.0,
+   "z": 2.6,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec19",
+   "prop": "CC_P11_CoastFlag",
+   "x": 76.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec20",
+   "prop": "CC_P12_CoastRocks",
+   "x": 80.0,
+   "y": 0.0,
+   "z": 5.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec21",
+   "prop": "CC_P11_CoastFlag",
+   "x": 96.0,
+   "y": 0.0,
+   "z": 3.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec22",
+   "prop": "CC_A02_PierGazebo",
+   "x": 47.0,
+   "y": 0.0,
+   "z": 6.5,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec23",
+   "prop": "CC_B06_Shipwreck",
+   "x": 16.0,
+   "y": -2.2,
+   "z": 24.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec24",
+   "prop": "CC_B01_PalmIsland",
+   "x": 10.0,
+   "y": -2.2,
+   "z": 50.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec25",
+   "prop": "CC_B01_PalmIsland",
+   "x": 92.0,
+   "y": -2.2,
+   "z": 54.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec26",
+   "prop": "CC_B02_SeaStacks",
+   "x": 30.0,
+   "y": -2.2,
+   "z": 38.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec27",
+   "prop": "CC_B02_SeaStacks",
+   "x": 66.0,
+   "y": -2.2,
+   "z": 36.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec28",
+   "prop": "CC_B03_SeaArch",
+   "x": 45.0,
+   "y": -2.2,
+   "z": 62.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec29",
+   "prop": "CC_B04_CoralRidge",
+   "x": 20.0,
+   "y": -2.2,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec30",
+   "prop": "CC_B04_CoralRidge",
+   "x": 90.0,
+   "y": -2.2,
+   "z": 82.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec31",
+   "prop": "CC_B05_ShellPalaceFar",
+   "x": 40.0,
+   "y": -2.2,
+   "z": 94.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec32",
+   "prop": "CC_A01_ShellPalace",
+   "x": 86.0,
+   "y": -1.6,
+   "z": 30.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec33",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec34",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec35",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec36",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec37",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec38",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec39",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec40",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": -16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec41",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec42",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec43",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec44",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec45",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec46",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec47",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec48",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 16.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec49",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec50",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec51",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec52",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec53",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec54",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec55",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec56",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 48.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec57",
+   "prop": "CC_B08_WaterSurface",
+   "x": -64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec58",
+   "prop": "CC_B08_WaterSurface",
+   "x": -32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec59",
+   "prop": "CC_B08_WaterSurface",
+   "x": 0.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec60",
+   "prop": "CC_B08_WaterSurface",
+   "x": 32.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec61",
+   "prop": "CC_B08_WaterSurface",
+   "x": 64.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec62",
+   "prop": "CC_B08_WaterSurface",
+   "x": 96.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec63",
+   "prop": "CC_B08_WaterSurface",
+   "x": 128.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  },
+  {
+   "id": "W4_B_dec64",
+   "prop": "CC_B08_WaterSurface",
+   "x": 160.0,
+   "y": -1.8,
+   "z": 80.0,
+   "rotY": 0.0,
+   "scale": 1.0
+  }
+ ],
+ "spikeTraps": [
+  {
+   "id": "W4_B_A_trap1",
+   "section": "W4_B_A",
+   "x": 40.0,
+   "y": 1.5,
+   "w": 3.0,
+   "period": 3.0,
+   "upTime": 1.0,
+   "warn": 0.5,
+   "offset": 0.0
+  }
+ ],
+ "boss": {
+  "bossId": 9004,
+  "x": 92.0,
+  "y": 0.0,
+  "arenaMinX": 72.0,
+  "arenaMaxX": 98.0
+ }
+}

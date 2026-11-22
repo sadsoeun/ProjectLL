@@ -1,0 +1,35 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.pidb
+*.booproj
+*.pdb
+*.mdb
+/Readme.dll
+.vs/
+.vscode/
+.idea/
+crashlytics-build.properties
+
+# Local tooling
+/.claude/
+
+# Bundled Python packages for an editor tool (contains a 100 MB+ ffmpeg binary; reinstall with pip / uv when needed)
+/Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/
+/Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps.meta
+
+# OS
+.DS_Store
+Thumbs.db

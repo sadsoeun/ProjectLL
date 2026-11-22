@@ -1,0 +1,726 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-PC doesn't exist
+OS: 'Windows 11  (10.0.26300) Core' Language: 'ko' Physical Memory: 31893 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-14T10:14:26Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 22156)
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/PC/UnityStudy/MyGame
+-executeMethod
+MyGame.EditorTools.PresentationCaptureBatch.Probe
+-logFile
+C:/Users/PC/UnityStudy/MyGame/Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log
+Successfully changed project path to: C:/Users/PC/UnityStudy/MyGame
+C:/Users/PC/UnityStudy/MyGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [35512]  Target information:
+
+Player connection [35512]  * "[IP] 172.30.1.20 [Port] 55504 [Flags] 2 [Guid] 1986427848 [EditorId] 1986427848 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-066L896) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35512] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [35512] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-PC" at "2026-11-14T10:14:26.8321761Z"
+[Package Manager] Connected to IPC stream "Upm-50308" after 0.5 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              2b16afc3c36c4bc6bae65968787fde51
+  Correlation Id:          e0108f7e724c71ed9be6f1bdd01da922
+  External correlation Id: 7323318240607599714
+  Machine Id:              fqWjLSezz2EDfzjsof/y5ySNfNU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-PC" (connect: 0.57s, validation: 0.05s, handshake: 1.70s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-PC-notifications" at "2026-11-14T10:14:28.5787687Z"
+[Licensing::Module] Connected to LicensingClient (PId: 22156, launch time: 0.01, total connection time: 2.31s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14568922053557-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.34s
+[Licensing::Module] Licensing is initialized (took 1.60s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Artifact Garbage Collection - Removed 1844 unused hashed content files
+Refreshing native plugins compatible for Editor in 191.67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/PC/UnityStudy/MyGame/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti SUPER (ID=0x2705)
+    Vendor:   NVIDIA
+    VRAM:     16061 MB
+    Driver:   32.0.16.2101
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.283362 seconds.
+- Loaded All Assemblies, in  9.038 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2187 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.743 seconds
+Domain Reload Profiling: 11779ms
+	BeginReloadAssembly (7309ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (209ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (329ms)
+	LoadAllAssembliesAndSetupDomain (1177ms)
+		LoadAssemblies (7296ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (1164ms)
+			TypeCache.Refresh (1162ms)
+				TypeCache.ScanAssembly (1150ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (2743ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2714ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2441ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (121ms)
+			ProcessInitializeOnLoadMethodAttributes (86ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 64 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.ai.navigation@2.0.9 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ai.navigation@5218e4bf7edc)
+    com.unity.behavior@1.0.16 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.behavior@1b9c0eccba9c)
+    com.unity.collab-proxy@2.11.2 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.collab-proxy@1ec4e416a4af)
+    com.unity.ide.rider@3.0.38 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.18.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.inputsystem@57d0e36f6123)
+    com.unity.recorder@5.1.8 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.recorder@f6fc668ad39d)
+    com.unity.timeline@1.8.10 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.timeline@7f8b2fb101b6)
+    com.unity.visualscripting@1.9.9 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.visualscripting@191c0d7e3b69)
+    com.unity.collections@2.6.2 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.collections@aea9d3bd5e19)
+    com.unity.bindings.openimageio@1.0.2 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.bindings.openimageio@94e2abc0bc65)
+    com.unity.burst@1.8.27 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.burst@973857688024)
+    com.unity.dt.app-ui@2.1.1 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.dt.app-ui@8ac7e730dd5d)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.cloud.gltfast@6.14.1 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.cloud.gltfast@0847aee0f6da)
+    com.unity.searcher@4.9.4 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.mathematics@1.3.3 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.2.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562)
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.1 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.multiplayer.center@f01f4ba8d00a)
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.render-pipelines.universal@1e87cf1dccb8)
+    com.unity.test-framework@1.6.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.test-framework@0b7a23ab2e1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ugui@b9d1dd437cb9)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.render-pipelines.core@9a9c0155552c)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.shadergraph@3e48e962d639)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+  Git packages:
+    com.coplaydev.coplay@https://github.com/CoplayDev/unity-plugin.git#beta (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.coplaydev.coplay@f7f876f5fa3b)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '18655' does not match file size '7019'
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/PC/UnityStudy/MyGame
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s198ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.18 seconds), 0 items updated, 196 evaluated
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/PC/UnityStudy/MyGame
+ExitCode: 0 Duration: 1s633ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/PC/UnityStudy/MyGame
+ExitCode: 0 Duration: 7s110ms
+Finished compiling graph: 1203 nodes, 23933 flattened edges (19805 ToBuild, 194 ToUse), maximum node priority 1274
+[ 642/1199  0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[ 924/1199  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[1195/1199  4s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[1196/1199  1s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 135 defines and 370 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[1197/1199  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[1198/1199  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (7.08 seconds), 6 items updated, 1199 evaluated
+AssetDatabase: script compilation time: 9.698943s
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '21342' does not match file size '19829'
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  8.478 seconds
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '21564' does not match file size '21520'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork using Guid(76b52ab2437f73044834eaf282ac8125) (DefaultImporter) -> (artifact id: '73c84b9bb300cf7112d6da43f1964bcc') in 0.0339139 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures using Guid(a06901adf6a920f499dec065d05597d1) (DefaultImporter) -> (artifact id: 'ac443e91bb764993f8620b2d94043cec') in 0.0095076 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources using Guid(52ef2594f5aab0043885ecadf109276f) (DefaultImporter) -> (artifact id: 'ae589f3f3656203a0f5096384b1167f1') in 0.0056446 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps using Guid(292a17a0a31c3214facde049bd1591e8) (DefaultImporter) -> (artifact id: 'f63d62703488de6ecac0749b9dfb0fb0') in 0.0058841 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg using Guid(e0198006ea08a314fab48b922bcfbbd3) (DefaultImporter) -> (artifact id: 'c4a20a18e7ff899780b9ed1056892d67') in 0.0061231 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info using Guid(f1899f6fb8433f0449f24aee336d8e08) (DefaultImporter) -> (artifact id: 'b08dc29ec02ff924cb02182ad94893e1') in 0.0046128 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__ using Guid(238244047614dd945a4a8d254e77d47a) (DefaultImporter) -> (artifact id: '7b8b7146cb0cc05a70768aa5a6a32b92') in 0.0044753 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/licenses using Guid(760a17545db6e414abe37806e8bc3432) (DefaultImporter) -> (artifact id: 'ea3e2426d03294ec42b3f21c4cf023b1') in 0.0050114 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries using Guid(fc3a8b31e07b5dd4daed4f35d35ff1a0) (DefaultImporter) -> (artifact id: 'bc2b352e7e406557e2dbb389c5649537') in 0.0051497 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/__pycache__ using Guid(1436c3b02cec971458b103c93043e58f) (DefaultImporter) -> (artifact id: '17f51a03b2144a526fc1c0dcceb1bf74') in 0.004843 seconds
+Refreshing native plugins compatible for Editor in 107.42 ms, found 9 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 5.56 ms, found 9 plugins.
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  5.938 seconds
+Domain Reload Profiling: 14412ms
+	BeginReloadAssembly (279ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (160ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (8107ms)
+		LoadAssemblies (7507ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (681ms)
+			TypeCache.Refresh (607ms)
+				TypeCache.ScanAssembly (592ms)
+			BuildScriptInfoCaches (57ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (5938ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (4811ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (34ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (221ms)
+			ProcessInitializeOnLoadAttributes (4165ms)
+			ProcessInitializeOnLoadMethodAttributes (378ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '25738' does not match file size '21708'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/refine_deck.py using Guid(a1b3de13d95b6ed4a8e183441923e1fc) (DefaultImporter) -> (artifact id: 'c84f98075d67f6ea6243cb18240a6253') in 0.0406366 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/export-notes.mjs using Guid(3263c67007bff794489e4ad39d10d751) (DefaultImporter) -> (artifact id: '83f09bfe1ea217b59ee1a01496042a7b') in 0.0072379 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/export-detailed-notes.mjs using Guid(5299d7b9a4672a440b3a2e7cc044c8dd) (DefaultImporter) -> (artifact id: '935d2597eafea94aa658d542a90ed538') in 0.004983 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/detailed-deck.mjs using Guid(92622982645e2554180700e8e3bef93b) (DefaultImporter) -> (artifact id: 'f792e4fba771cb248e4e3df143302af2') in 0.0052064 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/scan_video.py using Guid(7545c5372a5d6ae4ebb502aa0c22d0dc) (DefaultImporter) -> (artifact id: '9ea64901ac3cd8c961659138641fcbc1') in 0.0050879 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/deck-author.mjs using Guid(b789a591342c1e4468a573531a8803bf) (DefaultImporter) -> (artifact id: '5752b7364d522591255068e7f38c7344') in 0.0050721 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/read_sources.py using Guid(e861a4171de79ed46b2e07ac63f85f4a) (DefaultImporter) -> (artifact id: 'd4bf137dafa123ba865137964a49160f') in 0.0045248 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0421096 seconds
+Import Error Code:(5)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log does not exit in SourceAssetDB
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '27866' does not match file size '27625'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0008349 seconds
+Import Error Code:(5)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log does not exit in SourceAssetDB
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0009355 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:10.9967Z' while content on disk has modification time of '2026-11-14T10:15:11.0854418Z'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0008428 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.0869448Z' while content on disk has modification time of '2026-11-14T10:15:11.1760379Z'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007969 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.1775407Z' while content on disk has modification time of '2026-11-14T10:15:11.2836448Z'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0014808 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.2851488Z' while content on disk has modification time of '2026-11-14T10:15:11.3825605Z'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.000713 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.38456Z' while content on disk has modification time of '2026-11-14T10:15:11.4830215Z'
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0009701 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.484528Z' while content on disk has modification time of '2026-11-14T10:15:11.5714868Z'
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Decal Material Volume.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/Leaf_and_Leap_프로젝트_소개.txt(modified date 2026-11-14T09:49:19.5558877Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-71.9.png(modified date 2026-11-14T10:14:48.5756162Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/README.md(modified date 2026-11-14T10:13:53.4714852Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Basic.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/LEAF_AND_LEAP_상세발표_대본과제작보고.txt(modified date 2026-11-14T10:07:11.0943635Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-73.2.png(modified date 2026-11-14T10:14:48.8925035Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-312.pyc(modified date 2026-11-14T10:13:53.8364711Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-72.3.png(modified date 2026-11-14T10:14:48.7390308Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/top_level.txt(modified date 2026-11-14T10:13:53.7938977Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader(modified date 2026-01-27T10:31:08Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_parsing.py(modified date 2026-11-14T10:13:53.4704845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_io.cpython-312.pyc(modified date 2026-11-14T10:13:53.8170934Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-70.png(modified date 2026-11-14T10:14:20.6245166Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_definitions.cpython-312.pyc(modified date 2026-11-14T10:13:53.8074248Z)
+Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/GraphTemplates/Terrain Standard 4 Layers URP.shadergraph(modified date 2026-01-27T10:31:02Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Lit Full.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-pbrMetallicRoughness.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRays.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-85.png(modified date 2026-11-14T10:14:20.970892Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RestirCandidateTemporal.urtshader(modified date 2026-01-27T10:31:14Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/WHEEL(modified date 2026-11-14T10:13:53.7928906Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-80.png(modified date 2026-11-14T10:14:20.8579523Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-95.png(modified date 2026-11-14T10:14:21.1368588Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_definitions.py(modified date 2026-11-14T10:13:53.4694845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/RECORD(modified date 2026-11-14T10:13:53.8404777Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RisEstimation.urtshader(modified date 2026-01-27T10:31:14Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-unlit.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceTransparentRays.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/claude-sessions.txt(modified date 2026-11-14T09:49:22.5565247Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v9.0.2.exe(modified date 2026-11-14T10:13:53.7903839Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/UniformEstimation.urtshader(modified date 2026-01-27T10:31:14Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/INSTALLER(modified date 2026-11-14T10:13:53.8374747Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/URP/glTF-pbrMetallicRoughness-Clearcoat.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/RenderingLayerMask/TraceRenderingLayerMask.urtshader(modified date 2026-01-27T10:31:08Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Decal Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Particle Unlit.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-90.png(modified date 2026-11-14T10:14:21.0619058Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_io.py(modified date 2026-11-14T10:13:53.4704845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/map-tool-design.txt(modified date 2026-11-14T09:49:21.9419922Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE(modified date 2026-11-14T10:13:53.7913834Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/REQUESTED(modified date 2026-11-14T10:13:53.8394746Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-73.6.png(modified date 2026-11-14T10:14:49.0729008Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/HDRP/glTF-pbrMetallicRoughnessStackLit.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__init__.py(modified date 2026-11-14T10:13:53.4694845Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/2_Particle Lit.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-pbrSpecularGlossiness.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Unlit Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video_scan.json(modified date 2026-11-14T10:14:20.4456629Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log(modified date 2026-11-14T10:15:11.5725548Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/METADATA(modified date 2026-11-14T10:13:53.7913834Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/__init__.py(modified date 2026-11-14T10:13:53.4714852Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/level-design-report.txt(modified date 2026-11-14T09:49:20.7128282Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_utils.cpython-312.pyc(modified date 2026-11-14T10:13:53.831453Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_utils.py(modified date 2026-11-14T10:13:53.4714852Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/LEAF_AND_LEAP_발표대본_질의응답.txt(modified date 2026-11-14T04:21:08.0947951Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/SceneStructure_SceneFlow.txt(modified date 2026-11-14T09:49:22.4628961Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRaysAndFetchAttributes.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/claude-프롬프트내역.txt(modified date 2026-11-14T09:49:22.5677986Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-75.png(modified date 2026-11-14T10:14:20.7576612Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/DynamicGI/DynamicGISkyOcclusion.urtshader(modified date 2026-01-27T10:31:08Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_parsing.cpython-312.pyc(modified date 2026-11-14T10:13:53.8244549Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-65.png(modified date 2026-11-14T10:14:20.5327395Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/__init__.cpython-312.pyc(modified date 2026-11-14T10:13:53.799411Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Meter.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Lit Basic.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Terrain Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: 'b50ed2ec0d35fd18a12830a6aed36069') in 0.0031521 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0012585 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.484528Z' while content on disk has modification time of '2026-11-14T10:15:13.2679435Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+'Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log' Amount of processed bytes '43029' does not match file size '41578'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0008772 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:11.484528Z' while content on disk has modification time of '2026-11-14T10:15:13.3268637Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0008255 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:13.3278678Z' while content on disk has modification time of '2026-11-14T10:15:13.3984677Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0008292 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:13.3994684Z' while content on disk has modification time of '2026-11-14T10:15:13.4616112Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007425 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:13.4627532Z' while content on disk has modification time of '2026-11-14T10:15:13.5214215Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007835 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:13.5224213Z' while content on disk has modification time of '2026-11-14T10:15:13.5835191Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Start importing Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log using Guid(ca71e408e2f062742a618209ff0cad4e) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007155 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_project/scripts/editor/maptool/presentationwork/capture-batch.log in SourceAssetDB has modification time of '2026-11-14T10:15:13.584526Z' while content on disk has modification time of '2026-11-14T10:15:13.6486848Z'
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Decal Material Volume.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/Leaf_and_Leap_프로젝트_소개.txt(modified date 2026-11-14T09:49:19.5558877Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-71.9.png(modified date 2026-11-14T10:14:48.5756162Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/README.md(modified date 2026-11-14T10:13:53.4714852Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Basic.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/LEAF_AND_LEAP_상세발표_대본과제작보고.txt(modified date 2026-11-14T10:07:11.0943635Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-73.2.png(modified date 2026-11-14T10:14:48.8925035Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-312.pyc(modified date 2026-11-14T10:13:53.8364711Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-72.3.png(modified date 2026-11-14T10:14:48.7390308Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/top_level.txt(modified date 2026-11-14T10:13:53.7938977Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader(modified date 2026-01-27T10:31:08Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_parsing.py(modified date 2026-11-14T10:13:53.4704845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_io.cpython-312.pyc(modified date 2026-11-14T10:13:53.8170934Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-70.png(modified date 2026-11-14T10:14:20.6245166Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_definitions.cpython-312.pyc(modified date 2026-11-14T10:13:53.8074248Z)
+Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/GraphTemplates/Terrain Standard 4 Layers URP.shadergraph(modified date 2026-01-27T10:31:02Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/1_Lit Full.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-pbrMetallicRoughness.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRays.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-85.png(modified date 2026-11-14T10:14:20.970892Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RestirCandidateTemporal.urtshader(modified date 2026-01-27T10:31:14Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/WHEEL(modified date 2026-11-14T10:13:53.7928906Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-80.png(modified date 2026-11-14T10:14:20.8579523Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-95.png(modified date 2026-11-14T10:14:21.1368588Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_definitions.py(modified date 2026-11-14T10:13:53.4694845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/RECORD(modified date 2026-11-14T10:13:53.8404777Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/RisEstimation.urtshader(modified date 2026-01-27T10:31:14Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-unlit.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceTransparentRays.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/claude-sessions.txt(modified date 2026-11-14T09:49:22.5565247Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v9.0.2.exe(modified date 2026-11-14T10:13:53.7903839Z)
+Packages/com.unity.render-pipelines.universal/Runtime/RendererFeatures/SurfaceCacheGI/SurfaceCacheCore/UniformEstimation.urtshader(modified date 2026-01-27T10:31:14Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/INSTALLER(modified date 2026-11-14T10:13:53.8374747Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/URP/glTF-pbrMetallicRoughness-Clearcoat.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/RenderingLayerMask/TraceRenderingLayerMask.urtshader(modified date 2026-01-27T10:31:08Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Decal Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Particle Unlit.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-90.png(modified date 2026-11-14T10:14:21.0619058Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_io.py(modified date 2026-11-14T10:13:53.4704845Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/map-tool-design.txt(modified date 2026-11-14T09:49:21.9419922Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/licenses/LICENSE(modified date 2026-11-14T10:13:53.7913834Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/REQUESTED(modified date 2026-11-14T10:13:53.8394746Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/dodge-73.6.png(modified date 2026-11-14T10:14:49.0729008Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/HDRP/glTF-pbrMetallicRoughnessStackLit.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__init__.py(modified date 2026-11-14T10:13:53.4694845Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/2_Particle Lit.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.cloud.gltfast/Runtime/Shader/glTF-pbrSpecularGlossiness.shadergraph(modified date 2025-10-02T14:00:36.128Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Unlit Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video_scan.json(modified date 2026-11-14T10:14:20.4456629Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/capture-batch.log(modified date 2026-11-14T10:15:13.6496829Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg-0.8.1.dist-info/METADATA(modified date 2026-11-14T10:13:53.7913834Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/binaries/__init__.py(modified date 2026-11-14T10:13:53.4714852Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/level-design-report.txt(modified date 2026-11-14T09:49:20.7128282Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_utils.cpython-312.pyc(modified date 2026-11-14T10:13:53.831453Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/_utils.py(modified date 2026-11-14T10:13:53.4714852Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/LEAF_AND_LEAP_발표대본_질의응답.txt(modified date 2026-11-14T04:21:08.0947951Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/SceneStructure_SceneFlow.txt(modified date 2026-11-14T09:49:22.4628961Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRaysAndFetchAttributes.urtshader(modified date 2026-01-27T10:31:20Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/sources/claude-프롬프트내역.txt(modified date 2026-11-14T09:49:22.5677986Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-75.png(modified date 2026-11-14T10:14:20.7576612Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/DynamicGI/DynamicGISkyOcclusion.urtshader(modified date 2026-01-27T10:31:08Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/_parsing.cpython-312.pyc(modified date 2026-11-14T10:13:53.8244549Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/Captures/video-65.png(modified date 2026-11-14T10:14:20.5327395Z)
+Assets/_Project/Scripts/Editor/MapTool/PresentationWork/python_deps/imageio_ffmpeg/__pycache__/__init__.cpython-312.pyc(modified date 2026-11-14T10:13:53.799411Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/UGUI Canvas Meter.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/0_Lit Basic.shadergraph(modified date 2026-01-27T10:31:20Z)
+Packages/com.unity.shadergraph/GraphTemplates/Cross Pipeline/Terrain Simple.shadergraph(modified date 2026-01-27T10:31:20Z)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlitMaterial (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:426)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBlendModeMaterials (string) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:473)
+Live2D.Cubism.Editor.CubismAssetProcessor:GenerateBuiltinResources () (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:351)
+Live2D.Cubism.Editor.CubismAssetProcessor:OnPostprocessAllAssets (string[],string[],string[],string[]) (at Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs:60)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+[Assets/Live2D/Cubism/Editor/CubismAssetProcessor.cs line 426]
+
+Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.Rendering.RenderPipelineResourcesEditorUtils:TryReloadContainedNullFields (UnityEngine.Rendering.IRenderPipelineResources)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:UpdateRenderPipelineGlobalSettings (UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager/RenderPipelineGraphicsSettingsInfo,UnityEngine.Rendering.RenderPipelineGlobalSettings,bool&,UnityEngine.Rendering.IRenderPipelineGraphicsSettings&)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:PopulateRenderPipelineGraphicsSettings (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset (System.Type,UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset<UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool,System.Exception&) (at ./Library/PackageCache/com.unity.render-pipelines.core@9a9c0155552c/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:138)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool) (at ./Library/PackageCache/com.unity.render-pipelines.core@9a9c0155552c/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:90)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings:Ensure (bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@1e87cf1dccb8/Runtime/UniversalRenderPipelineGlobalSettings.cs:258)
+UnityEditor.Rendering.Universal.UniversalRenderPipelineGlobalSettingsPostprocessor:OnPostprocessAllAssets (string[],string[],string[],string[],bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@1e87cf1dccb8/Editor/AssetPostProcessors/UniversalRenderPipelineGlobalSettingsPostprocessor.cs:14)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.core@9a9c0155552c/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs Line: 138)
+
+Refreshing native plugins compatible for Editor in 6.14 ms, found 9 plugins.
+Preloading 1 native plugins for Editor in 0.06 ms.
+Asset Pipeline Refresh (id=6c86406609b1c164180af1802c95e1e4): Total: 35.062 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=11 (actual=25, local cache=18446744073709551602, cache server=0)
+		Asset DB Process Time: managed=5 ms, native=10902 ms
+		Asset DB Callback time: managed=4368 ms, native=1552 ms
+		Scripting: domain reloads=1, domain reload time=8478 ms, compile time=9700 ms, other=51 ms
+		Project Asset Count: scripts=2069, non-scripts=8887
+		Asset File Changes: new=60, changed=71, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokeCustomDependenciesCallbacks: 0.004ms
+	InvokePackagesCallback: 39.209ms
+	ApplyChangesToAssetFolders: 1.442ms
+	Scan: 543.575ms
+	OnSourceAssetsModified: 1.819ms
+	CategorizeAssetsWithTransientArtifact: 2055.991ms
+	ProcessAssetsWithTransientArtifactChanges: 101.553ms
+	CategorizeAssets: 411.368ms
+	ImportOutOfDateAssets: 6814.570ms (-3572.505ms without children)
+		ImportManagerImport: 665.978ms (430.319ms without children)
+			ImportInProcess: 231.526ms
+			UpdateCategorizedAssets: 4.133ms
+		CompileScripts: 9700.280ms
+		ReloadNativeAssets: 0.466ms
+		UnloadImportedAssets: 8.526ms
+		ReloadImportedAssets: 0.005ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 10.341ms
+		InitializingProgressBar: 0.092ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.005ms
+		OnDemandSchedulerStart: 1.382ms
+	PostProcessAllAssets: 6320.166ms
+	Hotreload: 10.985ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.489ms
+	UnloadStreamsBegin: 5.120ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 4.064ms
+	Untracked: 18755.240ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 26.166ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Leaf & Leap
+Unloading 1005 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 9153 unused Assets / (6.8 MB). Loaded Objects now: 9058.
+Memory consumption went from 283.9 MB to 277.1 MB.
+Total: 13.969000 ms (FindLiveObjects: 0.725800 ms CreateObjectMapping: 0.833700 ms MarkObjects: 9.208300 ms  DeleteObjects: 3.200800 ms)
+
+Batchmode quit successfully invoked - shutting down!
+Curl error 42: Callback aborted
+Killing ADB server in 0.0380946 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-PC-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-PC channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

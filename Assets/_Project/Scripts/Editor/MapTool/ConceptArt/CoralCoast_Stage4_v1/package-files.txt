@@ -1,0 +1,12 @@
+01-stage-keyart.png
+02-ground-modules.png
+03-background-3d.png
+04-monsters-a-v2.png
+05-monsters-b.png
+06-props.png
+07-palace-and-gimmicks.png
+08-effects.png
+09-modeling-brief-ko.txt
+10-generation-prompts.json
+11-asset-manifest.csv
+12-claude-blender-handoff.txt

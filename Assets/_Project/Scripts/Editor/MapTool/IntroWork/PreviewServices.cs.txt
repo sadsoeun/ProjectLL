@@ -1,0 +1,15 @@
+using System;
+namespace MyGame {
+ // Only for isolated verification. The complete game is compiled against its real services.
+ public sealed class GameSystems {
+  public PreviewLocalization Localization=new PreviewLocalization();
+  public PreviewSettings Settings=new PreviewSettings();
+  public PreviewAudio Audio=new PreviewAudio();
+  public PreviewInput InputMode=new PreviewInput();
+ }
+ public sealed class PreviewLocalization { public string CurrentLanguage="en"; public event Action LanguageChanged; public void Set(string s){CurrentLanguage=s;LanguageChanged?.Invoke();} }
+ public sealed class PreviewSettings { public PreviewData Data=new PreviewData();public event Action Changed;public void Notify(){Changed?.Invoke();} }
+ public sealed class PreviewData {public float bgmVolume=.5f,masterVolume=1;}
+ public sealed class PreviewAudio {public void PlayBgm(UnityEngine.AudioClip clip,float seconds){} }
+ public sealed class PreviewInput {public bool CancelPressed,PausePressed;}
+}

@@ -1,0 +1,185 @@
+using System;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>HUD, pause menu, result and game-over panels. Raises events; contains no game rules.</summary>
+    public sealed class InGameView : MonoBehaviour
+    {
+        [Header("HUD")]
+        [SerializeField] private LocalizedText livesText;
+        [SerializeField] private LocalizedText timeText;
+        [SerializeField] private LocalizedText stageNameText;
+        [SerializeField] private LocalizedText messageText;
+        [SerializeField] private LocalizedText coinsText;
+        [SerializeField] private Image[] specialSlots;
+
+        [Header("Pause")]
+        [SerializeField] private GameObject pausePanel;
+        [SerializeField] private Button resumeButton;
+        [SerializeField] private Button retryButton;
+        [SerializeField] private Button settingsButton;
+        [SerializeField] private Button exitButton;
+
+        [Header("Result")]
+        [SerializeField] private GameObject resultPanel;
+        [SerializeField] private LocalizedText resultTimeText;
+        [SerializeField] private Button resultContinueButton;
+
+        [Header("Game over")]
+        [SerializeField] private GameObject gameOverPanel;
+        [SerializeField] private Button gameOverContinueButton;
+
+        [SerializeField] private UiFocusKeeper focus;
+
+        private int shownSecond = -1;
+        private StageClearCelebration clearCelebration;
+
+        public event Action PauseClicked;
+        public event Action ResumeClicked;
+        public event Action RetryClicked;
+        public event Action SettingsClicked;
+        public event Action ExitClicked;
+        public event Action ResultContinueClicked;
+        public event Action GameOverContinueClicked;
+
+        private void Awake()
+        {
+            Assert.IsNotNull(livesText);
+            Assert.IsNotNull(timeText);
+            Assert.IsNotNull(stageNameText);
+            Assert.IsNotNull(messageText);
+            Assert.IsNotNull(coinsText);
+            Assert.IsNotNull(specialSlots);
+            Assert.AreEqual(StageSession.SpecialSlotCount, specialSlots.Length, "InGameView needs one Image per special slot.");
+            Assert.IsNotNull(pausePanel);
+            Assert.IsNotNull(resumeButton);
+            Assert.IsNotNull(retryButton);
+            Assert.IsNotNull(settingsButton);
+            Assert.IsNotNull(exitButton);
+            Assert.IsNotNull(resultPanel);
+            Assert.IsNotNull(resultTimeText);
+            Assert.IsNotNull(resultContinueButton);
+            Assert.IsNotNull(gameOverPanel);
+            Assert.IsNotNull(gameOverContinueButton);
+            Assert.IsNotNull(focus);
+
+            resumeButton.onClick.AddListener(() => ResumeClicked?.Invoke());
+            retryButton.onClick.AddListener(() => RetryClicked?.Invoke());
+            settingsButton.onClick.AddListener(() => SettingsClicked?.Invoke());
+            exitButton.onClick.AddListener(() => ExitClicked?.Invoke());
+            resultContinueButton.onClick.AddListener(() => ResultContinueClicked?.Invoke());
+            gameOverContinueButton.onClick.AddListener(() => GameOverContinueClicked?.Invoke());
+
+            pausePanel.SetActive(false);
+            resultPanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+            messageText.gameObject.SetActive(false);
+            focus.SetRestore(false);
+        }
+
+        public void SetCoins(int coins) => coinsText.SetText(coins.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
+        public void RequestPause() => PauseClicked?.Invoke();
+
+        public void SetPauseAvailable(bool available)
+        { GetComponent<HudPresentation>()?.SetPauseAvailable(available); }
+
+        public void SetSpecials(bool[] collected)
+        {
+            for (int i = 0; i < specialSlots.Length; i++)
+                specialSlots[i].color = (collected != null && i < collected.Length && collected[i]) ? HudColors.SpecialFull : HudColors.SpecialEmpty;
+        }
+
+        public void SetStageName(string key) => stageNameText.SetKey(key);
+
+        public void SetLives(int lives) => livesText.SetText("× " + lives.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
+        public void SetTime(float seconds)
+        {
+            int whole = (int)seconds;
+            if (whole == shownSecond)
+                return;
+            shownSecond = whole;
+            timeText.SetText(TimeFormat.Format(seconds));
+        }
+
+        public void ShowMessage(string key)
+        {
+            messageText.gameObject.SetActive(true);
+            messageText.SetKey(key);
+        }
+
+        public void HideMessage() => messageText.gameObject.SetActive(false);
+
+        public float ShowClearCelebration(float requestedDuration)
+        {
+            HideMessage();
+            SetHudVisible(false);
+            resultPanel.SetActive(false);
+            pausePanel.SetActive(false);
+            focus.SetRestore(false);
+            focus.ClearSelection();
+            if (clearCelebration == null)
+                clearCelebration = StageClearCelebration.Create(transform);
+            return clearCelebration.Play(requestedDuration);
+        }
+
+        public void HideClearCelebration()
+        {
+            if (clearCelebration != null) clearCelebration.Hide();
+        }
+
+        private void OnDisable() => HideClearCelebration();
+
+        public void ShowPause(bool visible)
+        {
+            SetHudVisible(!visible);
+            pausePanel.SetActive(visible);
+            if (visible)
+            {
+                focus.SetRestore(true);
+                focus.Select(resumeButton.gameObject);
+            }
+            else
+            {
+                focus.SetRestore(false);
+                focus.ClearSelection();
+            }
+        }
+
+        public void ShowResult(float clearSeconds)
+        {
+            HideMessage();
+            SetHudVisible(false);
+            resultPanel.SetActive(false);
+            if (clearCelebration == null) clearCelebration = StageClearCelebration.Create(transform);
+            clearCelebration.ShowResult(clearSeconds,resultTimeText,resultContinueButton,() =>
+            {
+                focus.SetRestore(true);
+                focus.Select(resultContinueButton.gameObject);
+            });
+        }
+
+        public void ShowGameOver()
+        {
+            HideMessage();
+            SetHudVisible(false);
+            gameOverPanel.SetActive(true);
+            focus.SetRestore(true);
+            focus.Select(gameOverContinueButton.gameObject);
+        }
+
+        private void SetHudVisible(bool visible)
+        {
+            GetComponent<HudPresentation>()?.SetVisible(visible);
+            livesText.gameObject.SetActive(visible);
+            coinsText.gameObject.SetActive(visible);
+            timeText.gameObject.SetActive(visible);
+            stageNameText.gameObject.SetActive(visible);
+            foreach (var slot in specialSlots) slot.gameObject.SetActive(visible);
+        }
+    }
+}

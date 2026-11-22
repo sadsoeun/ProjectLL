@@ -1,0 +1,430 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>World map flow (spec 5.5): node states, avatar movement, stage entry, pause menu.</summary>
+    public sealed class WorldMapController : MonoBehaviour
+    {
+        [Header("World")]
+        [SerializeField] private WorldMapNode[] nodes;
+        [SerializeField] private WorldMapPath[] paths;
+        [SerializeField] private MapPlayer mapPlayer;
+        [SerializeField] private CameraFollow cameraFollow;
+
+        [Header("Stage info panel")]
+        [SerializeField] private LocalizedText stageNameText;
+        [SerializeField] private LocalizedText stateText;
+        [SerializeField] private LocalizedText bestTimeText;
+        [SerializeField] private LocalizedText specialsText;
+        [SerializeField] private Image[] specialSlots;
+        [SerializeField] private LocalizedText messageText;
+        [SerializeField] private Button enterButton;
+
+        [Header("Pause menu")]
+        [SerializeField] private GameObject pausePanel;
+        [SerializeField] private Button resumeButton;
+        [SerializeField] private Button saveButton;
+        [SerializeField] private Button loadButton;
+        [SerializeField] private Button settingsButton;
+        [SerializeField] private Button titleButton;
+        [SerializeField] private Button quitButton;
+        [Tooltip("Always-visible HUD button that opens the pause menu (mouse users).")]
+        [SerializeField] private Button menuButton;
+        [SerializeField] private UiFocusKeeper focus;
+
+        [Tooltip("Looping world map BGM.")]
+        [SerializeField] private AudioClip bgm;
+
+        [SerializeField, Range(0.3f, 0.9f)] private float directionThreshold = 0.6f;
+        [SerializeField, Min(0f)] private float messageSeconds = 2.5f;
+
+        [Header("Zoom (mouse wheel, -/= keys, gamepad shoulders)")]
+        [Tooltip("Zoom multiplier per wheel notch toward the player (smaller = stronger zoom per notch).")]
+        [SerializeField, Range(0.5f, 0.98f)] private float zoomStepFactor = 0.85f;
+        [Tooltip("Wheel-notch equivalents per second while a zoom key is held.")]
+        [SerializeField, Min(0f)] private float zoomHeldStepsPerSecond = 4f;
+
+        private readonly Dictionary<string, WorldMapNode> nodeById = new Dictionary<string, WorldMapNode>();
+        private GameSystems systems;
+        private string currentNodeId;
+        private bool paused;
+        private WorldMapPresentation presentation;
+        private MapDirection lastDirection = MapDirection.None;
+        private float messageHideAt;
+
+        private WorldMapNode CurrentNode => nodeById[currentNodeId];
+
+        private void Awake()
+        {
+            Assert.IsNotNull(nodes);
+            Assert.IsTrue(nodes.Length > 0, "WorldMapController has no nodes.");
+            Assert.IsNotNull(paths);
+            Assert.IsNotNull(mapPlayer);
+            Assert.IsNotNull(cameraFollow);
+            Assert.IsNotNull(stageNameText);
+            Assert.IsNotNull(stateText);
+            Assert.IsNotNull(bestTimeText);
+            Assert.IsNotNull(messageText);
+            Assert.IsNotNull(specialsText);
+            Assert.IsNotNull(specialSlots);
+            Assert.IsNotNull(enterButton);
+            Assert.IsNotNull(pausePanel);
+            Assert.IsNotNull(resumeButton);
+            Assert.IsNotNull(settingsButton);
+            Assert.IsNotNull(saveButton);
+            Assert.IsNotNull(loadButton);
+            Assert.IsNotNull(titleButton);
+            Assert.IsNotNull(quitButton);
+            Assert.IsNotNull(menuButton);
+            Assert.IsNotNull(focus);
+
+            presentation = WorldMapPresentation.Apply(menuButton.transform.parent);
+            presentation.Configure(focus);
+            enterButton.onClick.AddListener(TryEnter);
+            resumeButton.onClick.AddListener(Resume);
+            settingsButton.onClick.AddListener(OpenSettings);
+            saveButton.onClick.AddListener(SaveGame);
+            loadButton.onClick.AddListener(LoadGame);
+            titleButton.onClick.AddListener(BackToTitle);
+            quitButton.onClick.AddListener(QuitGame);
+            menuButton.onClick.AddListener(Pause);
+            mapPlayer.Arrived += OnArrived;
+            pausePanel.SetActive(false);
+            messageText.gameObject.SetActive(false);
+        }
+
+        private void OnDestroy()
+        {
+            if (mapPlayer != null)
+                mapPlayer.Arrived -= OnArrived;
+            Time.timeScale = 1f;
+        }
+
+        private void Start()
+        {
+            systems = GameSystems.Instance;
+            if (bgm != null)
+                systems.Audio.PlayBgm(bgm);
+            var save = systems.Save;
+            if (!save.HasSave)
+                save.CreateTemporary(systems.StageDb.StartNodeId); // direct play (spec 4.3)
+
+            foreach (var n in nodes)
+                nodeById[n.Data.NodeId] = n;
+
+            RefreshStates();
+
+            currentNodeId = save.Current.currentNodeId;
+            if (!nodeById.ContainsKey(currentNodeId) || CurrentNode.State == NodeState.Locked)
+            {
+                Debug.LogWarning($"[WorldMap] currentNodeId '{currentNodeId}' is invalid or locked. Using start node.");
+                currentNodeId = systems.StageDb.StartNodeId;
+                Assert.IsTrue(nodeById.ContainsKey(currentNodeId), "Start node is missing from the WorldMap scene.");
+            }
+
+            mapPlayer.Teleport(CurrentNode.Anchor);
+            cameraFollow.SetTarget(mapPlayer.transform);
+            cameraFollow.SnapToTarget();
+
+            var request = systems.Loader.LastRequest;
+            if (request != null && request.Reason == LoadReason.StageClear)
+                PresentUnlocks(request.StageId);
+
+            systems.InputMode.SetMode(InputMode.Gameplay);
+            focus.SetRestore(false);
+            focus.ClearSelection();
+            ShowNodeInfo();
+        }
+
+        private void RefreshStates()
+        {
+            var save = systems.Save.Current;
+            foreach (var n in nodes)
+                n.Apply(NodeStateResolver.Resolve(n.Data, save));
+
+            foreach (var p in paths)
+            {
+                bool visible = nodeById.TryGetValue(p.FromNodeId, out var a)
+                    && nodeById.TryGetValue(p.ToNodeId, out var b)
+                    && a.State != NodeState.Locked
+                    && b.State != NodeState.Locked;
+                p.SetVisible(visible);
+            }
+        }
+
+        /// <summary>Highlights nodes that opened because of the cleared stage.</summary>
+        private void PresentUnlocks(string clearedStageId)
+        {
+            bool any = false;
+            foreach (var n in nodes)
+            {
+                if (n.State != NodeState.Open)
+                    continue;
+                var prereq = n.Data.PrerequisiteStageIds;
+                if (prereq != null && System.Array.IndexOf(prereq, clearedStageId) >= 0)
+                {
+                    n.PlayUnlockAttention();
+                    any = true;
+                }
+            }
+            if (any)
+                ShowMessage("worldmap.unlocked_msg");
+        }
+
+        private void Update()
+        {
+            if (systems.Loader.IsBusy)
+                return;
+
+            if (messageText.gameObject.activeSelf && Time.unscaledTime >= messageHideAt)
+                messageText.gameObject.SetActive(false);
+
+            var input = systems.InputMode;
+            if (systems.Popups.IsBlocking)
+                return;
+
+            if (paused)
+            {
+                if (input.PausePressed || input.CancelPressed)
+                {
+                    if (!presentation.CloseMore()) Resume();
+                }
+                return;
+            }
+
+            if (input.PausePressed)
+            {
+                Pause();
+                return;
+            }
+            UpdateZoom(input);
+            if (mapPlayer.IsMoving)
+                return;
+
+            var dir = ReadDirection(input.Move);
+            if (dir != MapDirection.None)
+                TryMove(dir);
+            if (input.ConfirmPressed)
+                TryEnter();
+        }
+
+        private MapDirection ReadDirection(Vector2 move)
+        {
+            MapDirection dir = MapDirection.None;
+            if (move.magnitude >= directionThreshold)
+            {
+                if (Mathf.Abs(move.x) >= Mathf.Abs(move.y))
+                    dir = move.x > 0f ? MapDirection.Right : MapDirection.Left;
+                else
+                    dir = move.y > 0f ? MapDirection.Up : MapDirection.Down;
+            }
+            // Edge trigger: one step per press; must release before the next one.
+            if (dir == lastDirection)
+                return MapDirection.None;
+            lastDirection = dir;
+            return dir;
+        }
+
+        private void TryMove(MapDirection dir)
+        {
+            string neighborId = CurrentNode.Data.GetNeighborId(dir);
+            if (string.IsNullOrEmpty(neighborId))
+                return;
+            if (!nodeById.TryGetValue(neighborId, out var next))
+            {
+                Debug.LogError($"[WorldMap] Neighbour '{neighborId}' of '{currentNodeId}' is missing in the scene.");
+                return;
+            }
+            if (next.State == NodeState.Locked)
+            {
+                ShowMessage("worldmap.locked_msg");
+                return;
+            }
+            var route = FindRoute(currentNodeId, neighborId);
+            currentNodeId = neighborId;
+            messageText.gameObject.SetActive(false);
+            if (route.Length > 0)
+                mapPlayer.MoveAlong(route);
+            else
+                mapPlayer.MoveTo(next.Anchor);
+        }
+
+        /// <summary>Route of the path joining the two nodes, in travel order. Empty (straight move) when there is none.</summary>
+        private Vector3[] FindRoute(string fromId, string toId)
+        {
+            foreach (var p in paths)
+            {
+                if (p != null && p.Connects(fromId, toId))
+                    return p.GetRoute(fromId);
+            }
+            Debug.LogError($"[WorldMap] No path joins '{fromId}' and '{toId}'; moving in a straight line.");
+            return new Vector3[0];
+        }
+
+        private void OnArrived()
+        {
+            // Save the current node when the avatar stops (spec 6 "node move").
+            systems.Save.Current.currentNodeId = currentNodeId;
+            if (!systems.Save.Save())
+                Debug.LogError("[WorldMap] Failed to save current node.");
+            ShowNodeInfo();
+        }
+
+        private void ShowNodeInfo()
+        {
+            var node = CurrentNode;
+            var stage = node.Data.Stage;
+            stageNameText.SetKey(stage.DisplayNameKey);
+            switch (node.State)
+            {
+                case NodeState.Cleared: stateText.SetKey("worldmap.state.cleared"); break;
+                case NodeState.Open: stateText.SetKey("worldmap.state.open"); break;
+                default: stateText.SetKey("worldmap.state.locked"); break;
+            }
+
+            var record = systems.Save.Current.FindStage(stage.StageId);
+            if (record != null && record.cleared && record.bestTime > 0f)
+                bestTimeText.SetKey("worldmap.best_time", TimeFormat.Format(record.bestTime, true));
+            else
+                bestTimeText.SetKey("worldmap.no_record");
+            int collected = record != null ? record.CollectedCount() : 0;
+            specialsText.SetKey("worldmap.specials", collected, stage.CollectibleCount);
+            for (int i = 0; i < specialSlots.Length; i++)
+                specialSlots[i].color = (record != null && record.IsCollected(i)) ? HudColors.SpecialFull : HudColors.SpecialEmpty;
+            enterButton.interactable = node.State != NodeState.Locked;
+        }
+
+        private void ShowMessage(string key)
+        {
+            messageText.gameObject.SetActive(true);
+            messageText.SetKey(key);
+            messageHideAt = Time.unscaledTime + messageSeconds;
+        }
+
+        private void TryEnter()
+        {
+            if (paused || mapPlayer.IsMoving || systems.Loader.IsBusy || systems.Popups.IsBlocking)
+                return;
+            var node = CurrentNode;
+            if (node.State == NodeState.Locked)
+            {
+                ShowMessage("worldmap.locked_msg");
+                return;
+            }
+            // Nodes of the full world map exist before their stage scenes are made.
+            if (!Application.CanStreamedLevelBeLoaded(node.Data.Stage.SceneName))
+            {
+                ShowMessage("worldmap.coming_soon");
+                return;
+            }
+            focus.ClearSelection();
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.InGame, node.Data.Stage.StageId, LoadReason.StageEnter));
+        }
+
+        private void UpdateZoom(InputModeService input)
+        {
+            float steps = input.ZoomWheelSteps + input.ZoomHeld * zoomHeldStepsPerSecond * Time.unscaledDeltaTime;
+            if (steps != 0f)
+                cameraFollow.ZoomBy(Mathf.Pow(zoomStepFactor, steps));
+        }
+
+        private bool CanUseMenu => systems != null && !systems.Loader.IsBusy && !systems.Popups.IsBlocking;
+
+        /// <summary>Writes the progress now (it is also saved automatically whenever the avatar stops on a node).</summary>
+        private void SaveGame()
+        {
+            if (!CanUseMenu)
+                return;
+            var save = systems.Save;
+            save.Current.currentNodeId = currentNodeId;
+            if (save.IsTemporary)
+            {
+                ShowMessage("worldmap.save_temporary"); // direct scene play: nothing is written to disk
+                return;
+            }
+            ShowMessage(save.Save() ? "worldmap.saved" : "worldmap.save_failed");
+        }
+
+        /// <summary>Asks, then reloads the progress from the save file and re-opens the world map from it.</summary>
+        private void LoadGame()
+        {
+            if (!CanUseMenu)
+                return;
+            if (!systems.Save.HasSaveOnDisk)
+            {
+                ShowMessage("worldmap.no_save");
+                return;
+            }
+            systems.Popups.OpenConfirm("worldmap.confirm_load", ReloadSave);
+        }
+
+        private void ReloadSave()
+        {
+            if (!systems.Save.ReloadFromDisk())
+            {
+                ShowMessage("worldmap.load_failed");
+                return;
+            }
+            focus.ClearSelection();
+            systems.Loader.LoadWithLoading(new LoadRequest(SceneId.WorldMap, null, LoadReason.Continue));
+        }
+
+        /// <summary>Asks, then saves and quits the application.</summary>
+        private void QuitGame()
+        {
+            if (!CanUseMenu)
+                return;
+            systems.Popups.OpenConfirm("worldmap.confirm_quit", () =>
+            {
+                systems.Save.Current.currentNodeId = currentNodeId;
+                if (!systems.Save.Save())
+                    Debug.LogError("[WorldMap] Failed to save before quitting.");
+                AppQuit.Quit();
+            });
+        }
+
+        private void Pause()
+        {
+            if (paused || !CanUseMenu)
+                return;
+            paused = true;
+            presentation.SetMenuVisible(true);
+            pausePanel.SetActive(true);
+            systems.InputMode.SetMode(InputMode.UI);
+            focus.SetRestore(true);
+            focus.Select(resumeButton.gameObject);
+        }
+
+        private void Resume()
+        {
+            if (!paused)
+                return;
+            paused = false;
+            pausePanel.SetActive(false);
+            presentation.SetMenuVisible(false);
+            systems.InputMode.SetMode(InputMode.Gameplay);
+            focus.SetRestore(false);
+            focus.ClearSelection();
+            lastDirection = MapDirection.Right; // swallow a held direction
+        }
+
+        private void OpenSettings()
+        {
+            if (systems.Loader.IsBusy || systems.Popups.IsBlocking)
+                return;
+            systems.Popups.OpenSettings();
+        }
+
+        private void BackToTitle()
+        {
+            if (systems.Loader.IsBusy || systems.Popups.IsBlocking)
+                return;
+            if (!systems.Save.Save())
+                Debug.LogError("[WorldMap] Failed to save before returning to the title.");
+            systems.Loader.Load(SceneId.Title);
+        }
+    }
+}

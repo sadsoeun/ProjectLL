@@ -1,0 +1,41 @@
+{
+ "version": 1,
+ "stageId": "BOSS_TEST",
+ "length": 100.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": { "x": 2.0, "y": 0.0 },
+ "goal": { "x": 88.0, "y": 0.0 },
+ "sections": [
+  { "id": "BT_A", "startX": 0.0, "endX": 70.0, "note": "run-up: gimmicks and the new monster movements" },
+  { "id": "BT_B", "startX": 70.0, "endX": 100.0, "note": "boss arena 74..100" }
+ ],
+ "blocks": [
+  { "id": "BT_A_ground1", "section": "BT_A", "kind": "ground", "x": 0.0, "y": 0.0, "w": 100.0, "h": 4.0 }
+ ],
+ "checkpoints": [ { "id": "BT_CP1", "x": 66.0, "y": 0.0 } ],
+ "coins": [ { "x": 6.0, "y": 1.5 }, { "x": 7.0, "y": 1.5 }, { "x": 8.0, "y": 1.5 } ],
+ "specials": [
+  { "id": "BT_SC1", "slot": 0, "x": 9.0, "y": 3.5 },
+  { "id": "BT_SC2", "slot": 1, "x": 30.0, "y": 3.5 },
+  { "id": "BT_SC3", "slot": 2, "x": 50.0, "y": 3.5 }
+ ],
+ "spikes": [],
+ "movers": [],
+ "enemies": [
+  { "id": "BT_A_bat", "monsterId": 1106, "x": 14.0, "y": 0.0, "range": 8.0 },
+  { "id": "BT_A_slime", "monsterId": 1104, "x": 30.0, "y": 0.0, "range": 4.0 },
+  { "id": "BT_A_worm", "monsterId": 1105, "x": 40.0, "y": 0.0, "range": 3.0 }
+ ],
+ "fallers": [],
+ "spikeTraps": [
+  { "id": "BT_A_trap1", "x": 22.0, "y": 0.0, "w": 3.0, "period": 3.0, "upTime": 1.0, "warn": 0.5, "offset": 0.0 }
+ ],
+ "switches": [
+  { "id": "BT_A_sw1", "x": 50.0, "y": 0.0, "channel": 1, "once": true }
+ ],
+ "gates": [
+  { "id": "BT_A_gate1", "x": 58.0, "y": 0.0, "h": 3.0, "channel": 1, "openSeconds": 0.8 }
+ ],
+ "boss": { "bossId": 9001, "x": 94.0, "y": 0.0, "arenaMinX": 76.0, "arenaMaxX": 100.0 }
+}

@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "stageId": "SD_SHOWCASE",
+ "length": 80.0,
+ "killY": -8.0,
+ "cameraMinY": 2.5,
+ "spawn": { "x": 2.0, "y": 0.0 },
+ "goal": { "x": 76.0, "y": 0.0 },
+ "sections": [
+  { "id": "S_A", "startX": 0.0, "endX": 40.0, "note": "Sun Dunes kit + props showcase" },
+  { "id": "S_B", "startX": 40.0, "endX": 80.0, "note": "platforms, monsters" }
+ ],
+ "blocks": [
+  { "id": "S_A_ground1", "section": "S_A", "kind": "ground", "x": 0.0, "y": 0.0, "w": 30.0, "h": 4.0 },
+  { "id": "S_A_platform1", "section": "S_A", "kind": "platform", "x": 33.0, "y": 2.0, "w": 6.0, "h": 1.0 },
+  { "id": "S_B_ground2", "section": "S_B", "kind": "ground", "x": 42.0, "y": 0.0, "w": 38.0, "h": 4.0 }
+ ],
+ "checkpoints": [ { "id": "S_A_CP1", "x": 14.0, "y": 0.0 } ],
+ "coins": [ { "x": 5.0, "y": 1.5 }, { "x": 6.0, "y": 1.5 }, { "x": 7.0, "y": 1.5 } ],
+ "specials": [ { "id": "SC1", "slot": 0, "x": 9.0, "y": 3.5 }, { "id": "SC2", "slot": 1, "x": 36.0, "y": 4.5 }, { "id": "SC3", "slot": 2, "x": 72.0, "y": 2.0 } ],
+ "spikes": [],
+ "movers": [],
+ "enemies": [
+  { "id": "S_B_en1", "monsterId": 1101, "x": 48.0, "y": 0.0, "range": 4.0 },
+  { "id": "S_B_en2", "monsterId": 1102, "x": 55.0, "y": 0.0, "range": 4.0 },
+  { "id": "S_B_en3", "monsterId": 1103, "x": 62.0, "y": 0.0, "range": 4.0 },
+  { "id": "S_B_en4", "monsterId": 1104, "x": 69.0, "y": 0.0, "range": 4.0 },
+  { "id": "S_A_en5", "monsterId": 1105, "x": 21.0, "y": 0.0, "range": 3.0 },
+  { "id": "S_A_en6", "monsterId": 1106, "x": 26.0, "y": 0.0, "range": 3.0 },
+  { "id": "S_B_en7", "monsterId": 1107, "x": 74.0, "y": 0.0, "range": 3.0 },
+  { "id": "S_B_en8", "monsterId": 2101, "x": 45.0, "y": 0.0, "range": 2.0 }
+ ],
+ "fallers": [],
+ "theme": "SunDunes",
+ "decorations": [
+  { "id": "d1", "prop": "SD_P01_Palm", "x": 3.0, "y": 0.0, "z": 6.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d2", "prop": "SD_P02_Cactus_Round", "x": 8.0, "y": 0.0, "z": 3.0, "rotY": 20.0, "scale": 1.0 },
+  { "id": "d3", "prop": "SD_P02_Cactus_Tall", "x": 10.0, "y": 0.0, "z": 3.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d4", "prop": "SD_P03_Rock_Set_A", "x": 12.0, "y": 0.0, "z": 4.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d5", "prop": "SD_P04_Column_Broken", "x": 17.0, "y": 0.0, "z": 5.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d6", "prop": "SD_P04_Column_Intact", "x": 20.0, "y": 0.0, "z": 5.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d7", "prop": "SD_P08_Pottery", "x": 22.0, "y": 0.0, "z": 2.5, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d8", "prop": "SD_P09_Banner", "x": 24.0, "y": 0.0, "z": 3.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d9", "prop": "SD_P10_Brazier", "x": 26.0, "y": 0.0, "z": 3.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d10", "prop": "SD_P03_Rock_Set_B", "x": 45.0, "y": 0.0, "z": 4.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d11", "prop": "SD_P01_Palm", "x": 58.0, "y": 0.0, "z": 6.0, "rotY": 90.0, "scale": 1.1 },
+  { "id": "d13", "prop": "SD_P06_TempleGate", "x": 76.0, "y": 0.0, "z": 12.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d14", "prop": "SD_P05_SunArch", "x": 36.0, "y": 0.0, "z": 5.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b1", "prop": "SD_B03_Dune_Ridge", "x": 10.0, "y": -2.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b2", "prop": "SD_B06_Oasis_Grove", "x": 40.0, "y": -2.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b3", "prop": "SD_B01_Mesa_Cluster", "x": 25.0, "y": -4.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b4", "prop": "SD_B04_Rock_Arch", "x": 60.0, "y": -4.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b5", "prop": "SD_B02_Butte_Trio", "x": 0.0, "y": -5.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "b6", "prop": "SD_B05_Temple_Far", "x": 75.0, "y": -5.0, "rotY": 0.0, "scale": 1.0 },
+  { "id": "d12", "prop": "SD_P03_Rock_Set_C", "x": 66.0, "y": 0.0, "z": 4.0, "rotY": 0.0, "scale": 1.0 }
+ ]
+}

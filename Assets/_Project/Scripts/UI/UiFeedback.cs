@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace MyGame
+{
+    /// <summary>Save failures survive scene transitions; retry saves the existing data, never records rewards twice.</summary>
+    public sealed class UiFeedback:MonoBehaviour
+    {
+        private struct Failure { public string key; public Func<bool> retry; }
+        private readonly Queue<Failure> failures=new Queue<Failure>();
+        private float readyAt;
+        private LocalizedText notice;
+        private float noticeUntil;
+        private static UiFeedback Get()
+        {
+            if(!GameSystems.Exists)return null;
+            return UiKit.Ensure<UiFeedback>(GameSystems.Instance.Popups);
+        }
+        public static void SaveFailed(string key,Func<bool> retry)
+        {
+            var view=Get();if(view==null)return;
+            view.failures.Enqueue(new Failure{key=key,retry=retry});view.readyAt=Time.unscaledTime+.85f;
+            Notice("ui.save_notice");
+        }
+        public static void Notice(string key)
+        {
+            var view=Get();if(view==null)return;
+            if(view.notice==null)
+            {
+                var plate=UiKit.Rect("StatusNotice",view.transform);var image=UiKit.Ensure<UnityEngine.UI.Image>(plate);image.color=GoldUiTheme.Panel;image.raycastTarget=false;
+                UiKit.Place(plate,.5f,1,0,-24,1000,72);GoldUiTheme.DressPanel(plate,false);
+                view.notice=UiKit.Label(plate,"Label",key,25,UnityEngine.TextAnchor.MiddleCenter);
+                GoldUiTheme.Stretch((RectTransform)view.notice.transform);((RectTransform)view.notice.transform).offsetMin=new Vector2(24,8);((RectTransform)view.notice.transform).offsetMax=new Vector2(-24,-8);
+            }
+            view.notice.SetKey(key);view.notice.transform.parent.gameObject.SetActive(true);view.notice.transform.parent.SetAsLastSibling();view.noticeUntil=Time.unscaledTime+7;
+        }
+        private void Update()
+        {
+            if(notice!=null&&Time.unscaledTime>noticeUntil)notice.transform.parent.gameObject.SetActive(false);
+            if(failures.Count==0||!GameSystems.Exists)return;
+            var systems=GameSystems.Instance;
+            if(systems.Loader.IsBusy||systems.Popups.IsBlocking||systems.InputMode.Mode!=InputMode.UI)
+            {readyAt=Time.unscaledTime+.85f;return;}
+            if(Time.unscaledTime<readyAt)return;
+            var failure=failures.Dequeue();
+            systems.Popups.OpenConfirm(failure.key,()=>
+            {
+                if(failure.retry!=null&&failure.retry())Notice("ui.saved");
+                else SaveFailed(failure.key,failure.retry);
+            });
+        }
+    }
+}

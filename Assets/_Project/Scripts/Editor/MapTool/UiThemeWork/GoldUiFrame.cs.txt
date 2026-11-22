@@ -1,0 +1,55 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Lightweight gold linework shared by menus, cards and HUD. No texture allocation.</summary>
+    [RequireComponent(typeof(CanvasRenderer))]
+    public sealed class GoldUiFrame : MaskableGraphic
+    {
+        public bool diamond = true;
+        public float inset = 3f;
+
+        protected override void OnPopulateMesh(VertexHelper vh)
+        {
+            vh.Clear();
+            Rect r = rectTransform.rect;
+            float x = r.xMin + inset, y = r.yMin + inset;
+            float w = r.width - inset * 2, h = r.height - inset * 2;
+            if (w <= 0 || h <= 0) return;
+            Color fine = color; fine.a *= .45f;
+            Quad(vh, x, y, w, 1, fine); Quad(vh, x, y + h - 1, w, 1, fine);
+            Quad(vh, x, y, 1, h, fine); Quad(vh, x + w - 1, y, 1, h, fine);
+            float a = Mathf.Min(22, Mathf.Min(w, h) * .2f);
+            foreach (float xx in new[] { x, x + w - a })
+                foreach (float yy in new[] { y, y + h - 2 }) Quad(vh, xx, yy, a, 2, color);
+            foreach (float xx in new[] { x, x + w - 2 })
+                foreach (float yy in new[] { y, y + h - a }) Quad(vh, xx, yy, 2, a, color);
+            if (diamond && w > 250)
+            {
+                Gem(vh, new Vector2(r.center.x, y + h), 4, color);
+                Gem(vh, new Vector2(r.center.x, y), 4, color);
+            }
+        }
+
+        internal static void Quad(VertexHelper vh, float x, float y, float w, float h, Color c)
+        {
+            int i = vh.currentVertCount;
+            vh.AddVert(new Vector3(x, y), c, Vector2.zero);
+            vh.AddVert(new Vector3(x, y + h), c, Vector2.zero);
+            vh.AddVert(new Vector3(x + w, y + h), c, Vector2.zero);
+            vh.AddVert(new Vector3(x + w, y), c, Vector2.zero);
+            vh.AddTriangle(i, i + 1, i + 2); vh.AddTriangle(i, i + 2, i + 3);
+        }
+
+        internal static void Gem(VertexHelper vh, Vector2 p, float s, Color c)
+        {
+            int i = vh.currentVertCount;
+            vh.AddVert(p + Vector2.up * s, c, Vector2.zero);
+            vh.AddVert(p + Vector2.right * s, c, Vector2.zero);
+            vh.AddVert(p + Vector2.down * s, c, Vector2.zero);
+            vh.AddVert(p + Vector2.left * s, c, Vector2.zero);
+            vh.AddTriangle(i, i + 1, i + 2); vh.AddTriangle(i, i + 2, i + 3);
+        }
+    }
+}

@@ -1,0 +1,43 @@
+2026-11-16 — 인트로 로고가 타이틀로 이어지는 전환
+
+화면 순서
+1. 인트로 81.58초부터 중앙 로고가 나타난다.
+2. 로고 하나를 씬 전환 내내 유지한다. 영상 끝부분의 고정 로고는 제거했다.
+3. 실제 타이틀 배경이 준비되면 1.3초 동안 로고가 이동·축소된다.
+4. 마지막 영화 프레임은 0.85초 동안 타이틀 배경으로 교차 전환한다.
+5. 도착한 로고를 타이틀의 동일 이미지로 이어받고 메뉴와 버전 표기를 표시한다.
+건너뛰기도 같은 연결을 사용한다. 음량 페이드와 5개 언어 자막은 유지한다.
+Noto Sans, 검정·금빛 미감, 꺼진 캐릭터 호흡은 유지한다.
+
+구현
+IntroTitleTransition은 씬 전환을 넘어 유지되는 전용 UI다.
+타이틀 로고의 실제 화면 좌표와 크기를 읽으므로 타이틀 위치를 하드코딩하지 않는다.
+IntroSequencePlayer는 영화 끝부분의 로고 표시와 마지막 프레임 전달을 담당한다.
+TitlePresentation은 도착 전 로고·메뉴·부가 문구를 숨기고 도착 후 메뉴를 연다.
+TitleIllustration은 이동 종료 시 기존 32픽셀 등장 동작이 다시 적용되지 않게 한다.
+TitleController는 전환 중 뒤쪽 메뉴 입력을 차단한다.
+음악 스트림 MD5는 기존 영상과 동일: d3800e363db9711a09225566481be8ab.
+
+검증
+원본 프로젝트 복사본, 실제 씬과 서비스, 별도 저장 경로를 이용했다.
+화면 조작 없이 숨김 Unity 실행과 엔진 내부 렌더·가상 입력으로 확인했다.
+초기 실행에서 영상 85초 완주를 확인했다. 착지 보정 후 재검증은 80초로 이동하여
+수정된 엔딩부터 자연 종료까지 재생했고, 버튼·Esc·새로 시작·이어하기도 검증했다.
+씬 전환 전후 동일 로고 객체, 원본 비율 유지, 중복 로고 숨김, 메뉴 표시 지연 확인.
+최종 로고 사각형의 네 꼭짓점 오차: 0.0000 화면 좌표 단위.
+게임 실행 오류 0건, 검증 Unity 종료 코드 0, 전체 프로젝트 C# 컴파일 통과.
+검증 렌더 01-film-logo / 02-moving-logo / 04-menu-revealed를 직접 확인했다.
+적용한 5개 소스 및 영상의 해시를 확인했다.
+Unity 엔진 스플래시의 빌드 플레이어 렌더는 이번 검증 범위에 포함하지 않았다.
+
+원본 적용 파일
+Assets/_Project/Scripts/Title/IntroTitleTransition.cs (신규)
+Assets/_Project/Scripts/Title/IntroSequencePlayer.cs
+Assets/_Project/Scripts/Title/TitlePresentation.cs
+Assets/_Project/Scripts/Title/TitleIllustration.cs
+Assets/_Project/Scripts/Title/TitleController.cs
+Assets/StreamingAssets/Video/LeafAndLeapIntro.mp4
+
+최신 적용 스크립트: ../install_handoff.ps1
+이전 Startup 작업본은 이 전환을 포함하지 않은 과거 버전이다.
+Unity Refresh 후 01_Logo 씬에서 전체 흐름을 확인할 수 있다.

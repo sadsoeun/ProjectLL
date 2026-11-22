@@ -1,0 +1,36 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    [DisallowMultipleComponent]
+    public sealed class GoldUiButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
+    {
+        private Button button;
+        private GoldUiFrame frame;
+        private Text label;
+        private bool hovered, selected, marked;
+        private float brightness;
+        public void Mark(bool value) { marked = value; Refresh(true); }
+        private void OnEnable() => Refresh(true);
+        private void OnDisable() { hovered = selected = false; }
+        public void OnPointerEnter(PointerEventData e) { hovered = true; }
+        public void OnPointerExit(PointerEventData e) { hovered = false; }
+        public void OnSelect(BaseEventData e) { selected = true; }
+        public void OnDeselect(BaseEventData e) { selected = false; }
+        private void Update() => Refresh(false);
+        private void Refresh(bool instant)
+        {
+            if (button == null) button = GetComponent<Button>();
+            if (frame == null) frame = GetComponentInChildren<GoldUiFrame>(true);
+            if (label == null) label = GetComponentInChildren<Text>(true);
+            if (button == null) return;
+            bool enabled = button.IsInteractable();
+            float goal = !enabled ? .22f : (hovered || selected || marked ? 1f : .55f);
+            brightness = instant ? goal : Mathf.MoveTowards(brightness, goal, Time.unscaledDeltaTime * 5);
+            if (frame != null) frame.color = new Color(1f, .77f, .35f, brightness);
+            if (label != null) label.color = enabled ? Color.Lerp(GoldUiTheme.Cream, GoldUiTheme.Gold, marked ? 1 : 0) : new Color(.53f,.52f,.47f);
+        }
+    }
+}

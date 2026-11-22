@@ -1,0 +1,38 @@
+Actual project-copy Play Mode test; no service adapters.
+13:07:46 Scene 01_Logo
+13:07:46 Isolated save path: C:/Users/PC/AppData/LocalLow/CodexIsolatedQA/LeafLeapIntroFlow-20261116130743
+13:07:46 State 1
+13:07:50 Scene 02_LanguageSelect
+13:07:50 State 2
+13:07:50 Natural video playback time=0.00
+13:07:52 PASS language confirm -> decoded video, Japanese Noto caption, duplicate-input guard; no new save.
+13:08:05 Natural video playback time=14.83
+13:08:20 Natural video playback time=29.83
+13:08:35 Natural video playback time=44.83
+13:08:50 Natural video playback time=59.83
+13:09:05 Natural video playback time=74.83
+13:09:17 Scene 03_Title
+13:09:18 PASS full 85s playback -> title, overlay released, input unlocked, menu entrance completed.
+13:09:18 State 3
+13:09:18 Scene 04_Loading
+13:09:20 Scene 05_WorldMap
+13:09:20 PASS title New Game -> loading -> real WorldMap, save exists, input unlocked.
+13:09:20 State 4
+13:09:20 Scene 03_Title
+13:09:21 State 5
+13:09:22 Scene 04_Loading
+13:09:24 Scene 05_WorldMap
+13:09:24 PASS title Continue -> real WorldMap without intro.
+13:09:24 State 6
+13:09:24 Scene 01_Logo
+13:09:29 State 10
+13:09:29 State 7
+13:09:30 Scene 03_Title
+13:09:31 PASS remembered-language startup -> actual virtual mouse click on skip -> picture/audio fade -> title once.
+13:09:31 State 8
+13:09:31 Scene 01_Logo
+13:09:36 State 9
+13:09:37 Scene 03_Title
+13:09:37 PASS Escape via Unity's virtual keyboard -> title, input unlocked.
+13:09:37 PASS ALL: actual scenes, actual services, real Play Mode, natural finish + button skip + Escape + New Game + Continue.
+13:09:37 Unity engine splash is build-player-only; enabled in settings, not observed in Editor Play Mode.

@@ -1,0 +1,2 @@
+Assets/_Project/Data/StageLayouts/W1_S1.json
+errors=0 warnings=0

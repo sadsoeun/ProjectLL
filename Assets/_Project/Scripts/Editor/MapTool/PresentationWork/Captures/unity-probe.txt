@@ -1,0 +1,359 @@
+batch=True
+NVIDIA GeForce RTX 4070 Ti SUPER
+UnityEditor.GUIView
+UnityEditor.GUIView get_current()
+UnityEditor.GUIView get_focusedView()
+UnityEditor.GUIView get_mouseOverView()
+Boolean get_hasFocus()
+Void Repaint()
+Void Focus()
+Void RepaintImmediately()
+Void CaptureRenderDocScene()
+Void CaptureRenderDocFullContent()
+Void BeginCaptureRenderDoc()
+Void EndCaptureRenderDoc()
+Boolean get_vSyncEnabled()
+Void RenderCurrentSceneForCapture()
+Boolean get_mouseRayInvisible()
+Void set_mouseRayInvisible(Boolean)
+Boolean get_disableInputEvents()
+Void set_disableInputEvents(Boolean)
+Boolean get_hdrActive()
+Void SetTitle(System.String)
+Void AddToAuxWindowList()
+Void SetInternalGameViewDimensions(UnityEngine.Rect, UnityEngine.Rect, UnityEngine.Vector2)
+Void SetMainPlayModeViewSize(UnityEngine.Vector2)
+Void SetDisplayViewSize(Int32, UnityEngine.Vector2)
+UnityEngine.Vector2 GetDisplayViewSize(Int32)
+Void SetAsStartView()
+Void SetAsLastPlayModeView()
+Void SetPlayModeView(Boolean)
+Void ClearStartView()
+Void SetEyeDropperOpen(Boolean)
+Void StealMouseCapture()
+Void ClearKeyboardControl()
+Void SetKeyboardControl(Int32)
+Int32 GetKeyboardControl()
+Void GrabPixels(UnityEngine.RenderTexture, UnityEngine.Rect)
+Single GetBackingScaleFactor()
+Void MarkHotRegion(UnityEngine.Rect)
+Void EnableVSync(Boolean)
+Void SetActualViewName(System.String)
+IntPtr get_nativeHandle()
+Void Internal_SetAsActiveWindow()
+Void Internal_Init(Int32, Int32, Boolean, Boolean)
+Void Internal_Recreate(Int32, Int32)
+Void Internal_Close()
+Boolean Internal_SendEvent(UnityEngine.Event)
+Void Internal_SetWantsMouseMove(Boolean)
+Void Internal_SetWantsMouseEnterLeaveWindow(Boolean)
+Void Internal_SetAutoRepaint(Boolean)
+Void Internal_SetWindow(UnityEngine.ScriptableObject)
+Void Internal_UnsetWindow(UnityEngine.ScriptableObject)
+Void Internal_SetPosition(UnityEngine.Rect)
+Void add_positionChanged(System.Action`1[UnityEditor.GUIView])
+Void remove_positionChanged(System.Action`1[UnityEditor.GUIView])
+Boolean SendEvent(UnityEngine.Event)
+Void SetWindow(UnityEditor.ContainerWindow)
+Void RecreateContext()
+UnityEngine.Vector2 UnityEditor.IWindowModel.get_size()
+UnityEngine.UIElements.VisualElement get_visualTree()
+UnityEngine.EventInterests get_eventInterests()
+Void set_eventInterests(UnityEngine.EventInterests)
+System.Action UnityEditor.IWindowModel.get_onGUIHandler()
+Boolean get_wantsMouseMove()
+Void set_wantsMouseMove(Boolean)
+Boolean get_wantsMouseEnterLeaveWindow()
+Void set_wantsMouseEnterLeaveWindow(Boolean)
+Boolean get_autoRepaintOnSceneChange()
+Void set_autoRepaintOnSceneChange(Boolean)
+Int32 get_depthBufferBits()
+Void set_depthBufferBits(Int32)
+Int32 get_antiAliasing()
+Void set_antiAliasing(Int32)
+Int32 get_antiAlias()
+Void set_antiAlias(Int32)
+Boolean get_resetPanelRenderingOnAssetChange()
+Void set_resetPanelRenderingOnAssetChange(Boolean)
+UnityEditor.IWindowBackend get_windowBackend()
+Void set_windowBackend(UnityEditor.IWindowBackend)
+UnityEditor.IWindowBackend UnityEditor.IWindowModel.get_windowBackend()
+Void UnityEditor.IWindowModel.set_windowBackend(UnityEditor.IWindowBackend)
+Void OnEnable()
+Void OnDisable()
+Void ValidateWindowBackendForCurrentView()
+Void OldOnGUI()
+Void OnGUI()
+Void OnBackingScaleFactorChanged()
+Void SetPosition(UnityEngine.Rect)
+Void OnDestroy()
+System.String GetViewName()
+System.String GetTypeNameOfMostSpecificActiveView()
+Void BeginOffsetArea(UnityEngine.Rect, UnityEngine.GUIContent, UnityEngine.GUIStyle)
+Void EndOffsetArea()
+Void CaptureMetalScene()
+Void IncrementVersion(UnityEngine.UIElements.TextElement, UnityEngine.UIElements.VersionChangeType)
+Void IncrementVersionForUITKText(UnityEngine.UIElements.VersionChangeType)
+Void SetActiveWindowAsPresented()
+IntPtr get_current_Injected()
+IntPtr get_focusedView_Injected()
+IntPtr get_mouseOverView_Injected()
+Boolean get_hasFocus_Injected(IntPtr)
+Void Repaint_Injected(IntPtr)
+Void Focus_Injected(IntPtr)
+Void RepaintImmediately_Injected(IntPtr)
+Void CaptureRenderDocScene_Injected(IntPtr)
+Void CaptureRenderDocFullContent_Injected(IntPtr)
+Void BeginCaptureRenderDoc_Injected(IntPtr)
+Void EndCaptureRenderDoc_Injected(IntPtr)
+Boolean get_vSyncEnabled_Injected(IntPtr)
+Void RenderCurrentSceneForCapture_Injected(IntPtr)
+Boolean get_mouseRayInvisible_Injected(IntPtr)
+Void set_mouseRayInvisible_Injected(IntPtr, Boolean)
+Boolean get_disableInputEvents_Injected(IntPtr)
+Void set_disableInputEvents_Injected(IntPtr, Boolean)
+Boolean get_hdrActive_Injected(IntPtr)
+Void SetTitle_Injected(IntPtr, UnityEngine.Bindings.ManagedSpanWrapper ByRef)
+Void AddToAuxWindowList_Injected(IntPtr)
+Void SetInternalGameViewDimensions_Injected(IntPtr, UnityEngine.Rect ByRef, UnityEngine.Rect ByRef, UnityEngine.Vector2 ByRef)
+Void SetMainPlayModeViewSize_Injected(IntPtr, UnityEngine.Vector2 ByRef)
+Void SetDisplayViewSize_Injected(IntPtr, Int32, UnityEngine.Vector2 ByRef)
+Void GetDisplayViewSize_Injected(IntPtr, Int32, UnityEngine.Vector2 ByRef)
+Void SetAsStartView_Injected(IntPtr)
+Void SetAsLastPlayModeView_Injected(IntPtr)
+Void SetPlayModeView_Injected(IntPtr, Boolean)
+Void ClearStartView_Injected(IntPtr)
+Void SetEyeDropperOpen_Injected(IntPtr, Boolean)
+Void StealMouseCapture_Injected(IntPtr)
+Void ClearKeyboardControl_Injected(IntPtr)
+Void SetKeyboardControl_Injected(IntPtr, Int32)
+Int32 GetKeyboardControl_Injected(IntPtr)
+Void GrabPixels_Injected(IntPtr, IntPtr, UnityEngine.Rect ByRef)
+Single GetBackingScaleFactor_Injected(IntPtr)
+Void MarkHotRegion_Injected(IntPtr, UnityEngine.Rect ByRef)
+Void EnableVSync_Injected(IntPtr, Boolean)
+Void SetActualViewName_Injected(IntPtr, UnityEngine.Bindings.ManagedSpanWrapper ByRef)
+IntPtr get_nativeHandle_Injected(IntPtr)
+Void Internal_SetAsActiveWindow_Injected(IntPtr)
+Void Internal_Init_Injected(IntPtr, Int32, Int32, Boolean, Boolean)
+Void Internal_Recreate_Injected(IntPtr, Int32, Int32)
+Void Internal_Close_Injected(IntPtr)
+Boolean Internal_SendEvent_Injected(IntPtr, IntPtr)
+Void Internal_SetWantsMouseMove_Injected(IntPtr, Boolean)
+Void Internal_SetWantsMouseEnterLeaveWindow_Injected(IntPtr, Boolean)
+Void Internal_SetAutoRepaint_Injected(IntPtr, Boolean)
+Void Internal_SetWindow_Injected(IntPtr, IntPtr)
+Void Internal_UnsetWindow_Injected(IntPtr, IntPtr)
+Void Internal_SetPosition_Injected(IntPtr, UnityEngine.Rect ByRef)
+Void .ctor()
+Void .cctor()
+UnityEditor.GUIView current
+UnityEditor.GUIView focusedView
+UnityEditor.GUIView mouseOverView
+Boolean hasFocus
+Boolean vSyncEnabled
+Boolean mouseRayInvisible
+Boolean disableInputEvents
+Boolean hdrActive
+IntPtr nativeHandle
+UnityEngine.Vector2 UnityEditor.IWindowModel.size
+UnityEngine.UIElements.VisualElement visualTree
+UnityEngine.EventInterests eventInterests
+System.Action UnityEditor.IWindowModel.onGUIHandler
+Boolean wantsMouseMove
+Boolean wantsMouseEnterLeaveWindow
+Boolean autoRepaintOnSceneChange
+Int32 depthBufferBits
+Int32 antiAliasing
+Int32 antiAlias
+Boolean resetPanelRenderingOnAssetChange
+UnityEditor.IWindowBackend windowBackend
+UnityEditor.IWindowBackend UnityEditor.IWindowModel.windowBackend
+System.Action`1[UnityEditor.GUIView] positionChanged
+System.Action`1[UnityEditor.GUIView] positionChanged
+System.Int32 m_DepthBufferBits
+System.Int32 m_AntiAliasing
+System.Boolean m_ResetPanelRenderingOnAssetChange
+System.Boolean m_AutoRepaintOnSceneChange
+UnityEditor.IWindowBackend m_WindowBackend
+UnityEngine.EventInterests m_EventInterests
+System.Action`2[UnityEngine.UIElements.TextElement,UnityEngine.UIElements.VersionChangeType] k_QueryIncrementVersion
+UnityEditor.GUIView+<>c__DisplayClass122_0
+UnityEditor.HostView
+Void add_actualViewChanged(System.Action`1[UnityEditor.HostView])
+Void remove_actualViewChanged(System.Action`1[UnityEditor.HostView])
+Void add_populateDefaultMenuItems(System.Action`2[UnityEditor.GenericMenu,UnityEditor.EditorWindow])
+Void remove_populateDefaultMenuItems(System.Action`2[UnityEditor.GenericMenu,UnityEditor.EditorWindow])
+Boolean get_showGenericMenu()
+Void set_showGenericMenu(Boolean)
+UnityEditor.EditorWindow get_actualView()
+Void set_actualView(UnityEditor.EditorWindow)
+UnityEngine.Vector2 get_minSize()
+UnityEngine.Vector2 get_maxSize()
+Void SetActualViewInternal(UnityEditor.EditorWindow, Boolean)
+Void CreateDelegates()
+Void ClearDelegates()
+Void ResetActiveView()
+Void UpdateMargins(UnityEditor.EditorWindow)
+UnityEngine.RectOffset UnityEditor.IEditorWindowModel.get_viewMargins()
+System.Action UnityEditor.IEditorWindowModel.get_onSplitterGUIHandler()
+Void UnityEditor.IEditorWindowModel.set_onSplitterGUIHandler(System.Action)
+Void UpdateViewMargins(UnityEditor.EditorWindow)
+Void SetPosition(UnityEngine.Rect)
+Void SetActualViewPosition(UnityEngine.Rect)
+Void SetWindow(UnityEditor.ContainerWindow)
+Void OnEnable()
+Void OnDisable()
+Void OnEditorModeChanged(ModeChangedArgs)
+Void HandleSplitView()
+Void OldOnGUI()
+Boolean OnFocus()
+Void OnLostFocus()
+Void OnBackingScaleFactorChanged()
+Void OnDestroy()
+System.Collections.Generic.IEnumerable`1[System.Type] GetBuiltInPaneTypes()
+System.Collections.Generic.IEnumerable`1[System.Type] GetCurrentModePaneTypes(System.String)
+System.Collections.Generic.IEnumerable`1[System.Type] GetDefaultPaneTypes()
+System.Collections.Generic.IEnumerable`1[System.Type] GetPaneTypes()
+Void OnProjectChange()
+Void OnSelectionChange()
+Void OnDidOpenScene()
+Void OnInspectorUpdate()
+Void OnHierarchyChange()
+EditorWindowDelegate CreateDelegate(System.String)
+System.Reflection.MethodInfo GetPaneMethod(System.String)
+System.Reflection.MethodInfo GetPaneMethod(System.String, System.Object)
+System.String GetActualViewName()
+Void InvokeOnGUI(UnityEngine.Rect)
+Void Invoke(System.String)
+Void Invoke(System.String, System.Object)
+UnityEditor.EditorWindow UnityEditor.IEditorWindowModel.get_window()
+UnityEditor.IEditorWindowBackend get_editorWindowBackend()
+Void set_editorWindowBackend(UnityEditor.IEditorWindowBackend)
+Void RegisterSelectedPane(Boolean)
+Void DeregisterSelectedPane(Boolean, Boolean, Boolean)
+Boolean UnityEditor.IEditorWindowModel.get_notificationVisible()
+Void CheckNotificationStatus()
+Void SendUpdate()
+Void SendModKeysChanged()
+UnityEngine.RectOffset get_borderSize()
+UnityEngine.RectOffset GetBorderSize()
+UnityEditor.WindowAction[] get_windowActions()
+Single GetGenericMenuLeftOffset(Boolean)
+Single GetExtraButtonsWidth()
+Void ShowGenericMenu(Single, Single)
+Void PopulateDataModeDropdown(UnityEditor.DataModeController, UnityEditor.GenericMenu)
+UnityEditor.WindowAction[] FetchWindowActionFromAttribute()
+Void FlushView(UnityEditor.EditorWindow)
+Void PopupGenericMenu(UnityEditor.EditorWindow, UnityEngine.Rect)
+Void AddWindowActionMenu(UnityEditor.GenericMenu, UnityEditor.EditorWindow)
+Void Inspect(System.Object)
+Void Reload(System.Object)
+Void AddDefaultItemsToMenu(UnityEditor.GenericMenu, UnityEditor.EditorWindow)
+UnityEngine.Color UnityEditor.IEditorWindowModel.get_playModeTintColor()
+Void PlayModeTintColorChangedCallback(System.String)
+Void .ctor()
+Void .cctor()
+Boolean showGenericMenu
+UnityEditor.EditorWindow actualView
+UnityEngine.Vector2 minSize
+UnityEngine.Vector2 maxSize
+UnityEngine.RectOffset UnityEditor.IEditorWindowModel.viewMargins
+System.Action UnityEditor.IEditorWindowModel.onSplitterGUIHandler
+UnityEditor.EditorWindow UnityEditor.IEditorWindowModel.window
+UnityEditor.IEditorWindowBackend editorWindowBackend
+Boolean UnityEditor.IEditorWindowModel.notificationVisible
+UnityEngine.RectOffset borderSize
+UnityEditor.WindowAction[] windowActions
+UnityEngine.Color UnityEditor.IEditorWindowModel.playModeTintColor
+System.Action`1[UnityEditor.HostView] actualViewChanged
+System.Action`2[UnityEditor.GenericMenu,UnityEditor.EditorWindow] populateDefaultMenuItems
+System.String kPlayModeDarkenKey
+UnityEditor.PrefColor kPlayModeDarken
+System.Action`1[UnityEditor.HostView] actualViewChanged
+System.Action`2[UnityEditor.GenericMenu,UnityEditor.EditorWindow] populateDefaultMenuItems
+UnityEditor.EditorWindow m_ActualView
+UnityEngine.RectOffset m_BorderSize
+System.Boolean <showGenericMenu>k__BackingField
+UnityEditor.HostView+EditorWindowDelegate m_OnGUI
+UnityEditor.HostView+EditorWindowDelegate m_OnFocus
+UnityEditor.HostView+EditorWindowDelegate m_OnLostFocus
+UnityEditor.HostView+EditorWindowDelegate m_OnProjectChange
+UnityEditor.HostView+EditorWindowDelegate m_OnSelectionChange
+UnityEditor.HostView+EditorWindowDelegate m_OnDidOpenScene
+UnityEditor.HostView+EditorWindowDelegate m_OnInspectorUpdate
+UnityEditor.HostView+EditorWindowDelegate m_OnHierarchyChange
+UnityEditor.HostView+EditorWindowDelegate m_OnBecameVisible
+UnityEditor.HostView+EditorWindowDelegate m_OnBecameInvisible
+UnityEditor.HostView+EditorWindowDelegate m_Update
+UnityEditor.HostView+EditorWindowDelegate m_ModifierKeysChanged
+UnityEditor.HostView+EditorWindowShowButtonDelegate m_ShowButton
+System.Boolean m_IsLosingFocus
+UnityEngine.Vector2 k_DockedMinSize
+UnityEngine.Vector2 k_DockedMaxSize
+System.Action <UnityEditor.IEditorWindowModel.onSplitterGUIHandler>k__BackingField
+System.String m_ActualViewName
+System.Boolean m_NotificationIsVisible
+UnityEditor.WindowAction[] s_windowActions
+UnityEditor.StyleSheets.SVC`1[System.Single] genericMenuLeftOffset
+UnityEditor.StyleSheets.SVC`1[System.Single] genericMenuFloatingLeftOffset
+UnityEditor.HostView+Styles
+UnityEditor.HostView+EditorWindowDelegate
+UnityEditor.HostView+EditorWindowShowButtonDelegate
+UnityEditor.HostView+<>c
+UnityEditor.HostView+<>c__DisplayClass105_0
+UnityEditor.HostView+<>c__DisplayClass105_1
+UnityEditor.HostView+<>c__DisplayClass109_0
+UnityEditor.HostView+<>c__DisplayClass109_1
+UnityEditor.HostView+<>c__DisplayClass65_0
+UnityEditor.HostView+<GetBuiltInPaneTypes>d__64
+UnityEditor.HostView+<GetCurrentModePaneTypes>d__65
+UnityEditor.HostView+<GetPaneTypes>d__67
+UnityEditor.View
+Void Reflow()
+System.String DebugHierarchy(Int32)
+Void Initialize(UnityEditor.ContainerWindow)
+UnityEngine.Vector2 get_minSize()
+UnityEngine.Vector2 get_maxSize()
+Void SetMinMaxSizes(UnityEngine.Vector2, UnityEngine.Vector2)
+Void ChildrenMinMaxChanged()
+UnityEditor.View[] get_allChildren()
+Void __internalAwake()
+UnityEngine.Rect get_position()
+Void set_position(UnityEngine.Rect)
+Void SetPosition(UnityEngine.Rect)
+UnityEngine.Rect get_windowPosition()
+UnityEngine.Rect get_screenPosition()
+UnityEditor.ContainerWindow get_window()
+UnityEditor.View get_parent()
+UnityEditor.View[] get_children()
+Int32 IndexOfChild(UnityEditor.View)
+Void OnDestroy()
+Void AddChild(UnityEditor.View)
+Void AddChild(UnityEditor.View, Int32)
+Void RemoveChild(UnityEditor.View)
+Void RemoveChild(Int32)
+Void SetWindow(UnityEditor.ContainerWindow)
+Void SetWindowRecurse(UnityEditor.ContainerWindow)
+Boolean OnFocus()
+Boolean IsValidViewPosition(UnityEngine.Vector2)
+Boolean IsValidViewSize(UnityEngine.Vector2)
+Boolean IsValidViewRect(UnityEngine.Rect)
+Boolean IsValidViewVector(UnityEngine.Vector2)
+Void .ctor()
+UnityEngine.Vector2 minSize
+UnityEngine.Vector2 maxSize
+UnityEditor.View[] allChildren
+UnityEngine.Rect position
+UnityEngine.Rect windowPosition
+UnityEngine.Rect screenPosition
+UnityEditor.ContainerWindow window
+UnityEditor.View parent
+UnityEditor.View[] children
+UnityEditor.MonoReloadableIntPtr m_ViewPtr
+UnityEditor.View[] m_Children
+UnityEditor.View m_Parent
+UnityEditor.ContainerWindow m_Window
+UnityEngine.Rect m_Position
+UnityEngine.Vector2 m_MinSize
+UnityEngine.Vector2 m_MaxSize

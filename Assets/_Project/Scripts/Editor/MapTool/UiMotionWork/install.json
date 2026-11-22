@@ -1,0 +1,32 @@
+[
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\GoldUiButton.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiButton.cs",
+    "beforeHash": "2C2ECABF76E07889F4D009C0EC4F91A3272B921BDFC68397D80D6E463DAAC448"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\GoldUiFrame.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiFrame.cs",
+    "beforeHash": "1671AF5B8BF76F332AAE6F9CF9AA95CA9608FA5F96387BB65D63B12DE746B4F9"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\GoldUiTheme.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiTheme.cs",
+    "beforeHash": "92A6C637C982428C6306F00C179135E52CAD369567E04E00F233A22F8F098685"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\PopupBase.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\PopupBase.cs",
+    "beforeHash": "4070516BDD8C5D6F836B78075FC57165E214C55084995F7F7EBA465297E4C5A0"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\ConfirmPopup.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\ConfirmPopup.cs",
+    "beforeHash": "42B4F8800AB25A863896DAC5FCFD585EE32CF9B643AE5524970F9E9B9BEC3694"
+  },
+  {
+    "source": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\Editor\\MapTool\\UiMotionWork\\GoldUiReveal.cs.txt",
+    "destination": "C:\\Users\\PC\\UnityStudy\\MyGame\\Assets\\_Project\\Scripts\\UI\\GoldUiReveal.cs",
+    "beforeHash": ""
+  }
+]

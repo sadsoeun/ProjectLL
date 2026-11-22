@@ -1,0 +1,1 @@
+PASS: actual title scene menu and TitleIllustration layout, static artwork preview; 5 languages x 4 resolutions; all four labels use Noto Sans, 40 design units, Normal, no individual auto-sizing, identical padding and centered alignment; text fits each button. No live playthrough or character animation verified.

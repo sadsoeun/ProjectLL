@@ -1,0 +1,56 @@
+using System.Collections.Generic;
+
+namespace MyGame
+{
+    /// <summary>Language-independent cue times for the 85.08-second opening film.</summary>
+    public static class IntroStory
+    {
+        public const double Duration = 85.08;
+        public const string FileName = "LeafAndLeapIntro.mp4";
+        public readonly struct Cue
+        {
+            public readonly double Start, End;
+            public readonly string Key;
+            public Cue(double start, double end, string key) { Start=start; End=end; Key=key; }
+        }
+        public static readonly Cue[] Cues = {
+            new Cue(.9,5.9,"intro.01"), new Cue(8.2,13.5,"intro.02"),
+            new Cue(15.6,21.7,"intro.03"), new Cue(24,28.8,"intro.04"),
+            new Cue(30.3,35.9,"intro.05"), new Cue(37.7,43.1,"intro.06"),
+            new Cue(45,50.8,"intro.07"), new Cue(53.3,57,"intro.08"),
+            new Cue(57.3,60.3,"intro.09"), new Cue(61.7,65.5,"intro.10"),
+            new Cue(66.9,69.2,"intro.11"), new Cue(69.5,73.2,"intro.12"),
+            new Cue(74.2,79,"intro.13"), new Cue(79.2,81.5,"intro.14")
+        };
+        public static int CueAt(double time)
+        {
+            for(int i=0;i<Cues.Length;i++) if(time>=Cues[i].Start && time<Cues[i].End)return i;
+            return -1;
+        }
+        public static string Text(string language, string key)
+            => LocalizationTable.TryGet(language,key,out var value) ? value : string.Empty;
+
+        public static void Register(Dictionary<string,string[]> t)
+        {
+            Add(t,"intro.skip","Skip","跳过","건너뛰기","Omitir","スキップ");
+            Add(t,"intro.loading","Preparing the opening…","正在准备开场影片…","인트로를 준비하는 중…","Preparando la introducción…","オープニングを準備中…");
+            Add(t,"intro.tagline","A little leaf. A great adventure.","一片小叶子，一场大冒险。","작은 잎에서 시작된, 커다란 모험","Una pequeña hoja. Una gran aventura.","小さな葉から始まる、大きな冒険。");
+            Add(t,"intro.01","Unity-chan was traveling wherever the wind led her.","优妮蒂酱正随风旅行。","바람을 따라 여행하던 유니티짱.","Unity-chan viajaba adonde la llevara el viento.","風の向くままに旅をしていたユニティちゃん。");
+            Add(t,"intro.02","A golden leaf appeared, guiding her toward an unfamiliar island.","一片金色的叶子出现了，引她前往一座陌生的岛屿。","금빛 잎 하나가, 낯선 섬으로 향하는 길을 비추었다.","Una hoja dorada apareció y la guio hacia una isla desconocida.","一枚の金色の葉が、見知らぬ島への道を示した。");
+            Add(t,"intro.03","A mysterious island where five different landscapes meet.","五种风景交织在这座神秘的岛屿上。","다섯 가지 풍경이 이어진 신비로운 섬.","Una isla misteriosa donde se unen cinco paisajes distintos.","五つの景色がつながる、不思議な島。");
+            Add(t,"intro.04","Suddenly, the guardian dragon's red crystal unleashed a massive shockwave.","突然，守护龙的红色结晶爆发出巨大的冲击波。","그때, 수호룡의 붉은 결정에서 거대한 충격파가 터졌다.","De pronto, el cristal rojo del dragón guardián liberó una enorme onda de choque.","そのとき、守護竜の赤い結晶から巨大な衝撃波が放たれた。");
+            Add(t,"intro.05","The balloon tore open. Her airship began losing altitude fast.","气囊被撕裂，飞艇迅速失去了高度。","기구가 찢어지고, 비행선은 빠르게 고도를 잃었다.","El globo se desgarró. La aeronave empezó a perder altura rápidamente.","気球が破れ、飛行船は急速に高度を失っていった。");
+            Add(t,"intro.06","Unity-chan barely managed an emergency landing on the grassy coast.","优妮蒂酱勉强在长满青草的海岸迫降。","유니티짱은 초원 해안에 가까스로 불시착했다.","Unity-chan apenas logró aterrizar de emergencia en la costa cubierta de hierba.","ユニティちゃんは、草原の海岸にどうにか不時着した。");
+            Add(t,"intro.07","A small island resident came to the shaken traveler's aid.","一位小小的岛民向惊魂未定的优妮蒂酱伸出了援手。","놀란 유니티짱에게, 작은 섬 주민이 도움의 손길을 내밀었다.","Un pequeño habitante de la isla acudió en ayuda de la viajera asustada.","おびえるユニティちゃんに、小さな島の住人が手を差し伸べた。");
+            Add(t,"intro.08","But cracks spreading from the volcano tore through the meadow.","然而，从火山蔓延而来的裂缝撕开了草原。","하지만 화산에서 번진 균열이 초원까지 갈라놓았다.","Pero las grietas del volcán se extendieron y partieron la pradera.","しかし、火山から広がった亀裂が草原を引き裂いた。");
+            Add(t,"intro.09","The ground is giving way! Take my hand!","脚下要塌了！抓住我的手！","발밑이 무너져! 내 손을 잡아!","¡El suelo se hunde! ¡Toma mi mano!","足場が崩れる！ 私の手をつかんで！");
+            Add(t,"intro.10","Holding the little resident close, Unity-chan leaped toward solid ground.","优妮蒂酱抱紧小岛民，向安全的地面跳去。","유니티짱은 주민을 안고, 안전한 땅을 향해 뛰었다.","Unity-chan abrazó al pequeño habitante y saltó hacia tierra firme.","ユニティちゃんは住人を抱え、安全な地面へと跳んだ。");
+            Add(t,"intro.11","It's all right. You're safe now.","没事了。现在安全了。","괜찮아. 이제 안전해.","Todo está bien. Ya estás a salvo.","大丈夫。もう安全だよ。");
+            Add(t,"intro.12","At this rate… the whole island will collapse.","再这样下去……整座岛都会崩塌。","이대로라면… 섬 전체가 무너질 거야.","Si esto sigue así… toda la isla se derrumbará.","このままじゃ…島全体が崩れてしまう。");
+            Add(t,"intro.13","Then I'll head for that volcano. Before anything else falls apart.","那我就去那座火山。在更多地方崩塌之前。","그럼 저 화산으로 가야겠네. 더 무너지기 전에.","Entonces iré a ese volcán. Antes de que todo se derrumbe.","それなら、あの火山へ行かなくちゃ。これ以上崩れる前に。");
+            Add(t,"intro.14","To save the island—and its guardian.","为了拯救这座岛和它的守护龙。","섬과 수호룡을 구하기 위한 모험이 시작된다.","Para salvar la isla y a su guardián.","島と守護竜を救う冒険が始まる。");
+        }
+        static void Add(Dictionary<string,string[]> t,string key,string en,string zh,string ko,string es,string ja)
+            => t.Add(key,new[]{en,zh,ko,es,ja});
+    }
+}

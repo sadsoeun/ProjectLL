@@ -1,0 +1,220 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Self-contained, resolution-independent clear overlay; no imported art or tween package required.</summary>
+    [DisallowMultipleComponent]
+    public sealed class StageClearCelebration : MonoBehaviour
+    {
+        public const float MinimumDuration = 2.6f;
+        private CanvasGroup group;
+        private CanvasGroup titleGroup;
+        private RectTransform composition;
+        private RectTransform titleRect;
+        private LocalizedText title;
+        private Image dim;
+        private StageClearGraphic ornament;
+        private RectTransform host;
+        private float elapsed;
+        private float duration = MinimumDuration;
+        private bool playing;
+        private RectTransform results;
+        private CanvasGroup resultsGroup;
+        private bool showingResult;
+        private float resultElapsed;
+        private System.Action resultReady;
+        public const float ResultTransitionDuration = 0.7f;
+
+        public float Duration => duration;
+        public bool IsPlaying => playing;
+
+        public static StageClearCelebration Create(Transform parent)
+        {
+            var root = NewRect("StageClearCelebration", parent);
+            Stretch(root);
+            var effect = root.gameObject.AddComponent<StageClearCelebration>();
+            effect.Build();
+            effect.Hide();
+            return effect;
+        }
+
+        private void Build()
+        {
+            if (group != null) return;
+            host = (RectTransform)transform;
+            group = gameObject.AddComponent<CanvasGroup>();
+            group.interactable = false;
+            group.blocksRaycasts = true;
+            var backdrop = NewRect("Backdrop", transform);
+            Stretch(backdrop);
+            dim = backdrop.gameObject.AddComponent<Image>();
+            dim.color = new Color(0.018f, 0.029f, 0.045f, 0.7f);
+            dim.raycastTarget = true;
+
+            composition = NewRect("Composition", transform);
+            composition.sizeDelta = new Vector2(1200f, 720f);
+            var art = NewRect("GoldFrameAndParticles", composition);
+            art.sizeDelta = composition.sizeDelta;
+            ornament = art.gameObject.AddComponent<StageClearGraphic>();
+            ornament.raycastTarget = false;
+
+            titleRect = NewRect("LocalizedTitle", composition);
+            titleRect.sizeDelta = new Vector2(1000f, 160f);
+            var label = titleRect.gameObject.AddComponent<Text>();
+            label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.fontSize = 82;
+            label.fontStyle = FontStyle.Bold;
+            label.alignment = TextAnchor.MiddleCenter;
+            label.color = new Color(1f, 0.94f, 0.76f);
+            label.resizeTextForBestFit = true;
+            label.resizeTextMinSize = 32;
+            label.resizeTextMaxSize = 82;
+            label.supportRichText = false;
+            label.raycastTarget = false;
+            var shadow = titleRect.gameObject.AddComponent<Shadow>();
+            shadow.effectColor = new Color(0.34f, 0.15f, 0.02f, 0.85f);
+            shadow.effectDistance = new Vector2(0f, -3f);
+            title = titleRect.gameObject.AddComponent<LocalizedText>();
+            titleGroup = titleRect.gameObject.AddComponent<CanvasGroup>();
+
+            results = NewRect("ClearTimeAndContinue", transform);
+            results.sizeDelta = new Vector2(1000,320);
+            resultsGroup = results.gameObject.AddComponent<CanvasGroup>();
+            var captionRect = NewRect("TimeCaption", results);
+            captionRect.sizeDelta = new Vector2(900,60);
+            captionRect.anchoredPosition = new Vector2(0,80);
+            var caption = captionRect.gameObject.AddComponent<Text>();
+            caption.font = FontProvider.Get(LocalizationTable.DefaultLanguage);
+            caption.fontSize = 32;
+            caption.alignment = TextAnchor.MiddleCenter;
+            caption.color = GoldUiTheme.Gold;
+            caption.raycastTarget = false;
+            captionRect.gameObject.AddComponent<LocalizedText>().SetKey("ingame.result_time_label");
+            results.gameObject.SetActive(false);
+        }
+
+        public float Play(float requestedDuration)
+        {
+            Build();
+            duration = Mathf.Max(MinimumDuration, requestedDuration);
+            elapsed = 0f;
+            showingResult = false;
+            resultReady = null;
+            results.gameObject.SetActive(false);
+            group.interactable = false;
+            gameObject.SetActive(true);
+            transform.SetAsLastSibling();
+            title.SetKey("ingame.clear");
+            playing = true;
+            Sample(0f);
+            return duration;
+        }
+
+        public void Hide()
+        {
+            playing = false;
+            showingResult = false;
+            resultReady = null;
+            if (group != null) group.alpha = 0f;
+            gameObject.SetActive(false);
+        }
+
+        private void OnDisable() { playing = false; showingResult = false; resultReady = null; }
+
+        public void ShowResult(float seconds, LocalizedText timeLabel, Button continueButton, System.Action onReady)
+        {
+            Build();
+            if (!gameObject.activeSelf) Play(duration);
+            playing = false;
+            elapsed = duration;
+            showingResult = true;
+            resultElapsed = 0;
+            resultReady = onReady;
+            results.gameObject.SetActive(true);
+            group.interactable = true;
+            timeLabel.transform.SetParent(results,false);
+            GoldUiTheme.Place((RectTransform)timeLabel.transform, new Vector2(.5f,.5f),new Vector2(.5f,.5f),Vector2.zero,new Vector2(900,120));
+            var label = timeLabel.GetComponent<Text>();
+            label.fontSize = 88; label.resizeTextForBestFit = true; label.resizeTextMinSize = 36; label.resizeTextMaxSize = 88;
+            label.alignment = TextAnchor.MiddleCenter; label.color = GoldUiTheme.Cream;
+            timeLabel.SetKey("ingame.result_seconds", float.IsNaN(seconds) || float.IsInfinity(seconds) ? 0f : Mathf.Max(0,seconds));
+            timeLabel.gameObject.SetActive(true);
+            continueButton.transform.SetParent(results,false);
+            GoldUiTheme.Place((RectTransform)continueButton.transform,new Vector2(.5f,.5f),new Vector2(.5f,.5f),new Vector2(0,-130),new Vector2(480,90));
+            GoldUiTheme.StyleButton(continueButton);
+            // This is the sole result action. Do not navigate back to the hidden legacy window.
+            continueButton.navigation = new Navigation { mode = Navigation.Mode.None };
+            continueButton.gameObject.SetActive(true);
+            Sample(duration);
+            SampleResult(0);
+        }
+
+        private void Update()
+        {
+            if (playing)
+            {
+                elapsed = Mathf.Min(duration, elapsed + Time.unscaledDeltaTime);
+                if (elapsed >= duration) playing = false;
+            }
+            Sample(elapsed);
+            if (showingResult)
+            {
+                resultElapsed += Time.unscaledDeltaTime;
+                SampleResult(resultElapsed);
+                if (resultElapsed >= ResultTransitionDuration && resultReady != null)
+                {
+                    var callback = resultReady; resultReady = null; callback();
+                }
+            }
+        }
+
+        /// <summary>Deterministic timeline sampling also used by the editor's visual verification.</summary>
+        public void Sample(float seconds)
+        {
+            Build();
+            float t = Mathf.Clamp01(seconds / duration);
+            float fadeIn = Mathf.SmoothStep(0f, 1f, t / 0.09f);
+            group.alpha = fadeIn;
+            float fit = Mathf.Min(host.rect.width / 1280f, host.rect.height / 960f);
+            composition.localScale = Vector3.one * Mathf.Max(0.01f, fit);
+            composition.anchoredPosition = Vector2.zero;
+            float reveal = Mathf.Clamp01((t - 0.12f) / 0.18f);
+            float settle = 1f - Mathf.Pow(1f - reveal, 3f);
+            titleGroup.alpha = Mathf.SmoothStep(0f, 1f, reveal);
+            titleRect.localScale = Vector3.one * (1f + 0.23f * (1f - settle));
+            titleRect.anchoredPosition = new Vector2(0f, 14f * (1f - settle));
+            ornament.Progress = t;
+        }
+
+        public void SampleResult(float seconds)
+        {
+            if (!showingResult) return;
+            float progress = Mathf.Clamp01(seconds / ResultTransitionDuration);
+            float slide = 1f - Mathf.Pow(1f-progress,3);
+            float fit = composition.localScale.x;
+            composition.anchoredPosition = new Vector2(0,150*fit*slide);
+            results.localScale = Vector3.one*fit;
+            results.anchoredPosition = new Vector2(0,(-200-24*(1-slide))*fit);
+            resultsGroup.alpha = Mathf.SmoothStep(0,1,Mathf.Clamp01((progress-.25f)/.65f));
+            resultsGroup.interactable = progress >= 1;
+            resultsGroup.blocksRaycasts = progress >= 1;
+        }
+
+        private static RectTransform NewRect(string name, Transform parent)
+        {
+            var rect = (RectTransform)new GameObject(name, typeof(RectTransform)).transform;
+            rect.gameObject.layer = parent.gameObject.layer;
+            rect.SetParent(parent, false);
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
+            return rect;
+        }
+
+        private static void Stretch(RectTransform rect)
+        {
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.offsetMin = rect.offsetMax = Vector2.zero;
+        }
+    }
+}

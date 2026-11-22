@@ -1,0 +1,389 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/respin/6000.3.6f1-732c1ec89f18' branch; Version is '6000.3.6f1 (bbb010bdb8a3) revision 12300304'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26300) Core' Language: 'ko' Physical Memory: 31893 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-PC" at "2026-11-15T18:22:44.6724644Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-15T18:22:44Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/CutInPreview
+-executeMethod
+MyGame.EditorTools.NowCutInVerification.Run
+-logFile
+C:\Users\PC\UnityStudy\MyGame\Assets\_Project\Scripts\Editor\MapTool\CutInArtWork\preview-verification.log
+Successfully changed project path to: C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/CutInPreview
+C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/CutInPreview
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [41456]  Target information:
+
+Player connection [41456]  * "[IP] 172.30.1.20 [Port] 55505 [Flags] 2 [Guid] 2702613390 [EditorId] 2702613390 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-066L896) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [41456] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [41456] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 39164, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              afdea9f6e8a94f62908c29137f883393
+  Correlation Id:          1f0c23e1708495c5d4862313df4f9b1f
+  External correlation Id: 2775299428440451943
+  Machine Id:              fqWjLSezz2EDfzjsof/y5ySNfNU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-PC" (connect: 0.00s, validation: 0.00s, handshake: 0.03s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-PC-notifications" at "2026-11-15T18:22:44.7049752Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14568922053557-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.04s
+[Package Manager] Connected to IPC stream "Upm-24560" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.6f1 (bbb010bdb8a3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/CutInPreview/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti SUPER (ID=0x2705)
+    Vendor:   NVIDIA
+    VRAM:     16061 MB
+    Driver:   32.0.16.2101
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.6f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.006040 seconds.
+- Loaded All Assemblies, in  0.313 seconds
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 2172 ms
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.502 seconds
+Domain Reload Profiling: 2813ms
+	BeginReloadAssembly (100ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (133ms)
+		LoadAssemblies (96ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (130ms)
+			TypeCache.Refresh (129ms)
+				TypeCache.ScanAssembly (117ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (2503ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2474ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2242ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (113ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 4 packages:
+  Built-in packages:
+    com.unity.modules.ui@1.0.0 (location: C:\Users\PC\.codex\visualizations\2026\10\31\01a19252-8ac5-7110-b2a9-856eb2b4ca42\CutInPreview\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\PC\.codex\visualizations\2026\10\31\01a19252-8ac5-7110-b2a9-856eb2b4ca42\CutInPreview\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\PC\.codex\visualizations\2026\10\31\01a19252-8ac5-7110-b2a9-856eb2b4ca42\CutInPreview\Library\PackageCache\com.unity.modules.imageconversion)
+  Local packages:
+    com.unity.ugui@file:C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ugui@b9d1dd437cb9 (location: C:\Users\PC\UnityStudy\MyGame\Library\PackageCache\com.unity.ugui@b9d1dd437cb9)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.6f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/PC/.codex/visualizations/2026/10/31/01a19252-8ac5-7110-b2a9-856eb2b4ca42/CutInPreview
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 1s224ms
+[215/218    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[216/218    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[217/218    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (1.20 seconds), 3 items updated, 218 evaluated
+AssetDatabase: script compilation time: 1.512181s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.385 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.338 seconds
+Domain Reload Profiling: 721ms
+	BeginReloadAssembly (267ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (17ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (141ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (60ms)
+		LoadAssemblies (120ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (13ms)
+				TypeCache.ScanAssembly (9ms)
+			BuildScriptInfoCaches (2ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (338ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (247ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (91ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-hold-1280x720.png using Guid(2003526efae40a64cb504fc8f4bd11cc) (TextureImporter) -> (artifact id: '61d1947d456a4f870878c16e0b0ca962') in 0.0336366 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.65-1920x1080.png using Guid(91269e2014a2298458de7df189c48127) (TextureImporter) -> (artifact id: '189d907d6f8c99faed399e505bf2012f') in 0.0515753 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/es-hold-1920x1080.png using Guid(4407127d97b0f7e49a217fabcc2c0d0c) (TextureImporter) -> (artifact id: '08f47ef156125ebc8fd510cca6068ed2') in 0.0517899 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ja-hold-1920x1080.png using Guid(64f9c6674b0ad2143bbd2ec29021bc7b) (TextureImporter) -> (artifact id: '63efe19229572f7b7b8240984d1f0903') in 0.0514077 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/zh-Hans-hold-1920x1080.png using Guid(94229bda862e3174bbc81ba160bd0ec6) (TextureImporter) -> (artifact id: 'd6701b1e782fc643d6f0a1ba63a2603d') in 0.0546412 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-hold-1024x768.png using Guid(4608b4d5f1d866e49bfd43868643d22c) (TextureImporter) -> (artifact id: 'f629c510866d5b48566d33a740f45b69') in 0.0247964 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-hold-1920x1080.png using Guid(868be16e5512bb44f8f79cb9fde0c526) (TextureImporter) -> (artifact id: '669669433e76f7b290f6191d571ab3e2') in 0.0378061 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.10-1920x1080.png using Guid(d6d6720c3fc2f6040bae0e1db6aaab83) (TextureImporter) -> (artifact id: '4116d3fb30cfc5600db13054e1435324') in 0.052651 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.32-1920x1080.png using Guid(68701ac81a4f8464793ea89cc2d814fe) (TextureImporter) -> (artifact id: '3935da94965113694e50e7c1bb4b2967') in 0.0528093 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t1.15-1920x1080.png using Guid(888f1a4c4fef476429e2ff414464469a) (TextureImporter) -> (artifact id: '1b89d58f281b4cc68f3ddc8b22c7ff0c') in 0.0578909 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-hold-2560x1080.png using Guid(59de9cdc6392d324aa16546b35cce2b7) (TextureImporter) -> (artifact id: 'f0c89b7e160e94092d24ea35028f553a') in 0.0565277 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/en-hold-1920x1080.png using Guid(3a69802f8f3e31b45aafac5c3ca346a7) (TextureImporter) -> (artifact id: '3105ac8033f8c7ea96bb732089f928a5') in 0.053254 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.00-1920x1080.png using Guid(fa7be298becec7b4b83b9366de9ad7f0) (TextureImporter) -> (artifact id: '179b7ffd250583f3f1f55e4efda104d2') in 0.0522711 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.22-1920x1080.png using Guid(8b59a11ff06e6604681ff38e4471c684) (TextureImporter) -> (artifact id: 'c0d194fdecadfe4ab982352db9bbee94') in 0.0512532 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/ko-t0.96-1920x1080.png using Guid(af7bf49586271c34e9051fbe91e8f192) (TextureImporter) -> (artifact id: 'f943171fdce23d86ab930a25bec44d05') in 0.0560337 seconds
+Start importing Assets/_Project/Scripts/Editor/MapTool/CutInArtWork/Verification/verification.txt using Guid(7e8ee70e1d676614fbbae773223a3a03) (TextScriptImporter) -> (artifact id: 'b39f9d7f1408d0e325666f3c41eb7e46') in 0.0171594 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=645bcf0b4c6ab9241ad1b3e0ea98bb53): Total: 3.151 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=16 (actual=16, local cache=0, cache server=0)
+		Asset DB Process Time: managed=5 ms, native=1188 ms
+		Asset DB Callback time: managed=43 ms, native=4 ms
+		Scripting: domain reloads=1, domain reload time=385 ms, compile time=1514 ms, other=9 ms
+		Project Asset Count: scripts=124, non-scripts=70
+		Asset File Changes: new=1, changed=17, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 5.324ms
+	ApplyChangesToAssetFolders: 0.276ms
+	Scan: 35.705ms
+	OnSourceAssetsModified: 0.603ms
+	CategorizeAssetsWithTransientArtifact: 0.840ms
+	ProcessAssetsWithTransientArtifactChanges: 4.134ms
+	CategorizeAssets: 0.768ms
+	ImportOutOfDateAssets: 1098.548ms (-1174.381ms without children)
+		ImportManagerImport: 759.166ms (0.990ms without children)
+			ImportInProcess: 758.110ms
+			UpdateCategorizedAssets: 0.066ms
+		CompileScripts: 1513.508ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.083ms
+		ReloadImportedAssets: 0.002ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.022ms
+		InitializingProgressBar: 0.003ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.145ms
+	PostProcessAllAssets: 43.186ms
+	Hotreload: 0.907ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 0.927ms
+	PersistCurrentRevisions: 0.055ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.001ms
+	Untracked: 1960.185ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 35.613ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-CutInPreview
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 373 unused Assets / (1.1 MB). Loaded Objects now: 978.
+Memory consumption went from 93.3 MB to 92.1 MB.
+Total: 5.964000 ms (FindLiveObjects: 0.059500 ms CreateObjectMapping: 0.011300 ms MarkObjects: 5.318100 ms  DeleteObjects: 0.574500 ms)
+
+Start importing Assets/_Project/Resources/CutInArt/CounterPortrait.png using Guid(a513fd5e87d60e543a8f995167b73279) (TextureImporter) -> (artifact id: '74d5cc36d1448565000eab945ca16897') in 0.0838448 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2e30bb5c87bfd7448890bffb897f5178): Total: 0.109 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/_Project/Resources/CutInArt/NowKo.png using Guid(096e63767a35fa14d88746041f0a3676) (TextureImporter) -> (artifact id: '1b50ae06b53b438b0e03e4a56f4337f8') in 0.0897284 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8913bc68643100e42b7f70fbfbd1d11b): Total: 0.096 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[FontProvider] 'en' -> NotoSansKR-Regular (bundled)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MyGame.FontProvider:Get (string) (at Assets/Runtime/FontProvider.cs:70)
+MyGame.NowCutIn:BuildLocalizedLabel () (at Assets/Runtime/NowCutIn.cs:126)
+MyGame.NowCutIn:BuildUi (string) (at Assets/Runtime/NowCutIn.cs:111)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+MyGame.EditorTools.NowCutInVerification:Run () (at Assets/Editor/NowCutInVerification.cs:59)
+
+(Filename: Assets/Runtime/FontProvider.cs Line: 70)
+
+[FontProvider] 'ja' -> NotoSansJP-Regular (bundled)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MyGame.FontProvider:Get (string) (at Assets/Runtime/FontProvider.cs:70)
+MyGame.NowCutIn:BuildLocalizedLabel () (at Assets/Runtime/NowCutIn.cs:126)
+MyGame.NowCutIn:BuildUi (string) (at Assets/Runtime/NowCutIn.cs:111)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+MyGame.EditorTools.NowCutInVerification:Run () (at Assets/Editor/NowCutInVerification.cs:59)
+
+(Filename: Assets/Runtime/FontProvider.cs Line: 70)
+
+[FontProvider] 'zh-Hans' -> NotoSansSC-Regular (bundled)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MyGame.FontProvider:Get (string) (at Assets/Runtime/FontProvider.cs:70)
+MyGame.NowCutIn:BuildLocalizedLabel () (at Assets/Runtime/NowCutIn.cs:126)
+MyGame.NowCutIn:BuildUi (string) (at Assets/Runtime/NowCutIn.cs:111)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+MyGame.EditorTools.NowCutInVerification:Run () (at Assets/Editor/NowCutInVerification.cs:59)
+
+(Filename: Assets/Runtime/FontProvider.cs Line: 70)
+
+[FontProvider] 'es' -> NotoSansKR-Regular (bundled)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+MyGame.FontProvider:Get (string) (at Assets/Runtime/FontProvider.cs:70)
+MyGame.NowCutIn:BuildLocalizedLabel () (at Assets/Runtime/NowCutIn.cs:126)
+MyGame.NowCutIn:BuildUi (string) (at Assets/Runtime/NowCutIn.cs:111)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+MyGame.EditorTools.NowCutInVerification:Run () (at Assets/Editor/NowCutInVerification.cs:59)
+
+(Filename: Assets/Runtime/FontProvider.cs Line: 70)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 0.0431365 seconds.
+Start importing ProjectSettings/TimeManager.asset using Guid(00000000000000007000000000000000) (LibraryAssetImporter) -> (artifact id: '52c307e924e96ceef905bcc2cea85a00') in 0.0016223 seconds
+Start importing ProjectSettings/GraphicsSettings.asset using Guid(00000000000000006100000000000000) (LibraryAssetImporter) -> (artifact id: 'b7a369a9c0780e3bb2635b3b3f88ffe1') in 0.0012495 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ed1e2b790084b4e4ebc659be33dabf4e): Total: 0.010 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-PC-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-PC channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

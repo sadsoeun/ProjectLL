@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0242f7edd1024328a60723d0a84843fb, type: 3}
+  m_Name: VoiceStudioConfig
+  m_EditorClassIdentifier: Assembly-CSharp::MyGame.VoiceStudioConfig
+  slots:
+  - slot: 0
+    leavesRequired: 5
+    maxSeconds: 0.6
+    replacesSfx: 0
+    priority: 1
+  - slot: 1
+    leavesRequired: 12
+    maxSeconds: 0.6
+    replacesSfx: 0
+    priority: 1
+  - slot: 2
+    leavesRequired: 20
+    maxSeconds: 1.5
+    replacesSfx: 0
+    priority: 2
+  - slot: 3
+    leavesRequired: 30
+    maxSeconds: 2
+    replacesSfx: 0
+    priority: 3
+  - slot: 4
+    leavesRequired: 40
+    maxSeconds: 1.5
+    replacesSfx: 1
+    priority: 3
+  - slot: 5
+    leavesRequired: 50
+    maxSeconds: 2
+    replacesSfx: 0
+    priority: 3
+  - slot: 6
+    leavesRequired: 62
+    maxSeconds: 2.5
+    replacesSfx: 0
+    priority: 4
+  - slot: 7
+    leavesRequired: 75
+    maxSeconds: 2.5
+    replacesSfx: 0
+    priority: 3
+  extraTakePrices: 1e0000003c000000
+  voiceVolume: 1
+  sampleRate: 44100
+  countdownSeconds: 2.4
+  recordBgmDuck: 0
+  previewBgmDuck: 0.25
+  minPeak: 0.03
+  silenceFraction: 0.08
+  leadPadSeconds: 0.02
+  tailPadSeconds: 0.12
+  targetPeak: 0.9
+  maxGain: 8

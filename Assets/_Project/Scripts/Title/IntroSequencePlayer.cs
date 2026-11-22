@@ -1,0 +1,159 @@
+using System;
+using System.Collections;
+using System.IO;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.Video;
+
+namespace MyGame
+{
+    /// <summary>Plays the opening and ending films with localized captions.</summary>
+    public sealed class IntroSequencePlayer : MonoBehaviour
+    {
+        GameSystems systems;
+        IntroView view;
+        VideoPlayer player;
+        AudioSource audioSource;
+        RenderTexture target;
+        Action completed;
+        bool outro;
+        bool finished, finishing, pausedByApplication, selectionSet;
+        float transitionGain=1;
+        float began, lastProgress;
+        double lastVideoTime=-1;
+        public bool IsFinished => finished;
+        public VideoPlayer Player => player;
+        public IntroView View => view;
+
+        public static IntroSequencePlayer Play(GameSystems owner,Action onCompleted)
+            => Create(owner, onCompleted, false);
+
+        public static IntroSequencePlayer PlayOutro(GameSystems owner)
+            => Create(owner, null, true);
+
+        static IntroSequencePlayer Create(GameSystems owner, Action onCompleted, bool isOutro)
+        {
+            var root=new GameObject(isOutro ? "EndingFilm" : "OpeningFilm",typeof(RectTransform));
+            var sequence=root.AddComponent<IntroSequencePlayer>();
+            sequence.outro=isOutro;
+            sequence.Begin(owner,onCompleted);return sequence;
+        }
+        public void Begin(GameSystems owner,Action onCompleted)
+        {
+            systems=owner;completed=onCompleted;began=lastProgress=Time.realtimeSinceStartup;
+            view=gameObject.AddComponent<IntroView>();
+            view.Build(systems!=null?systems.Localization.CurrentLanguage:LocalizationTable.DefaultLanguage, outro);
+            view.Skip.onClick.AddListener(Skip);
+            // The logo scene has no menu EventSystem. Own one only when needed.
+            if(EventSystem.current==null)
+            {
+                var inputRoot=new GameObject("IntroEventSystem",typeof(EventSystem));
+                inputRoot.transform.SetParent(transform,false);
+                inputRoot.AddComponent<InputSystemUIInputModule>().AssignDefaultActions();
+            }
+            if(systems!=null)
+            {
+                systems.Localization.LanguageChanged+=RefreshLanguage;
+                systems.Settings.Changed+=ApplyVolume;
+                systems.Audio.PlayBgm(null,.25f);
+            }
+            target=new RenderTexture(1920,1080,0,RenderTextureFormat.ARGB32){name=gameObject.name+"Frame"};target.Create();
+            player=gameObject.AddComponent<VideoPlayer>();player.playOnAwake=false;player.isLooping=false;
+            player.source=VideoSource.Url;player.url=Path.Combine(Application.streamingAssetsPath,"Video",outro ? IntroStory.OutroFileName : IntroStory.FileName).Replace('\\','/');
+            player.renderMode=VideoRenderMode.RenderTexture;player.targetTexture=target;player.aspectRatio=VideoAspectRatio.FitInside;
+            player.waitForFirstFrame=true;player.skipOnDrop=true;player.timeUpdateMode=VideoTimeUpdateMode.UnscaledGameTime;
+            player.controlledAudioTrackCount=1;
+#if UNITY_WEBGL && !UNITY_EDITOR
+            player.audioOutputMode=VideoAudioOutputMode.Direct;
+#else
+            audioSource=gameObject.AddComponent<AudioSource>();audioSource.playOnAwake=false;audioSource.spatialBlend=0;audioSource.loop=false;
+            player.audioOutputMode=VideoAudioOutputMode.AudioSource;player.EnableAudioTrack(0,true);player.SetTargetAudioSource(0,audioSource);
+#endif
+            player.prepareCompleted+=Prepared;player.errorReceived+=Failed;player.loopPointReached+=Ended;
+            ApplyVolume();
+            try { player.Prepare(); }
+            catch(Exception e){Failed(player,e.Message);}
+        }
+        void Prepared(VideoPlayer source)
+        {
+            if(finished||finishing)return;
+            lastProgress=Time.realtimeSinceStartup;ApplyVolume();view.SetReady(target);player.Play();
+        }
+        void RefreshLanguage(){if(view!=null)view.SetLanguage(systems.Localization.CurrentLanguage);}
+        void ApplyVolume()
+        {
+            if(player==null)return;
+            float bgm=systems!=null?Mathf.Clamp01(systems.Settings.Data.bgmVolume):1;
+            if(audioSource!=null)audioSource.volume=bgm*transitionGain; // AudioListener already applies master volume.
+            else if(player.audioOutputMode==VideoAudioOutputMode.Direct && player.canSetDirectAudioVolume)
+                player.SetDirectAudioVolume(0,transitionGain*bgm*(systems!=null?Mathf.Clamp01(systems.Settings.Data.masterVolume):1));
+        }
+        void Update()
+        {
+            if(finished||finishing||player==null||pausedByApplication)return;
+            float now=Time.realtimeSinceStartup;
+            bool armed=now-began>.6f;view.Skip.interactable=armed;
+            if(armed && !selectionSet && EventSystem.current!=null)
+            {selectionSet=true;EventSystem.current.SetSelectedGameObject(view.Skip.gameObject);}
+            if(armed && systems!=null && (systems.InputMode.CancelPressed||systems.InputMode.PausePressed)) {Skip();return;}
+            if(!player.isPrepared)
+            {if(now-began>15)Failed(player,"Preparing video timed out.");return;}
+            double time=player.time;
+            view.SetTime(time);
+            if(!outro && time>=81.58)IntroTitleTransition.Ensure()?.SetFilmTime(time);
+            if(time>lastVideoTime+.01){lastVideoTime=time;lastProgress=now;}
+            if(time>=(outro ? IntroStory.OutroDuration : IntroStory.Duration)-.04)Complete();
+            else if(now-lastProgress>12)Failed(player,"Video playback stopped advancing.");
+        }
+        public void Skip(){if(!finished && Time.realtimeSinceStartup-began>.6f)Complete();}
+        void Ended(VideoPlayer source)=>Complete();
+        void Failed(VideoPlayer source,string message)
+        {if(finished)return;Debug.LogWarning((outro ? "[Outro] " : "[Intro] ")+message);Complete();}
+        void Complete()
+        {
+            if(finished||finishing)return;
+            finishing=true;
+            if(view!=null)view.Skip.interactable=false;
+            if(!outro)IntroTitleTransition.Ensure()?.BeginHandoff(player!=null&&player.isPrepared?target:null);
+            StartCoroutine(FinishRoutine());
+        }
+        IEnumerator FinishRoutine()
+        {
+            const float fadeSeconds=.45f;
+            float elapsed=0;
+            while(elapsed<fadeSeconds)
+            {
+                elapsed+=Time.unscaledDeltaTime;
+                transitionGain=1-Mathf.SmoothStep(0,1,Mathf.Clamp01(elapsed/fadeSeconds));
+                if(view!=null)view.SetTransitionGain(transitionGain);
+                ApplyVolume();
+                yield return null;
+            }
+            finished=true;
+            if(player!=null)player.Stop();if(audioSource!=null)audioSource.Stop();
+            if(view!=null)view.ShowBlack();
+            var next=completed;completed=null;next?.Invoke();
+            // Keep the black overlay until the hosting scene unloads, avoiding a menu flash.
+        }
+        void OnApplicationPause(bool paused)
+        {
+            if(finished||finishing||player==null)return;
+            if(paused){pausedByApplication=true;if(player.isPlaying)player.Pause();}
+            else if(pausedByApplication)
+            {pausedByApplication=false;lastProgress=Time.realtimeSinceStartup;if(!player.isPrepared)began=lastProgress;else player.Play();}
+        }
+        void OnDestroy()
+        {
+            completed=null;
+            if(systems!=null){systems.Localization.LanguageChanged-=RefreshLanguage;systems.Settings.Changed-=ApplyVolume;}
+            if(player!=null){player.prepareCompleted-=Prepared;player.errorReceived-=Failed;player.loopPointReached-=Ended;player.Stop();player.targetTexture=null;}
+            if(target!=null)
+            {
+                target.Release();
+                if(Application.isPlaying)Destroy(target);else DestroyImmediate(target);
+                target=null;
+            }
+        }
+    }
+}

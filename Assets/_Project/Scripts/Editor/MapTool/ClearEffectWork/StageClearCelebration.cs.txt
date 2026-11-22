@@ -1,0 +1,140 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Self-contained, resolution-independent clear overlay; no imported art or tween package required.</summary>
+    [DisallowMultipleComponent]
+    public sealed class StageClearCelebration : MonoBehaviour
+    {
+        public const float MinimumDuration = 2.6f;
+        private CanvasGroup group;
+        private CanvasGroup titleGroup;
+        private RectTransform composition;
+        private RectTransform titleRect;
+        private LocalizedText title;
+        private Image dim;
+        private StageClearGraphic ornament;
+        private RectTransform host;
+        private float elapsed;
+        private float duration = MinimumDuration;
+        private bool playing;
+
+        public float Duration => duration;
+        public bool IsPlaying => playing;
+
+        public static StageClearCelebration Create(Transform parent)
+        {
+            var root = NewRect("StageClearCelebration", parent);
+            Stretch(root);
+            var effect = root.gameObject.AddComponent<StageClearCelebration>();
+            effect.Build();
+            effect.Hide();
+            return effect;
+        }
+
+        private void Build()
+        {
+            if (group != null) return;
+            host = (RectTransform)transform;
+            group = gameObject.AddComponent<CanvasGroup>();
+            group.interactable = false;
+            group.blocksRaycasts = true;
+            var backdrop = NewRect("Backdrop", transform);
+            Stretch(backdrop);
+            dim = backdrop.gameObject.AddComponent<Image>();
+            dim.color = new Color(0.018f, 0.029f, 0.045f, 0.7f);
+            dim.raycastTarget = true;
+
+            composition = NewRect("Composition", transform);
+            composition.sizeDelta = new Vector2(1200f, 720f);
+            var art = NewRect("GoldFrameAndParticles", composition);
+            art.sizeDelta = composition.sizeDelta;
+            ornament = art.gameObject.AddComponent<StageClearGraphic>();
+            ornament.raycastTarget = false;
+
+            titleRect = NewRect("LocalizedTitle", composition);
+            titleRect.sizeDelta = new Vector2(1000f, 160f);
+            var label = titleRect.gameObject.AddComponent<Text>();
+            label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.fontSize = 82;
+            label.fontStyle = FontStyle.Bold;
+            label.alignment = TextAnchor.MiddleCenter;
+            label.color = new Color(1f, 0.94f, 0.76f);
+            label.resizeTextForBestFit = true;
+            label.resizeTextMinSize = 32;
+            label.resizeTextMaxSize = 82;
+            label.supportRichText = false;
+            label.raycastTarget = false;
+            var shadow = titleRect.gameObject.AddComponent<Shadow>();
+            shadow.effectColor = new Color(0.34f, 0.15f, 0.02f, 0.85f);
+            shadow.effectDistance = new Vector2(0f, -3f);
+            title = titleRect.gameObject.AddComponent<LocalizedText>();
+            titleGroup = titleRect.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        public float Play(float requestedDuration)
+        {
+            Build();
+            duration = Mathf.Max(MinimumDuration, requestedDuration);
+            elapsed = 0f;
+            gameObject.SetActive(true);
+            transform.SetAsLastSibling();
+            title.SetKey("ingame.clear");
+            playing = true;
+            Sample(0f);
+            return duration;
+        }
+
+        public void Hide()
+        {
+            playing = false;
+            if (group != null) group.alpha = 0f;
+            gameObject.SetActive(false);
+        }
+
+        private void OnDisable() => playing = false;
+
+        private void Update()
+        {
+            if (!playing) return;
+            elapsed += Time.unscaledDeltaTime;
+            Sample(elapsed);
+            if (elapsed >= duration) Hide();
+        }
+
+        /// <summary>Deterministic timeline sampling also used by the editor's visual verification.</summary>
+        public void Sample(float seconds)
+        {
+            Build();
+            float t = Mathf.Clamp01(seconds / duration);
+            float fadeIn = Mathf.SmoothStep(0f, 1f, t / 0.09f);
+            float fadeOut = 1f - Mathf.SmoothStep(0f, 1f, (t - 0.84f) / 0.16f);
+            group.alpha = fadeIn * fadeOut;
+            float fit = Mathf.Min(host.rect.width / 1280f, host.rect.height / 800f);
+            composition.localScale = Vector3.one * Mathf.Max(0.01f, fit);
+            float reveal = Mathf.Clamp01((t - 0.12f) / 0.18f);
+            float settle = 1f - Mathf.Pow(1f - reveal, 3f);
+            titleGroup.alpha = Mathf.SmoothStep(0f, 1f, reveal);
+            titleRect.localScale = Vector3.one * (1f + 0.23f * (1f - settle));
+            titleRect.anchoredPosition = new Vector2(0f, 14f * (1f - settle));
+            ornament.Progress = t;
+        }
+
+        private static RectTransform NewRect(string name, Transform parent)
+        {
+            var rect = (RectTransform)new GameObject(name, typeof(RectTransform)).transform;
+            rect.gameObject.layer = parent.gameObject.layer;
+            rect.SetParent(parent, false);
+            rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(0.5f, 0.5f);
+            return rect;
+        }
+
+        private static void Stretch(RectTransform rect)
+        {
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.offsetMin = rect.offsetMax = Vector2.zero;
+        }
+    }
+}

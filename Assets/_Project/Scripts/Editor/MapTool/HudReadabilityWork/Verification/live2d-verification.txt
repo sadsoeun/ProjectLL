@@ -1,0 +1,1 @@
+PASS: genuine Cubism moc loaded; eye and breath parameters present; 3 ArtMeshes; breath vertex delta=0.01356506.

@@ -1,0 +1,126 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MyGame
+{
+    /// <summary>Compact icon HUD; keeps the scene's existing text bindings and menu navigation.</summary>
+    [DisallowMultipleComponent]
+    public sealed class HudPresentation : MonoBehaviour
+    {
+        private RectTransform stats, chapter, timer, pause;
+        private RectTransform lives, coins, time, stage, slots;
+        private bool initialized, visible = true;
+        public Button PauseButton { get; private set; }
+        private static readonly Color Back = new Color(.035f,.038f,.045f,.92f);
+
+        public static HudPresentation Apply(Transform root)
+        {
+            var hud = root.GetComponent<HudPresentation>();
+            if (hud == null) hud = root.gameObject.AddComponent<HudPresentation>();
+            hud.Initialize(); hud.Layout();
+            return hud;
+        }
+
+        public void Initialize()
+        {
+            if (initialized) return;
+            lives = transform.Find("LivesText") as RectTransform;
+            coins = transform.Find("CoinsText") as RectTransform;
+            time = transform.Find("TimeText") as RectTransform;
+            stage = transform.Find("StageNameText") as RectTransform;
+            slots = transform.Find("SpecialSlots") as RectTransform;
+            if (lives == null || coins == null || time == null || stage == null || slots == null) return;
+            initialized = true;
+            stats = Plate("HudStats"); chapter = Plate("HudChapter"); timer = Plate("HudTimer");
+            Icon(stats, "Portrait", new Vector2(8,4), new Vector2(76,76));
+            Icon(stats, "Coin", new Vector2(182,-10), new Vector2(48,48));
+            var clock = ExistingRect("Clock",timer);
+            GoldUiTheme.Place(clock,new Vector2(0,.5f),new Vector2(0,.5f),new Vector2(14,0),new Vector2(32,32));
+            Ensure<HudGlyph>(clock).kind = HudGlyph.Kind.Clock;
+            pause = ExistingRect("HudPauseButton",transform);
+            var image = Ensure<Image>(pause); image.color = Color.white;
+            PauseButton = Ensure<Button>(pause); PauseButton.targetGraphic = image;
+            GoldUiTheme.StyleButton(PauseButton);
+            var colors = PauseButton.colors; colors.normalColor = Back; PauseButton.colors = colors;
+            // Esc / gamepad Start remain the keyboard/controller route. Do not steal jump/submit focus.
+            PauseButton.navigation = new Navigation { mode = Navigation.Mode.None };
+            var bars = ExistingRect("PauseGlyph",pause);
+            GoldUiTheme.Place(bars,new Vector2(.5f,.5f),new Vector2(.5f,.5f),Vector2.zero,new Vector2(30,32));
+            Ensure<HudGlyph>(bars).kind = HudGlyph.Kind.Pause;
+            PauseButton.onClick.RemoveListener(OnPauseClicked);
+            PauseButton.onClick.AddListener(OnPauseClicked);
+            Style(lives,UiKit.HudSize,TextAnchor.MiddleLeft); Style(coins,UiKit.HudSize,TextAnchor.MiddleLeft);
+            Style(time,UiKit.HudSize,TextAnchor.MiddleRight); Style(stage,UiKit.HudSize,TextAnchor.MiddleCenter);
+            SetVisible(visible);
+        }
+
+        private void OnPauseClicked() => GetComponent<InGameView>()?.RequestPause();
+        private static RectTransform ExistingRect(string name,Transform parent)
+            => parent.Find(name) as RectTransform ?? GoldUiTheme.Rect(name,parent);
+        private static T Ensure<T>(Component parent) where T : Component
+            => parent.GetComponent<T>() ?? parent.gameObject.AddComponent<T>();
+
+        private RectTransform Plate(string name)
+        {
+            var rt = ExistingRect(name,transform); rt.SetAsFirstSibling();
+            var image = Ensure<Image>(rt); image.color = Back; image.raycastTarget = false;
+            var frame = GoldUiTheme.Frame(rt); frame.diamond = false; frame.color = new Color(.79f,.65f,.42f,.7f);
+            return rt;
+        }
+
+        private static void Icon(Transform parent,string name,Vector2 position,Vector2 size)
+        {
+            var rt = ExistingRect(name,parent);
+            GoldUiTheme.Place(rt,Vector2.up,Vector2.up,position,size);
+            var image = Ensure<Image>(rt); image.sprite = Resources.Load<Sprite>("HudArt/"+name);
+            image.preserveAspect = true; image.raycastTarget = false;
+        }
+
+        private static void Style(RectTransform rt,int size,TextAnchor alignment)
+        {
+            UiKit.TextStyle(rt,size,alignment);
+        }
+
+        private void OnRectTransformDimensionsChange() { if (initialized) Layout(); }
+
+        public void Layout()
+        {
+            if (!initialized) return;
+            float width = ((RectTransform)transform).rect.width;
+            const float margin = 32, top = -28, height = 72;
+            bool narrow = width < 1240;
+            float middleWidth = narrow ? Mathf.Min(520,width-64) : Mathf.Min(520,width-780);
+            float middleY = narrow ? -116 : top;
+            Place(stats,0,margin,top,340,height);
+            Place(chapter,.5f,0,middleY,middleWidth,height);
+            Place(timer,1,-margin-86,top,220,height);
+            Place(pause,1,-margin,top,72,height);
+            Place(lives,0,margin+90,top,86,height);
+            Place(coins,0,margin+238,top,88,height);
+            Place(time,1,-margin-102,top,155,height);
+            Style(lives,UiKit.HudSize,TextAnchor.MiddleLeft);Style(coins,UiKit.HudSize,TextAnchor.MiddleLeft);
+            Style(time,UiKit.HudSize,TextAnchor.MiddleRight);Style(stage,UiKit.HudSize,TextAnchor.MiddleCenter);
+            Place(stage,.5f,0,middleY,middleWidth-24,height);
+            Place(slots,.5f,0,middleY-height-10,104,24);
+            for (int i=0;i<slots.childCount;i++)
+            {
+                var rt=slots.GetChild(i) as RectTransform;
+                if(rt!=null) GoldUiTheme.Place(rt,new Vector2(0,.5f),new Vector2(.5f,.5f),new Vector2(16+i*36,0),new Vector2(24,24));
+            }
+        }
+
+        private static void Place(RectTransform rt,float anchor,float x,float y,float w,float h)
+        { GoldUiTheme.Place(rt,new Vector2(anchor,1),new Vector2(anchor,1),new Vector2(x,y),new Vector2(w,h)); }
+
+        public void SetVisible(bool value)
+        {
+            visible=value;
+            if(!initialized)return;
+            stats.gameObject.SetActive(value); chapter.gameObject.SetActive(value);
+            timer.gameObject.SetActive(value); pause.gameObject.SetActive(value);
+        }
+
+        public void SetPauseAvailable(bool value)
+        { if (PauseButton != null) PauseButton.interactable = value; }
+    }
+}

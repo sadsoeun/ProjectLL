@@ -1,0 +1,1 @@
+PASS: Unity compiled; approved Sprite imported and assigned to first build scene; one logo; aspect preserved; no legacy Text or added gold frame. Actual scene rendered at 1600x900. Existing 0.8s fade in / 1.5s hold / 0.8s fade out and skip flow preserved. No player saves touched.
