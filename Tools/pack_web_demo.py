@@ -27,6 +27,9 @@ PAGE = """<!DOCTYPE html>
   #fill { width: 0; height: 100%; background: #f1cf7a; transition: width .2s; }
   #note { font-size: 14px; opacity: .75; text-align: center; line-height: 1.6; padding: 0 16px; }
   #error { color: #ff9c8a; white-space: pre-wrap; max-width: 80vw; }
+  #slow { position: fixed; left: 50%; top: 12px; transform: translateX(-50%); z-index: 5; max-width: min(760px, 92vw); padding: 12px 16px; background: #2b2110; border: 1px solid #f1cf7a; border-radius: 8px; font-size: 14px; line-height: 1.6; }
+  #slow b { color: #f1cf7a; }
+  #slow button { margin-left: 12px; padding: 2px 10px; background: none; color: inherit; border: 1px solid #8a7a4a; border-radius: 4px; cursor: pointer; font: inherit; }
 </style>
 </head>
 <body>
@@ -36,6 +39,11 @@ PAGE = """<!DOCTYPE html>
   <div id="bar"><div id="fill"></div></div>
   <div id="note"><span id="status">0%</span><br>Web demo: World 1 - keyboard or gamepad - desktop browser recommended</div>
   <div id="error"></div>
+</div>
+<div id="slow" hidden>
+  <b>이 브라우저는 그래픽 가속이 꺼져 있어 게임이 느리게 실행됩니다.</b><button id="slow-close">닫기</button><br>
+  설정 &gt; 시스템 &gt; "가능한 경우 그래픽 가속 사용"을 켜고 브라우저를 다시 시작하거나, 다른 브라우저로 열어 주세요.<br>
+  <span style="opacity:.75">Graphics acceleration is off in this browser, so the game runs slowly. Turn it on in Settings &gt; System and restart the browser. (<span id="slow-gpu"></span>)</span>
 </div>
 <script>
   var BUILD = "Build", NAME = "__NAME__", PARTS = __PARTS__, DATA_BYTES = __DATA_BYTES__;
@@ -50,6 +58,23 @@ PAGE = """<!DOCTYPE html>
   }
   window.addEventListener("resize", fit);
   fit();
+
+  // Without graphics acceleration the browser draws WebGL on the CPU (SwiftShader, WARP...): far too slow at full size.
+  function softwareRenderer() {
+    try {
+      var gl = document.createElement("canvas").getContext("webgl2");
+      if (!gl) return "no WebGL 2";
+      var info = gl.getExtension("WEBGL_debug_renderer_info");
+      var name = info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : "";
+      return /swiftshader|warp|basic render|llvmpipe|software/i.test(name) ? name : "";
+    } catch (e) { return ""; }
+  }
+  var software = softwareRenderer();
+  if (software) {
+    document.getElementById("slow").hidden = false;
+    document.getElementById("slow-gpu").textContent = software;
+    document.getElementById("slow-close").onclick = function () { document.getElementById("slow").hidden = true; canvas.focus(); };
+  }
 
   function show(fraction) {
     var percent = Math.round(Math.max(0, Math.min(1, fraction)) * 100);
@@ -98,7 +123,8 @@ PAGE = """<!DOCTYPE html>
         productVersion: "__VERSION__",
         autoSyncPersistentDataPath: true,
         // High-DPI screens would otherwise render 2-4x the pixels; one canvas pixel per CSS pixel keeps the frame rate up.
-        devicePixelRatio: 1,
+        // On a CPU renderer, draw a small picture and let the page stretch it: blurry, but it moves.
+        devicePixelRatio: software ? Math.min(1, 640 / canvas.clientWidth) : 1,
         // The joined data file has a new blob address on every visit, so Unity's own cache could never hit.
         cacheControl: function (url) { return url.indexOf("blob:") === 0 ? "no-store" : "must-revalidate"; },
         showBanner: function (message, type) { if (type === "error") fail(message); else console.warn(message); },
