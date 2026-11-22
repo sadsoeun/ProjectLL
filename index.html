@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaf &amp; Leap - Web Demo</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #101214; color: #e9e2cf; font-family: system-ui, "Malgun Gothic", sans-serif; overflow: hidden; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #unity-canvas { background: #101214; outline: none; }
+  #loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
+  #loading h1 { margin: 0; font-size: 34px; letter-spacing: .04em; color: #f1cf7a; }
+  #bar { width: min(480px, 70vw); height: 8px; background: #2a2c2f; border-radius: 4px; overflow: hidden; }
+  #fill { width: 0; height: 100%; background: #f1cf7a; transition: width .2s; }
+  #note { font-size: 14px; opacity: .75; text-align: center; line-height: 1.6; padding: 0 16px; }
+  #error { color: #ff9c8a; white-space: pre-wrap; max-width: 80vw; }
+</style>
+</head>
+<body>
+<div id="stage"><canvas id="unity-canvas" tabindex="-1"></canvas></div>
+<div id="loading">
+  <h1>Leaf &amp; Leap</h1>
+  <div id="bar"><div id="fill"></div></div>
+  <div id="note"><span id="status">0%</span><br>Web demo: World 1 - keyboard or gamepad - desktop browser recommended</div>
+  <div id="error"></div>
+</div>
+<script>
+  var BUILD = "Build", NAME = "LeafLeapWeb", PARTS = 3, DATA_BYTES = 267028104;
+  var canvas = document.getElementById("unity-canvas");
+  var fill = document.getElementById("fill"), statusText = document.getElementById("status");
+
+  function fit() {
+    var w = window.innerWidth, h = window.innerHeight, ratio = 16 / 9;
+    var cw = Math.min(w, h * ratio), ch = cw / ratio;
+    canvas.style.width = Math.floor(cw) + "px";
+    canvas.style.height = Math.floor(ch) + "px";
+  }
+  window.addEventListener("resize", fit);
+  fit();
+
+  function show(fraction) {
+    var percent = Math.round(Math.max(0, Math.min(1, fraction)) * 100);
+    fill.style.width = percent + "%";
+    statusText.textContent = percent + "%";
+  }
+  function fail(message) { document.getElementById("error").textContent = String(message); }
+
+  // The data file is published in parts (GitHub's 100 MB file limit): download them and join them again.
+  async function loadData() {
+    var done = 0, chunks = [];
+    for (var i = 0; i < PARTS; i++) {
+      var response = await fetch(BUILD + "/" + NAME + ".data.unityweb.part" + i);
+      if (!response.ok) throw new Error("Download failed: part " + i + " (" + response.status + ")");
+      var reader = response.body.getReader();
+      for (;;) {
+        var step = await reader.read();
+        if (step.done) break;
+        chunks.push(step.value);
+        done += step.value.length;
+        show(0.8 * done / DATA_BYTES);
+      }
+    }
+    return URL.createObjectURL(new Blob(chunks, { type: "application/octet-stream" }));
+  }
+
+  function loadScript(url) {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement("script");
+      script.src = url; script.onload = resolve; script.onerror = function () { reject(new Error("Could not load " + url)); };
+      document.body.appendChild(script);
+    });
+  }
+
+  (async function () {
+    try {
+      var dataUrl = await loadData();
+      await loadScript(BUILD + "/" + NAME + ".loader.js");
+      var instance = await createUnityInstance(canvas, {
+        dataUrl: dataUrl,
+        frameworkUrl: BUILD + "/" + NAME + ".framework.js.unityweb",
+        codeUrl: BUILD + "/" + NAME + ".wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Leaf _ Leap",
+        productVersion: "0.1.0",
+        autoSyncPersistentDataPath: true,
+        // The joined data file has a new blob address on every visit, so Unity's own cache could never hit.
+        cacheControl: function (url) { return url.indexOf("blob:") === 0 ? "no-store" : "must-revalidate"; },
+        showBanner: function (message, type) { if (type === "error") fail(message); else console.warn(message); },
+      }, function (progress) { show(0.8 + 0.2 * progress); });
+      window.unityInstance = instance;
+      document.getElementById("loading").style.display = "none";
+      canvas.focus();
+    } catch (error) { fail(error && error.message ? error.message : error); }
+  })();
+</script>
+</body>
+</html>
