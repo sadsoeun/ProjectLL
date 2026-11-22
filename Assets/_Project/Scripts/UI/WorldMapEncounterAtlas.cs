@@ -13,6 +13,9 @@ namespace MyGame
             public int[] models;
         }
 
+        /// <summary>Tiles per sheet row (the baker lays the sheet out with this).</summary>
+        public const int Columns = 16;
+
         public Texture2D texture;
         public int viewCount;
         public int tileSize;
@@ -29,10 +32,11 @@ namespace MyGame
         public Rect UV(int model, int view)
         {
             int tile = 1 + model * viewCount + view; // The frame lines sample white in tile zero.
-            int columns = texture.width / tileSize;
-            return new Rect((float)(tile % columns * tileSize + .5f) / texture.width,
-                (float)(tile / columns * tileSize + .5f) / texture.height,
-                (float)(tileSize - 1) / texture.width, (float)(tileSize - 1) / texture.height);
+            // Grid cells, not texture pixels: a build may ship the sheet smaller than it was baked (web demo texture cap).
+            int rows = (creatureIds.Length * viewCount + Columns) / Columns; // tiles + the white one, rounded up
+            float inset = .5f / tileSize;
+            return new Rect((tile % Columns + inset) / Columns, (tile / Columns + inset) / rows,
+                (1f - 2f * inset) / Columns, (1f - 2f * inset) / rows);
         }
     }
 }

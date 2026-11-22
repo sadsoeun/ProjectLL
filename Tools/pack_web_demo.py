@@ -97,6 +97,8 @@ PAGE = """<!DOCTYPE html>
         productName: "Leaf _ Leap",
         productVersion: "__VERSION__",
         autoSyncPersistentDataPath: true,
+        // High-DPI screens would otherwise render 2-4x the pixels; one canvas pixel per CSS pixel keeps the frame rate up.
+        devicePixelRatio: 1,
         // The joined data file has a new blob address on every visit, so Unity's own cache could never hit.
         cacheControl: function (url) { return url.indexOf("blob:") === 0 ? "no-store" : "must-revalidate"; },
         showBanner: function (message, type) { if (type === "error") fail(message); else console.warn(message); },

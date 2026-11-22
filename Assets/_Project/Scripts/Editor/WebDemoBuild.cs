@@ -47,6 +47,10 @@ namespace MyGame.EditorTools
             PlayerSettings.WebGL.dataCaching = true;
             PlayerSettings.WebGL.nameFilesAsHashes = false;
             PlayerSettings.runInBackground = true;
+            // The default ("BuildTimes") ships unoptimised code, which runs several times slower in the browser.
+            // Not "RuntimeSpeedLTO": its link step alone ran past 20 minutes here, against under 2 without LTO.
+            EditorUserBuildSettings.SetPlatformSettings("WebGL", "CodeOptimization", "RuntimeSpeed");
+            PlayerSettings.SetIl2CppCompilerConfiguration(UnityEditor.Build.NamedBuildTarget.WebGL, Il2CppCompilerConfiguration.Release);
 
             int previousMax = EditorUserBuildSettings.overrideMaxTextureSize;
             EditorUserBuildSettings.overrideMaxTextureSize = MaxTextureSize; // build-time cap; importers stay untouched

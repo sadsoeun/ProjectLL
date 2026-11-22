@@ -12,7 +12,7 @@ namespace MyGame.EditorTools
 {
     public static class WorldMapEncounterBaker
     {
-        const int Views = 11, Tile = 128, Resolution = 256, Columns = 16;
+        const int Views = 11, Tile = 128, Resolution = 256, Columns = WorldMapEncounterAtlas.Columns;
         const string SheetPath = "Assets/_Project/Art/UI/WorldMapEncounterViews.png";
         const string AtlasPath = "Assets/_Project/Resources/WorldMapEncounters.asset";
 

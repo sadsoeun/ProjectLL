@@ -59,6 +59,12 @@ namespace MyGame
         {
             QualitySettings.vSyncCount = Data.vSync ? 1 : 0;
 
+#if UNITY_WEBGL
+            // Browser: the page owns the canvas size and the browser paces the frames. Asking for the display's full
+            // resolution here would render far more pixels than the canvas shows.
+            if (!Application.isEditor)
+                return;
+#endif
             // Window changes are skipped in the Editor (Game view is not a real window).
             if (Application.isEditor)
             {
